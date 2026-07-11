@@ -1,0 +1,3187 @@
+{
+  "meta": {
+    "title": "Tokyo Ghoul: Break the Chains S00 Combat Power snapshots",
+    "sourcePackage": "com.tokyoghoulsea1.google",
+    "sourceVersion": "3.10814",
+    "sourceTable": "HeroStrengthList",
+    "sourceRecordCount": 1568,
+    "preset": "S00",
+    "unitCount": 122,
+    "exportedOn": "2026-07-10",
+    "note": "Base and upgraded labels describe the two stat/CP sets stored in each S00 record. They are direct game values, not calculations from the website's level-1 stats."
+  },
+  "units": {
+    "1001": {
+      "heroId": "1001",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.9/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "B",
+        "star": "B",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 41148,
+        "def": 25040,
+        "hp": 692718,
+        "combatPower": 151911
+      },
+      "upgraded": {
+        "atk": 51176,
+        "def": 28640,
+        "hp": 838090,
+        "combatPower": 177797
+      },
+      "combatPowerIncrease": 25886
+    },
+    "1002": {
+      "heroId": "1002",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.5/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 43792,
+        "def": 26707,
+        "hp": 711116,
+        "combatPower": 158039
+      },
+      "upgraded": {
+        "atk": 58084,
+        "def": 34707,
+        "hp": 789716,
+        "combatPower": 189662
+      },
+      "combatPowerIncrease": 31623
+    },
+    "1003": {
+      "heroId": "1003",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 43631,
+        "def": 24207,
+        "hp": 737902,
+        "combatPower": 156536
+      },
+      "upgraded": {
+        "atk": 52825,
+        "def": 32040,
+        "hp": 883028,
+        "combatPower": 186992
+      },
+      "combatPowerIncrease": 30456
+    },
+    "1004": {
+      "heroId": "1004",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.0/10.0",
+        "level": "B",
+        "rank": "S",
+        "quality": "S",
+        "star": "A",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 36886,
+        "def": 25873,
+        "hp": 764238,
+        "combatPower": 153208
+      },
+      "upgraded": {
+        "atk": 42780,
+        "def": 33129,
+        "hp": 962260,
+        "combatPower": 182985
+      },
+      "combatPowerIncrease": 29777
+    },
+    "1005": {
+      "heroId": "1005",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.2/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 43954,
+        "def": 30040,
+        "hp": 823880,
+        "combatPower": 170799
+      },
+      "upgraded": {
+        "atk": 57397,
+        "def": 33640,
+        "hp": 902480,
+        "combatPower": 195769
+      },
+      "combatPowerIncrease": 24970
+    },
+    "1006": {
+      "heroId": "1006",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "A",
+        "skill": "S",
+        "other": "S"
+      },
+      "base": {
+        "atk": 44383,
+        "def": 24762,
+        "hp": 724970,
+        "combatPower": 157206
+      },
+      "upgraded": {
+        "atk": 54712,
+        "def": 28362,
+        "hp": 875769,
+        "combatPower": 183804
+      },
+      "combatPowerIncrease": 26598
+    },
+    "1007": {
+      "heroId": "1007",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "A",
+        "skill": "S",
+        "other": "A"
+      },
+      "base": {
+        "atk": 44046,
+        "def": 23651,
+        "hp": 713744,
+        "combatPower": 154720
+      },
+      "upgraded": {
+        "atk": 58132,
+        "def": 27251,
+        "hp": 865257,
+        "combatPower": 185501
+      },
+      "combatPowerIncrease": 30781
+    },
+    "1008": {
+      "heroId": "1008",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.1/10.0",
+        "level": "C",
+        "rank": "B",
+        "quality": "B",
+        "star": "S",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 19261,
+        "def": 18305,
+        "hp": 441722,
+        "combatPower": 84185
+      },
+      "upgraded": {
+        "atk": 24261,
+        "def": 21905,
+        "hp": 520322,
+        "combatPower": 99867
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1009": {
+      "heroId": "1009",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.2/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "B",
+        "star": "B",
+        "skill": "A",
+        "other": "B"
+      },
+      "base": {
+        "atk": 24177,
+        "def": 14890,
+        "hp": 420776,
+        "combatPower": 83806
+      },
+      "upgraded": {
+        "atk": 29177,
+        "def": 18490,
+        "hp": 499376,
+        "combatPower": 99488
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1010": {
+      "heroId": "1010",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.0/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "A",
+        "star": "A",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 42136,
+        "def": 24484,
+        "hp": 690230,
+        "combatPower": 151916
+      },
+      "upgraded": {
+        "atk": 52249,
+        "def": 28084,
+        "hp": 838744,
+        "combatPower": 178117
+      },
+      "combatPowerIncrease": 26201
+    },
+    "1011": {
+      "heroId": "1011",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 43059,
+        "def": 23095,
+        "hp": 709410,
+        "combatPower": 152643
+      },
+      "upgraded": {
+        "atk": 53216,
+        "def": 26695,
+        "hp": 859781,
+        "combatPower": 179022
+      },
+      "combatPowerIncrease": 26379
+    },
+    "1012": {
+      "heroId": "1012",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.1/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "B",
+        "star": "S",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 42560,
+        "def": 25318,
+        "hp": 677298,
+        "combatPower": 152676
+      },
+      "upgraded": {
+        "atk": 57448,
+        "def": 28918,
+        "hp": 755898,
+        "combatPower": 179235
+      },
+      "combatPowerIncrease": 26559
+    },
+    "1013": {
+      "heroId": "1013",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 42731,
+        "def": 27262,
+        "hp": 701595,
+        "combatPower": 157033
+      },
+      "upgraded": {
+        "atk": 51822,
+        "def": 33138,
+        "hp": 859223,
+        "combatPower": 185705
+      },
+      "combatPowerIncrease": 28672
+    },
+    "1014": {
+      "heroId": "1014",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 39894,
+        "def": 27818,
+        "hp": 703091,
+        "combatPower": 154694
+      },
+      "upgraded": {
+        "atk": 52577,
+        "def": 31418,
+        "hp": 864405,
+        "combatPower": 184618
+      },
+      "combatPowerIncrease": 29924
+    },
+    "1015": {
+      "heroId": "1015",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 41250,
+        "def": 23373,
+        "hp": 730529,
+        "combatPower": 152513
+      },
+      "upgraded": {
+        "atk": 52741,
+        "def": 29895,
+        "hp": 848269,
+        "combatPower": 181873
+      },
+      "combatPowerIncrease": 29360
+    },
+    "1016": {
+      "heroId": "1016",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 40060,
+        "def": 27262,
+        "hp": 784442,
+        "combatPower": 159919
+      },
+      "upgraded": {
+        "atk": 50504,
+        "def": 35138,
+        "hp": 977776,
+        "combatPower": 195178
+      },
+      "combatPowerIncrease": 35259
+    },
+    "1017": {
+      "heroId": "1017",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.5/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 40115,
+        "def": 26707,
+        "hp": 818484,
+        "combatPower": 161995
+      },
+      "upgraded": {
+        "atk": 45115,
+        "def": 35742,
+        "hp": 981788,
+        "combatPower": 190672
+      },
+      "combatPowerIncrease": 28677
+    },
+    "1018": {
+      "heroId": "1018",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.1/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 40125,
+        "def": 26985,
+        "hp": 682585,
+        "combatPower": 152389
+      },
+      "upgraded": {
+        "atk": 49979,
+        "def": 30585,
+        "hp": 814814,
+        "combatPower": 177165
+      },
+      "combatPowerIncrease": 24776
+    },
+    "1019": {
+      "heroId": "1019",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.1/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 40125,
+        "def": 26985,
+        "hp": 682585,
+        "combatPower": 152419
+      },
+      "upgraded": {
+        "atk": 49979,
+        "def": 30585,
+        "hp": 814814,
+        "combatPower": 177195
+      },
+      "combatPowerIncrease": 24776
+    },
+    "1020": {
+      "heroId": "1020",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 42920,
+        "def": 28929,
+        "hp": 761920,
+        "combatPower": 163981
+      },
+      "upgraded": {
+        "atk": 53077,
+        "def": 38327,
+        "hp": 848705,
+        "combatPower": 193445
+      },
+      "combatPowerIncrease": 29464
+    },
+    "1021": {
+      "heroId": "1021",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.7/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "S",
+        "star": "SS",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 49203,
+        "def": 29207,
+        "hp": 747926,
+        "combatPower": 170253
+      },
+      "upgraded": {
+        "atk": 61375,
+        "def": 32807,
+        "hp": 826526,
+        "combatPower": 193824
+      },
+      "combatPowerIncrease": 23571
+    },
+    "1022": {
+      "heroId": "1022",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.8/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "B",
+        "star": "A",
+        "skill": "B",
+        "other": "C"
+      },
+      "base": {
+        "atk": 23709,
+        "def": 15317,
+        "hp": 383074,
+        "combatPower": 81152
+      },
+      "upgraded": {
+        "atk": 28709,
+        "def": 18917,
+        "hp": 461674,
+        "combatPower": 96834
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1023": {
+      "heroId": "1023",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.0/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "A",
+        "star": "B",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 42237,
+        "def": 25040,
+        "hp": 677469,
+        "combatPower": 151982
+      },
+      "upgraded": {
+        "atk": 57474,
+        "def": 28640,
+        "hp": 756069,
+        "combatPower": 178924
+      },
+      "combatPowerIncrease": 26942
+    },
+    "1025": {
+      "heroId": "1025",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "SS",
+        "star": "A",
+        "skill": "S",
+        "other": "A"
+      },
+      "base": {
+        "atk": 37429,
+        "def": 24762,
+        "hp": 794256,
+        "combatPower": 154567
+      },
+      "upgraded": {
+        "atk": 46529,
+        "def": 28362,
+        "hp": 1025619,
+        "combatPower": 185452
+      },
+      "combatPowerIncrease": 30885
+    },
+    "1026": {
+      "heroId": "1026",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.6/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "A",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 41564,
+        "def": 25873,
+        "hp": 673476,
+        "combatPower": 151925
+      },
+      "upgraded": {
+        "atk": 51591,
+        "def": 34129,
+        "hp": 759119,
+        "combatPower": 179683
+      },
+      "combatPowerIncrease": 27758
+    },
+    "1027": {
+      "heroId": "1027",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.2/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 42782,
+        "def": 23373,
+        "hp": 703642,
+        "combatPower": 152211
+      },
+      "upgraded": {
+        "atk": 57139,
+        "def": 31895,
+        "hp": 789785,
+        "combatPower": 185111
+      },
+      "combatPowerIncrease": 32900
+    },
+    "1029": {
+      "heroId": "1029",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.3/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "D",
+        "star": "C",
+        "skill": "C",
+        "other": "C"
+      },
+      "base": {
+        "atk": 24411,
+        "def": 19586,
+        "hp": 328616,
+        "combatPower": 83668
+      },
+      "upgraded": {
+        "atk": 29411,
+        "def": 23186,
+        "hp": 407216,
+        "combatPower": 99350
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1030": {
+      "heroId": "1030",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 42062,
+        "def": 21429,
+        "hp": 747182,
+        "combatPower": 152069
+      },
+      "upgraded": {
+        "atk": 55633,
+        "def": 25029,
+        "hp": 898409,
+        "combatPower": 182263
+      },
+      "combatPowerIncrease": 30194
+    },
+    "1031": {
+      "heroId": "1031",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "SS",
+        "star": "A",
+        "skill": "SS",
+        "other": "A"
+      },
+      "base": {
+        "atk": 34248,
+        "def": 27818,
+        "hp": 765331,
+        "combatPower": 153010
+      },
+      "upgraded": {
+        "atk": 39248,
+        "def": 35884,
+        "hp": 974180,
+        "combatPower": 183615
+      },
+      "combatPowerIncrease": 30605
+    },
+    "1032": {
+      "heroId": "1032",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.2/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 36765,
+        "def": 26985,
+        "hp": 747577,
+        "combatPower": 153397
+      },
+      "upgraded": {
+        "atk": 47120,
+        "def": 32070,
+        "hp": 907461,
+        "combatPower": 182591
+      },
+      "combatPowerIncrease": 29194
+    },
+    "1033": {
+      "heroId": "1033",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.8/10.0",
+        "level": "B",
+        "rank": "A",
+        "quality": "A",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 40660,
+        "def": 26707,
+        "hp": 674259,
+        "combatPower": 152168
+      },
+      "upgraded": {
+        "atk": 54989,
+        "def": 30307,
+        "hp": 752859,
+        "combatPower": 178112
+      },
+      "combatPowerIncrease": 25944
+    },
+    "1034": {
+      "heroId": "1034",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.5/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "B",
+        "star": "B",
+        "skill": "A",
+        "other": "C"
+      },
+      "base": {
+        "atk": 23007,
+        "def": 14890,
+        "hp": 412398,
+        "combatPower": 81902
+      },
+      "upgraded": {
+        "atk": 28007,
+        "def": 18490,
+        "hp": 490998,
+        "combatPower": 97584
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1035": {
+      "heroId": "1035",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.8/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "B",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 39857,
+        "def": 27540,
+        "hp": 676375,
+        "combatPower": 152457
+      },
+      "upgraded": {
+        "atk": 49669,
+        "def": 31140,
+        "hp": 823461,
+        "combatPower": 178226
+      },
+      "combatPowerIncrease": 25769
+    },
+    "1036": {
+      "heroId": "1036",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.2/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "A",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 41785,
+        "def": 25318,
+        "hp": 680709,
+        "combatPower": 151887
+      },
+      "upgraded": {
+        "atk": 56770,
+        "def": 28918,
+        "hp": 759309,
+        "combatPower": 178552
+      },
+      "combatPowerIncrease": 26665
+    },
+    "1037": {
+      "heroId": "1037",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "A",
+        "quality": "S",
+        "star": "B",
+        "skill": "S",
+        "other": "B"
+      },
+      "base": {
+        "atk": 35585,
+        "def": 27262,
+        "hp": 749422,
+        "combatPower": 152439
+      },
+      "upgraded": {
+        "atk": 40585,
+        "def": 30862,
+        "hp": 974789,
+        "combatPower": 178395
+      },
+      "combatPowerIncrease": 25956
+    },
+    "1038": {
+      "heroId": "1038",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.9/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "A",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 39986,
+        "def": 26707,
+        "hp": 680469,
+        "combatPower": 151612
+      },
+      "upgraded": {
+        "atk": 54712,
+        "def": 30307,
+        "hp": 759069,
+        "combatPower": 177992
+      },
+      "combatPowerIncrease": 26380
+    },
+    "1039": {
+      "heroId": "1039",
+      "preset": "S00",
+      "ratings": {
+        "overall": "7.9/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "A",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 40300,
+        "def": 27818,
+        "hp": 654536,
+        "combatPower": 151551
+      },
+      "upgraded": {
+        "atk": 50198,
+        "def": 31418,
+        "hp": 802908,
+        "combatPower": 177505
+      },
+      "combatPowerIncrease": 25954
+    },
+    "1040": {
+      "heroId": "1040",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.5/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 37006,
+        "def": 28651,
+        "hp": 723458,
+        "combatPower": 153941
+      },
+      "upgraded": {
+        "atk": 42461,
+        "def": 39500,
+        "hp": 816857,
+        "combatPower": 180583
+      },
+      "combatPowerIncrease": 26642
+    },
+    "1041": {
+      "heroId": "1041",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.2/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "B",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 43353,
+        "def": 23929,
+        "hp": 675523,
+        "combatPower": 151519
+      },
+      "upgraded": {
+        "atk": 57297,
+        "def": 31129,
+        "hp": 754123,
+        "combatPower": 181718
+      },
+      "combatPowerIncrease": 30199
+    },
+    "1042": {
+      "heroId": "1042",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "B"
+      },
+      "base": {
+        "atk": 41019,
+        "def": 25873,
+        "hp": 683609,
+        "combatPower": 152010
+      },
+      "upgraded": {
+        "atk": 50007,
+        "def": 32229,
+        "hp": 839952,
+        "combatPower": 181103
+      },
+      "combatPowerIncrease": 29093
+    },
+    "1043": {
+      "heroId": "1043",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.1/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "S",
+        "skill": "S",
+        "other": "A"
+      },
+      "base": {
+        "atk": 42911,
+        "def": 25596,
+        "hp": 661056,
+        "combatPower": 152241
+      },
+      "upgraded": {
+        "atk": 57951,
+        "def": 29196,
+        "hp": 739656,
+        "combatPower": 178967
+      },
+      "combatPowerIncrease": 26726
+    },
+    "1044": {
+      "heroId": "1044",
+      "preset": "S00",
+      "ratings": {
+        "overall": "5.8/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "B",
+        "star": "B",
+        "skill": "B",
+        "other": "B"
+      },
+      "base": {
+        "atk": 23475,
+        "def": 14890,
+        "hp": 404020,
+        "combatPower": 81726
+      },
+      "upgraded": {
+        "atk": 28475,
+        "def": 18490,
+        "hp": 482620,
+        "combatPower": 97408
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1045": {
+      "heroId": "1045",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.2/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "D",
+        "star": "C",
+        "skill": "C",
+        "other": "C"
+      },
+      "base": {
+        "atk": 23241,
+        "def": 16811,
+        "hp": 387263,
+        "combatPower": 82813
+      },
+      "upgraded": {
+        "atk": 28241,
+        "def": 20411,
+        "hp": 465863,
+        "combatPower": 98495
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1046": {
+      "heroId": "1046",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.0/10.0",
+        "level": "B",
+        "rank": "B",
+        "quality": "S",
+        "star": "A",
+        "skill": "B",
+        "other": "C"
+      },
+      "base": {
+        "atk": 40521,
+        "def": 26429,
+        "hp": 682345,
+        "combatPower": 152176
+      },
+      "upgraded": {
+        "atk": 50462,
+        "def": 30029,
+        "hp": 828431,
+        "combatPower": 178017
+      },
+      "combatPowerIncrease": 25841
+    },
+    "1048": {
+      "heroId": "1048",
+      "preset": "S00",
+      "ratings": {
+        "overall": "5.8/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "C",
+        "star": "C",
+        "skill": "C",
+        "other": "C"
+      },
+      "base": {
+        "atk": 20899,
+        "def": 20013,
+        "hp": 374696,
+        "combatPower": 83566
+      },
+      "upgraded": {
+        "atk": 25899,
+        "def": 23613,
+        "hp": 453296,
+        "combatPower": 99248
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1049": {
+      "heroId": "1049",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.0/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "A",
+        "star": "B",
+        "skill": "B",
+        "other": "C"
+      },
+      "base": {
+        "atk": 24177,
+        "def": 13395,
+        "hp": 450100,
+        "combatPower": 83871
+      },
+      "upgraded": {
+        "atk": 29177,
+        "def": 16995,
+        "hp": 528700,
+        "combatPower": 99553
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1050": {
+      "heroId": "1050",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.1/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "S",
+        "star": "SS",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 43825,
+        "def": 25040,
+        "hp": 884483,
+        "combatPower": 168564
+      },
+      "upgraded": {
+        "atk": 58816,
+        "def": 28640,
+        "hp": 963083,
+        "combatPower": 195237
+      },
+      "combatPowerIncrease": 26673
+    },
+    "1052": {
+      "heroId": "1052",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "A",
+        "skill": "A",
+        "other": "S"
+      },
+      "base": {
+        "atk": 43825,
+        "def": 26985,
+        "hp": 700742,
+        "combatPower": 157805
+      },
+      "upgraded": {
+        "atk": 54068,
+        "def": 30585,
+        "hp": 846828,
+        "combatPower": 183978
+      },
+      "combatPowerIncrease": 26173
+    },
+    "1055": {
+      "heroId": "1055",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.1/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 38741,
+        "def": 31985,
+        "hp": 799652,
+        "combatPower": 166197
+      },
+      "upgraded": {
+        "atk": 43741,
+        "def": 40065,
+        "hp": 962243,
+        "combatPower": 193583
+      },
+      "combatPowerIncrease": 27386
+    },
+    "1056": {
+      "heroId": "1056",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 45770,
+        "def": 29485,
+        "hp": 817865,
+        "combatPower": 171844
+      },
+      "upgraded": {
+        "atk": 56623,
+        "def": 33085,
+        "hp": 967541,
+        "combatPower": 198939
+      },
+      "combatPowerIncrease": 27095
+    },
+    "1058": {
+      "heroId": "1058",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.5/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 44766,
+        "def": 29207,
+        "hp": 823950,
+        "combatPower": 170679
+      },
+      "upgraded": {
+        "atk": 55138,
+        "def": 35109,
+        "hp": 911377,
+        "combatPower": 195881
+      },
+      "combatPowerIncrease": 25202
+    },
+    "1060": {
+      "heroId": "1060",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "A",
+        "skill": "S",
+        "other": "A"
+      },
+      "base": {
+        "atk": 41924,
+        "def": 24762,
+        "hp": 687842,
+        "combatPower": 152087
+      },
+      "upgraded": {
+        "atk": 54380,
+        "def": 28362,
+        "hp": 825842,
+        "combatPower": 180479
+      },
+      "combatPowerIncrease": 28392
+    },
+    "1061": {
+      "heroId": "1061",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.8/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "A",
+        "star": "C",
+        "skill": "B",
+        "other": "C"
+      },
+      "base": {
+        "atk": 23709,
+        "def": 17878,
+        "hp": 349561,
+        "combatPower": 82172
+      },
+      "upgraded": {
+        "atk": 28709,
+        "def": 21478,
+        "hp": 428161,
+        "combatPower": 97854
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1062": {
+      "heroId": "1062",
+      "preset": "S00",
+      "ratings": {
+        "overall": "5.8/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "C",
+        "star": "C",
+        "skill": "C",
+        "other": "C"
+      },
+      "base": {
+        "atk": 20197,
+        "def": 19373,
+        "hp": 404020,
+        "combatPower": 84009
+      },
+      "upgraded": {
+        "atk": 25197,
+        "def": 22973,
+        "hp": 482620,
+        "combatPower": 99691
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1063": {
+      "heroId": "1063",
+      "preset": "S00",
+      "ratings": {
+        "overall": "6.2/10.0",
+        "level": "C",
+        "rank": "C",
+        "quality": "B",
+        "star": "B",
+        "skill": "A",
+        "other": "B"
+      },
+      "base": {
+        "atk": 19495,
+        "def": 19586,
+        "hp": 387263,
+        "combatPower": 82316
+      },
+      "upgraded": {
+        "atk": 24495,
+        "def": 23186,
+        "hp": 465863,
+        "combatPower": 97998
+      },
+      "combatPowerIncrease": 15682
+    },
+    "1065": {
+      "heroId": "1065",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 44766,
+        "def": 28651,
+        "hp": 829136,
+        "combatPower": 170444
+      },
+      "upgraded": {
+        "atk": 58713,
+        "def": 32251,
+        "hp": 907736,
+        "combatPower": 195968
+      },
+      "combatPowerIncrease": 25524
+    },
+    "1071": {
+      "heroId": "1071",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 44858,
+        "def": 30318,
+        "hp": 822244,
+        "combatPower": 172075
+      },
+      "upgraded": {
+        "atk": 55231,
+        "def": 33918,
+        "hp": 971899,
+        "combatPower": 198641
+      },
+      "combatPowerIncrease": 26566
+    },
+    "1072": {
+      "heroId": "1072",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.5/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "S",
+        "skill": "S",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 44498,
+        "def": 31429,
+        "hp": 787643,
+        "combatPower": 170912
+      },
+      "upgraded": {
+        "atk": 54828,
+        "def": 35029,
+        "hp": 914299,
+        "combatPower": 195820
+      },
+      "combatPowerIncrease": 24908
+    },
+    "1073": {
+      "heroId": "1073",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.8/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "S",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42191,
+        "def": 30318,
+        "hp": 813437,
+        "combatPower": 168560
+      },
+      "upgraded": {
+        "atk": 52259,
+        "def": 33918,
+        "hp": 969688,
+        "combatPower": 195253
+      },
+      "combatPowerIncrease": 26693
+    },
+    "1074": {
+      "heroId": "1074",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "A",
+        "star": "A",
+        "skill": "S",
+        "other": "S"
+      },
+      "base": {
+        "atk": 44474,
+        "def": 29818,
+        "hp": 799806,
+        "combatPower": 169477
+      },
+      "upgraded": {
+        "atk": 54829,
+        "def": 33418,
+        "hp": 951918,
+        "combatPower": 196196
+      },
+      "combatPowerIncrease": 26719
+    },
+    "1075": {
+      "heroId": "1075",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.9/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "S",
+        "star": "SS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 42359,
+        "def": 30068,
+        "hp": 839617,
+        "combatPower": 170168
+      },
+      "upgraded": {
+        "atk": 47359,
+        "def": 36568,
+        "hp": 1025944,
+        "combatPower": 197161
+      },
+      "combatPowerIncrease": 26993
+    },
+    "1076": {
+      "heroId": "1076",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "B",
+        "skill": "A",
+        "other": "S"
+      },
+      "base": {
+        "atk": 41370,
+        "def": 24762,
+        "hp": 707224,
+        "combatPower": 152725
+      },
+      "upgraded": {
+        "atk": 55154,
+        "def": 32003,
+        "hp": 793366,
+        "combatPower": 183330
+      },
+      "combatPowerIncrease": 30605
+    },
+    "1077": {
+      "heroId": "1077",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 43363,
+        "def": 30040,
+        "hp": 782526,
+        "combatPower": 167344
+      },
+      "upgraded": {
+        "atk": 58255,
+        "def": 33640,
+        "hp": 861126,
+        "combatPower": 193907
+      },
+      "combatPowerIncrease": 26563
+    },
+    "1078": {
+      "heroId": "1078",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.8/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "S",
+        "star": "S",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42683,
+        "def": 30735,
+        "hp": 818279,
+        "combatPower": 170002
+      },
+      "upgraded": {
+        "atk": 48708,
+        "def": 34335,
+        "hp": 1044124,
+        "combatPower": 197118
+      },
+      "combatPowerIncrease": 27116
+    },
+    "1079": {
+      "heroId": "1079",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.0/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "S",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 43706,
+        "def": 29707,
+        "hp": 823146,
+        "combatPower": 170052
+      },
+      "upgraded": {
+        "atk": 58314,
+        "def": 33307,
+        "hp": 901746,
+        "combatPower": 196302
+      },
+      "combatPowerIncrease": 26250
+    },
+    "1080": {
+      "heroId": "1080",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.8/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "S",
+        "star": "S",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 41112,
+        "def": 27818,
+        "hp": 772153,
+        "combatPower": 161303
+      },
+      "upgraded": {
+        "atk": 53102,
+        "def": 31418,
+        "hp": 963263,
+        "combatPower": 192550
+      },
+      "combatPowerIncrease": 31247
+    },
+    "1081": {
+      "heroId": "1081",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.3/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "S"
+      },
+      "base": {
+        "atk": 42072,
+        "def": 27262,
+        "hp": 753461,
+        "combatPower": 160228
+      },
+      "upgraded": {
+        "atk": 48077,
+        "def": 33938,
+        "hp": 906368,
+        "combatPower": 186215
+      },
+      "combatPowerIncrease": 25987
+    },
+    "1083": {
+      "heroId": "1083",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.5/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "A",
+        "skill": "A",
+        "other": "A"
+      },
+      "base": {
+        "atk": 44091,
+        "def": 30540,
+        "hp": 796934,
+        "combatPower": 169719
+      },
+      "upgraded": {
+        "atk": 55440,
+        "def": 34140,
+        "hp": 875534,
+        "combatPower": 192385
+      },
+      "combatPowerIncrease": 22666
+    },
+    "1084": {
+      "heroId": "1084",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.8/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "SSS",
+        "star": "S",
+        "skill": "S",
+        "other": "S"
+      },
+      "base": {
+        "atk": 40300,
+        "def": 30318,
+        "hp": 822035,
+        "combatPower": 167047
+      },
+      "upgraded": {
+        "atk": 45300,
+        "def": 33918,
+        "hp": 1050393,
+        "combatPower": 193212
+      },
+      "combatPowerIncrease": 26165
+    },
+    "1087": {
+      "heroId": "1087",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "A",
+        "star": "A",
+        "skill": "S",
+        "other": "A"
+      },
+      "base": {
+        "atk": 44046,
+        "def": 27540,
+        "hp": 708557,
+        "combatPower": 159513
+      },
+      "upgraded": {
+        "atk": 59089,
+        "def": 31140,
+        "hp": 787157,
+        "combatPower": 186242
+      },
+      "combatPowerIncrease": 26729
+    },
+    "1088": {
+      "heroId": "1088",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "S",
+        "star": "S",
+        "skill": "S",
+        "other": "S"
+      },
+      "base": {
+        "atk": 42699,
+        "def": 25873,
+        "hp": 734490,
+        "combatPower": 157500
+      },
+      "upgraded": {
+        "atk": 53835,
+        "def": 29473,
+        "hp": 813090,
+        "combatPower": 179931
+      },
+      "combatPowerIncrease": 22431
+    },
+    "1089": {
+      "heroId": "1089",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.9/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "A"
+      },
+      "base": {
+        "atk": 41924,
+        "def": 29763,
+        "hp": 827291,
+        "combatPower": 168504
+      },
+      "upgraded": {
+        "atk": 46924,
+        "def": 33363,
+        "hp": 1010962,
+        "combatPower": 191541
+      },
+      "combatPowerIncrease": 23037
+    },
+    "1090": {
+      "heroId": "1090",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.1/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42195,
+        "def": 30902,
+        "hp": 821917,
+        "combatPower": 169942
+      },
+      "upgraded": {
+        "atk": 48206,
+        "def": 34502,
+        "hp": 1030333,
+        "combatPower": 195823
+      },
+      "combatPowerIncrease": 25881
+    },
+    "1091": {
+      "heroId": "1091",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.6/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "SSS",
+        "star": "S",
+        "skill": "SS",
+        "other": "A"
+      },
+      "base": {
+        "atk": 40619,
+        "def": 31179,
+        "hp": 840473,
+        "combatPower": 169918
+      },
+      "upgraded": {
+        "atk": 45619,
+        "def": 35638,
+        "hp": 1007132,
+        "combatPower": 192880
+      },
+      "combatPowerIncrease": 22962
+    },
+    "1092": {
+      "heroId": "1092",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.9/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "S",
+        "star": "S",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 43578,
+        "def": 30624,
+        "hp": 802775,
+        "combatPower": 169762
+      },
+      "upgraded": {
+        "atk": 54854,
+        "def": 34224,
+        "hp": 881375,
+        "combatPower": 192348
+      },
+      "combatPowerIncrease": 22586
+    },
+    "1098": {
+      "heroId": "1098",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.3/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 43704,
+        "def": 30068,
+        "hp": 813148,
+        "combatPower": 169859
+      },
+      "upgraded": {
+        "atk": 54703,
+        "def": 33668,
+        "hp": 961910,
+        "combatPower": 197051
+      },
+      "combatPowerIncrease": 27192
+    },
+    "1099": {
+      "heroId": "1099",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.7/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42680,
+        "def": 30707,
+        "hp": 817256,
+        "combatPower": 169896
+      },
+      "upgraded": {
+        "atk": 47680,
+        "def": 34307,
+        "hp": 1056670,
+        "combatPower": 196835
+      },
+      "combatPowerIncrease": 26939
+    },
+    "1100": {
+      "heroId": "1100",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.5/10.0",
+        "level": "A",
+        "rank": "S",
+        "quality": "A",
+        "star": "S",
+        "skill": "A",
+        "other": "S"
+      },
+      "base": {
+        "atk": 43905,
+        "def": 30068,
+        "hp": 804644,
+        "combatPower": 169560
+      },
+      "upgraded": {
+        "atk": 55238,
+        "def": 33668,
+        "hp": 883244,
+        "combatPower": 192208
+      },
+      "combatPowerIncrease": 22648
+    },
+    "1101": {
+      "heroId": "1101",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.6/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 45742,
+        "def": 29013,
+        "hp": 798320,
+        "combatPower": 169675
+      },
+      "upgraded": {
+        "atk": 60754,
+        "def": 32613,
+        "hp": 876920,
+        "combatPower": 196371
+      },
+      "combatPowerIncrease": 26696
+    },
+    "1102": {
+      "heroId": "1102",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 46623,
+        "def": 30485,
+        "hp": 825645,
+        "combatPower": 176157
+      },
+      "upgraded": {
+        "atk": 58386,
+        "def": 34085,
+        "hp": 904245,
+        "combatPower": 199278
+      },
+      "combatPowerIncrease": 23121
+    },
+    "1104": {
+      "heroId": "1104",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.1/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "S",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 44463,
+        "def": 28790,
+        "hp": 809184,
+        "combatPower": 168710
+      },
+      "upgraded": {
+        "atk": 54805,
+        "def": 32390,
+        "hp": 960638,
+        "combatPower": 195369
+      },
+      "combatPowerIncrease": 26659
+    },
+    "1105": {
+      "heroId": "1105",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.4/10.0",
+        "level": "A",
+        "rank": "A",
+        "quality": "S",
+        "star": "A",
+        "skill": "S",
+        "other": "A"
+      },
+      "base": {
+        "atk": 44178,
+        "def": 29540,
+        "hp": 796537,
+        "combatPower": 168551
+      },
+      "upgraded": {
+        "atk": 59258,
+        "def": 33140,
+        "hp": 875137,
+        "combatPower": 195321
+      },
+      "combatPowerIncrease": 26770
+    },
+    "1114": {
+      "heroId": "1114",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 48319,
+        "def": 31541,
+        "hp": 851616,
+        "combatPower": 181162
+      },
+      "upgraded": {
+        "atk": 60351,
+        "def": 35141,
+        "hp": 930216,
+        "combatPower": 204580
+      },
+      "combatPowerIncrease": 23418
+    },
+    "1116": {
+      "heroId": "1116",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 45964,
+        "def": 30652,
+        "hp": 837731,
+        "combatPower": 176454
+      },
+      "upgraded": {
+        "atk": 50964,
+        "def": 34252,
+        "hp": 1026027,
+        "combatPower": 199815
+      },
+      "combatPowerIncrease": 23361
+    },
+    "1120": {
+      "heroId": "1120",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.6/10.0",
+        "level": "SSS",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 45983,
+        "def": 29985,
+        "hp": 832057,
+        "combatPower": 173547
+      },
+      "upgraded": {
+        "atk": 57638,
+        "def": 33585,
+        "hp": 910657,
+        "combatPower": 196548
+      },
+      "combatPowerIncrease": 23001
+    },
+    "1121": {
+      "heroId": "1121",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.0/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "S",
+        "star": "S",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42769,
+        "def": 31346,
+        "hp": 834636,
+        "combatPower": 173001
+      },
+      "upgraded": {
+        "atk": 48799,
+        "def": 37977,
+        "hp": 993710,
+        "combatPower": 199391
+      },
+      "combatPowerIncrease": 26390
+    },
+    "1122": {
+      "heroId": "1122",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.0/10.0",
+        "level": "S",
+        "rank": "S",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 45122,
+        "def": 29513,
+        "hp": 800735,
+        "combatPower": 169817
+      },
+      "upgraded": {
+        "atk": 56641,
+        "def": 33113,
+        "hp": 879335,
+        "combatPower": 192671
+      },
+      "combatPowerIncrease": 22854
+    },
+    "1123": {
+      "heroId": "1123",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.7/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "S",
+        "skill": "SSS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 44067,
+        "def": 30013,
+        "hp": 809873,
+        "combatPower": 169967
+      },
+      "upgraded": {
+        "atk": 54362,
+        "def": 36626,
+        "hp": 897207,
+        "combatPower": 196002
+      },
+      "combatPowerIncrease": 26035
+    },
+    "1124": {
+      "heroId": "1124",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.5/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 46381,
+        "def": 30540,
+        "hp": 835148,
+        "combatPower": 175623
+      },
+      "upgraded": {
+        "atk": 58108,
+        "def": 34140,
+        "hp": 913748,
+        "combatPower": 198704
+      },
+      "combatPowerIncrease": 23081
+    },
+    "1125": {
+      "heroId": "1125",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.5/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "S",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 46311,
+        "def": 30068,
+        "hp": 825321,
+        "combatPower": 173574
+      },
+      "upgraded": {
+        "atk": 58017,
+        "def": 33668,
+        "hp": 903921,
+        "combatPower": 196632
+      },
+      "combatPowerIncrease": 23058
+    },
+    "1127": {
+      "heroId": "1127",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 41504,
+        "def": 32179,
+        "hp": 883295,
+        "combatPower": 176109
+      },
+      "upgraded": {
+        "atk": 46504,
+        "def": 35779,
+        "hp": 1073990,
+        "combatPower": 199638
+      },
+      "combatPowerIncrease": 23529
+    },
+    "1128": {
+      "heroId": "1128",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 42442,
+        "def": 31624,
+        "hp": 838260,
+        "combatPower": 172916
+      },
+      "upgraded": {
+        "atk": 47442,
+        "def": 35224,
+        "hp": 1024672,
+        "combatPower": 196144
+      },
+      "combatPowerIncrease": 23228
+    },
+    "1129": {
+      "heroId": "1129",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.7/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 45718,
+        "def": 31124,
+        "hp": 814221,
+        "combatPower": 174161
+      },
+      "upgraded": {
+        "atk": 57336,
+        "def": 34724,
+        "hp": 892821,
+        "combatPower": 197123
+      },
+      "combatPowerIncrease": 22962
+    },
+    "1132": {
+      "heroId": "1132",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.7/10.0",
+        "level": "S",
+        "rank": "SS",
+        "quality": "S",
+        "star": "SSS",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42383,
+        "def": 30846,
+        "hp": 824604,
+        "combatPower": 170605
+      },
+      "upgraded": {
+        "atk": 47383,
+        "def": 34446,
+        "hp": 1008789,
+        "combatPower": 193678
+      },
+      "combatPowerIncrease": 23073
+    },
+    "1133": {
+      "heroId": "1133",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "S"
+      },
+      "base": {
+        "atk": 44643,
+        "def": 29735,
+        "hp": 810868,
+        "combatPower": 170649
+      },
+      "upgraded": {
+        "atk": 60005,
+        "def": 33335,
+        "hp": 889468,
+        "combatPower": 197730
+      },
+      "combatPowerIncrease": 27081
+    },
+    "1134": {
+      "heroId": "1134",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 45831,
+        "def": 31179,
+        "hp": 828774,
+        "combatPower": 174752
+      },
+      "upgraded": {
+        "atk": 59559,
+        "def": 34779,
+        "hp": 907374,
+        "combatPower": 200035
+      },
+      "combatPowerIncrease": 25283
+    },
+    "1135": {
+      "heroId": "1135",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.6/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 46032,
+        "def": 30179,
+        "hp": 838274,
+        "combatPower": 175038
+      },
+      "upgraded": {
+        "atk": 56586,
+        "def": 33779,
+        "hp": 972271,
+        "combatPower": 200707
+      },
+      "combatPowerIncrease": 25669
+    },
+    "1136": {
+      "heroId": "1136",
+      "preset": "S00",
+      "ratings": {
+        "overall": "8.9/10.0",
+        "level": "S",
+        "rank": "A",
+        "quality": "S",
+        "star": "SS",
+        "skill": "S",
+        "other": "S"
+      },
+      "base": {
+        "atk": 40835,
+        "def": 31374,
+        "hp": 842468,
+        "combatPower": 171263
+      },
+      "upgraded": {
+        "atk": 45835,
+        "def": 34974,
+        "hp": 1095595,
+        "combatPower": 199162
+      },
+      "combatPowerIncrease": 27899
+    },
+    "1137": {
+      "heroId": "1137",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.1/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 42405,
+        "def": 31068,
+        "hp": 832882,
+        "combatPower": 171746
+      },
+      "upgraded": {
+        "atk": 47405,
+        "def": 34668,
+        "hp": 1018180,
+        "combatPower": 194897
+      },
+      "combatPowerIncrease": 23151
+    },
+    "1138": {
+      "heroId": "1138",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.2/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 45031,
+        "def": 30429,
+        "hp": 814725,
+        "combatPower": 172584
+      },
+      "upgraded": {
+        "atk": 59640,
+        "def": 34029,
+        "hp": 893325,
+        "combatPower": 198836
+      },
+      "combatPowerIncrease": 26252
+    },
+    "1139": {
+      "heroId": "1139",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.3/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 44074,
+        "def": 30902,
+        "hp": 820893,
+        "combatPower": 172606
+      },
+      "upgraded": {
+        "atk": 54381,
+        "def": 37927,
+        "hp": 908335,
+        "combatPower": 199199
+      },
+      "combatPowerIncrease": 26593
+    },
+    "1140": {
+      "heroId": "1140",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.2/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 44505,
+        "def": 30568,
+        "hp": 824033,
+        "combatPower": 173148
+      },
+      "upgraded": {
+        "atk": 60037,
+        "def": 34168,
+        "hp": 902633,
+        "combatPower": 200414
+      },
+      "combatPowerIncrease": 27266
+    },
+    "1141": {
+      "heroId": "1141",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 45346,
+        "def": 30624,
+        "hp": 817162,
+        "combatPower": 173703
+      },
+      "upgraded": {
+        "atk": 56902,
+        "def": 34224,
+        "hp": 895762,
+        "combatPower": 196597
+      },
+      "combatPowerIncrease": 22894
+    },
+    "1142": {
+      "heroId": "1142",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 41428,
+        "def": 32179,
+        "hp": 863072,
+        "combatPower": 174700
+      },
+      "upgraded": {
+        "atk": 46428,
+        "def": 35779,
+        "hp": 1052567,
+        "combatPower": 198145
+      },
+      "combatPowerIncrease": 23445
+    },
+    "1143": {
+      "heroId": "1143",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "S",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 43623,
+        "def": 31818,
+        "hp": 831921,
+        "combatPower": 174385
+      },
+      "upgraded": {
+        "atk": 48623,
+        "def": 35418,
+        "hp": 1017990,
+        "combatPower": 197590
+      },
+      "combatPowerIncrease": 23205
+    },
+    "1144": {
+      "heroId": "1144",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 41355,
+        "def": 31846,
+        "hp": 879025,
+        "combatPower": 175588
+      },
+      "upgraded": {
+        "atk": 46355,
+        "def": 35446,
+        "hp": 1069633,
+        "combatPower": 199110
+      },
+      "combatPowerIncrease": 23522
+    },
+    "1145": {
+      "heroId": "1145",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.3/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 42026,
+        "def": 31846,
+        "hp": 851773,
+        "combatPower": 174079
+      },
+      "upgraded": {
+        "atk": 47026,
+        "def": 35446,
+        "hp": 1040754,
+        "combatPower": 197488
+      },
+      "combatPowerIncrease": 23409
+    },
+    "1146": {
+      "heroId": "1146",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 47637,
+        "def": 31263,
+        "hp": 842096,
+        "combatPower": 178885
+      },
+      "upgraded": {
+        "atk": 59561,
+        "def": 34863,
+        "hp": 920696,
+        "combatPower": 202183
+      },
+      "combatPowerIncrease": 23298
+    },
+    "1147": {
+      "heroId": "1147",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 48382,
+        "def": 31124,
+        "hp": 838650,
+        "combatPower": 179452
+      },
+      "upgraded": {
+        "atk": 60424,
+        "def": 34724,
+        "hp": 917250,
+        "combatPower": 202881
+      },
+      "combatPowerIncrease": 23429
+    },
+    "1148": {
+      "heroId": "1148",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 43449,
+        "def": 30763,
+        "hp": 857861,
+        "combatPower": 174891
+      },
+      "upgraded": {
+        "atk": 54725,
+        "def": 34363,
+        "hp": 936461,
+        "combatPower": 197477
+      },
+      "combatPowerIncrease": 22586
+    },
+    "1149": {
+      "heroId": "1149",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.3/10.0",
+        "level": "SS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 42212,
+        "def": 31513,
+        "hp": 869710,
+        "combatPower": 175410
+      },
+      "upgraded": {
+        "atk": 47212,
+        "def": 35113,
+        "hp": 1059034,
+        "combatPower": 198843
+      },
+      "combatPowerIncrease": 23433
+    },
+    "1150": {
+      "heroId": "1150",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 48619,
+        "def": 31346,
+        "hp": 855759,
+        "combatPower": 181714
+      },
+      "upgraded": {
+        "atk": 60703,
+        "def": 34946,
+        "hp": 934359,
+        "combatPower": 205189
+      },
+      "combatPowerIncrease": 23475
+    },
+    "1158": {
+      "heroId": "1158",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.7/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 44833,
+        "def": 30735,
+        "hp": 840638,
+        "combatPower": 175412
+      },
+      "upgraded": {
+        "atk": 56316,
+        "def": 34335,
+        "hp": 919238,
+        "combatPower": 198225
+      },
+      "combatPowerIncrease": 22813
+    },
+    "1160": {
+      "heroId": "1160",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 48190,
+        "def": 30957,
+        "hp": 850074,
+        "combatPower": 180084
+      },
+      "upgraded": {
+        "atk": 60196,
+        "def": 34557,
+        "hp": 928674,
+        "combatPower": 203473
+      },
+      "combatPowerIncrease": 23389
+    },
+    "1161": {
+      "heroId": "1161",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 47075,
+        "def": 30846,
+        "hp": 830995,
+        "combatPower": 177498
+      },
+      "upgraded": {
+        "atk": 58916,
+        "def": 34446,
+        "hp": 909595,
+        "combatPower": 200705
+      },
+      "combatPowerIncrease": 23207
+    },
+    "1162": {
+      "heroId": "1162",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 45910,
+        "def": 30902,
+        "hp": 845170,
+        "combatPower": 177396
+      },
+      "upgraded": {
+        "atk": 57559,
+        "def": 34502,
+        "hp": 923770,
+        "combatPower": 200392
+      },
+      "combatPowerIncrease": 22996
+    },
+    "1164": {
+      "heroId": "1164",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 41174,
+        "def": 32291,
+        "hp": 875885,
+        "combatPower": 175977
+      },
+      "upgraded": {
+        "atk": 46174,
+        "def": 35891,
+        "hp": 1065637,
+        "combatPower": 199439
+      },
+      "combatPowerIncrease": 23462
+    },
+    "1165": {
+      "heroId": "1165",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.4/10.0",
+        "level": "SS",
+        "rank": "SS",
+        "quality": "SSS",
+        "star": "S",
+        "skill": "S",
+        "other": "SS"
+      },
+      "base": {
+        "atk": 45193,
+        "def": 30652,
+        "hp": 842044,
+        "combatPower": 175963
+      },
+      "upgraded": {
+        "atk": 51826,
+        "def": 35517,
+        "hp": 1030940,
+        "combatPower": 203042
+      },
+      "combatPowerIncrease": 27079
+    },
+    "1166": {
+      "heroId": "1166",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 42107,
+        "def": 32013,
+        "hp": 874681,
+        "combatPower": 176857
+      },
+      "upgraded": {
+        "atk": 47107,
+        "def": 35613,
+        "hp": 1066403,
+        "combatPower": 200458
+      },
+      "combatPowerIncrease": 23601
+    },
+    "1168": {
+      "heroId": "1168",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 48760,
+        "def": 31040,
+        "hp": 844560,
+        "combatPower": 180529
+      },
+      "upgraded": {
+        "atk": 60855,
+        "def": 34640,
+        "hp": 923160,
+        "combatPower": 204015
+      },
+      "combatPowerIncrease": 23486
+    },
+    "1169": {
+      "heroId": "1169",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.9/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SSS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 46323,
+        "def": 30763,
+        "hp": 842406,
+        "combatPower": 177521
+      },
+      "upgraded": {
+        "atk": 58039,
+        "def": 34363,
+        "hp": 921006,
+        "combatPower": 200591
+      },
+      "combatPowerIncrease": 23070
+    },
+    "1170": {
+      "heroId": "1170",
+      "preset": "S00",
+      "ratings": {
+        "overall": "9.8/10.0",
+        "level": "SSS",
+        "rank": "SSS",
+        "quality": "SS",
+        "star": "SSS",
+        "skill": "SSS",
+        "other": "SSS"
+      },
+      "base": {
+        "atk": 44980,
+        "def": 30929,
+        "hp": 850833,
+        "combatPower": 176701
+      },
+      "upgraded": {
+        "atk": 49980,
+        "def": 34529,
+        "hp": 1040843,
+        "combatPower": 200181
+      },
+      "combatPowerIncrease": 23480
+    }
+  }
+}

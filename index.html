@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>XIII Files · Tokyo Ghoul Awakening</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Tokyo Ghoul Awakening</p>
+      <h1>XIII Files</h1>
+    </div>
+    <div class="header-tools">
+      <p class="header-note">Local character database</p>
+      <div class="language-switch" role="group" aria-label="Language">
+        <button class="language-option active" type="button" data-language="en" aria-pressed="true">EN</button>
+        <span>|</span>
+        <button class="language-option" type="button" data-language="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="app-tabs" role="tablist" aria-label="BTC tools">
+      <button class="app-tab active" type="button" role="tab" aria-selected="true" aria-controls="archive-view" data-view="archive">Unit Archive</button>
+      <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="cp-battle-view" data-view="battle">CP Battle</button>
+      <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="team-builder-view" data-view="builder">Team Building</button>
+    </nav>
+
+    <section id="archive-view" class="app-view" role="tabpanel">
+    <section class="filter-panel" aria-label="Character filters">
+      <label>
+        <span>Rarity</span>
+        <select id="rarity-filter">
+          <option value="all">All</option>
+          <option value="SP">SP</option>
+          <option value="SSR">SSR</option>
+        </select>
+      </label>
+      <label>
+        <span>Faction</span>
+        <select id="faction-filter">
+          <option value="all">All</option>
+          <option value="ccg">CCG (High &amp; Low Rank)</option>
+          <option value="anteiku">Anteiku</option>
+          <option value="none">No Org</option>
+        </select>
+      </label>
+      <label class="sort-field">
+        <span>Sort by</span>
+        <select id="sort-filter">
+          <option value="default">Default</option>
+          <option value="cp-desc">CP: highest to lowest</option>
+          <option value="cp-asc">CP: lowest to highest</option>
+          <option value="release-desc">Release: newest first</option>
+          <option value="release-asc">Release: oldest first</option>
+        </select>
+      </label>
+      <label class="search-field">
+        <span>Search by name</span>
+        <input id="search-input" type="search" placeholder="Enter a character name" autocomplete="off">
+      </label>
+      <div class="result-count" aria-live="polite">
+        <strong id="shown-count">—</strong> <span id="shown-label">shown</span>
+        <span class="result-divider"></span>
+        <strong id="total-count">—</strong> <span id="total-label">total</span>
+      </div>
+    </section>
+
+    <div id="loading" class="state-message">Opening the archive…</div>
+    <section id="unit-grid" class="unit-grid" aria-label="Characters"></section>
+    <div id="empty-state" class="state-message" hidden>No units match those filters.</div>
+    </section>
+
+    <section id="cp-battle-view" class="app-view cp-battle-view" role="tabpanel" hidden>
+      <header class="battle-header">
+        <div>
+          <p class="eyebrow">Team comparison</p>
+          <h2>CP Battle</h2>
+          <p>Build two teams of five with one Assistant per unit. Assistants use the confirmed max 6★ transfer ratio and an estimated CP contribution.</p>
+        </div>
+        <div class="battle-rule"><strong>5</strong><span>units per side</span></div>
+      </header>
+
+      <div class="battle-arena">
+        <article class="battle-team team-left" data-team="left">
+          <header class="team-heading">
+            <div><span>Team A</span><strong id="left-total-cp">0</strong><small>Total max CP · estimated with Assistants</small><em id="left-assist-cp" class="assist-breakdown">Main 0 + Assist ~0</em></div>
+            <div id="left-first-turn" class="first-turn" hidden>FIRST TURN!</div>
+          </header>
+          <div id="left-slots" class="team-slots"></div>
+        </article>
+
+        <div class="battle-versus" aria-hidden="true"><span>VS</span></div>
+
+        <article class="battle-team team-right" data-team="right">
+          <header class="team-heading">
+            <div><span>Team B</span><strong id="right-total-cp">0</strong><small>Total max CP · estimated with Assistants</small><em id="right-assist-cp" class="assist-breakdown">Main 0 + Assist ~0</em></div>
+            <div id="right-first-turn" class="first-turn" hidden>FIRST TURN!</div>
+          </header>
+          <div id="right-slots" class="team-slots"></div>
+        </article>
+      </div>
+      <p id="battle-status" class="battle-status" aria-live="polite">Select units to compare both teams.</p>
+    </section>
+
+    <section id="team-builder-view" class="app-view team-builder-view" role="tabpanel" hidden>
+      <header class="builder-header">
+        <div><p class="eyebrow">Three-team line-up</p><h2>Team Building</h2><p>Create three teams with four main units and one back-up. Drag units between any team slots.</p></div>
+        <div class="builder-count"><strong>3</strong><span>teams</span></div>
+      </header>
+      <div class="builder-column-headings" aria-hidden="true"><span>Main Line-up</span><span>Back-up</span><span>Team CP</span></div>
+      <div id="team-builder-stages" class="builder-stages"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Presented by ICX (5081)</footer>
+
+  <dialog id="unit-modal" class="unit-modal">
+    <div class="modal-shell">
+      <button id="modal-close" class="modal-close" type="button" aria-label="Close character details">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </dialog>
+
+  <dialog id="battle-picker-modal" class="battle-picker-modal">
+    <div class="battle-picker-shell">
+      <header class="battle-picker-heading">
+        <div><p class="eyebrow">Unit pool</p><h2 id="battle-picker-title">Choose a unit</h2></div>
+        <button id="battle-picker-close" class="modal-close" type="button" aria-label="Close unit picker">×</button>
+      </header>
+      <div class="battle-picker-tools">
+        <input id="battle-picker-search" type="search" placeholder="Search by unit name or title" aria-label="Search units" autocomplete="off">
+        <select id="battle-picker-faction" aria-label="Filter units by faction">
+          <option value="all">All factions</option><option value="ccg">CCG</option><option value="anteiku">Anteiku</option><option value="none">No Org</option>
+        </select>
+      </div>
+      <button id="battle-picker-clear" class="picker-clear" type="button">Clear this slot</button>
+      <div id="battle-picker-results" class="picker-results battle-picker-results"></div>
+    </div>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+</html>

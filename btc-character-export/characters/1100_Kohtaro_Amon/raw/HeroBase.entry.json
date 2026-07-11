@@ -1,0 +1,81 @@
+{
+    "__key": "1100",
+    "id": "1100",
+    "model": "r_1100_T1",
+    "hero_coin": "30100",
+    "display_time": "{\"DisplayTime\":\"2025-05-08 05:00:00\"}",
+    "display_chain_level": 17,
+    "arena_display_time": "{\"DisplayTime\":[\"2025-05-08 05:00:00\",\"2025-05-25 05:00:00\"]}",
+    "rarity": 4,
+    "comm_coin": 30,
+    "max_rank_skill_icon": "ComPSkill_3",
+    "max_rank_skill_tips": "tid#HeroRMaxDescT1_1100",
+    "max_rank_skill_desc": "tid#Skill_SupEntryDesc_1100",
+    "base_quality": "1100_Q1",
+    "rank": "Rank_40",
+    "skill_up_cost": "SLvCost4",
+    "skill_up_effect": "{\"1\":[\"1001_bre1_p1\",\"1013_bre1_p4\",\"1100_bre1_p3\",\"1100_bre1_p4\",\"1012_bre1_p5\"],\"2\":[\"1012_bre2_p1\",\"1027_bre3_p3\",\"1100_bre2_p3\",\"1027_bre2_p5\",\"1100_bre2_p5\"],\"3\":[\"1027_bre3_p1\",\"1100_bre3_p2\",\"1100_bre3_p3\",\"1100_bre3_p4\",\"1031_bre3_p5\"]}",
+    "star_value": "{\"1\":[\"StarValueTask01_1100_1\"],\"2\":[\"StarValueTask02_1100_1\"],\"3\":[\"StarValueTask03_1100_1\"]}",
+    "hero_limit": "HL_1100_0",
+    "gift_natural": "gift_1100_00",
+    "relation": [
+        "1100_R1_1",
+        "1100_R2_1",
+        "1100_R3_1"
+    ],
+    "relation_max": "1100_Rmax",
+    "base_cell_fusion": "Com_CellF_0",
+    "cell_fusion_name": "tid#HeroCellFusionName",
+    "exp_factor": 1,
+    "atk_factor": 1.188,
+    "def_factor": 1.051,
+    "hp_factor": 1.151,
+    "skill": [
+        "1100_v1s1"
+    ],
+    "passive_skill": [
+        "1100_p1",
+        "1100_p2",
+        "1100_p3",
+        "1100_p4"
+    ],
+    "passive_skill_gift_n": [
+        "1100_p1",
+        "1100_rp2",
+        "1100_p3",
+        "1100_p4"
+    ],
+    "rank_p_skill": "1100_p5",
+    "skill_amount": [
+        8
+    ],
+    "weak_min": 3,
+    "weak_max": 6,
+    "attribution_id": "h100",
+    "player_head": "H_1100",
+    "player_head_combine": "HC_1100",
+    "star_preview": "[\"tid#RoleStarPreview_1100_1\",\"tid#RoleStarPreview_1100_2\",\"tid#RoleStarPreview_1100_3\",\"tid#RoleStarPreview_1100_4\",\"tid#RoleStarPreview_1100_5\",\"tid#RoleStarPreview_1100_6\"]",
+    "senior_arena_equip": [
+        "EquipAtk_UR_atk_T1_1",
+        "EquipDef_UR_def_T1_1",
+        "EquipHp_UR_hp_T1_1"
+    ],
+    "senior_arena_gift": [
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_105_04_06",
+        "Gift_105_04_06",
+        "Gift_105_04_06"
+    ],
+    "senior_arena_lineup": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}

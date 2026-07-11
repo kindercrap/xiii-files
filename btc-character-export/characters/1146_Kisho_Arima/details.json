@@ -1,0 +1,1240 @@
+{
+    "id": "1146",
+    "name": "Kisho Arima",
+    "folder": "1146_Kisho_Arima",
+    "source": "https://btc-web-863ee.web.app",
+    "version": "1782840365890",
+    "downloadedImages": [
+        {
+            "url": "https://btc-web-863ee.web.app/pic_head/1146_head.png?v=1782840365890",
+            "file": "images/1146_head_a582a229.png"
+        }
+    ],
+    "hero": {
+        "__key": "1146",
+        "id": "1146",
+        "model": "r_1146_T4",
+        "hero_coin": "30146",
+        "display_time": "{\"DisplayTime\":\"2025-12-29 05:00:00\"}",
+        "display_chain_level": 17,
+        "shop_time": "{\"server_day\":75,\"real_time\":\"2026-02-02 05:00:00\"}",
+        "rarity": 55,
+        "comm_coin": 30,
+        "max_rank_skill_icon": "ComPSkill_3",
+        "max_rank_skill_tips": "tid#HeroRMaxDescT1_303",
+        "max_rank_skill_tips_translated": "Active Elevation: Upgrades Peerless damage to Ultra-Peerless damage.",
+        "max_rank_skill_desc": "tid#Skill_SupEntryDesc_303",
+        "max_rank_skill_desc_translated": "*Ultra-Peerless: Doubles Crit Rate and ignores DEF and Block Chance. Deals 80% ATK damage in one hit for every 20% of the target's missing HP.",
+        "base_quality": "1146_Q1",
+        "rank": "Rank_50",
+        "skill_up_cost": "SLvCost5",
+        "skill_up_effect": "{\"1\":[\"1146_bre1_p1\",\"1146_bre1_p2\",\"1146_bre1_p3\",\"1146_bre1_p4\",\"1146_bre1_p5\"],\"2\":[\"1146_bre2_p1\",\"1146_bre2_p2\",\"1146_bre2_p3\",\"1146_bre2_p4\",\"1146_bre2_p5\"],\"3\":[\"1146_bre3_p1\",\"1146_bre3_p2\",\"1146_bre3_p3\",\"1146_bre3_p4\",\"1146_bre3_p5\"]}",
+        "star_value": "{\"1\":[\"StarValueTask01_1146_1\"],\"2\":[\"StarValueTask02_1146_1\"],\"3\":[\"StarValueTask03_1146_1\"]}",
+        "hero_limit": "HL_1146_0",
+        "gift_natural": "gift_1146_00",
+        "relation": [
+            "1146_R1_1",
+            "1146_R2_1",
+            "1146_R3_1"
+        ],
+        "relation_max": "1146_Rmax",
+        "base_cell_fusion": "Com_CellF_0",
+        "cell_fusion_name": "tid#HeroCellFusionName",
+        "cell_fusion_name_translated": "Ability Breakthrough",
+        "exp_factor": 1,
+        "atk_factor": 1.302,
+        "def_factor": 1.094,
+        "hp_factor": 1.214,
+        "skill": [
+            "1146_v1s1"
+        ],
+        "passive_skill": [
+            "1146_p1",
+            "1146_p2",
+            "1146_p3",
+            "1146_p4"
+        ],
+        "passive_skill_gift_n": [
+            "1146_rp1",
+            "1146_p2",
+            "1146_p3",
+            "1146_p4"
+        ],
+        "rank_p_skill": "1146_p5",
+        "skill_amount": [
+            8
+        ],
+        "weak_min": 3,
+        "weak_max": 6,
+        "attribution_id": "h146",
+        "player_head": "H_1146",
+        "player_head_combine": "HC_1146",
+        "star_preview": "[\"tid#RoleStarPreview_1146_1\",\"tid#RoleStarPreview_1146_2\",\"tid#RoleStarPreview_1146_3\",\"tid#RoleStarPreview_1146_4\",\"tid#RoleStarPreview_1146_5\",\"tid#RoleStarPreview_1146_6\"]",
+        "senior_arena_equip": [
+            "EquipAtk_UR_atk_T4_1",
+            "EquipDef_UR_def_T4_1",
+            "EquipHp_UR_hp_T4_1"
+        ],
+        "senior_arena_gift": [
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_105_04_06",
+            "Gift_105_04_06",
+            "Gift_105_04_06"
+        ],
+        "senior_arena_lineup": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "roleModels": [
+        {
+            "__key": "r_1146_T4",
+            "id": "r_1146_T4",
+            "model": "1146",
+            "pic_spell": "1146",
+            "boss_pic_config": [
+                115,
+                -17,
+                0.54
+            ],
+            "gacha_pic_config": [
+                -58,
+                64,
+                0.54
+            ],
+            "title": "tid#RoleTitle_1146",
+            "title_translated": "Invincible Investigator",
+            "name": "tid#RoleName_1002",
+            "name_translated": "Kisho Arima",
+            "name_pic": "1146_name",
+            "eng_name": "tid#RoleEngName_1146",
+            "cv": "tid#RoleCV_1146",
+            "grow_show_rate": 1,
+            "soul": "1146",
+            "real_soul": "1002",
+            "test_appear": 3,
+            "test_lightness": "{\"start\":[3,60],\"keep\":[4,60],\"end\":[6,0]}",
+            "hpbar_delay_time": 0.3,
+            "radius": 0.5,
+            "sex": 1,
+            "faction": [
+                1
+            ],
+            "race": 1,
+            "tactic_type": 2,
+            "rc_type": "T4",
+            "animator": "1146Anima",
+            "dead_sound": "cv_die_1002",
+            "character_sound_list": [
+                "100203",
+                "100205",
+                "100207"
+            ],
+            "full_star_effect": [
+                "wit_fullstar",
+                "4",
+                "0.8",
+                "0",
+                "0",
+                "0"
+            ],
+            "get_dialogue": "100207",
+            "gacha_pic_pos": [
+                300,
+                -47,
+                0.49
+            ]
+        }
+    ],
+    "ranks": [
+        {
+            "__key": "Rank_50",
+            "id": "Rank_50",
+            "next": "Rank_51",
+            "cost": 1,
+            "cost_common": 2,
+            "gold_cost": 5000,
+            "atk_grow": 46,
+            "def_grow": 40,
+            "hp_grow": 830
+        }
+    ],
+    "qualities": [
+        {
+            "__key": "1146_Q1",
+            "id": "1146_Q1",
+            "next_quality": "1146_Q2",
+            "level_limit": 30,
+            "gold_cost": 10000,
+            "cost_item": [
+                "20023",
+                "20118",
+                "20117",
+                "20116"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "__key": "1146_Q2",
+            "id": "1146_Q2",
+            "next_quality": "1146_Q3",
+            "level_limit": 40,
+            "gold_cost": 20000,
+            "cost_item": [
+                "20023",
+                "20119",
+                "20118",
+                "20117"
+            ],
+            "cost_item_amount": [
+                1,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "__key": "1146_Q3",
+            "id": "1146_Q3",
+            "next_quality": "1146_Q4",
+            "level_limit": 45,
+            "gold_cost": 30000,
+            "cost_item": [
+                "20023",
+                "20119",
+                "20118",
+                "20117"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "__key": "1146_Q4",
+            "id": "1146_Q4",
+            "next_quality": "1146_Q5",
+            "level_limit": 50,
+            "gold_cost": 40000,
+            "cost_item": [
+                "20023",
+                "20120",
+                "20119",
+                "20118"
+            ],
+            "cost_item_amount": [
+                1,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "__key": "1146_Q5",
+            "id": "1146_Q5",
+            "next_quality": "1146_Q6",
+            "level_limit": 55,
+            "gold_cost": 50000,
+            "cost_item": [
+                "20023",
+                "20120",
+                "20119",
+                "20118"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                5,
+                5
+            ]
+        }
+    ],
+    "stats": [
+        {
+            "__key": "h146",
+            "id": "h146",
+            "energy_be_hurt": 30,
+            "atk": 1302,
+            "def": 875.2,
+            "hp": 12140,
+            "crit": 0.1,
+            "uncrit": 0.05,
+            "crit_deepen": 1.65,
+            "uncrit_deepen": 0.08,
+            "block": 0.05,
+            "unblock": 0.09,
+            "suck": 0.02,
+            "regeneration": 0.03,
+            "get_cured": 1.03
+        }
+    ],
+    "skills": [
+        {
+            "__key": "1146_v1s1",
+            "id": "1146_v1s1",
+            "type": 1,
+            "sub_type": 2,
+            "ai_type": [
+                "free"
+            ],
+            "level": 1,
+            "next": "1146_v1s2",
+            "skill_action": "1146_v1s1",
+            "effects": [
+                "1146_v1s1_1",
+                "1146_v1s1_9",
+                "1146_v1s1_10",
+                "1146_v1s1_2",
+                "1146_v1s1_3",
+                "1146_v1s1_8"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 5,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv1",
+            "name_translated": "Active Skill - Level 1",
+            "desc_short": "tid#SkillDesc_1146_v1s1",
+            "desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "max_desc_short": "tid#SkillDesc_1146_v1s1",
+            "max_desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "entry": [
+                "tid#Skill_EntryName_303"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_303"
+            ],
+            "entry_desc_translated": "*Peerless: Doubles Crit Rate and ignores DEF. Deals 60% ATK damage in one hit for every 20% of the target's missing HP.",
+            "factor_lv1": [
+                "120%"
+            ],
+            "factor_lv2": [
+                "124%",
+                "128%",
+                "132%",
+                "136%",
+                "145%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_303"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_303"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Peerless: Doubles Crit Rate and ignores DEF and Block Chance. Deals 80% ATK damage in one hit for every 20% of the target's missing HP.",
+            "card_bg": "1146_skill_b",
+            "card_use_icon": "1146_skill_s"
+        },
+        {
+            "__key": "1146_p1",
+            "id": "1146_p1",
+            "type": 301,
+            "effects": [
+                "1146_p1_1",
+                "1146_p1_2",
+                "1146_p1_3",
+                "1146_p1_4"
+            ],
+            "name": "tid#SkillName_1146_p1",
+            "name_translated": "Gaze of the Strong",
+            "desc_short": "tid#SkillDesc_1146_p1",
+            "desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK damage to enemies afflicted with Gaze.",
+            "max_desc_short": "tid#SkillDesc_1146_p1",
+            "max_desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK damage to enemies afflicted with Gaze.",
+            "entry": [
+                "tid#Skill_EntryName_304"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_304"
+            ],
+            "entry_desc_translated": "*Gaze of the Strong: Reduces all stats by 4% and ATK-related stats by 12%. Lowers the target's skill level to 1 when your turn starts.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_304"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_304"
+            ],
+            "r_max_entry_desc_translated": "*Gaze of the Strong: Reduces all stats by 4% and ATK-related stats by 12%. Lowers the target's skill level to 1 when your turn starts.",
+            "icon": "1146_p1"
+        },
+        {
+            "__key": "1146_p2",
+            "id": "1146_p2",
+            "type": 301,
+            "effects": [
+                "1146_p2_1",
+                "1146_p2_2",
+                "1146_p2_3",
+                "1146_p2_4",
+                "1146_p2_5",
+                "1146_p2_6",
+                "1146_p2_7"
+            ],
+            "name": "tid#SkillName_1146_p2",
+            "name_translated": "Weapon Boost",
+            "desc_short": "tid#SkillDesc_1146_p2",
+            "desc_short_translated": "When the battle starts, increases basic stats of all allied CCG characters by 12%. For each CCG character on the field, increases self's stats by 4%. When an enemy's HP first drops below 50%, grants the user 1 stack of #Entry_1#, up to 4 stacks. When self first gains 2 stacks of Weapon Boost, increases self's skill level",
+            "max_desc_short": "tid#SkillDesc_1146_p2",
+            "max_desc_short_translated": "When the battle starts, increases basic stats of all allied CCG characters by 12%. For each CCG character on the field, increases self's stats by 4%. When an enemy's HP first drops below 50%, grants the user 1 stack of #Entry_1#, up to 4 stacks. When self first gains 2 stacks of Weapon Boost, increases self's skill level",
+            "entry": [
+                "tid#Skill_EntryName_305"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_305"
+            ],
+            "entry_desc_translated": "*Weapon Boost: Increases ATK by 4% and Crit Rate by 4%.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_305"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_305"
+            ],
+            "r_max_entry_desc_translated": "*Weapon Boost: Increases ATK by 4% and Crit Rate by 4%.",
+            "icon": "1146_p2"
+        },
+        {
+            "__key": "1146_p3",
+            "id": "1146_p3",
+            "type": 301,
+            "effects": [
+                "1146_p3_1",
+                "1146_p3_2"
+            ],
+            "name": "tid#SkillName_1146_p3",
+            "name_translated": "Weaken",
+            "desc_short": "tid#SkillDesc_1146_p3",
+            "desc_short_translated": "When dealing damage, reducing the target's Crit DEF by 10% for 1 turn, up to 3 stacks. When your turn ends, if self has used an active skill this turn, applies #Entry_1# to all enemies for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_1146_p3",
+            "max_desc_short_translated": "When dealing damage, reducing the target's Crit DEF by 10% for 1 turn, up to 3 stacks. When your turn ends, if self has used an active skill this turn, applies #Entry_1# to all enemies for 1 turn.",
+            "entry": [
+                "tid#Skill_EntryName_306"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_306"
+            ],
+            "entry_desc_translated": "*Electrocution: Unable to trigger all healing effects. Takes 6% more damage for 1 turn after attacking, up to 4 stacks.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_306"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_306"
+            ],
+            "r_max_entry_desc_translated": "*Electrocution: Unable to trigger all healing effects. Takes 6% more damage for 1 turn after attacking, up to 4 stacks.",
+            "icon": "1146_p3"
+        },
+        {
+            "__key": "1146_p4",
+            "id": "1146_p4",
+            "type": 301,
+            "effects": [
+                "1146_p4_1"
+            ],
+            "name": "tid#SkillName_burst_1",
+            "name_translated": "Power Burst Boost",
+            "desc_short": "tid#SkillDesc_burst_41",
+            "desc_short_translated": "Gaining Power Burst increases basic stats by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_burst_41",
+            "max_desc_short_translated": "Gaining Power Burst increases basic stats by 10% for 1 turn.",
+            "icon": "ComPSkill_1"
+        },
+        {
+            "__key": "1146_rp1",
+            "id": "1146_rp1",
+            "type": 301,
+            "effects": [
+                "1146_rp1_1",
+                "1146_rp1_2",
+                "1146_rp1_3",
+                "1146_rp1_4"
+            ],
+            "name": "tid#SkillName_1146_p1",
+            "name_translated": "Gaze of the Strong",
+            "desc_short": "tid#SkillDesc_1146_rp1",
+            "desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK #Entry_2# damage to enemies afflicted with Gaze.",
+            "max_desc_short": "tid#SkillDesc_1146_rp1",
+            "max_desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK #Entry_2# damage to enemies afflicted with Gaze.",
+            "entry": [
+                "tid#Skill_EntryName_304",
+                "tid#Skill_EntryName_303"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_304",
+                "tid#Skill_EntryDesc_303"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_304",
+                "tid#Skill_EntryName_303"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_304",
+                "tid#Skill_EntryDesc_303"
+            ],
+            "icon": "1146_p1"
+        },
+        {
+            "__key": "1146_p5",
+            "id": "1146_p5",
+            "type": 301,
+            "effects": [
+                "1146_p5_1"
+            ],
+            "name": "tid#SkillName_weak_1",
+            "name_translated": "Weak",
+            "desc_short": "tid#SkillDesc_weak_55",
+            "desc_short_translated": "When applying Weak, inflict the target a 10% increase in damage taken for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_weak_55",
+            "max_desc_short_translated": "When applying Weak, inflict the target a 10% increase in damage taken for 1 turn.",
+            "icon": "ComPSkill_2"
+        },
+        {
+            "__key": "1146_bre1_p1",
+            "id": "1146_bre1_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_1_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_1",
+            "desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_1",
+            "max_desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+            "icon": "1022_p2"
+        },
+        {
+            "__key": "1146_bre1_p2",
+            "id": "1146_bre1_p2",
+            "type": 301,
+            "effects": [
+                "hero_break_32_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_32",
+            "desc_short_translated": "When the battle starts, increase your CRIT DMG by 10%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_32",
+            "max_desc_short_translated": "When the battle starts, increase your CRIT DMG by 10%.",
+            "icon": "1005_p3"
+        },
+        {
+            "__key": "1146_bre1_p3",
+            "id": "1146_bre1_p3",
+            "type": 301,
+            "effects": [
+                "1146_bre1_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1146_bre1_p3",
+            "desc_short_translated": "Increases ATK by 6% when HP is above 50%.",
+            "max_desc_short": "tid#SkillDesc_1146_bre1_p3",
+            "max_desc_short_translated": "Increases ATK by 6% when HP is above 50%.",
+            "icon": "1013_p1"
+        },
+        {
+            "__key": "1146_bre1_p4",
+            "id": "1146_bre1_p4",
+            "type": 301,
+            "effects": [
+                "1146_bre1_p4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1146_bre1_p4",
+            "desc_short_translated": "In battle, reduce damage taken by 5%",
+            "max_desc_short": "tid#SkillDesc_1146_bre1_p4",
+            "max_desc_short_translated": "In battle, reduce damage taken by 5%",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1146_bre1_p5",
+            "id": "1146_bre1_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_5_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_5",
+            "desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_5",
+            "max_desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+            "icon": "1022_p2"
+        },
+        {
+            "__key": "1146_bre2_p1",
+            "id": "1146_bre2_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_24_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_24",
+            "desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_24",
+            "max_desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1146_bre2_p2",
+            "id": "1146_bre2_p2",
+            "type": 301,
+            "effects": [
+                "hero_break_127_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_127",
+            "desc_short_translated": "When the battle starts, increase your HP-related stats by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_127",
+            "max_desc_short_translated": "When the battle starts, increase your HP-related stats by 5%.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1146_bre2_p3",
+            "id": "1146_bre2_p3",
+            "type": 302,
+            "effects": [
+                "1146_bre2_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1146_bre2_p3",
+            "desc_short_translated": "[Effective also in back-up state] Allied CCG characters take 5% less damage.",
+            "max_desc_short": "tid#SkillDesc_1146_bre2_p3",
+            "max_desc_short_translated": "[Effective also in back-up state] Allied CCG characters take 5% less damage.",
+            "icon": "1018_p2"
+        },
+        {
+            "__key": "1146_bre2_p4",
+            "id": "1146_bre2_p4",
+            "type": 301,
+            "effects": [
+                "hero_break_92_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_92",
+            "desc_short_translated": "When the battle starts, increase your DEF by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_92",
+            "max_desc_short_translated": "When the battle starts, increase your DEF by 5%.",
+            "icon": "bio_p15"
+        },
+        {
+            "__key": "1146_bre2_p5",
+            "id": "1146_bre2_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_28_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_28",
+            "desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_28",
+            "max_desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1146_bre3_p1",
+            "id": "1146_bre3_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_40_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_40",
+            "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_40",
+            "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1146_bre3_p2",
+            "id": "1146_bre3_p2",
+            "type": 301,
+            "effects": [
+                "1146_bre3_p2_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1146_bre3_p2",
+            "desc_short_translated": "Reduces damage taken from enemies afflicted with Gaze of the Strong by 12%.",
+            "max_desc_short": "tid#SkillDesc_1146_bre3_p2",
+            "max_desc_short_translated": "Reduces damage taken from enemies afflicted with Gaze of the Strong by 12%.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1146_bre3_p3",
+            "id": "1146_bre3_p3",
+            "type": 301,
+            "effects": [
+                "1146_bre3_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1146_bre3_p3",
+            "desc_short_translated": "Damage dealt in battle increased by 5%",
+            "max_desc_short": "tid#SkillDesc_1146_bre3_p3",
+            "max_desc_short_translated": "Damage dealt in battle increased by 5%",
+            "icon": "1067_p2"
+        },
+        {
+            "__key": "1146_bre3_p4",
+            "id": "1146_bre3_p4",
+            "type": 301,
+            "effects": [
+                "1146_bre3_p4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1146_bre3_p4",
+            "desc_short_translated": "Increase allied CCG characters’ Crit Rate by 5%.",
+            "max_desc_short": "tid#SkillDesc_1146_bre3_p4",
+            "max_desc_short_translated": "Increase allied CCG characters’ Crit Rate by 5%.",
+            "icon": "1046_p3"
+        },
+        {
+            "__key": "1146_bre3_p5",
+            "id": "1146_bre3_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_44_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_44",
+            "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_44",
+            "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1146_v1s2",
+            "id": "1146_v1s2",
+            "type": 1,
+            "sub_type": 2,
+            "ai_type": [
+                "attack_t0_s2",
+                "free"
+            ],
+            "level": 2,
+            "next": "1146_v1s3",
+            "skill_action": "1146_v1s2",
+            "effects": [
+                "1146_v1s1_1",
+                "1146_v1s1_9",
+                "1146_v1s1_10",
+                "1146_v1s1_2",
+                "1146_v1s2_3",
+                "1146_v1s1_8"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 5,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv2",
+            "name_translated": "Active Skill - Level 2",
+            "desc_short": "tid#SkillDesc_1146_v1s2",
+            "desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "max_desc_short": "tid#SkillDesc_1146_v1s2",
+            "max_desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "entry": [
+                "tid#Skill_EntryName_303"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_303"
+            ],
+            "entry_desc_translated": "*Peerless: Doubles Crit Rate and ignores DEF. Deals 60% ATK damage in one hit for every 20% of the target's missing HP.",
+            "factor_lv1": [
+                "170%"
+            ],
+            "factor_lv2": [
+                "177%",
+                "184%",
+                "191%",
+                "198%",
+                "210%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_303"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_303"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Peerless: Doubles Crit Rate and ignores DEF and Block Chance. Deals 80% ATK damage in one hit for every 20% of the target's missing HP.",
+            "card_bg": "1146_skill_b",
+            "card_use_icon": "1146_skill_s"
+        },
+        {
+            "__key": "1146_v1s3",
+            "id": "1146_v1s3",
+            "type": 1,
+            "sub_type": 2,
+            "ai_type": [
+                "attack_t0_s3",
+                "skill_lv3",
+                "free"
+            ],
+            "level": 3,
+            "skill_action": "1146_v1s3",
+            "effects": [
+                "1146_v1s1_1",
+                "1146_v1s1_9",
+                "1146_v1s1_10",
+                "1146_v1s1_2",
+                "1146_v1s3_3",
+                "1146_v1s1_8"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 5,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv3",
+            "name_translated": "Active Skill - Level 3",
+            "desc_short": "tid#SkillDesc_1146_v1s3",
+            "desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "max_desc_short": "tid#SkillDesc_1146_v1s3",
+            "max_desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "entry": [
+                "tid#Skill_EntryName_303"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_303"
+            ],
+            "entry_desc_translated": "*Peerless: Doubles Crit Rate and ignores DEF. Deals 60% ATK damage in one hit for every 20% of the target's missing HP.",
+            "factor_lv1": [
+                "260%"
+            ],
+            "factor_lv2": [
+                "270%",
+                "280%",
+                "290%",
+                "300%",
+                "320%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_303"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_303"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Peerless: Doubles Crit Rate and ignores DEF and Block Chance. Deals 80% ATK damage in one hit for every 20% of the target's missing HP.",
+            "card_bg": "1146_skill_b",
+            "card_use_icon": "1146_skill_s"
+        },
+        {
+            "__key": "1146_v1s1",
+            "id": "1146_v1s1",
+            "type": 1,
+            "sub_type": 2,
+            "ai_type": [
+                "free"
+            ],
+            "level": 1,
+            "next": "1146_v1s2",
+            "skill_action": "1146_v1s1",
+            "effects": [
+                "1146_v1s1_1",
+                "1146_v1s1_9",
+                "1146_v1s1_10",
+                "1146_v1s1_2",
+                "1146_v1s1_3",
+                "1146_v1s1_8"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 5,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv1",
+            "name_translated": "Active Skill - Level 1",
+            "desc_short": "tid#SkillDesc_1146_v1s1",
+            "desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "max_desc_short": "tid#SkillDesc_1146_v1s1",
+            "max_desc_short_translated": "Deals #Factor_1# #Entry_1# damage to all enemies.",
+            "entry": [
+                "tid#Skill_EntryName_303"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_303"
+            ],
+            "entry_desc_translated": "*Peerless: Doubles Crit Rate and ignores DEF. Deals 60% ATK damage in one hit for every 20% of the target's missing HP.",
+            "factor_lv1": [
+                "120%"
+            ],
+            "factor_lv2": [
+                "124%",
+                "128%",
+                "132%",
+                "136%",
+                "145%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_303"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_303"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Peerless: Doubles Crit Rate and ignores DEF and Block Chance. Deals 80% ATK damage in one hit for every 20% of the target's missing HP.",
+            "card_bg": "1146_skill_b",
+            "card_use_icon": "1146_skill_s"
+        },
+        {
+            "__key": "1146_p1",
+            "id": "1146_p1",
+            "type": 301,
+            "effects": [
+                "1146_p1_1",
+                "1146_p1_2",
+                "1146_p1_3",
+                "1146_p1_4"
+            ],
+            "name": "tid#SkillName_1146_p1",
+            "name_translated": "Gaze of the Strong",
+            "desc_short": "tid#SkillDesc_1146_p1",
+            "desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK damage to enemies afflicted with Gaze.",
+            "max_desc_short": "tid#SkillDesc_1146_p1",
+            "max_desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK damage to enemies afflicted with Gaze.",
+            "entry": [
+                "tid#Skill_EntryName_304"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_304"
+            ],
+            "entry_desc_translated": "*Gaze of the Strong: Reduces all stats by 4% and ATK-related stats by 12%. Lowers the target's skill level to 1 when your turn starts.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_304"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_304"
+            ],
+            "r_max_entry_desc_translated": "*Gaze of the Strong: Reduces all stats by 4% and ATK-related stats by 12%. Lowers the target's skill level to 1 when your turn starts.",
+            "icon": "1146_p1"
+        },
+        {
+            "__key": "1146_p2",
+            "id": "1146_p2",
+            "type": 301,
+            "effects": [
+                "1146_p2_1",
+                "1146_p2_2",
+                "1146_p2_3",
+                "1146_p2_4",
+                "1146_p2_5",
+                "1146_p2_6",
+                "1146_p2_7"
+            ],
+            "name": "tid#SkillName_1146_p2",
+            "name_translated": "Weapon Boost",
+            "desc_short": "tid#SkillDesc_1146_p2",
+            "desc_short_translated": "When the battle starts, increases basic stats of all allied CCG characters by 12%. For each CCG character on the field, increases self's stats by 4%. When an enemy's HP first drops below 50%, grants the user 1 stack of #Entry_1#, up to 4 stacks. When self first gains 2 stacks of Weapon Boost, increases self's skill level",
+            "max_desc_short": "tid#SkillDesc_1146_p2",
+            "max_desc_short_translated": "When the battle starts, increases basic stats of all allied CCG characters by 12%. For each CCG character on the field, increases self's stats by 4%. When an enemy's HP first drops below 50%, grants the user 1 stack of #Entry_1#, up to 4 stacks. When self first gains 2 stacks of Weapon Boost, increases self's skill level",
+            "entry": [
+                "tid#Skill_EntryName_305"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_305"
+            ],
+            "entry_desc_translated": "*Weapon Boost: Increases ATK by 4% and Crit Rate by 4%.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_305"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_305"
+            ],
+            "r_max_entry_desc_translated": "*Weapon Boost: Increases ATK by 4% and Crit Rate by 4%.",
+            "icon": "1146_p2"
+        },
+        {
+            "__key": "1146_p3",
+            "id": "1146_p3",
+            "type": 301,
+            "effects": [
+                "1146_p3_1",
+                "1146_p3_2"
+            ],
+            "name": "tid#SkillName_1146_p3",
+            "name_translated": "Weaken",
+            "desc_short": "tid#SkillDesc_1146_p3",
+            "desc_short_translated": "When dealing damage, reducing the target's Crit DEF by 10% for 1 turn, up to 3 stacks. When your turn ends, if self has used an active skill this turn, applies #Entry_1# to all enemies for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_1146_p3",
+            "max_desc_short_translated": "When dealing damage, reducing the target's Crit DEF by 10% for 1 turn, up to 3 stacks. When your turn ends, if self has used an active skill this turn, applies #Entry_1# to all enemies for 1 turn.",
+            "entry": [
+                "tid#Skill_EntryName_306"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_306"
+            ],
+            "entry_desc_translated": "*Electrocution: Unable to trigger all healing effects. Takes 6% more damage for 1 turn after attacking, up to 4 stacks.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_306"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_306"
+            ],
+            "r_max_entry_desc_translated": "*Electrocution: Unable to trigger all healing effects. Takes 6% more damage for 1 turn after attacking, up to 4 stacks.",
+            "icon": "1146_p3"
+        },
+        {
+            "__key": "1146_p4",
+            "id": "1146_p4",
+            "type": 301,
+            "effects": [
+                "1146_p4_1"
+            ],
+            "name": "tid#SkillName_burst_1",
+            "name_translated": "Power Burst Boost",
+            "desc_short": "tid#SkillDesc_burst_41",
+            "desc_short_translated": "Gaining Power Burst increases basic stats by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_burst_41",
+            "max_desc_short_translated": "Gaining Power Burst increases basic stats by 10% for 1 turn.",
+            "icon": "ComPSkill_1"
+        },
+        {
+            "__key": "1146_p5",
+            "id": "1146_p5",
+            "type": 301,
+            "effects": [
+                "1146_p5_1"
+            ],
+            "name": "tid#SkillName_weak_1",
+            "name_translated": "Weak",
+            "desc_short": "tid#SkillDesc_weak_55",
+            "desc_short_translated": "When applying Weak, inflict the target a 10% increase in damage taken for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_weak_55",
+            "max_desc_short_translated": "When applying Weak, inflict the target a 10% increase in damage taken for 1 turn.",
+            "icon": "ComPSkill_2"
+        },
+        {
+            "__key": "1146_rp1",
+            "id": "1146_rp1",
+            "type": 301,
+            "effects": [
+                "1146_rp1_1",
+                "1146_rp1_2",
+                "1146_rp1_3",
+                "1146_rp1_4"
+            ],
+            "name": "tid#SkillName_1146_p1",
+            "name_translated": "Gaze of the Strong",
+            "desc_short": "tid#SkillDesc_1146_rp1",
+            "desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK #Entry_2# damage to enemies afflicted with Gaze.",
+            "max_desc_short": "tid#SkillDesc_1146_rp1",
+            "max_desc_short_translated": "When the battle and your turn start, applies #Entry_1# to the enemy with the highest ATK. After self uses an active skill, launches a pursuit attack dealing 180% ATK #Entry_2# damage to enemies afflicted with Gaze.",
+            "entry": [
+                "tid#Skill_EntryName_304",
+                "tid#Skill_EntryName_303"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_304",
+                "tid#Skill_EntryDesc_303"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_304",
+                "tid#Skill_EntryName_303"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_304",
+                "tid#Skill_EntryDesc_303"
+            ],
+            "icon": "1146_p1"
+        }
+    ],
+    "effects": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "name": "tid#AttrName_Atk",
+            "name_translated": "ATK",
+            "attr_effect": "1001_R1_1"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "name": "tid#AttrName_Def",
+            "name_translated": "DEF",
+            "attr_effect": "1001_R2_1"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "name": "tid#AttrName_Hp",
+            "name_translated": "HP",
+            "attr_effect": "1001_R3_1"
+        }
+    ],
+    "attrEffects": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Atk"
+            ],
+            "grow_type": "FIXED",
+            "value": "[50]"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Def"
+            ],
+            "grow_type": "FIXED",
+            "value": "[40]"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Hp"
+            ],
+            "grow_type": "FIXED",
+            "value": "[1350]"
+        }
+    ],
+    "relations": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "next": "1001_R1_2",
+            "hero_soul_id": [
+                "1001",
+                "1049"
+            ],
+            "hero_head_icon": "1049_head",
+            "item": [
+                "20097"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R1_1"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "next": "1001_R2_2",
+            "hero_soul_id": [
+                "1001",
+                "1018"
+            ],
+            "hero_head_icon": "1018_head",
+            "item": [
+                "20095"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R2_1"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "next": "1001_R3_2",
+            "hero_soul_id": [
+                "1001",
+                "1019"
+            ],
+            "hero_head_icon": "1019_head",
+            "item": [
+                "20096"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R3_1"
+        },
+        {
+            "__key": "1146_R1_1",
+            "id": "1146_R1_1",
+            "next": "1146_R1_2",
+            "hero_soul_id": [
+                "1146",
+                "1010"
+            ],
+            "hero_head_icon": "1010_head",
+            "item": [
+                "20097"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R1_1"
+        },
+        {
+            "__key": "1146_R2_1",
+            "id": "1146_R2_1",
+            "next": "1146_R2_2",
+            "hero_soul_id": [
+                "1146",
+                "1035"
+            ],
+            "hero_head_icon": "1035_head",
+            "item": [
+                "20095"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R2_1"
+        },
+        {
+            "__key": "1146_R3_1",
+            "id": "1146_R3_1",
+            "next": "1146_R3_2",
+            "hero_soul_id": [
+                "1146",
+                "1060"
+            ],
+            "hero_head_icon": "1060_head",
+            "item": [
+                "20096"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R3_1"
+        }
+    ],
+    "properEquip": [],
+    "properEquipAdvance": []
+}

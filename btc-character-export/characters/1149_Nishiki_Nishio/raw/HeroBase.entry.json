@@ -1,0 +1,81 @@
+{
+    "__key": "1149",
+    "id": "1149",
+    "model": "r_1149_T0",
+    "hero_coin": "30149",
+    "display_s_days": 8,
+    "display_time": "{\"DisplayTime\":\"2026-02-21 05:00:00\"}",
+    "display_chain_level": 17,
+    "rarity": 4,
+    "comm_coin": 30,
+    "max_rank_skill_icon": "ComPSkill_3",
+    "max_rank_skill_tips": "tid#HeroRMaxDescT1_337",
+    "max_rank_skill_desc": "tid#Skill_SupEntryDesc_337",
+    "base_quality": "1149_Q1",
+    "rank": "Rank_40",
+    "skill_up_cost": "SLvCost4",
+    "skill_up_effect": "{\"1\":[\"1149_bre1_p1\",\"1149_bre1_p2\",\"1149_bre1_p3\",\"1149_bre1_p4\",\"1149_bre1_p5\"],\"2\":[\"1149_bre2_p1\",\"1149_bre2_p2\",\"1149_bre2_p3\",\"1149_bre2_p4\",\"1149_bre2_p5\"],\"3\":[\"1149_bre3_p1\",\"1149_bre3_p2\",\"1149_bre3_p3\",\"1149_bre3_p4\",\"1149_bre3_p5\"]}",
+    "star_value": "{\"1\":[\"StarValueTask01_1149_1\"],\"2\":[\"StarValueTask02_1149_1\"],\"3\":[\"StarValueTask03_1149_1\"]}",
+    "hero_limit": "HL_1149_0",
+    "gift_natural": "gift_1149_00",
+    "relation": [
+        "1149_R1_1",
+        "1149_R2_1",
+        "1149_R3_1"
+    ],
+    "relation_max": "1149_Rmax",
+    "base_cell_fusion": "Com_CellF_0",
+    "cell_fusion_name": "tid#HeroCellFusionName",
+    "exp_factor": 1,
+    "atk_factor": 1.143,
+    "def_factor": 1.103,
+    "hp_factor": 1.236,
+    "skill": [
+        "1149_v1s1"
+    ],
+    "passive_skill": [
+        "1149_p1",
+        "1149_p2",
+        "1149_p3",
+        "1149_p4"
+    ],
+    "passive_skill_gift_n": [
+        "1149_p1",
+        "1149_p2",
+        "1149_rp3",
+        "1149_p4"
+    ],
+    "rank_p_skill": "1149_p5",
+    "skill_amount": [
+        8
+    ],
+    "weak_min": 3,
+    "weak_max": 6,
+    "attribution_id": "h149",
+    "player_head": "H_1149",
+    "player_head_combine": "HC_1149",
+    "star_preview": "[\"tid#RoleStarPreview_1149_1\",\"tid#RoleStarPreview_1149_2\",\"tid#RoleStarPreview_1149_3\",\"tid#RoleStarPreview_1149_4\",\"tid#RoleStarPreview_1149_5\",\"tid#RoleStarPreview_1149_6\"]",
+    "senior_arena_equip": [
+        "EquipAtk_UR_atk_T0_1",
+        "EquipDef_UR_def_T0_1",
+        "EquipHp_UR_hp_T0_1"
+    ],
+    "senior_arena_gift": [
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_106_04_06",
+        "Gift_105_04_06",
+        "Gift_105_04_06",
+        "Gift_105_04_06"
+    ],
+    "senior_arena_lineup": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}

@@ -1,0 +1,1216 @@
+{
+    "id": "1123",
+    "name": "Juzo Suzuya",
+    "folder": "1123_Juzo_Suzuya",
+    "source": "https://btc-web-863ee.web.app",
+    "version": "1782840365890",
+    "downloadedImages": [
+        {
+            "url": "https://btc-web-863ee.web.app/pic_head/1123_head.png?v=1782840365890",
+            "file": "images/1123_head_4b20be40.png"
+        }
+    ],
+    "hero": {
+        "__key": "1123",
+        "id": "1123",
+        "model": "r_1123_T2",
+        "hero_coin": "30123",
+        "display_time": "{\"DisplayTime\":\"2025-07-26 05:00:00\"}",
+        "display_chain_level": 17,
+        "shop_time": "{\"server_day\":43}",
+        "rarity": 4,
+        "comm_coin": 30,
+        "max_rank_skill_icon": "ComPSkill_3",
+        "max_rank_skill_tips": "tid#HeroRMaxDescT1_211",
+        "max_rank_skill_tips_translated": "Active Elevation: Upgrades Ruin effects to Ultra-Ruin effects.",
+        "max_rank_skill_desc": "tid#Skill_SupEntryDesc_211",
+        "max_rank_skill_desc_translated": "*Ultra-Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate and Crit DMG by 40%.",
+        "base_quality": "1123_Q1",
+        "rank": "Rank_40",
+        "skill_up_cost": "SLvCost4",
+        "skill_up_effect": "{\"1\":[\"1123_bre1_p1\",\"1123_bre1_p2\",\"1123_bre1_p3\",\"1123_bre1_p4\",\"1123_bre1_p5\"],\"2\":[\"1123_bre2_p1\",\"1123_bre2_p2\",\"1123_bre2_p3\",\"1123_bre2_p4\",\"1123_bre2_p5\"],\"3\":[\"1123_bre3_p1\",\"1123_bre3_p2\",\"1123_bre3_p3\",\"1123_bre3_p4\",\"1123_bre3_p5\"]}",
+        "star_value": "{\"1\":[\"StarValueTask01_1123_1\"],\"2\":[\"StarValueTask02_1123_1\"],\"3\":[\"StarValueTask03_1123_1\"]}",
+        "hero_limit": "HL_1123_0",
+        "gift_natural": "gift_1123_00",
+        "relation": [
+            "1123_R1_1",
+            "1123_R2_1",
+            "1123_R3_1"
+        ],
+        "relation_max": "1123_Rmax",
+        "base_cell_fusion": "Com_CellF_0",
+        "cell_fusion_name": "tid#HeroCellFusionName",
+        "cell_fusion_name_translated": "Ability Breakthrough",
+        "exp_factor": 1,
+        "atk_factor": 1.192,
+        "def_factor": 1.049,
+        "hp_factor": 1.167,
+        "skill": [
+            "1123_v1s1"
+        ],
+        "passive_skill": [
+            "1123_p1",
+            "1123_p2",
+            "1123_p3",
+            "1123_p4"
+        ],
+        "passive_skill_gift_n": [
+            "1123_rp1",
+            "1123_p2",
+            "1123_p3",
+            "1123_p4"
+        ],
+        "rank_p_skill": "1123_p5",
+        "skill_amount": [
+            8
+        ],
+        "weak_min": 3,
+        "weak_max": 6,
+        "attribution_id": "h123",
+        "player_head": "H_1123",
+        "player_head_combine": "HC_1123",
+        "star_preview": "[\"tid#RoleStarPreview_1123_1\",\"tid#RoleStarPreview_1123_2\",\"tid#RoleStarPreview_1123_3\",\"tid#RoleStarPreview_1123_4\",\"tid#RoleStarPreview_1123_5\",\"tid#RoleStarPreview_1123_6\"]",
+        "senior_arena_equip": [
+            "EquipAtk_UR_atk_T2_1",
+            "EquipDef_UR_def_T2_1",
+            "EquipHp_UR_hp_T2_1"
+        ],
+        "senior_arena_gift": [
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_105_04_06",
+            "Gift_105_04_06",
+            "Gift_105_04_06"
+        ],
+        "senior_arena_lineup": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "roleModels": [
+        {
+            "__key": "r_1123_T2",
+            "id": "r_1123_T2",
+            "model": "1123",
+            "pic_spell": "1123",
+            "boss_pic_config": [
+                88,
+                -103,
+                1.5
+            ],
+            "gacha_pic_config": [
+                -22,
+                -88,
+                0.64
+            ],
+            "title": "tid#RoleTitle_1123",
+            "title_translated": "Scorpion1/56",
+            "name": "tid#RoleName_1123",
+            "name_translated": "Juzo Suzuya",
+            "name_pic": "1123_name",
+            "eng_name": "tid#RoleEngName_1123",
+            "cv": "tid#RoleCV_1123",
+            "grow_show_rate": 1,
+            "soul": "1123",
+            "real_soul": "1003",
+            "test_appear": 3,
+            "test_lightness": "{\"start\":[3,60],\"keep\":[4,60],\"end\":[6,0]}",
+            "hpbar_delay_time": 0.3,
+            "radius": 0.5,
+            "sex": 1,
+            "faction": [
+                2
+            ],
+            "race": 1,
+            "tactic_type": 4,
+            "rc_type": "T2",
+            "animator": "1123Anima",
+            "dead_sound": "cv_die_1003",
+            "character_sound_list": [
+                "100305",
+                "100306",
+                "100307",
+                "100308"
+            ],
+            "full_star_effect": [
+                "speed_fullstar",
+                "4",
+                "0.8",
+                "0",
+                "0",
+                "0"
+            ],
+            "get_dialogue": "100305",
+            "gacha_pic_pos": [
+                227,
+                -313,
+                0.8
+            ]
+        }
+    ],
+    "ranks": [
+        {
+            "__key": "Rank_40",
+            "id": "Rank_40",
+            "next": "Rank_41",
+            "cost": 1,
+            "cost_common": 1,
+            "gold_cost": 5000,
+            "atk_grow": 46,
+            "def_grow": 40,
+            "hp_grow": 830
+        }
+    ],
+    "qualities": [
+        {
+            "__key": "1123_Q1",
+            "id": "1123_Q1",
+            "next_quality": "1123_Q2",
+            "level_limit": 30,
+            "gold_cost": 10000,
+            "cost_item": [
+                "20023",
+                "20013",
+                "20012",
+                "20011"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "__key": "1123_Q2",
+            "id": "1123_Q2",
+            "next_quality": "1123_Q3",
+            "level_limit": 40,
+            "gold_cost": 20000,
+            "cost_item": [
+                "20023",
+                "20014",
+                "20013",
+                "20012"
+            ],
+            "cost_item_amount": [
+                1,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "__key": "1123_Q3",
+            "id": "1123_Q3",
+            "next_quality": "1123_Q4",
+            "level_limit": 45,
+            "gold_cost": 30000,
+            "cost_item": [
+                "20023",
+                "20014",
+                "20013",
+                "20012"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "__key": "1123_Q4",
+            "id": "1123_Q4",
+            "next_quality": "1123_Q5",
+            "level_limit": 50,
+            "gold_cost": 40000,
+            "cost_item": [
+                "20023",
+                "20015",
+                "20014",
+                "20013"
+            ],
+            "cost_item_amount": [
+                1,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "__key": "1123_Q5",
+            "id": "1123_Q5",
+            "next_quality": "1123_Q6",
+            "is_quality_up": 1,
+            "level_limit": 55,
+            "gold_cost": 50000,
+            "cost_item": [
+                "20023",
+                "20015",
+                "20014",
+                "20013"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                5,
+                5
+            ]
+        }
+    ],
+    "stats": [
+        {
+            "__key": "h123",
+            "id": "h123",
+            "energy_be_hurt": 30,
+            "atk": 1192,
+            "def": 839.2,
+            "hp": 11670,
+            "crit": 0.06,
+            "uncrit": 0.03,
+            "crit_deepen": 1.59,
+            "uncrit_deepen": 0.04,
+            "block": 0.03,
+            "unblock": 0.08,
+            "suck": 0.03,
+            "regeneration": 0.02,
+            "get_cured": 1.02
+        }
+    ],
+    "skills": [
+        {
+            "__key": "1123_v1s1",
+            "id": "1123_v1s1",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "free"
+            ],
+            "level": 1,
+            "next": "1123_v1s2",
+            "skill_action": "1123_v1s1",
+            "effects": [
+                "1123_v1s1_1"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv1",
+            "name_translated": "Active Skill - Level 1",
+            "desc_short": "tid#SkillDesc_1123_v1s1",
+            "desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "max_desc_short": "tid#SkillDesc_1123_v1s1",
+            "max_desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "entry": [
+                "tid#Skill_EntryName_211"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_211"
+            ],
+            "entry_desc_translated": "*Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate by 40%.",
+            "factor_lv1": [
+                "185%"
+            ],
+            "factor_lv2": [
+                "191%",
+                "197%",
+                "203%",
+                "209%",
+                "222%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_211"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_211"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate and Crit DMG by 40%.",
+            "card_bg": "1123_skill_b",
+            "card_use_icon": "1123_skill_s"
+        },
+        {
+            "__key": "1123_p1",
+            "id": "1123_p1",
+            "type": 301,
+            "effects": [
+                "1123_p1_1",
+                "1123_p1_2",
+                "1123_p1_3"
+            ],
+            "name": "tid#SkillName_1123_p1",
+            "name_translated": "Poison Scorpion",
+            "desc_short": "tid#SkillDesc_1123_p1",
+            "desc_short_translated": "When the battle starts, if all allied characters are CCG characters, increases all allied characters' ATK by 20% and Pen Rate by 8%. When your turn, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "max_desc_short": "tid#SkillDesc_1123_p1",
+            "max_desc_short_translated": "When the battle starts, if all allied characters are CCG characters, increases all allied characters' ATK by 20% and Pen Rate by 8%. When your turn, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "r_max_entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "icon": "1123_p1"
+        },
+        {
+            "__key": "1123_p2",
+            "id": "1123_p2",
+            "type": 301,
+            "effects": [
+                "1123_p2_1",
+                "1123_p2_2",
+                "1123_p2_3",
+                "1123_p2_4"
+            ],
+            "name": "tid#SkillName_1123_p2",
+            "name_translated": "Clean-up",
+            "desc_short": "tid#SkillDesc_1123_p2",
+            "desc_short_translated": "When an allied CCG character deals damage, inflict #Entry_1# to the target, up to 4 stacks. At max stacks, inflict #Entry_2# for 2 turns and increases your skill level. Skill level increase can only trigger once per turn.",
+            "max_desc_short": "tid#SkillDesc_1123_p2",
+            "max_desc_short_translated": "When an allied CCG character deals damage, inflict #Entry_1# to the target, up to 4 stacks. At max stacks, inflict #Entry_2# for 2 turns and increases your skill level. Skill level increase can only trigger once per turn.",
+            "entry": [
+                "tid#Skill_EntryName_213",
+                "tid#Skill_EntryName_214"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_213",
+                "tid#Skill_EntryDesc_214"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_213",
+                "tid#Skill_EntryName_214"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_213",
+                "tid#Skill_EntryDesc_214"
+            ],
+            "icon": "1123_p2"
+        },
+        {
+            "__key": "1123_p3",
+            "id": "1123_p3",
+            "type": 301,
+            "effects": [
+                "1123_p3_1",
+                "1123_p3_2"
+            ],
+            "name": "tid#SkillName_1123_p3",
+            "name_translated": "Cowardice",
+            "desc_short": "tid#SkillDesc_1123_p3",
+            "desc_short_translated": "When dealing damage, inflict #Entry_1# to the target for 2 turns. If an enemy is immobilized, immediately deals 160% #Entry_2# damage to that enemy.",
+            "max_desc_short": "tid#SkillDesc_1123_p3",
+            "max_desc_short_translated": "When dealing damage, inflict #Entry_1# to the target for 2 turns. If an enemy is immobilized, immediately deals 160% #Entry_2# damage to that enemy.",
+            "entry": [
+                "tid#Skill_EntryName_215",
+                "tid#Skill_EntryName_1"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_215",
+                "tid#Skill_EntryDesc_1"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_215",
+                "tid#Skill_EntryName_1"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_215",
+                "tid#Skill_EntryDesc_1"
+            ],
+            "icon": "1123_p3"
+        },
+        {
+            "__key": "1123_p4",
+            "id": "1123_p4",
+            "type": 301,
+            "effects": [
+                "1123_p4_1"
+            ],
+            "name": "tid#SkillName_burst_1",
+            "name_translated": "Power Burst Boost",
+            "desc_short": "tid#SkillDesc_burst_5",
+            "desc_short_translated": "Gaining Power Burst increases damage dealt by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_burst_5",
+            "max_desc_short_translated": "Gaining Power Burst increases damage dealt by 10% for 1 turn.",
+            "icon": "ComPSkill_1"
+        },
+        {
+            "__key": "1123_rp1",
+            "id": "1123_rp1",
+            "type": 301,
+            "effects": [
+                "1123_rp1_1",
+                "1123_rp1_2",
+                "1123_rp1_3",
+                "1123_rp1_4"
+            ],
+            "name": "tid#SkillName_1123_p1",
+            "name_translated": "Poison Scorpion",
+            "desc_short": "tid#SkillDesc_1123_rp1",
+            "desc_short_translated": "When the battle starts, grant yourself 1 #Entry_1#. If all allieds characters are CCG characters, increases all allied characters' ATK by 20% and PEN Rate by 8%. When your turn starts, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "max_desc_short": "tid#SkillDesc_1123_rp1",
+            "max_desc_short_translated": "When the battle starts, grant yourself 1 #Entry_1#. If all allieds characters are CCG characters, increases all allied characters' ATK by 20% and PEN Rate by 8%. When your turn starts, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "r_max_entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "icon": "1123_p1"
+        },
+        {
+            "__key": "1123_p5",
+            "id": "1123_p5",
+            "type": 301,
+            "effects": [
+                "1123_p5_1"
+            ],
+            "name": "tid#SkillName_weak_1",
+            "name_translated": "Weak",
+            "desc_short": "tid#SkillDesc_weak_33",
+            "desc_short_translated": "Applying Weak increases ATK by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_weak_33",
+            "max_desc_short_translated": "Applying Weak increases ATK by 10% for 1 turn.",
+            "icon": "ComPSkill_2"
+        },
+        {
+            "__key": "1123_bre1_p1",
+            "id": "1123_bre1_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_1_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_1",
+            "desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_1",
+            "max_desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+            "icon": "1022_p2"
+        },
+        {
+            "__key": "1123_bre1_p2",
+            "id": "1123_bre1_p2",
+            "type": 301,
+            "effects": [
+                "hero_break_32_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_32",
+            "desc_short_translated": "When the battle starts, increase your CRIT DMG by 10%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_32",
+            "max_desc_short_translated": "When the battle starts, increase your CRIT DMG by 10%.",
+            "icon": "1005_p3"
+        },
+        {
+            "__key": "1123_bre1_p3",
+            "id": "1123_bre1_p3",
+            "type": 301,
+            "effects": [
+                "1105_bre2_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1105_bre2_p3",
+            "desc_short_translated": "Immune to Weak effect for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_1105_bre2_p3",
+            "max_desc_short_translated": "Immune to Weak effect for 1 turn.",
+            "icon": "1042_p3"
+        },
+        {
+            "__key": "1123_bre1_p4",
+            "id": "1123_bre1_p4",
+            "type": 301,
+            "effects": [
+                "1092_bre3_p2_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1092_bre3_p2",
+            "desc_short_translated": "Increases damage dealt by 5% in battle.",
+            "max_desc_short": "tid#SkillDesc_1092_bre3_p2",
+            "max_desc_short_translated": "Increases damage dealt by 5% in battle.",
+            "icon": "1026_p3"
+        },
+        {
+            "__key": "1123_bre1_p5",
+            "id": "1123_bre1_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_5_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_5",
+            "desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_5",
+            "max_desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+            "icon": "1022_p2"
+        },
+        {
+            "__key": "1123_bre2_p1",
+            "id": "1123_bre2_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_24_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_24",
+            "desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_24",
+            "max_desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1123_bre2_p2",
+            "id": "1123_bre2_p2",
+            "type": 301,
+            "effects": [
+                "hero_break_46_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_46",
+            "desc_short_translated": "When the battle starts, increase your Block Chance by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_46",
+            "max_desc_short_translated": "When the battle starts, increase your Block Chance by 5%.",
+            "icon": "1056_p3"
+        },
+        {
+            "__key": "1123_bre2_p3",
+            "id": "1123_bre2_p3",
+            "type": 301,
+            "effects": [
+                "1123_bre2_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1123_bre2_p3",
+            "desc_short_translated": "In battle, increase ATK by 5%.",
+            "max_desc_short": "tid#SkillDesc_1123_bre2_p3",
+            "max_desc_short_translated": "In battle, increase ATK by 5%.",
+            "icon": "1068_p1"
+        },
+        {
+            "__key": "1123_bre2_p4",
+            "id": "1123_bre2_p4",
+            "type": 301,
+            "effects": [
+                "1123_bre2_p4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1123_bre2_p4",
+            "desc_short_translated": "Increases triggered skill damage of allied [CCG] characters by 8%.",
+            "max_desc_short": "tid#SkillDesc_1123_bre2_p4",
+            "max_desc_short_translated": "Increases triggered skill damage of allied [CCG] characters by 8%.",
+            "icon": "1034_p1"
+        },
+        {
+            "__key": "1123_bre2_p5",
+            "id": "1123_bre2_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_28_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_28",
+            "desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_28",
+            "max_desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1123_bre3_p1",
+            "id": "1123_bre3_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_40_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_40",
+            "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_40",
+            "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1123_bre3_p2",
+            "id": "1123_bre3_p2",
+            "type": 301,
+            "effects": [
+                "1099_bre2_p4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1099_bre2_p4",
+            "desc_short_translated": "In battle, reduce damage taken by 5%",
+            "max_desc_short": "tid#SkillDesc_1099_bre2_p4",
+            "max_desc_short_translated": "In battle, reduce damage taken by 5%",
+            "icon": "1012_p1"
+        },
+        {
+            "__key": "1123_bre3_p3",
+            "id": "1123_bre3_p3",
+            "type": 301,
+            "effects": [
+                "1123_bre3_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1123_bre3_p3",
+            "desc_short_translated": "Increase damage dealt by active skills on the first turn by 10%.",
+            "max_desc_short": "tid#SkillDesc_1123_bre3_p3",
+            "max_desc_short_translated": "Increase damage dealt by active skills on the first turn by 10%.",
+            "icon": "1067_p2"
+        },
+        {
+            "__key": "1123_bre3_p4",
+            "id": "1123_bre3_p4",
+            "type": 301,
+            "effects": [
+                "hero_break_4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_4",
+            "desc_short_translated": "When the battle starts, increase your Lifesteal Rate by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_4",
+            "max_desc_short_translated": "When the battle starts, increase your Lifesteal Rate by 5%.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1123_bre3_p5",
+            "id": "1123_bre3_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_44_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_44",
+            "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_44",
+            "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1123_v1s2",
+            "id": "1123_v1s2",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "free"
+            ],
+            "level": 2,
+            "next": "1123_v1s3",
+            "skill_action": "1123_v1s2",
+            "effects": [
+                "1123_v1s2_1"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv2",
+            "name_translated": "Active Skill - Level 2",
+            "desc_short": "tid#SkillDesc_1123_v1s2",
+            "desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "max_desc_short": "tid#SkillDesc_1123_v1s2",
+            "max_desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "entry": [
+                "tid#Skill_EntryName_211"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_211"
+            ],
+            "entry_desc_translated": "*Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate by 40%.",
+            "factor_lv1": [
+                "260%"
+            ],
+            "factor_lv2": [
+                "268%",
+                "276%",
+                "284%",
+                "293%",
+                "310%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_211"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_211"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate and Crit DMG by 40%.",
+            "card_bg": "1123_skill_b",
+            "card_use_icon": "1123_skill_s"
+        },
+        {
+            "__key": "1123_v1s3",
+            "id": "1123_v1s3",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "skill_lv3",
+                "free"
+            ],
+            "level": 3,
+            "skill_action": "1123_v1s3",
+            "effects": [
+                "1123_v1s3_1"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv3",
+            "name_translated": "Active Skill - Level 3",
+            "desc_short": "tid#SkillDesc_1123_v1s3",
+            "desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "max_desc_short": "tid#SkillDesc_1123_v1s3",
+            "max_desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "entry": [
+                "tid#Skill_EntryName_211"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_211"
+            ],
+            "entry_desc_translated": "*Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate by 40%.",
+            "factor_lv1": [
+                "440%"
+            ],
+            "factor_lv2": [
+                "455%",
+                "470%",
+                "485%",
+                "500%",
+                "540%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_211"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_211"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate and Crit DMG by 40%.",
+            "card_bg": "1123_skill_b",
+            "card_use_icon": "1123_skill_s"
+        },
+        {
+            "__key": "1123_v1s1",
+            "id": "1123_v1s1",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "free"
+            ],
+            "level": 1,
+            "next": "1123_v1s2",
+            "skill_action": "1123_v1s1",
+            "effects": [
+                "1123_v1s1_1"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T1",
+            "name": "tid#SkillName_ActiveSkill_lv1",
+            "name_translated": "Active Skill - Level 1",
+            "desc_short": "tid#SkillDesc_1123_v1s1",
+            "desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "max_desc_short": "tid#SkillDesc_1123_v1s1",
+            "max_desc_short_translated": "Deal #Entry_1# damage equal to #Factor_1# of ATK to the enemy target.",
+            "entry": [
+                "tid#Skill_EntryName_211"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_211"
+            ],
+            "entry_desc_translated": "*Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate by 40%.",
+            "factor_lv1": [
+                "185%"
+            ],
+            "factor_lv2": [
+                "191%",
+                "197%",
+                "203%",
+                "209%",
+                "222%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_211"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_211"
+            ],
+            "r_max_entry_desc_translated": "*Ultra-Ruin: Increase this skill's ATK by 20%. If Poison Scorpion is active on yourself, increase Crit Rate and Crit DMG by 40%.",
+            "card_bg": "1123_skill_b",
+            "card_use_icon": "1123_skill_s"
+        },
+        {
+            "__key": "1123_p1",
+            "id": "1123_p1",
+            "type": 301,
+            "effects": [
+                "1123_p1_1",
+                "1123_p1_2",
+                "1123_p1_3"
+            ],
+            "name": "tid#SkillName_1123_p1",
+            "name_translated": "Poison Scorpion",
+            "desc_short": "tid#SkillDesc_1123_p1",
+            "desc_short_translated": "When the battle starts, if all allied characters are CCG characters, increases all allied characters' ATK by 20% and Pen Rate by 8%. When your turn, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "max_desc_short": "tid#SkillDesc_1123_p1",
+            "max_desc_short_translated": "When the battle starts, if all allied characters are CCG characters, increases all allied characters' ATK by 20% and Pen Rate by 8%. When your turn, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "r_max_entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "icon": "1123_p1"
+        },
+        {
+            "__key": "1123_p2",
+            "id": "1123_p2",
+            "type": 301,
+            "effects": [
+                "1123_p2_1",
+                "1123_p2_2",
+                "1123_p2_3",
+                "1123_p2_4"
+            ],
+            "name": "tid#SkillName_1123_p2",
+            "name_translated": "Clean-up",
+            "desc_short": "tid#SkillDesc_1123_p2",
+            "desc_short_translated": "When an allied CCG character deals damage, inflict #Entry_1# to the target, up to 4 stacks. At max stacks, inflict #Entry_2# for 2 turns and increases your skill level. Skill level increase can only trigger once per turn.",
+            "max_desc_short": "tid#SkillDesc_1123_p2",
+            "max_desc_short_translated": "When an allied CCG character deals damage, inflict #Entry_1# to the target, up to 4 stacks. At max stacks, inflict #Entry_2# for 2 turns and increases your skill level. Skill level increase can only trigger once per turn.",
+            "entry": [
+                "tid#Skill_EntryName_213",
+                "tid#Skill_EntryName_214"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_213",
+                "tid#Skill_EntryDesc_214"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_213",
+                "tid#Skill_EntryName_214"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_213",
+                "tid#Skill_EntryDesc_214"
+            ],
+            "icon": "1123_p2"
+        },
+        {
+            "__key": "1123_p3",
+            "id": "1123_p3",
+            "type": 301,
+            "effects": [
+                "1123_p3_1",
+                "1123_p3_2"
+            ],
+            "name": "tid#SkillName_1123_p3",
+            "name_translated": "Cowardice",
+            "desc_short": "tid#SkillDesc_1123_p3",
+            "desc_short_translated": "When dealing damage, inflict #Entry_1# to the target for 2 turns. If an enemy is immobilized, immediately deals 160% #Entry_2# damage to that enemy.",
+            "max_desc_short": "tid#SkillDesc_1123_p3",
+            "max_desc_short_translated": "When dealing damage, inflict #Entry_1# to the target for 2 turns. If an enemy is immobilized, immediately deals 160% #Entry_2# damage to that enemy.",
+            "entry": [
+                "tid#Skill_EntryName_215",
+                "tid#Skill_EntryName_1"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_215",
+                "tid#Skill_EntryDesc_1"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_215",
+                "tid#Skill_EntryName_1"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_215",
+                "tid#Skill_EntryDesc_1"
+            ],
+            "icon": "1123_p3"
+        },
+        {
+            "__key": "1123_p4",
+            "id": "1123_p4",
+            "type": 301,
+            "effects": [
+                "1123_p4_1"
+            ],
+            "name": "tid#SkillName_burst_1",
+            "name_translated": "Power Burst Boost",
+            "desc_short": "tid#SkillDesc_burst_5",
+            "desc_short_translated": "Gaining Power Burst increases damage dealt by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_burst_5",
+            "max_desc_short_translated": "Gaining Power Burst increases damage dealt by 10% for 1 turn.",
+            "icon": "ComPSkill_1"
+        },
+        {
+            "__key": "1123_p5",
+            "id": "1123_p5",
+            "type": 301,
+            "effects": [
+                "1123_p5_1"
+            ],
+            "name": "tid#SkillName_weak_1",
+            "name_translated": "Weak",
+            "desc_short": "tid#SkillDesc_weak_33",
+            "desc_short_translated": "Applying Weak increases ATK by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_weak_33",
+            "max_desc_short_translated": "Applying Weak increases ATK by 10% for 1 turn.",
+            "icon": "ComPSkill_2"
+        },
+        {
+            "__key": "1123_rp1",
+            "id": "1123_rp1",
+            "type": 301,
+            "effects": [
+                "1123_rp1_1",
+                "1123_rp1_2",
+                "1123_rp1_3",
+                "1123_rp1_4"
+            ],
+            "name": "tid#SkillName_1123_p1",
+            "name_translated": "Poison Scorpion",
+            "desc_short": "tid#SkillDesc_1123_rp1",
+            "desc_short_translated": "When the battle starts, grant yourself 1 #Entry_1#. If all allieds characters are CCG characters, increases all allied characters' ATK by 20% and PEN Rate by 8%. When your turn starts, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "max_desc_short": "tid#SkillDesc_1123_rp1",
+            "max_desc_short_translated": "When the battle starts, grant yourself 1 #Entry_1#. If all allieds characters are CCG characters, increases all allied characters' ATK by 20% and PEN Rate by 8%. When your turn starts, grant yourself 1 #Entry_1#, up to 3 stacks.",
+            "entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "r_max_entry": [
+                "tid#Skill_EntryName_212"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_212"
+            ],
+            "r_max_entry_desc_translated": "*Poison Scorpion: After using an active skill, consumes 1 Poison Scorpion to immediately launch a Bonus-Attack on the same target, dealing 160% ATK damage and applying 1 stack of Weak. Can only trigger once per skill.",
+            "icon": "1123_p1"
+        }
+    ],
+    "effects": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "name": "tid#AttrName_Atk",
+            "name_translated": "ATK",
+            "attr_effect": "1001_R1_1"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "name": "tid#AttrName_Def",
+            "name_translated": "DEF",
+            "attr_effect": "1001_R2_1"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "name": "tid#AttrName_Hp",
+            "name_translated": "HP",
+            "attr_effect": "1001_R3_1"
+        }
+    ],
+    "attrEffects": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Atk"
+            ],
+            "grow_type": "FIXED",
+            "value": "[50]"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Def"
+            ],
+            "grow_type": "FIXED",
+            "value": "[40]"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Hp"
+            ],
+            "grow_type": "FIXED",
+            "value": "[1350]"
+        }
+    ],
+    "relations": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "next": "1001_R1_2",
+            "hero_soul_id": [
+                "1001",
+                "1049"
+            ],
+            "hero_head_icon": "1049_head",
+            "item": [
+                "20097"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R1_1"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "next": "1001_R2_2",
+            "hero_soul_id": [
+                "1001",
+                "1018"
+            ],
+            "hero_head_icon": "1018_head",
+            "item": [
+                "20095"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R2_1"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "next": "1001_R3_2",
+            "hero_soul_id": [
+                "1001",
+                "1019"
+            ],
+            "hero_head_icon": "1019_head",
+            "item": [
+                "20096"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R3_1"
+        },
+        {
+            "__key": "1123_R1_1",
+            "id": "1123_R1_1",
+            "next": "1123_R1_2",
+            "hero_soul_id": [
+                "1123",
+                "1074"
+            ],
+            "hero_head_icon": "1074_head",
+            "item": [
+                "20097"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R1_1"
+        },
+        {
+            "__key": "1123_R2_1",
+            "id": "1123_R2_1",
+            "next": "1123_R2_2",
+            "hero_soul_id": [
+                "1123",
+                "1034"
+            ],
+            "hero_head_icon": "1034_head",
+            "item": [
+                "20095"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R2_1"
+        },
+        {
+            "__key": "1123_R3_1",
+            "id": "1123_R3_1",
+            "next": "1123_R3_2",
+            "hero_soul_id": [
+                "1123",
+                "1023"
+            ],
+            "hero_head_icon": "1023_head",
+            "item": [
+                "20096"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R3_1"
+        }
+    ],
+    "properEquip": [],
+    "properEquipAdvance": []
+}

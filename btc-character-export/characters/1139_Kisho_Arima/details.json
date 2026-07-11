@@ -1,0 +1,1229 @@
+{
+    "id": "1139",
+    "name": "Kisho Arima",
+    "folder": "1139_Kisho_Arima",
+    "source": "https://btc-web-863ee.web.app",
+    "version": "1782840365890",
+    "downloadedImages": [
+        {
+            "url": "https://btc-web-863ee.web.app/pic_head/1139_head.png?v=1782840365890",
+            "file": "images/1139_head_c887b04a.png"
+        }
+    ],
+    "hero": {
+        "__key": "1139",
+        "id": "1139",
+        "model": "r_1139_T2",
+        "hero_coin": "30139",
+        "display_time": "{\"DisplayTime\":\"2025-10-18 05:00:00\"}",
+        "display_chain_level": 17,
+        "rarity": 4,
+        "comm_coin": 30,
+        "max_rank_skill_icon": "ComPSkill_3",
+        "max_rank_skill_tips": "tid#HeroRMaxDescT1_233",
+        "max_rank_skill_tips_translated": "Active Elevation: Upgrades Ghostly Shadow damage to Ultra-Ghostly Shadow damage.",
+        "max_rank_skill_desc": "tid#Skill_SupEntryDesc_257",
+        "max_rank_skill_desc_translated": "*Ultra Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%. For each Cursed Candy on all enemies, increases the CRIT Rate of this attack by 40%.",
+        "base_quality": "1139_Q1",
+        "rank": "Rank_40",
+        "skill_up_cost": "SLvCost4",
+        "skill_up_effect": "{\"1\":[\"1139_bre1_p1\",\"1139_bre1_p2\",\"1139_bre1_p3\",\"1139_bre1_p4\",\"1139_bre1_p5\"],\"2\":[\"1139_bre2_p1\",\"1139_bre2_p2\",\"1139_bre2_p3\",\"1139_bre2_p4\",\"1139_bre2_p5\"],\"3\":[\"1139_bre3_p1\",\"1139_bre3_p2\",\"1139_bre3_p3\",\"1139_bre3_p4\",\"1139_bre3_p5\"]}",
+        "star_value": "{\"1\":[\"StarValueTask01_1139_1\"],\"2\":[\"StarValueTask02_1139_1\"],\"3\":[\"StarValueTask03_1139_1\"]}",
+        "hero_limit": "HL_1139_0",
+        "gift_natural": "gift_1139_00",
+        "relation": [
+            "1139_R1_1",
+            "1139_R2_1",
+            "1139_R3_1"
+        ],
+        "relation_max": "1139_Rmax",
+        "base_cell_fusion": "Com_CellF_0",
+        "cell_fusion_name": "tid#HeroCellFusionName",
+        "cell_fusion_name_translated": "Ability Breakthrough",
+        "exp_factor": 1,
+        "atk_factor": 1.195,
+        "def_factor": 1.081,
+        "hp_factor": 1.182,
+        "skill": [
+            "1139_v1s1"
+        ],
+        "passive_skill": [
+            "1139_p1",
+            "1139_p2",
+            "1139_p3",
+            "1139_p4"
+        ],
+        "passive_skill_gift_n": [
+            "1139_p1",
+            "1139_rp2",
+            "1139_p3",
+            "1139_p4"
+        ],
+        "rank_p_skill": "1139_p5",
+        "skill_amount": [
+            8
+        ],
+        "weak_min": 3,
+        "weak_max": 6,
+        "attribution_id": "h139",
+        "player_head": "H_1139",
+        "player_head_combine": "HC_1139",
+        "star_preview": "[\"tid#RoleStarPreview_1139_1\",\"tid#RoleStarPreview_1139_2\",\"tid#RoleStarPreview_1139_3\",\"tid#RoleStarPreview_1139_4\",\"tid#RoleStarPreview_1139_5\",\"tid#RoleStarPreview_1139_6\"]",
+        "senior_arena_equip": [
+            "EquipAtk_UR_atk_T2_1",
+            "EquipDef_UR_def_T2_1",
+            "EquipHp_UR_hp_T2_1"
+        ],
+        "senior_arena_gift": [
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_106_04_06",
+            "Gift_105_04_06",
+            "Gift_105_04_06",
+            "Gift_105_04_06"
+        ],
+        "senior_arena_lineup": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "roleModels": [
+        {
+            "__key": "r_1139_T2",
+            "id": "r_1139_T2",
+            "model": "1139",
+            "pic_spell": "1139",
+            "boss_pic_config": [
+                15,
+                -195,
+                1.6
+            ],
+            "gacha_pic_config": [
+                -98,
+                -120,
+                0.64
+            ],
+            "title": "tid#RoleTitle_1139",
+            "title_translated": "Halloween",
+            "name": "tid#RoleName_1139",
+            "name_translated": "Kisho Arima",
+            "name_pic": "1139_name",
+            "eng_name": "tid#RoleEngName_1139",
+            "cv": "tid#RoleCV_1139",
+            "grow_show_rate": 1,
+            "soul": "1139",
+            "real_soul": "1002",
+            "test_appear": 3,
+            "test_lightness": "{\"start\":[3,60],\"keep\":[4,60],\"end\":[6,0]}",
+            "hpbar_delay_time": 0.3,
+            "radius": 0.5,
+            "sex": 1,
+            "faction": [
+                1
+            ],
+            "race": 1,
+            "tactic_type": 1,
+            "rc_type": "T2",
+            "animator": "1139Anima",
+            "full_star_effect": [
+                "speed_fullstar",
+                "4",
+                "0.8",
+                "0",
+                "0",
+                "0"
+            ],
+            "get_dialogue": "100201",
+            "gacha_pic_pos": [
+                198,
+                -326,
+                0.8
+            ]
+        }
+    ],
+    "ranks": [
+        {
+            "__key": "Rank_40",
+            "id": "Rank_40",
+            "next": "Rank_41",
+            "cost": 1,
+            "cost_common": 1,
+            "gold_cost": 5000,
+            "atk_grow": 46,
+            "def_grow": 40,
+            "hp_grow": 830
+        }
+    ],
+    "qualities": [
+        {
+            "__key": "1139_Q1",
+            "id": "1139_Q1",
+            "next_quality": "1139_Q2",
+            "level_limit": 30,
+            "gold_cost": 10000,
+            "cost_item": [
+                "20023",
+                "20013",
+                "20012",
+                "20011"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "__key": "1139_Q2",
+            "id": "1139_Q2",
+            "next_quality": "1139_Q3",
+            "level_limit": 40,
+            "gold_cost": 20000,
+            "cost_item": [
+                "20023",
+                "20014",
+                "20013",
+                "20012"
+            ],
+            "cost_item_amount": [
+                1,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "__key": "1139_Q3",
+            "id": "1139_Q3",
+            "next_quality": "1139_Q4",
+            "level_limit": 45,
+            "gold_cost": 30000,
+            "cost_item": [
+                "20023",
+                "20014",
+                "20013",
+                "20012"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "__key": "1139_Q4",
+            "id": "1139_Q4",
+            "next_quality": "1139_Q5",
+            "level_limit": 50,
+            "gold_cost": 40000,
+            "cost_item": [
+                "20023",
+                "20015",
+                "20014",
+                "20013"
+            ],
+            "cost_item_amount": [
+                1,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "__key": "1139_Q5",
+            "id": "1139_Q5",
+            "next_quality": "1139_Q6",
+            "is_quality_up": 1,
+            "level_limit": 55,
+            "gold_cost": 50000,
+            "cost_item": [
+                "20023",
+                "20015",
+                "20014",
+                "20013"
+            ],
+            "cost_item_amount": [
+                1,
+                2,
+                5,
+                5
+            ]
+        }
+    ],
+    "stats": [
+        {
+            "__key": "h139",
+            "id": "h139",
+            "energy_be_hurt": 30,
+            "atk": 1195,
+            "def": 856.8,
+            "hp": 11750,
+            "crit": 0.06,
+            "uncrit": 0.07,
+            "crit_deepen": 1.58,
+            "uncrit_deepen": 0.07,
+            "block": 0.08,
+            "unblock": 0.06,
+            "suck": 0.02,
+            "regeneration": 0.04,
+            "get_cured": 1.02
+        }
+    ],
+    "skills": [
+        {
+            "__key": "1139_v1s1",
+            "id": "1139_v1s1",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "free"
+            ],
+            "level": 1,
+            "next": "1139_v1s2",
+            "skill_action": "1139_v1s1",
+            "effects": [
+                "1139_v1s1_1",
+                "1139_v1s1_2",
+                "1139_v1s1_3",
+                "1139_v1s1_4"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T2",
+            "name": "tid#SkillName_ActiveSkill_lv1",
+            "name_translated": "Active Skill - Level 1",
+            "desc_short": "tid#SkillDesc_1139_v1s1",
+            "desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "max_desc_short": "tid#SkillDesc_1139_v1s1",
+            "max_desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "entry": [
+                "tid#Skill_EntryName_257"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_257"
+            ],
+            "entry_desc_translated": "*Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%.",
+            "factor_lv1": [
+                "170%"
+            ],
+            "factor_lv2": [
+                "176%",
+                "182%",
+                "188%",
+                "194%",
+                "207%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_257"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_257"
+            ],
+            "r_max_entry_desc_translated": "*Ultra Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%. For each Cursed Candy on all enemies, increases the CRIT Rate of this attack by 40%.",
+            "card_bg": "1139_skill_b",
+            "card_use_icon": "1139_skill_s"
+        },
+        {
+            "__key": "1139_p1",
+            "id": "1139_p1",
+            "type": 302,
+            "effects": [
+                "1139_p1_1",
+                "1139_p1_2"
+            ],
+            "name": "tid#SkillName_1139_p1",
+            "name_translated": "Cursed Candy",
+            "desc_short": "tid#SkillDesc_1139_p1",
+            "desc_short_translated": "[Effective also in back-up state] When enemy’s turn ends, inflicts #Entry_1# on all enemies. When the caster enters the field as a back-up, for each #Entry_1# stack on the enemy, increases ATK-related stats by 10%, up to 40% and deals #Entry_2# damage equal to 210% of ATK to all enemies.",
+            "max_desc_short": "tid#SkillDesc_1139_p1",
+            "max_desc_short_translated": "[Effective also in back-up state] When enemy’s turn ends, inflicts #Entry_1# on all enemies. When the caster enters the field as a back-up, for each #Entry_1# stack on the enemy, increases ATK-related stats by 10%, up to 40% and deals #Entry_2# damage equal to 210% of ATK to all enemies.",
+            "entry": [
+                "tid#Skill_EntryName_258",
+                "tid#Skill_EntryName_259"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_258",
+                "tid#Skill_EntryDesc_259"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_258",
+                "tid#Skill_EntryName_259"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_258",
+                "tid#Skill_EntryDesc_259"
+            ],
+            "icon": "1139_p1"
+        },
+        {
+            "__key": "1139_p2",
+            "id": "1139_p2",
+            "type": 302,
+            "effects": [
+                "1139_p2_1",
+                "1139_p2_2",
+                "1139_p2_3",
+                "1139_p2_4",
+                "1139_p2_5",
+                "1139_p2_6",
+                "1139_p2_7"
+            ],
+            "name": "tid#SkillName_1139_p2",
+            "name_translated": "Delicious Candy",
+            "desc_short": "tid#SkillDesc_1139_p2",
+            "desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff.",
+            "max_desc_short": "tid#SkillDesc_1139_p2",
+            "max_desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff.",
+            "entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "icon": "1139_p2"
+        },
+        {
+            "__key": "1139_p3",
+            "id": "1139_p3",
+            "type": 302,
+            "effects": [
+                "1139_p3_1",
+                "1139_p3_2",
+                "1139_p3_3",
+                "1139_p3_4",
+                "1139_p3_5",
+                "1139_p3_6",
+                "1139_p3_7",
+                "1139_p3_8",
+                "1139_p3_9",
+                "1139_p3_10",
+                "1139_p3_11",
+                "1139_p3_12"
+            ],
+            "name": "tid#SkillName_1139_p3",
+            "name_translated": "All Char Stats Boost",
+            "desc_short": "tid#SkillDesc_1139_p3",
+            "desc_short_translated": "[Effective also in back-up state] When increases all allies’ basic stats by 12% and additionally increases ally CCG characters’ stats by 4%. For each ally with HP above 75%, reduces all enemies’ CRIT DEF-related stats by 5%. For each ally with HP below 75%, reduces all enemies’ ATK-related stats by 3%.",
+            "max_desc_short": "tid#SkillDesc_1139_p3",
+            "max_desc_short_translated": "[Effective also in back-up state] When increases all allies’ basic stats by 12% and additionally increases ally CCG characters’ stats by 4%. For each ally with HP above 75%, reduces all enemies’ CRIT DEF-related stats by 5%. For each ally with HP below 75%, reduces all enemies’ ATK-related stats by 3%.",
+            "icon": "1139_p3"
+        },
+        {
+            "__key": "1139_p4",
+            "id": "1139_p4",
+            "type": 301,
+            "effects": [
+                "1139_p4_1"
+            ],
+            "name": "tid#SkillName_burst_1",
+            "name_translated": "Power Burst Boost",
+            "desc_short": "tid#SkillDesc_burst_57",
+            "desc_short_translated": "Gaining Power Burst increases all allied characters' basic stats by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_burst_57",
+            "max_desc_short_translated": "Gaining Power Burst increases all allied characters' basic stats by 5% for 1 turn.",
+            "icon": "ComPSkill_1"
+        },
+        {
+            "__key": "1139_rp2",
+            "id": "1139_rp2",
+            "type": 302,
+            "effects": [
+                "1139_rp2_1",
+                "1139_rp2_2",
+                "1139_rp2_3",
+                "1139_rp2_4",
+                "1139_rp2_5",
+                "1139_rp2_6",
+                "1139_rp2_7"
+            ],
+            "name": "tid#SkillName_1139_p2",
+            "name_translated": "Delicious Candy",
+            "desc_short": "tid#SkillDesc_1139_rp2",
+            "desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff and heals self for 5% of the ally’s missing HP.",
+            "max_desc_short": "tid#SkillDesc_1139_rp2",
+            "max_desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff and heals self for 5% of the ally’s missing HP.",
+            "entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "icon": "1139_p2"
+        },
+        {
+            "__key": "1139_p5",
+            "id": "1139_p5",
+            "type": 301,
+            "effects": [
+                "1139_p5_1"
+            ],
+            "name": "tid#SkillName_weak_1",
+            "name_translated": "Weak",
+            "desc_short": "tid#SkillDesc_weak_74",
+            "desc_short_translated": "Applying Weak reduces the target's Basic Stats by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_weak_74",
+            "max_desc_short_translated": "Applying Weak reduces the target's Basic Stats by 5% for 1 turn.",
+            "icon": "ComPSkill_2"
+        },
+        {
+            "__key": "1139_bre1_p1",
+            "id": "1139_bre1_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_1_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_1",
+            "desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_1",
+            "max_desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+            "icon": "1022_p2"
+        },
+        {
+            "__key": "1139_bre1_p2",
+            "id": "1139_bre1_p2",
+            "type": 302,
+            "effects": [
+                "1139_bre1_p2_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1139_bre1_p2",
+            "desc_short_translated": "[Effective also in back-up state] Increases allied character's Max HP by 6%.",
+            "max_desc_short": "tid#SkillDesc_1139_bre1_p2",
+            "max_desc_short_translated": "[Effective also in back-up state] Increases allied character's Max HP by 6%.",
+            "icon": "1063_p3"
+        },
+        {
+            "__key": "1139_bre1_p3",
+            "id": "1139_bre1_p3",
+            "type": 301,
+            "effects": [
+                "hero_break_46_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_46",
+            "desc_short_translated": "When the battle starts, increase your Block Chance by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_46",
+            "max_desc_short_translated": "When the battle starts, increase your Block Chance by 5%.",
+            "icon": "1056_p3"
+        },
+        {
+            "__key": "1139_bre1_p4",
+            "id": "1139_bre1_p4",
+            "type": 301,
+            "work_type": [
+                1
+            ],
+            "effects": [
+                "hero_break_8_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_8",
+            "desc_short_translated": "In PVP, increase your damage dealt by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_8",
+            "max_desc_short_translated": "In PVP, increase your damage dealt by 5%.",
+            "icon": "1067_p2"
+        },
+        {
+            "__key": "1139_bre1_p5",
+            "id": "1139_bre1_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_5_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_5",
+            "desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_5",
+            "max_desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+            "icon": "1022_p2"
+        },
+        {
+            "__key": "1139_bre2_p1",
+            "id": "1139_bre2_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_24_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_24",
+            "desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_24",
+            "max_desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1139_bre2_p2",
+            "id": "1139_bre2_p2",
+            "type": 301,
+            "effects": [
+                "hero_break_148_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_148",
+            "desc_short_translated": "When the battle starts, reduce your damage taken by 10% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_148",
+            "max_desc_short_translated": "When the battle starts, reduce your damage taken by 10% for 1 turn.",
+            "icon": "1061_p1"
+        },
+        {
+            "__key": "1139_bre2_p3",
+            "id": "1139_bre2_p3",
+            "type": 302,
+            "effects": [
+                "1139_bre2_p3_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1139_bre2_p3",
+            "desc_short_translated": "[Effective also in back-up state] Increases allied characters' CRIT DEF in the first turn by 10%.",
+            "max_desc_short": "tid#SkillDesc_1139_bre2_p3",
+            "max_desc_short_translated": "[Effective also in back-up state] Increases allied characters' CRIT DEF in the first turn by 10%.",
+            "icon": "bio_p15"
+        },
+        {
+            "__key": "1139_bre2_p4",
+            "id": "1139_bre2_p4",
+            "type": 302,
+            "effects": [
+                "1139_bre2_p4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1139_bre2_p4",
+            "desc_short_translated": "[Effective also in back-up state] In battle, increases CRIT Rate of allied characters by 3%.",
+            "max_desc_short": "tid#SkillDesc_1139_bre2_p4",
+            "max_desc_short_translated": "[Effective also in back-up state] In battle, increases CRIT Rate of allied characters by 3%.",
+            "icon": "1046_p3"
+        },
+        {
+            "__key": "1139_bre2_p5",
+            "id": "1139_bre2_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_28_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_28",
+            "desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_28",
+            "max_desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1139_bre3_p1",
+            "id": "1139_bre3_p1",
+            "type": 301,
+            "effects": [
+                "hero_break_40_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_40",
+            "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_40",
+            "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1139_bre3_p2",
+            "id": "1139_bre3_p2",
+            "type": 301,
+            "effects": [
+                "1139_bre3_p2_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_1139_bre3_p2",
+            "desc_short_translated": "Increases allied Characters' Block Chance by 5%.",
+            "max_desc_short": "tid#SkillDesc_1139_bre3_p2",
+            "max_desc_short_translated": "Increases allied Characters' Block Chance by 5%.",
+            "icon": "1056_p3"
+        },
+        {
+            "__key": "1139_bre3_p3",
+            "id": "1139_bre3_p3",
+            "type": 301,
+            "effects": [
+                "hero_break_173_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_173",
+            "desc_short_translated": "When the battle starts, grant yourself Disruption Immunity for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_hero_break_173",
+            "max_desc_short_translated": "When the battle starts, grant yourself Disruption Immunity for 1 turn.",
+            "icon": "1057_b2p3"
+        },
+        {
+            "__key": "1139_bre3_p4",
+            "id": "1139_bre3_p4",
+            "type": 301,
+            "effects": [
+                "hero_break_4_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_4",
+            "desc_short_translated": "When the battle starts, increase your Lifesteal Rate by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_4",
+            "max_desc_short_translated": "When the battle starts, increase your Lifesteal Rate by 5%.",
+            "icon": "1016_p1"
+        },
+        {
+            "__key": "1139_bre3_p5",
+            "id": "1139_bre3_p5",
+            "type": 301,
+            "effects": [
+                "hero_break_44_1"
+            ],
+            "name": "tid#SkillName_Talent_Common",
+            "name_translated": "Talent Effect",
+            "desc_short": "tid#SkillDesc_hero_break_44",
+            "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+            "max_desc_short": "tid#SkillDesc_hero_break_44",
+            "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+            "icon": "1045_p3"
+        },
+        {
+            "__key": "1139_v1s2",
+            "id": "1139_v1s2",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "free"
+            ],
+            "level": 2,
+            "next": "1139_v1s3",
+            "skill_action": "1139_v1s2",
+            "effects": [
+                "1139_v1s2_1",
+                "1139_v1s2_2",
+                "1139_v1s2_3",
+                "1139_v1s2_4"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T2",
+            "name": "tid#SkillName_ActiveSkill_lv2",
+            "name_translated": "Active Skill - Level 2",
+            "desc_short": "tid#SkillDesc_1139_v1s2",
+            "desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "max_desc_short": "tid#SkillDesc_1139_v1s2",
+            "max_desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "entry": [
+                "tid#Skill_EntryName_257"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_257"
+            ],
+            "entry_desc_translated": "*Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%.",
+            "factor_lv1": [
+                "240%"
+            ],
+            "factor_lv2": [
+                "248%",
+                "256%",
+                "264%",
+                "273%",
+                "290%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_257"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_257"
+            ],
+            "r_max_entry_desc_translated": "*Ultra Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%. For each Cursed Candy on all enemies, increases the CRIT Rate of this attack by 40%.",
+            "card_bg": "1139_skill_b",
+            "card_use_icon": "1139_skill_s"
+        },
+        {
+            "__key": "1139_v1s3",
+            "id": "1139_v1s3",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "skill_lv3",
+                "free"
+            ],
+            "level": 3,
+            "skill_action": "1139_v1s3",
+            "effects": [
+                "1139_v1s3_1",
+                "1139_v1s3_2",
+                "1139_v1s3_3",
+                "1139_v1s3_4"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T2",
+            "name": "tid#SkillName_ActiveSkill_lv3",
+            "name_translated": "Active Skill - Level 3",
+            "desc_short": "tid#SkillDesc_1139_v1s3",
+            "desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "max_desc_short": "tid#SkillDesc_1139_v1s3",
+            "max_desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "entry": [
+                "tid#Skill_EntryName_257"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_257"
+            ],
+            "entry_desc_translated": "*Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%.",
+            "factor_lv1": [
+                "420%"
+            ],
+            "factor_lv2": [
+                "435%",
+                "450%",
+                "465%",
+                "480%",
+                "520%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_257"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_257"
+            ],
+            "r_max_entry_desc_translated": "*Ultra Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%. For each Cursed Candy on all enemies, increases the CRIT Rate of this attack by 40%.",
+            "card_bg": "1139_skill_b",
+            "card_use_icon": "1139_skill_s"
+        },
+        {
+            "__key": "1139_v1s1",
+            "id": "1139_v1s1",
+            "type": 1,
+            "sub_type": 1,
+            "ai_type": [
+                "free"
+            ],
+            "level": 1,
+            "next": "1139_v1s2",
+            "skill_action": "1139_v1s1",
+            "effects": [
+                "1139_v1s1_1",
+                "1139_v1s1_2",
+                "1139_v1s1_3",
+                "1139_v1s1_4"
+            ],
+            "energy": 5,
+            "card_type": 1,
+            "type_icon": 52,
+            "rc_type": "T2",
+            "name": "tid#SkillName_ActiveSkill_lv1",
+            "name_translated": "Active Skill - Level 1",
+            "desc_short": "tid#SkillDesc_1139_v1s1",
+            "desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "max_desc_short": "tid#SkillDesc_1139_v1s1",
+            "max_desc_short_translated": "Deals #Entry_1# damage equal to #Factor_1# of ATK to the target.",
+            "entry": [
+                "tid#Skill_EntryName_257"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_257"
+            ],
+            "entry_desc_translated": "*Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%.",
+            "factor_lv1": [
+                "170%"
+            ],
+            "factor_lv2": [
+                "176%",
+                "182%",
+                "188%",
+                "194%",
+                "207%"
+            ],
+            "r_max_entry": [
+                "tid#Skill_SupEntryName_257"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_SupEntryDesc_257"
+            ],
+            "r_max_entry_desc_translated": "*Ultra Ghostly Shadow: Ignores the target’s active attack evasion. Increases damage dealt to enemies with lower ATK by 30% and CRIT DMG by 50%. For each Cursed Candy on all enemies, increases the CRIT Rate of this attack by 40%.",
+            "card_bg": "1139_skill_b",
+            "card_use_icon": "1139_skill_s"
+        },
+        {
+            "__key": "1139_p1",
+            "id": "1139_p1",
+            "type": 302,
+            "effects": [
+                "1139_p1_1",
+                "1139_p1_2"
+            ],
+            "name": "tid#SkillName_1139_p1",
+            "name_translated": "Cursed Candy",
+            "desc_short": "tid#SkillDesc_1139_p1",
+            "desc_short_translated": "[Effective also in back-up state] When enemy’s turn ends, inflicts #Entry_1# on all enemies. When the caster enters the field as a back-up, for each #Entry_1# stack on the enemy, increases ATK-related stats by 10%, up to 40% and deals #Entry_2# damage equal to 210% of ATK to all enemies.",
+            "max_desc_short": "tid#SkillDesc_1139_p1",
+            "max_desc_short_translated": "[Effective also in back-up state] When enemy’s turn ends, inflicts #Entry_1# on all enemies. When the caster enters the field as a back-up, for each #Entry_1# stack on the enemy, increases ATK-related stats by 10%, up to 40% and deals #Entry_2# damage equal to 210% of ATK to all enemies.",
+            "entry": [
+                "tid#Skill_EntryName_258",
+                "tid#Skill_EntryName_259"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_258",
+                "tid#Skill_EntryDesc_259"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_258",
+                "tid#Skill_EntryName_259"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_258",
+                "tid#Skill_EntryDesc_259"
+            ],
+            "icon": "1139_p1"
+        },
+        {
+            "__key": "1139_p2",
+            "id": "1139_p2",
+            "type": 302,
+            "effects": [
+                "1139_p2_1",
+                "1139_p2_2",
+                "1139_p2_3",
+                "1139_p2_4",
+                "1139_p2_5",
+                "1139_p2_6",
+                "1139_p2_7"
+            ],
+            "name": "tid#SkillName_1139_p2",
+            "name_translated": "Delicious Candy",
+            "desc_short": "tid#SkillDesc_1139_p2",
+            "desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff.",
+            "max_desc_short": "tid#SkillDesc_1139_p2",
+            "max_desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff.",
+            "entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "icon": "1139_p2"
+        },
+        {
+            "__key": "1139_p3",
+            "id": "1139_p3",
+            "type": 302,
+            "effects": [
+                "1139_p3_1",
+                "1139_p3_2",
+                "1139_p3_3",
+                "1139_p3_4",
+                "1139_p3_5",
+                "1139_p3_6",
+                "1139_p3_7",
+                "1139_p3_8",
+                "1139_p3_9",
+                "1139_p3_10",
+                "1139_p3_11",
+                "1139_p3_12"
+            ],
+            "name": "tid#SkillName_1139_p3",
+            "name_translated": "All Char Stats Boost",
+            "desc_short": "tid#SkillDesc_1139_p3",
+            "desc_short_translated": "[Effective also in back-up state] When increases all allies’ basic stats by 12% and additionally increases ally CCG characters’ stats by 4%. For each ally with HP above 75%, reduces all enemies’ CRIT DEF-related stats by 5%. For each ally with HP below 75%, reduces all enemies’ ATK-related stats by 3%.",
+            "max_desc_short": "tid#SkillDesc_1139_p3",
+            "max_desc_short_translated": "[Effective also in back-up state] When increases all allies’ basic stats by 12% and additionally increases ally CCG characters’ stats by 4%. For each ally with HP above 75%, reduces all enemies’ CRIT DEF-related stats by 5%. For each ally with HP below 75%, reduces all enemies’ ATK-related stats by 3%.",
+            "icon": "1139_p3"
+        },
+        {
+            "__key": "1139_p4",
+            "id": "1139_p4",
+            "type": 301,
+            "effects": [
+                "1139_p4_1"
+            ],
+            "name": "tid#SkillName_burst_1",
+            "name_translated": "Power Burst Boost",
+            "desc_short": "tid#SkillDesc_burst_57",
+            "desc_short_translated": "Gaining Power Burst increases all allied characters' basic stats by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_burst_57",
+            "max_desc_short_translated": "Gaining Power Burst increases all allied characters' basic stats by 5% for 1 turn.",
+            "icon": "ComPSkill_1"
+        },
+        {
+            "__key": "1139_p5",
+            "id": "1139_p5",
+            "type": 301,
+            "effects": [
+                "1139_p5_1"
+            ],
+            "name": "tid#SkillName_weak_1",
+            "name_translated": "Weak",
+            "desc_short": "tid#SkillDesc_weak_74",
+            "desc_short_translated": "Applying Weak reduces the target's Basic Stats by 5% for 1 turn.",
+            "max_desc_short": "tid#SkillDesc_weak_74",
+            "max_desc_short_translated": "Applying Weak reduces the target's Basic Stats by 5% for 1 turn.",
+            "icon": "ComPSkill_2"
+        },
+        {
+            "__key": "1139_rp2",
+            "id": "1139_rp2",
+            "type": 302,
+            "effects": [
+                "1139_rp2_1",
+                "1139_rp2_2",
+                "1139_rp2_3",
+                "1139_rp2_4",
+                "1139_rp2_5",
+                "1139_rp2_6",
+                "1139_rp2_7"
+            ],
+            "name": "tid#SkillName_1139_p2",
+            "name_translated": "Delicious Candy",
+            "desc_short": "tid#SkillDesc_1139_rp2",
+            "desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff and heals self for 5% of the ally’s missing HP.",
+            "max_desc_short": "tid#SkillDesc_1139_rp2",
+            "max_desc_short_translated": "[Effective also in back-up state] When battle and your turn start, grants 2 stacks of #Entry_1# to all allies, up to 3 stacks. Before an ally uses a skill, clears 1 stack of #Entry_1# and grants 1 #Entry_2#. When an ally is inflicted with a debuff, if they have #Entry_1#, clears 1 stack of #Entry_1# to resist the debuff and heals self for 5% of the ally’s missing HP.",
+            "entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "r_max_entry": [
+                "tid#Skill_EntryName_260",
+                "tid#Skill_EntryName_261"
+            ],
+            "r_max_entry_desc": [
+                "tid#Skill_EntryDesc_260",
+                "tid#Skill_EntryDesc_261"
+            ],
+            "icon": "1139_p2"
+        }
+    ],
+    "effects": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "name": "tid#AttrName_Atk",
+            "name_translated": "ATK",
+            "attr_effect": "1001_R1_1"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "name": "tid#AttrName_Def",
+            "name_translated": "DEF",
+            "attr_effect": "1001_R2_1"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "name": "tid#AttrName_Hp",
+            "name_translated": "HP",
+            "attr_effect": "1001_R3_1"
+        }
+    ],
+    "attrEffects": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Atk"
+            ],
+            "grow_type": "FIXED",
+            "value": "[50]"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Def"
+            ],
+            "grow_type": "FIXED",
+            "value": "[40]"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "attr_system": 1,
+            "effect_range": [
+                "ALL"
+            ],
+            "target": "SELF",
+            "attr_type": [
+                "Hp"
+            ],
+            "grow_type": "FIXED",
+            "value": "[1350]"
+        }
+    ],
+    "relations": [
+        {
+            "__key": "1001_R1_1",
+            "id": "1001_R1_1",
+            "next": "1001_R1_2",
+            "hero_soul_id": [
+                "1001",
+                "1049"
+            ],
+            "hero_head_icon": "1049_head",
+            "item": [
+                "20097"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R1_1"
+        },
+        {
+            "__key": "1001_R2_1",
+            "id": "1001_R2_1",
+            "next": "1001_R2_2",
+            "hero_soul_id": [
+                "1001",
+                "1018"
+            ],
+            "hero_head_icon": "1018_head",
+            "item": [
+                "20095"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R2_1"
+        },
+        {
+            "__key": "1001_R3_1",
+            "id": "1001_R3_1",
+            "next": "1001_R3_2",
+            "hero_soul_id": [
+                "1001",
+                "1019"
+            ],
+            "hero_head_icon": "1019_head",
+            "item": [
+                "20096"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R3_1"
+        },
+        {
+            "__key": "1139_R1_1",
+            "id": "1139_R1_1",
+            "next": "1139_R1_2",
+            "hero_soul_id": [
+                "1139",
+                "1035"
+            ],
+            "hero_head_icon": "1035_head",
+            "item": [
+                "20097"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R1_1"
+        },
+        {
+            "__key": "1139_R2_1",
+            "id": "1139_R2_1",
+            "next": "1139_R2_2",
+            "hero_soul_id": [
+                "1139",
+                "1041"
+            ],
+            "hero_head_icon": "1041_head",
+            "item": [
+                "20095"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R2_1"
+        },
+        {
+            "__key": "1139_R3_1",
+            "id": "1139_R3_1",
+            "next": "1139_R3_2",
+            "hero_soul_id": [
+                "1139",
+                "1033"
+            ],
+            "hero_head_icon": "1033_head",
+            "item": [
+                "20096"
+            ],
+            "item_amount": [
+                10
+            ],
+            "gold": 30000,
+            "effect": "1001_R3_1"
+        }
+    ],
+    "properEquip": [],
+    "properEquipAdvance": []
+}
