@@ -2,6 +2,7 @@ const EXPORT_ROOT = "./btc-character-export/";
 const state = {
   units: [],
   combatPower: {},
+  skillEntries: {},
   language: localStorage.getItem("xiii-language") === "zh" ? "zh" : "en",
   rarity: "all",
   faction: "all",
@@ -90,11 +91,13 @@ function releaseTimestamp(hero = {}) {
 
 async function loadCatalog() {
   try {
-    const [index, combatPowerData] = await Promise.all([
+    const [index, combatPowerData, skillEntryData] = await Promise.all([
       fetch(`${EXPORT_ROOT}index.json`).then(checkResponse).then(r => r.json()),
-      fetch("./btc-combat-power-s00.json").then(checkResponse).then(r => r.json()).catch(() => ({ units: {} }))
+      fetch("./btc-combat-power-s00.json").then(checkResponse).then(r => r.json()).catch(() => ({ units: {} })),
+      fetch(`${EXPORT_ROOT}skill-entry-translations.json`).then(checkResponse).then(r => r.json()).catch(() => ({}))
     ]);
     state.combatPower = combatPowerData.units || {};
+    state.skillEntries = skillEntryData;
     state.units = await Promise.all(index.map(async unit => {
       const details = await fetch(`${EXPORT_ROOT}${unit.folder}/details.json`).then(checkResponse).then(r => r.json());
       const model = details.roleModels?.[0] || {};
@@ -1151,17 +1154,33 @@ function replaceTokens(text, skill) {
   (skill.factor_lv1 || []).forEach((value, index) => {
     result = result.replaceAll(`#Factor_${index + 1}#`, value);
   });
-  const entryNames = Array.isArray(skill.entry) ? skill.entry.map(value => String(value).replace(/^tid#Skill_EntryName_/, "Effect ")) : [];
+  const translatedEntries = Array.isArray(skill.entry_translated) ? skill.entry_translated : [];
+  const entryNames = Array.isArray(skill.entry) ? skill.entry.map((value, index) => {
+    const translated = state.skillEntries[value] ?? translatedEntries[index];
+    if (translated != null) return translated;
+    if (/^tid#Skill_(?:Sup)?EntryName_0$/.test(value)) return "";
+    return String(value).replace(/^tid#Skill_(?:Sup)?EntryName_/, "Effect ");
+  }) : [];
   entryNames.forEach((value, index) => {
     result = result.replaceAll(`#Entry_${index + 1}#`, value);
   });
   return cleanText(result);
 }
 
+function translatedSkillEntries(skill, key) {
+  const tokens = Array.isArray(skill[key]) ? skill[key] : [];
+  if (tokens.length) {
+    const resolved = tokens.map(token => state.skillEntries[token]).filter(Boolean);
+    if (resolved.length === tokens.length) return resolved.join(" ");
+  }
+  const translated = skill[`${key}_translated`];
+  return Array.isArray(translated) ? translated.join(" ") : translated || "";
+}
+
 function skillCard(skill, label, className = "") {
   const base = replaceTokens(skill.desc_short_translated || skill.max_desc_short_translated, skill);
-  const entry = cleanText(skill.entry_desc_translated || "");
-  const rank = cleanText(skill.r_max_entry_desc_translated || "");
+  const entry = cleanText(translatedSkillEntries(skill, "entry_desc"));
+  const rank = cleanText(translatedSkillEntries(skill, "r_max_entry_desc"));
   return `
     <article class="skill ${className}">
       <div class="skill-heading">
