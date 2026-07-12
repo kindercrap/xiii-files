@@ -601,7 +601,10 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 .team-share-shell h2 { margin: 2px 0 0; font-size: 20px; }
 .team-share-shell > header .modal-close { position: static; flex: 0 0 auto; float: none; margin: 0; }
 .team-share-preview { overflow: hidden; border: 1px solid #34383e; background: #08090b; }
-.team-share-preview canvas { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.team-share-preview canvas[hidden] { display: none; }
+.team-share-preview img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; -webkit-touch-callout: default; user-select: auto; }
+.team-share-preview img[hidden] { display: none; }
+.team-share-preview img.long-press-ready { outline: 2px solid var(--accent); outline-offset: -2px; animation: imageSaveHint .8s ease-out; }
 .team-share-actions { display: flex; align-items: center; justify-content: space-between; gap: 15px; min-height: 48px; padding-top: 10px; }
 .team-share-actions p { margin: 0; color: #8d969f; font-size: 10px; line-height: 1.45; }
 #team-share-copy { flex: 0 0 auto; min-width: 120px; height: 36px; color: #06110d; border: 1px solid var(--accent); border-radius: 2px; background: var(--accent); font-size: 10px; font-weight: 900; cursor: pointer; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
@@ -787,6 +790,7 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 @keyframes carnivalReveal { from { opacity: 0; transform: translateY(18px) scale(.82); } 70% { opacity: 1; transform: translateY(-3px) scale(1.02); } to { opacity: 1; transform: none; } }
 @keyframes carnivalGlow { to { transform: rotate(360deg); } }
 @keyframes carnivalParticle { 0% { opacity: 0; transform: translate(0, 0) rotate(0); } 18% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(420deg); } }
+@keyframes imageSaveHint { 0%, 100% { filter: brightness(1); } 45% { filter: brightness(1.22); } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

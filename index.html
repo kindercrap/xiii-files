@@ -248,7 +248,10 @@
         <div><p class="eyebrow">Ready to share</p><h2 id="team-share-title">Team</h2></div>
         <button id="team-share-close" class="modal-close" type="button" aria-label="Close team share preview">&times;</button>
       </header>
-      <div class="team-share-preview"><canvas id="team-share-canvas" width="1200" height="675" aria-label="Generated team share image"></canvas></div>
+      <div class="team-share-preview">
+        <canvas id="team-share-canvas" width="1200" height="675" aria-hidden="true" hidden></canvas>
+        <img id="team-share-image" alt="Generated team share image. Press and hold to save or send." hidden>
+      </div>
       <div class="team-share-actions">
         <p id="team-share-status" role="status" aria-live="polite">Creating your share image...</p>
         <button id="team-share-copy" type="button" disabled>Copy Image</button>

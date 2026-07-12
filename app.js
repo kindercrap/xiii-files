@@ -58,6 +58,7 @@ const battlePickerModal = document.querySelector("#battle-picker-modal");
 const battlePickerResults = document.querySelector("#battle-picker-results");
 const teamShareModal = document.querySelector("#team-share-modal");
 const teamShareCanvas = document.querySelector("#team-share-canvas");
+const teamShareImage = document.querySelector("#team-share-image");
 let activeBattlePicker = null;
 let builderDrag = null;
 let activeTeamShareStage = 0;
@@ -472,8 +473,15 @@ async function generateTeamShare(stageIndex) {
   context.fillStyle = "#31d6a4";
   context.fillText("Presented by ICX (5081)", 1146, 634);
   context.textAlign = "left";
+  teamShareImage.src = teamShareCanvas.toDataURL("image/png");
+  teamShareImage.hidden = false;
+  teamShareImage.classList.remove("long-press-ready");
   document.querySelector("#team-share-title").textContent = team.name.trim() || `Team ${stageIndex + 1}`;
-  status.textContent = "Image ready. Copy it, then paste it into Discord, Messenger, or any image editor.";
+  const weChat = /MicroMessenger/i.test(navigator.userAgent);
+  copyButton.textContent = weChat ? "Press & Hold Image" : "Copy Image";
+  status.textContent = weChat
+    ? "WeChat blocks direct image copying. Press and hold the image, then choose Save Image or Send to Chat."
+    : "Image ready. Copy it, then paste it into Discord, Messenger, or any image editor.";
   copyButton.disabled = false;
 }
 
@@ -483,11 +491,22 @@ async function openTeamShare(stageIndex) {
   await generateTeamShare(stageIndex);
 }
 
+function showTeamShareImageFallback() {
+  const button = document.querySelector("#team-share-copy");
+  const status = document.querySelector("#team-share-status");
+  teamShareImage.classList.remove("long-press-ready");
+  void teamShareImage.offsetWidth;
+  teamShareImage.classList.add("long-press-ready");
+  button.textContent = "Press & Hold Image";
+  button.disabled = false;
+  status.textContent = "Press and hold the image above, then choose Save Image or Send to Chat. WeChat does not allow websites to copy PNG files directly.";
+}
+
 function copyTeamShareImage() {
   const button = document.querySelector("#team-share-copy");
   const status = document.querySelector("#team-share-status");
-  if (!navigator.clipboard?.write || typeof ClipboardItem === "undefined") {
-    status.textContent = "Image copying is not supported in this browser. Try the latest Chrome or Edge.";
+  if (/MicroMessenger/i.test(navigator.userAgent) || !navigator.clipboard?.write || typeof ClipboardItem === "undefined") {
+    showTeamShareImageFallback();
     return;
   }
   button.disabled = true;
@@ -503,8 +522,7 @@ function copyTeamShareImage() {
         button.disabled = false;
       }, 1600);
     } catch (error) {
-      status.textContent = "The browser blocked clipboard access. Keep this modal open and try Copy Image again.";
-      button.disabled = false;
+      showTeamShareImageFallback();
     }
   }, "image/png");
 }
