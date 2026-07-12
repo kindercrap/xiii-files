@@ -1,668 +1,686 @@
 [
-    {
-        "id": "1001",
-        "name": "Rize Kamishiro",
-        "folder": "characters/1001_Rize_Kamishiro",
-        "imageCount": 1
-    },
-    {
-        "id": "1002",
-        "name": "Kisho Arima",
-        "folder": "characters/1002_Kisho_Arima",
-        "imageCount": 1
-    },
-    {
-        "id": "1003",
-        "name": "Juzo Suzuya",
-        "folder": "characters/1003_Juzo_Suzuya",
-        "imageCount": 1
-    },
-    {
-        "id": "1004",
-        "name": "Shu Tsukiyama",
-        "folder": "characters/1004_Shu_Tsukiyama",
-        "imageCount": 1
-    },
-    {
-        "id": "1005",
-        "name": "Toka Kirishima",
-        "folder": "characters/1005_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1006",
-        "name": "Ayato Kirishima",
-        "folder": "characters/1006_Ayato_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1007",
-        "name": "Ken Kaneki",
-        "folder": "characters/1007_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1010",
-        "name": "Kureo Mado",
-        "folder": "characters/1010_Kureo_Mado",
-        "imageCount": 1
-    },
-    {
-        "id": "1011",
-        "name": "Hinami Fueguchi",
-        "folder": "characters/1011_Hinami_Fueguchi",
-        "imageCount": 1
-    },
-    {
-        "id": "1012",
-        "name": "Yakumo Omori",
-        "folder": "characters/1012_Yakumo_Omori",
-        "imageCount": 1
-    },
-    {
-        "id": "1013",
-        "name": "Akira Mado",
-        "folder": "characters/1013_Akira_Mado",
-        "imageCount": 1
-    },
-    {
-        "id": "1014",
-        "name": "Renji Yomo",
-        "folder": "characters/1014_Renji_Yomo",
-        "imageCount": 1
-    },
-    {
-        "id": "1015",
-        "name": "Yukinori Shinohara",
-        "folder": "characters/1015_Yukinori_Shinohara",
-        "imageCount": 1
-    },
-    {
-        "id": "1016",
-        "name": "Yoshimura",
-        "folder": "characters/1016_Yoshimura",
-        "imageCount": 1
-    },
-    {
-        "id": "1017",
-        "name": "Eto",
-        "folder": "characters/1017_Eto",
-        "imageCount": 1
-    },
-    {
-        "id": "1018",
-        "name": "Kurona Yasuhisa",
-        "folder": "characters/1018_Kurona_Yasuhisa",
-        "imageCount": 1
-    },
-    {
-        "id": "1019",
-        "name": "Nashiro Yasuhisa",
-        "folder": "characters/1019_Nashiro_Yasuhisa",
-        "imageCount": 1
-    },
-    {
-        "id": "1020",
-        "name": "Tatara",
-        "folder": "characters/1020_Tatara",
-        "imageCount": 1
-    },
-    {
-        "id": "1021",
-        "name": "Matasaka Kamishiro",
-        "folder": "characters/1021_Matasaka_Kamishiro",
-        "imageCount": 1
-    },
-    {
-        "id": "1023",
-        "name": "Kosuke Hoji",
-        "folder": "characters/1023_Kosuke_Hoji",
-        "imageCount": 1
-    },
-    {
-        "id": "1025",
-        "name": "Uta",
-        "folder": "characters/1025_Uta",
-        "imageCount": 1
-    },
-    {
-        "id": "1026",
-        "name": "Enji Koma",
-        "folder": "characters/1026_Enji_Koma",
-        "imageCount": 1
-    },
-    {
-        "id": "1027",
-        "name": "Kaya Irimi",
-        "folder": "characters/1027_Kaya_Irimi",
-        "imageCount": 1
-    },
-    {
-        "id": "1030",
-        "name": "Noro",
-        "folder": "characters/1030_Noro",
-        "imageCount": 1
-    },
-    {
-        "id": "1031",
-        "name": "Itori",
-        "folder": "characters/1031_Itori",
-        "imageCount": 1
-    },
-    {
-        "id": "1032",
-        "name": "Iwao Kuroiwa",
-        "folder": "characters/1032_Iwao_Kuroiwa",
-        "imageCount": 1
-    },
-    {
-        "id": "1033",
-        "name": "Take Hirako",
-        "folder": "characters/1033_Take_Hirako",
-        "imageCount": 1
-    },
-    {
-        "id": "1035",
-        "name": "Kori Ui",
-        "folder": "characters/1035_Kori_Ui",
-        "imageCount": 1
-    },
-    {
-        "id": "1036",
-        "name": "Naki",
-        "folder": "characters/1036_Naki",
-        "imageCount": 1
-    },
-    {
-        "id": "1037",
-        "name": "Nico",
-        "folder": "characters/1037_Nico",
-        "imageCount": 1
-    },
-    {
-        "id": "1038",
-        "name": "Elder Bin",
-        "folder": "characters/1038_Elder_Bin",
-        "imageCount": 1
-    },
-    {
-        "id": "1039",
-        "name": "Younger Bin",
-        "folder": "characters/1039_Younger_Bin",
-        "imageCount": 1
-    },
-    {
-        "id": "1040",
-        "name": "Ryoko Fueguchi",
-        "folder": "characters/1040_Ryoko_Fueguchi",
-        "imageCount": 1
-    },
-    {
-        "id": "1041",
-        "name": "Mogan Tanakamaru",
-        "folder": "characters/1041_Mogan_Tanakamaru",
-        "imageCount": 1
-    },
-    {
-        "id": "1042",
-        "name": "Ayumu Hogi",
-        "folder": "characters/1042_Ayumu_Hogi",
-        "imageCount": 1
-    },
-    {
-        "id": "1043",
-        "name": "Chu Hachikawa",
-        "folder": "characters/1043_Chu_Hachikawa",
-        "imageCount": 1
-    },
-    {
-        "id": "1046",
-        "name": "Kyoji Misaka",
-        "folder": "characters/1046_Kyoji_Misaka",
-        "imageCount": 1
-    },
-    {
-        "id": "1050",
-        "name": "Kisho Arima",
-        "folder": "characters/1050_Kisho_Arima",
-        "imageCount": 1
-    },
-    {
-        "id": "1052",
-        "name": "Toka Kirishima",
-        "folder": "characters/1052_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1055",
-        "name": "Hinami Fueguchi",
-        "folder": "characters/1055_Hinami_Fueguchi",
-        "imageCount": 1
-    },
-    {
-        "id": "1056",
-        "name": "Shu Tsukiyama",
-        "folder": "characters/1056_Shu_Tsukiyama",
-        "imageCount": 1
-    },
-    {
-        "id": "1058",
-        "name": "Ayato Kirishima",
-        "folder": "characters/1058_Ayato_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1060",
-        "name": "Kohtaro Amon",
-        "folder": "characters/1060_Kohtaro_Amon",
-        "imageCount": 1
-    },
-    {
-        "id": "1065",
-        "name": "Ken Kaneki",
-        "folder": "characters/1065_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1071",
-        "name": "Yakumo Omori",
-        "folder": "characters/1071_Yakumo_Omori",
-        "imageCount": 1
-    },
-    {
-        "id": "1072",
-        "name": "Kohtaro Amon",
-        "folder": "characters/1072_Kohtaro_Amon",
-        "imageCount": 1
-    },
-    {
-        "id": "1073",
-        "name": "Kureo Mado",
-        "folder": "characters/1073_Kureo_Mado",
-        "imageCount": 1
-    },
-    {
-        "id": "1074",
-        "name": "Yukinori Shinohara",
-        "folder": "characters/1074_Yukinori_Shinohara",
-        "imageCount": 1
-    },
-    {
-        "id": "1075",
-        "name": "Iwao Kuroiwa",
-        "folder": "characters/1075_Iwao_Kuroiwa",
-        "imageCount": 1
-    },
-    {
-        "id": "1076",
-        "name": "Toka Kirishima",
-        "folder": "characters/1076_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1077",
-        "name": "Shu Tsukiyama",
-        "folder": "characters/1077_Shu_Tsukiyama",
-        "imageCount": 1
-    },
-    {
-        "id": "1078",
-        "name": "Toka Kirishima",
-        "folder": "characters/1078_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1079",
-        "name": "Ken Kaneki",
-        "folder": "characters/1079_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1080",
-        "name": "Ken Kaneki",
-        "folder": "characters/1080_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1081",
-        "name": "Renji Yomo",
-        "folder": "characters/1081_Renji_Yomo",
-        "imageCount": 1
-    },
-    {
-        "id": "1083",
-        "name": "Juzo Suzuya",
-        "folder": "characters/1083_Juzo_Suzuya",
-        "imageCount": 1
-    },
-    {
-        "id": "1084",
-        "name": "Sen Takatsuki",
-        "folder": "characters/1084_Sen_Takatsuki",
-        "imageCount": 1
-    },
-    {
-        "id": "1087",
-        "name": "Ken Kaneki",
-        "folder": "characters/1087_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1088",
-        "name": "Hinami Fueguchi",
-        "folder": "characters/1088_Hinami_Fueguchi",
-        "imageCount": 1
-    },
-    {
-        "id": "1089",
-        "name": "Toka Kirishima",
-        "folder": "characters/1089_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1090",
-        "name": "Uta",
-        "folder": "characters/1090_Uta",
-        "imageCount": 1
-    },
-    {
-        "id": "1091",
-        "name": "Yoshitoki Washu",
-        "folder": "characters/1091_Yoshitoki_Washu",
-        "imageCount": 1
-    },
-    {
-        "id": "1092",
-        "name": "Tatara",
-        "folder": "characters/1092_Tatara",
-        "imageCount": 1
-    },
-    {
-        "id": "1098",
-        "name": "Ayato Kirishima",
-        "folder": "characters/1098_Ayato_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1099",
-        "name": "Hinami Fueguchi",
-        "folder": "characters/1099_Hinami_Fueguchi",
-        "imageCount": 1
-    },
-    {
-        "id": "1104",
-        "name": "Ayato Kirishima",
-        "folder": "characters/1104_Ayato_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1105",
-        "name": "Toka Kirishima",
-        "folder": "characters/1105_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1100",
-        "name": "Kohtaro Amon ",
-        "folder": "characters/1100_Kohtaro_Amon",
-        "imageCount": 1
-    },
-    {
-        "id": "1101",
-        "name": "Kisho Arima",
-        "folder": "characters/1101_Kisho_Arima",
-        "imageCount": 1
-    },
-    {
-        "id": "1120",
-        "name": "Yoshimura",
-        "folder": "characters/1120_Yoshimura",
-        "imageCount": 1
-    },
-    {
-        "id": "1122",
-        "name": "Yakumo Omori",
-        "folder": "characters/1122_Yakumo_Omori",
-        "imageCount": 1
-    },
-    {
-        "id": "1123",
-        "name": "Juzo Suzuya",
-        "folder": "characters/1123_Juzo_Suzuya",
-        "imageCount": 1
-    },
-    {
-        "id": "1125",
-        "name": "Kisho Arima",
-        "folder": "characters/1125_Kisho_Arima",
-        "imageCount": 1
-    },
-    {
-        "id": "1134",
-        "name": "Uta",
-        "folder": "characters/1134_Uta",
-        "imageCount": 1
-    },
-    {
-        "id": "1132",
-        "name": "Toka Kirishima",
-        "folder": "characters/1132_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1133",
-        "name": "Nishiki Nishio",
-        "folder": "characters/1133_Nishiki_Nishio",
-        "imageCount": 1
-    },
-    {
-        "id": "1135",
-        "name": "Noro",
-        "folder": "characters/1135_Noro",
-        "imageCount": 1
-    },
-    {
-        "id": "1136",
-        "name": "Kiyoko Aura",
-        "folder": "characters/1136_Kiyoko_Aura",
-        "imageCount": 1
-    },
-    {
-        "id": "1137",
-        "name": "Naki",
-        "folder": "characters/1137_Naki",
-        "imageCount": 1
-    },
-    {
-        "id": "1138",
-        "name": "Juzo Suzuya",
-        "folder": "characters/1138_Juzo_Suzuya",
-        "imageCount": 1
-    },
-    {
-        "id": "1139",
-        "name": "Kisho Arima",
-        "folder": "characters/1139_Kisho_Arima",
-        "imageCount": 1
-    },
-    {
-        "id": "1124",
-        "name": "Yoshimura",
-        "folder": "characters/1124_Yoshimura",
-        "imageCount": 1
-    },
-    {
-        "id": "1128",
-        "name": "Toka Kirishima",
-        "folder": "characters/1128_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1129",
-        "name": "Ken Kaneki",
-        "folder": "characters/1129_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1127",
-        "name": "Hideyoshi Nagachika",
-        "folder": "characters/1127_Hideyoshi_Nagachika",
-        "imageCount": 1
-    },
-    {
-        "id": "1121",
-        "name": "Kosuke Hoji",
-        "folder": "characters/1121_Kosuke_Hoji",
-        "imageCount": 1
-    },
-    {
-        "id": "1140",
-        "name": "Rize Kamishiro",
-        "folder": "characters/1140_Rize_Kamishiro",
-        "imageCount": 1
-    },
-    {
-        "id": "1141",
-        "name": "Toka Kirishima",
-        "folder": "characters/1141_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1146",
-        "name": "Kisho Arima",
-        "folder": "characters/1146_Kisho_Arima",
-        "imageCount": 1
-    },
-    {
-        "id": "1145",
-        "name": "Uta",
-        "folder": "characters/1145_Uta",
-        "imageCount": 1
-    },
-    {
-        "id": "1142",
-        "name": "Sen Takatsuki",
-        "folder": "characters/1142_Sen_Takatsuki",
-        "imageCount": 1
-    },
-    {
-        "id": "1143",
-        "name": "Roma Hoito",
-        "folder": "characters/1143_Roma_Hoito",
-        "imageCount": 1
-    },
-    {
-        "id": "1147",
-        "name": "Ayato Kirishima",
-        "folder": "characters/1147_Ayato_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1148",
-        "name": "Rize Kamishiro",
-        "folder": "characters/1148_Rize_Kamishiro",
-        "imageCount": 1
-    },
-    {
-        "id": "1164",
-        "name": "Eto",
-        "folder": "characters/1164_Eto",
-        "imageCount": 1
-    },
-    {
-        "id": "1144",
-        "name": "Hinami Fueguchi",
-        "folder": "characters/1144_Hinami_Fueguchi",
-        "imageCount": 1
-    },
-    {
-        "id": "1149",
-        "name": "Nishiki Nishio",
-        "folder": "characters/1149_Nishiki_Nishio",
-        "imageCount": 1
-    },
-    {
-        "id": "1160",
-        "name": "Toka Kirishima",
-        "folder": "characters/1160_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1167",
-        "name": "Kaya Irimi",
-        "folder": "characters/1167_Kaya_Irimi",
-        "imageCount": 1
-    },
-    {
-        "id": "1158",
-        "name": "Tatara",
-        "folder": "characters/1158_Tatara",
-        "imageCount": 1
-    },
-    {
-        "id": "1168",
-        "name": "Ken Kaneki",
-        "folder": "characters/1168_Ken_Kaneki",
-        "imageCount": 1
-    },
-    {
-        "id": "1165",
-        "name": "Naki",
-        "folder": "characters/1165_Naki",
-        "imageCount": 1
-    },
-    {
-        "id": "1161",
-        "name": "Ayato Kirishima",
-        "folder": "characters/1161_Ayato_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1102",
-        "name": "Haise Sasaki",
-        "folder": "characters/1102_Haise_Sasaki",
-        "imageCount": 1
-    },
-    {
-        "id": "1116",
-        "name": "Urie Kuki",
-        "folder": "characters/1116_Urie_Kuki",
-        "imageCount": 1
-    },
-    {
-        "id": "1114",
-        "name": "Nishiki Nishio",
-        "folder": "characters/1114_Nishiki_Nishio",
-        "imageCount": 1
-    },
-    {
-        "id": "1150",
-        "name": "Haise Sasaki",
-        "folder": "characters/1150_Haise_Sasaki",
-        "imageCount": 1
-    },
-    {
-        "id": "1170",
-        "name": "Mutsuki Tooru",
-        "folder": "characters/1170_Mutsuki_Tooru",
-        "imageCount": 1
-    },
-    {
-        "id": "1162",
-        "name": "Toka Kirishima",
-        "folder": "characters/1162_Toka_Kirishima",
-        "imageCount": 1
-    },
-    {
-        "id": "1166",
-        "name": "Akira Mado",
-        "folder": "characters/1166_Akira_Mado",
-        "imageCount": 1
-    },
-    {
-        "id": "1169",
-        "name": "Ginshi Shirazu",
-        "folder": "characters/1169_Ginshi_Shirazu",
-        "imageCount": 1
-    }
+  {
+    "id": "1001",
+    "name": "Rize Kamishiro",
+    "folder": "characters/1001_Rize_Kamishiro",
+    "imageCount": 1
+  },
+  {
+    "id": "1002",
+    "name": "Kisho Arima",
+    "folder": "characters/1002_Kisho_Arima",
+    "imageCount": 1
+  },
+  {
+    "id": "1003",
+    "name": "Juzo Suzuya",
+    "folder": "characters/1003_Juzo_Suzuya",
+    "imageCount": 1
+  },
+  {
+    "id": "1004",
+    "name": "Shu Tsukiyama",
+    "folder": "characters/1004_Shu_Tsukiyama",
+    "imageCount": 1
+  },
+  {
+    "id": "1005",
+    "name": "Toka Kirishima",
+    "folder": "characters/1005_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1006",
+    "name": "Ayato Kirishima",
+    "folder": "characters/1006_Ayato_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1007",
+    "name": "Ken Kaneki",
+    "folder": "characters/1007_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1010",
+    "name": "Kureo Mado",
+    "folder": "characters/1010_Kureo_Mado",
+    "imageCount": 1
+  },
+  {
+    "id": "1011",
+    "name": "Hinami Fueguchi",
+    "folder": "characters/1011_Hinami_Fueguchi",
+    "imageCount": 1
+  },
+  {
+    "id": "1012",
+    "name": "Yakumo Omori",
+    "folder": "characters/1012_Yakumo_Omori",
+    "imageCount": 1
+  },
+  {
+    "id": "1013",
+    "name": "Akira Mado",
+    "folder": "characters/1013_Akira_Mado",
+    "imageCount": 1
+  },
+  {
+    "id": "1014",
+    "name": "Renji Yomo",
+    "folder": "characters/1014_Renji_Yomo",
+    "imageCount": 1
+  },
+  {
+    "id": "1015",
+    "name": "Yukinori Shinohara",
+    "folder": "characters/1015_Yukinori_Shinohara",
+    "imageCount": 1
+  },
+  {
+    "id": "1016",
+    "name": "Yoshimura",
+    "folder": "characters/1016_Yoshimura",
+    "imageCount": 1
+  },
+  {
+    "id": "1017",
+    "name": "Eto",
+    "folder": "characters/1017_Eto",
+    "imageCount": 1
+  },
+  {
+    "id": "1018",
+    "name": "Kurona Yasuhisa",
+    "folder": "characters/1018_Kurona_Yasuhisa",
+    "imageCount": 1
+  },
+  {
+    "id": "1019",
+    "name": "Nashiro Yasuhisa",
+    "folder": "characters/1019_Nashiro_Yasuhisa",
+    "imageCount": 1
+  },
+  {
+    "id": "1020",
+    "name": "Tatara",
+    "folder": "characters/1020_Tatara",
+    "imageCount": 1
+  },
+  {
+    "id": "1021",
+    "name": "Matasaka Kamishiro",
+    "folder": "characters/1021_Matasaka_Kamishiro",
+    "imageCount": 1
+  },
+  {
+    "id": "1023",
+    "name": "Kosuke Hoji",
+    "folder": "characters/1023_Kosuke_Hoji",
+    "imageCount": 1
+  },
+  {
+    "id": "1025",
+    "name": "Uta",
+    "folder": "characters/1025_Uta",
+    "imageCount": 1
+  },
+  {
+    "id": "1026",
+    "name": "Enji Koma",
+    "folder": "characters/1026_Enji_Koma",
+    "imageCount": 1
+  },
+  {
+    "id": "1027",
+    "name": "Kaya Irimi",
+    "folder": "characters/1027_Kaya_Irimi",
+    "imageCount": 1
+  },
+  {
+    "id": "1030",
+    "name": "Noro",
+    "folder": "characters/1030_Noro",
+    "imageCount": 1
+  },
+  {
+    "id": "1031",
+    "name": "Itori",
+    "folder": "characters/1031_Itori",
+    "imageCount": 1
+  },
+  {
+    "id": "1032",
+    "name": "Iwao Kuroiwa",
+    "folder": "characters/1032_Iwao_Kuroiwa",
+    "imageCount": 1
+  },
+  {
+    "id": "1033",
+    "name": "Take Hirako",
+    "folder": "characters/1033_Take_Hirako",
+    "imageCount": 1
+  },
+  {
+    "id": "1035",
+    "name": "Kori Ui",
+    "folder": "characters/1035_Kori_Ui",
+    "imageCount": 1
+  },
+  {
+    "id": "1036",
+    "name": "Naki",
+    "folder": "characters/1036_Naki",
+    "imageCount": 1
+  },
+  {
+    "id": "1037",
+    "name": "Nico",
+    "folder": "characters/1037_Nico",
+    "imageCount": 1
+  },
+  {
+    "id": "1038",
+    "name": "Elder Bin",
+    "folder": "characters/1038_Elder_Bin",
+    "imageCount": 1
+  },
+  {
+    "id": "1039",
+    "name": "Younger Bin",
+    "folder": "characters/1039_Younger_Bin",
+    "imageCount": 1
+  },
+  {
+    "id": "1040",
+    "name": "Ryoko Fueguchi",
+    "folder": "characters/1040_Ryoko_Fueguchi",
+    "imageCount": 1
+  },
+  {
+    "id": "1041",
+    "name": "Mogan Tanakamaru",
+    "folder": "characters/1041_Mogan_Tanakamaru",
+    "imageCount": 1
+  },
+  {
+    "id": "1042",
+    "name": "Ayumu Hogi",
+    "folder": "characters/1042_Ayumu_Hogi",
+    "imageCount": 1
+  },
+  {
+    "id": "1043",
+    "name": "Chu Hachikawa",
+    "folder": "characters/1043_Chu_Hachikawa",
+    "imageCount": 1
+  },
+  {
+    "id": "1046",
+    "name": "Kyoji Misaka",
+    "folder": "characters/1046_Kyoji_Misaka",
+    "imageCount": 1
+  },
+  {
+    "id": "1050",
+    "name": "Kisho Arima",
+    "folder": "characters/1050_Kisho_Arima",
+    "imageCount": 1
+  },
+  {
+    "id": "1052",
+    "name": "Toka Kirishima",
+    "folder": "characters/1052_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1055",
+    "name": "Hinami Fueguchi",
+    "folder": "characters/1055_Hinami_Fueguchi",
+    "imageCount": 1
+  },
+  {
+    "id": "1056",
+    "name": "Shu Tsukiyama",
+    "folder": "characters/1056_Shu_Tsukiyama",
+    "imageCount": 1
+  },
+  {
+    "id": "1058",
+    "name": "Ayato Kirishima",
+    "folder": "characters/1058_Ayato_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1060",
+    "name": "Kohtaro Amon",
+    "folder": "characters/1060_Kohtaro_Amon",
+    "imageCount": 1
+  },
+  {
+    "id": "1065",
+    "name": "Ken Kaneki",
+    "folder": "characters/1065_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1071",
+    "name": "Yakumo Omori",
+    "folder": "characters/1071_Yakumo_Omori",
+    "imageCount": 1
+  },
+  {
+    "id": "1072",
+    "name": "Kohtaro Amon",
+    "folder": "characters/1072_Kohtaro_Amon",
+    "imageCount": 1
+  },
+  {
+    "id": "1073",
+    "name": "Kureo Mado",
+    "folder": "characters/1073_Kureo_Mado",
+    "imageCount": 1
+  },
+  {
+    "id": "1074",
+    "name": "Yukinori Shinohara",
+    "folder": "characters/1074_Yukinori_Shinohara",
+    "imageCount": 1
+  },
+  {
+    "id": "1075",
+    "name": "Iwao Kuroiwa",
+    "folder": "characters/1075_Iwao_Kuroiwa",
+    "imageCount": 1
+  },
+  {
+    "id": "1076",
+    "name": "Toka Kirishima",
+    "folder": "characters/1076_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1077",
+    "name": "Shu Tsukiyama",
+    "folder": "characters/1077_Shu_Tsukiyama",
+    "imageCount": 1
+  },
+  {
+    "id": "1078",
+    "name": "Toka Kirishima",
+    "folder": "characters/1078_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1079",
+    "name": "Ken Kaneki",
+    "folder": "characters/1079_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1080",
+    "name": "Ken Kaneki",
+    "folder": "characters/1080_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1081",
+    "name": "Renji Yomo",
+    "folder": "characters/1081_Renji_Yomo",
+    "imageCount": 1
+  },
+  {
+    "id": "1083",
+    "name": "Juzo Suzuya",
+    "folder": "characters/1083_Juzo_Suzuya",
+    "imageCount": 1
+  },
+  {
+    "id": "1084",
+    "name": "Sen Takatsuki",
+    "folder": "characters/1084_Sen_Takatsuki",
+    "imageCount": 1
+  },
+  {
+    "id": "1087",
+    "name": "Ken Kaneki",
+    "folder": "characters/1087_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1088",
+    "name": "Hinami Fueguchi",
+    "folder": "characters/1088_Hinami_Fueguchi",
+    "imageCount": 1
+  },
+  {
+    "id": "1089",
+    "name": "Toka Kirishima",
+    "folder": "characters/1089_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1090",
+    "name": "Uta",
+    "folder": "characters/1090_Uta",
+    "imageCount": 1
+  },
+  {
+    "id": "1091",
+    "name": "Yoshitoki Washu",
+    "folder": "characters/1091_Yoshitoki_Washu",
+    "imageCount": 1
+  },
+  {
+    "id": "1092",
+    "name": "Tatara",
+    "folder": "characters/1092_Tatara",
+    "imageCount": 1
+  },
+  {
+    "id": "1098",
+    "name": "Ayato Kirishima",
+    "folder": "characters/1098_Ayato_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1099",
+    "name": "Hinami Fueguchi",
+    "folder": "characters/1099_Hinami_Fueguchi",
+    "imageCount": 1
+  },
+  {
+    "id": "1100",
+    "name": "Kohtaro Amon ",
+    "folder": "characters/1100_Kohtaro_Amon",
+    "imageCount": 1
+  },
+  {
+    "id": "1101",
+    "name": "Kisho Arima",
+    "folder": "characters/1101_Kisho_Arima",
+    "imageCount": 1
+  },
+  {
+    "id": "1102",
+    "name": "Haise Sasaki",
+    "folder": "characters/1102_Haise_Sasaki",
+    "imageCount": 1
+  },
+  {
+    "id": "1104",
+    "name": "Ayato Kirishima",
+    "folder": "characters/1104_Ayato_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1105",
+    "name": "Toka Kirishima",
+    "folder": "characters/1105_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1114",
+    "name": "Nishiki Nishio",
+    "folder": "characters/1114_Nishiki_Nishio",
+    "imageCount": 1
+  },
+  {
+    "id": "1116",
+    "name": "Urie Kuki",
+    "folder": "characters/1116_Urie_Kuki",
+    "imageCount": 1
+  },
+  {
+    "id": "1120",
+    "name": "Yoshimura",
+    "folder": "characters/1120_Yoshimura",
+    "imageCount": 1
+  },
+  {
+    "id": "1121",
+    "name": "Kosuke Hoji",
+    "folder": "characters/1121_Kosuke_Hoji",
+    "imageCount": 1
+  },
+  {
+    "id": "1122",
+    "name": "Yakumo Omori",
+    "folder": "characters/1122_Yakumo_Omori",
+    "imageCount": 1
+  },
+  {
+    "id": "1123",
+    "name": "Juzo Suzuya",
+    "folder": "characters/1123_Juzo_Suzuya",
+    "imageCount": 1
+  },
+  {
+    "id": "1124",
+    "name": "Yoshimura",
+    "folder": "characters/1124_Yoshimura",
+    "imageCount": 1
+  },
+  {
+    "id": "1125",
+    "name": "Kisho Arima",
+    "folder": "characters/1125_Kisho_Arima",
+    "imageCount": 1
+  },
+  {
+    "id": "1127",
+    "name": "Hideyoshi Nagachika",
+    "folder": "characters/1127_Hideyoshi_Nagachika",
+    "imageCount": 1
+  },
+  {
+    "id": "1128",
+    "name": "Toka Kirishima",
+    "folder": "characters/1128_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1129",
+    "name": "Ken Kaneki",
+    "folder": "characters/1129_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1132",
+    "name": "Toka Kirishima",
+    "folder": "characters/1132_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1133",
+    "name": "Nishiki Nishio",
+    "folder": "characters/1133_Nishiki_Nishio",
+    "imageCount": 1
+  },
+  {
+    "id": "1134",
+    "name": "Uta",
+    "folder": "characters/1134_Uta",
+    "imageCount": 1
+  },
+  {
+    "id": "1135",
+    "name": "Noro",
+    "folder": "characters/1135_Noro",
+    "imageCount": 1
+  },
+  {
+    "id": "1136",
+    "name": "Kiyoko Aura",
+    "folder": "characters/1136_Kiyoko_Aura",
+    "imageCount": 1
+  },
+  {
+    "id": "1137",
+    "name": "Naki",
+    "folder": "characters/1137_Naki",
+    "imageCount": 1
+  },
+  {
+    "id": "1138",
+    "name": "Juzo Suzuya",
+    "folder": "characters/1138_Juzo_Suzuya",
+    "imageCount": 1
+  },
+  {
+    "id": "1139",
+    "name": "Kisho Arima",
+    "folder": "characters/1139_Kisho_Arima",
+    "imageCount": 1
+  },
+  {
+    "id": "1140",
+    "name": "Rize Kamishiro",
+    "folder": "characters/1140_Rize_Kamishiro",
+    "imageCount": 1
+  },
+  {
+    "id": "1141",
+    "name": "Toka Kirishima",
+    "folder": "characters/1141_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1142",
+    "name": "Sen Takatsuki",
+    "folder": "characters/1142_Sen_Takatsuki",
+    "imageCount": 1
+  },
+  {
+    "id": "1143",
+    "name": "Roma Hoito",
+    "folder": "characters/1143_Roma_Hoito",
+    "imageCount": 1
+  },
+  {
+    "id": "1144",
+    "name": "Hinami Fueguchi",
+    "folder": "characters/1144_Hinami_Fueguchi",
+    "imageCount": 1
+  },
+  {
+    "id": "1145",
+    "name": "Uta",
+    "folder": "characters/1145_Uta",
+    "imageCount": 1
+  },
+  {
+    "id": "1146",
+    "name": "Kisho Arima",
+    "folder": "characters/1146_Kisho_Arima",
+    "imageCount": 1
+  },
+  {
+    "id": "1147",
+    "name": "Ayato Kirishima",
+    "folder": "characters/1147_Ayato_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1148",
+    "name": "Rize Kamishiro",
+    "folder": "characters/1148_Rize_Kamishiro",
+    "imageCount": 1
+  },
+  {
+    "id": "1149",
+    "name": "Nishiki Nishio",
+    "folder": "characters/1149_Nishiki_Nishio",
+    "imageCount": 1
+  },
+  {
+    "id": "1150",
+    "name": "Haise Sasaki",
+    "folder": "characters/1150_Haise_Sasaki",
+    "imageCount": 1
+  },
+  {
+    "id": "1158",
+    "name": "Tatara",
+    "folder": "characters/1158_Tatara",
+    "imageCount": 1
+  },
+  {
+    "id": "1160",
+    "name": "Toka Kirishima",
+    "folder": "characters/1160_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1161",
+    "name": "Ayato Kirishima",
+    "folder": "characters/1161_Ayato_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1162",
+    "name": "Toka Kirishima",
+    "folder": "characters/1162_Toka_Kirishima",
+    "imageCount": 1
+  },
+  {
+    "id": "1164",
+    "name": "Eto",
+    "folder": "characters/1164_Eto",
+    "imageCount": 1
+  },
+  {
+    "id": "1165",
+    "name": "Naki",
+    "folder": "characters/1165_Naki",
+    "imageCount": 1
+  },
+  {
+    "id": "1166",
+    "name": "Akira Mado",
+    "folder": "characters/1166_Akira_Mado",
+    "imageCount": 1
+  },
+  {
+    "id": "1167",
+    "name": "Kaya Irimi",
+    "folder": "characters/1167_Kaya_Irimi",
+    "imageCount": 1
+  },
+  {
+    "id": "1168",
+    "name": "Ken Kaneki",
+    "folder": "characters/1168_Ken_Kaneki",
+    "imageCount": 1
+  },
+  {
+    "id": "1169",
+    "name": "Ginshi Shirazu",
+    "folder": "characters/1169_Ginshi_Shirazu",
+    "imageCount": 1
+  },
+  {
+    "id": "1170",
+    "name": "Mutsuki Tooru",
+    "folder": "characters/1170_Mutsuki_Tooru",
+    "imageCount": 1
+  },
+  {
+    "id": "1171",
+    "name": "Rize Kamishiro",
+    "folder": "characters/1171_Rize_Kamishiro",
+    "imageCount": 1,
+    "upcoming": true,
+    "releaseAt": "2026-07-21 05:00:00",
+    "previewSource": "9333 (2) JSON dump"
+  },
+  {
+    "id": "1173",
+    "name": "Yoshimura",
+    "folder": "characters/1173_Yoshimura",
+    "imageCount": 1,
+    "upcoming": true,
+    "releaseAt": "2026-07-27 05:00:00",
+    "previewSource": "9333 (2) JSON dump"
+  }
 ]

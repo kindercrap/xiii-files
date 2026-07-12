@@ -11,7 +11,7 @@ const state = {
     left: { slots: ["", "", "", "", ""], assistants: ["", "", "", "", ""] },
     right: { slots: ["", "", "", "", ""], assistants: ["", "", "", "", ""] }
   },
-  builder: Array.from({ length: 3 }, (_, index) => ({ name: `Team ${index + 1}`, slots: ["", "", "", ""], backup: "" }))
+  builder: Array.from({ length: 3 }, (_, index) => ({ name: `Team ${index + 1}`, description: "", slots: ["", "", "", ""], backup: "" }))
 };
 
 const translations = {
@@ -26,7 +26,8 @@ const translations = {
     threeTeam: "Three-team line-up", builderDesc: "Create three teams with four main units and one back-up. Drag units between any team slots.",
     teams: "teams", mainLineup: "Main Line-up", backup: "Back-up", teamCp: "Team CP", presented: "Presented by ICX (5081)",
     searchUnits: "Search by unit name or title", allFactions: "All factions", clearSlot: "Clear this slot", unitPool: "Unit pool",
-    selectUnit: "Select a unit", emptySlot: "Empty slot", addAssistant: "Add Assistant", unit: "Unit", mainUnits: "main units", dragHint: "drag to rearrange", noMatches: "No units match this search."
+    selectUnit: "Select a unit", emptySlot: "Empty slot", addAssistant: "Add Assistant", unit: "Unit", mainUnits: "main units", dragHint: "drag to rearrange", noMatches: "No units match this search.",
+    teamStrategy: "Team strategy & goal", teamStrategyPlaceholder: "Explain why this team works, its playstyle, and its goal...", shareTeam: "Share Team"
   },
   zh: {
     subtitle: "东京喰种：觉醒", archive: "角色档案", battle: "战力对决", builder: "队伍编成",
@@ -54,8 +55,11 @@ const modal = document.querySelector("#unit-modal");
 const modalContent = document.querySelector("#modal-content");
 const battlePickerModal = document.querySelector("#battle-picker-modal");
 const battlePickerResults = document.querySelector("#battle-picker-results");
+const teamShareModal = document.querySelector("#team-share-modal");
+const teamShareCanvas = document.querySelector("#team-share-canvas");
 let activeBattlePicker = null;
 let builderDrag = null;
+let activeTeamShareStage = 0;
 
 const rarityName = value => ({ 55: "SP", 4: "SSR", 3: "SR", 2: "R" }[value] || `R${value ?? "?"}`);
 const factionName = values => {
@@ -214,6 +218,7 @@ function render() {
       <span class="portrait-wrap">
         <img src="${escapeHtml(unit.image)}" alt="" loading="lazy">
         <span class="rarity-dot ${unit.rarity.toLowerCase()}">${escapeHtml(unit.rarity)}</span>
+        ${unit.upcoming ? `<span class="upcoming-unit-badge">UPCOMING</span>` : ""}
       </span>
       ${unit.title ? `<span class="unit-title">${escapeHtml(unit.title)}</span>` : ""}
       <span class="unit-name">${escapeHtml(unit.name)}</span>
@@ -339,8 +344,166 @@ function renderTeamBuilder() {
         </button>
         <div class="builder-cp"><span>${t("teamCp")}</span><strong>${formatNumber(mainCp + backupCp)}</strong><small>${t("mainLineup")} ${formatNumber(mainCp)}${backupCp ? ` + ${t("backup")} ${formatNumber(backupCp)}` : ""}</small></div>
       </div>
+      <div class="builder-team-notes">
+        <label><span>${t("teamStrategy")}</span><textarea class="builder-team-description" data-stage="${stageIndex}" maxlength="420" placeholder="${escapeHtml(t("teamStrategyPlaceholder"))}" aria-label="${escapeHtml(t("teamStrategy"))} for ${escapeHtml(team.name)}">${escapeHtml(team.description || "")}</textarea></label>
+        <button class="builder-share-button" type="button" data-stage="${stageIndex}"><span aria-hidden="true">&#8599;</span>${t("shareTeam")}</button>
+      </div>
     </article>`;
   }).join("");
+}
+
+function canvasImage(source) {
+  return new Promise(resolve => {
+    if (!source) return resolve(null);
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => resolve(null);
+    image.src = source;
+  });
+}
+
+function drawCover(context, image, x, y, width, height) {
+  const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+  const sourceWidth = width / scale;
+  const sourceHeight = height / scale;
+  const sourceX = (image.naturalWidth - sourceWidth) / 2;
+  const sourceY = (image.naturalHeight - sourceHeight) / 2;
+  context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, x, y, width, height);
+}
+
+function canvasLines(context, text, maxWidth, maxLines = 3) {
+  const words = String(text || "").trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  const lines = [];
+  let current = "";
+  let wordIndex = 0;
+  for (; wordIndex < words.length; wordIndex += 1) {
+    const candidate = current ? `${current} ${words[wordIndex]}` : words[wordIndex];
+    if (context.measureText(candidate).width <= maxWidth || !current) current = candidate;
+    else {
+      lines.push(current);
+      current = words[wordIndex];
+      if (lines.length === maxLines) break;
+    }
+  }
+  if (lines.length < maxLines && current) lines.push(current);
+  if (wordIndex < words.length && lines.length) {
+    const last = lines.length - 1;
+    while (lines[last] && context.measureText(`${lines[last]}...`).width > maxWidth) lines[last] = lines[last].replace(/\s+\S+$/, "");
+    lines[last] = `${lines[last]}...`;
+  }
+  return lines;
+}
+
+function drawShareUnit(context, unit, image, x, y, width, label, accent) {
+  const imageHeight = 205;
+  context.fillStyle = "#111316";
+  context.fillRect(x, y, width, 320);
+  context.fillStyle = accent;
+  context.fillRect(x, y, width, 5);
+  if (image) drawCover(context, image, x, y + 5, width, imageHeight);
+  else {
+    context.fillStyle = "#1b1e22";
+    context.fillRect(x, y + 5, width, imageHeight);
+    context.fillStyle = "#59616b";
+    context.font = "700 18px Inter, Arial, sans-serif";
+    context.textAlign = "center";
+    context.fillText("EMPTY SLOT", x + width / 2, y + 112);
+  }
+  context.textAlign = "left";
+  context.fillStyle = accent;
+  context.font = "800 14px Inter, Arial, sans-serif";
+  context.fillText(label.toUpperCase(), x + 14, y + 238);
+  context.fillStyle = "#f5f7fa";
+  context.font = "800 18px Inter, Arial, sans-serif";
+  const nameLines = canvasLines(context, unit?.name || "Unassigned", width - 28, 2);
+  nameLines.forEach((line, index) => context.fillText(line, x + 14, y + 268 + index * 21));
+  if (unit?.title && nameLines.length === 1) {
+    context.fillStyle = "#8d969f";
+    context.font = "500 12px Inter, Arial, sans-serif";
+    const title = canvasLines(context, unit.title, width - 28, 1)[0];
+    if (title) context.fillText(title, x + 14, y + 298);
+  }
+}
+
+async function generateTeamShare(stageIndex) {
+  const team = state.builder[stageIndex];
+  if (!team || !teamShareCanvas) return;
+  const copyButton = document.querySelector("#team-share-copy");
+  const status = document.querySelector("#team-share-status");
+  copyButton.disabled = true;
+  status.textContent = "Creating your share image...";
+  const units = [...team.slots, team.backup].map(id => state.units.find(unit => String(unit.id) === String(id)) || null);
+  const images = await Promise.all(units.map(unit => canvasImage(unit?.image)));
+  const context = teamShareCanvas.getContext("2d");
+  context.fillStyle = "#08090b";
+  context.fillRect(0, 0, teamShareCanvas.width, teamShareCanvas.height);
+  context.fillStyle = "#31d6a4";
+  context.fillRect(0, 0, teamShareCanvas.width, 8);
+  context.fillStyle = "#76818c";
+  context.font = "800 15px Inter, Arial, sans-serif";
+  context.fillText("XIII FILES  /  TEAM BUILDING", 54, 50);
+  context.fillStyle = "#f6f7f9";
+  context.font = "800 40px Inter, Arial, sans-serif";
+  const title = canvasLines(context, team.name.trim() || `Team ${stageIndex + 1}`, 1090, 1)[0];
+  context.fillText(title, 54, 98);
+  context.fillStyle = "#a6afb8";
+  context.font = "500 18px Inter, Arial, sans-serif";
+  const description = team.description.trim() || "No team strategy has been added yet.";
+  canvasLines(context, description, 1085, 3).forEach((line, index) => context.fillText(line, 54, 136 + index * 25));
+  context.fillStyle = "#262a2f";
+  context.fillRect(54, 205, 1092, 1);
+  context.fillStyle = "#727c86";
+  context.font = "800 13px Inter, Arial, sans-serif";
+  context.fillText("MAIN LINE-UP", 54, 234);
+  context.fillStyle = "#a98ad4";
+  context.fillText("BACK-UP", 958, 234);
+  for (let index = 0; index < 4; index += 1) drawShareUnit(context, units[index], images[index], 54 + index * 218, 249, 198, `On field ${index + 1}`, "#31d6a4");
+  drawShareUnit(context, units[4], images[4], 958, 249, 188, "Backup", "#a98ad4");
+  context.fillStyle = "#25292e";
+  context.fillRect(54, 600, 1092, 1);
+  context.fillStyle = "#707984";
+  context.font = "600 14px Inter, Arial, sans-serif";
+  context.fillText("TOKYO GHOUL AWAKENING", 54, 634);
+  context.textAlign = "right";
+  context.fillStyle = "#31d6a4";
+  context.fillText("Presented by ICX (5081)", 1146, 634);
+  context.textAlign = "left";
+  document.querySelector("#team-share-title").textContent = team.name.trim() || `Team ${stageIndex + 1}`;
+  status.textContent = "Image ready. Copy it, then paste it into Discord, Messenger, or any image editor.";
+  copyButton.disabled = false;
+}
+
+async function openTeamShare(stageIndex) {
+  activeTeamShareStage = stageIndex;
+  teamShareModal.showModal();
+  await generateTeamShare(stageIndex);
+}
+
+function copyTeamShareImage() {
+  const button = document.querySelector("#team-share-copy");
+  const status = document.querySelector("#team-share-status");
+  if (!navigator.clipboard?.write || typeof ClipboardItem === "undefined") {
+    status.textContent = "Image copying is not supported in this browser. Try the latest Chrome or Edge.";
+    return;
+  }
+  button.disabled = true;
+  teamShareCanvas.toBlob(async blob => {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+      button.classList.add("copied");
+      button.textContent = "Copied!";
+      status.textContent = "Copied to clipboard - your team image is ready to paste.";
+      setTimeout(() => {
+        button.classList.remove("copied");
+        button.textContent = "Copy Image";
+        button.disabled = false;
+      }, 1600);
+    } catch (error) {
+      status.textContent = "The browser blocked clipboard access. Keep this modal open and try Copy Image again.";
+      button.disabled = false;
+    }
+  }, "image/png");
 }
 
 function refreshBattlePicker() {
@@ -439,6 +602,7 @@ function switchView(view) {
   });
 }
 
+/* Legacy single-banner simulator retained temporarily for comparison.
 const CARNIVAL_FEATURED_IDS = ["1150", "1114", "1168", "1160", "1147", "1146", "1127", "1135", "1120", "1072", "1058", "1065", "1050"];
 const CARNIVAL_STANDARD_SSR_IDS = ["1001", "1010", "1004", "1012", "1015", "1018", "1019", "1023", "1026", "1027", "1033", "1035", "1036", "1037", "1038", "1039", "1041", "1042", "1043", "1046", "1060", "1076"];
 const CARNIVAL_ITEM_POOL = [
@@ -464,6 +628,7 @@ const carnivalState = {
   featuredId: "1150", pulls: 0, progress: 0, featuredCopies: 0, otherSsr: 0,
   inventory: {}, recent: [], bonuses: []
 };
+let carnivalRevealTimer = null;
 
 function carnivalWeightedRoll(pool) {
   let roll = Math.random();
@@ -513,6 +678,7 @@ function claimCarnivalBonus() {
 }
 
 function carnivalPullMany(count) {
+  const featuredBefore = carnivalState.featuredCopies;
   const batch = [];
   for (let index = 0; index < count; index++) {
     carnivalState.pulls++;
@@ -522,6 +688,8 @@ function carnivalPullMany(count) {
   }
   carnivalState.recent = batch.slice(-10).reverse();
   renderCarnival();
+  const featuredGained = carnivalState.featuredCopies - featuredBefore;
+  if (featuredGained > 0) showCarnivalFeaturedReveal(featuredGained);
 }
 
 function carnivalResultMarkup(result) {
@@ -539,11 +707,39 @@ function renderCarnivalFeatured() {
   card.innerHTML = `<img src="${escapeHtml(unit.image)}" alt=""><div><span>1.00% featured rate</span><h3>${escapeHtml(unit.name)}</h3><p>${escapeHtml(unit.title || `Unit #${unit.id}`)} · ${escapeHtml(unit.rarity)}</p></div>`;
 }
 
+function hideCarnivalFeaturedReveal() {
+  clearTimeout(carnivalRevealTimer);
+  const reveal = document.querySelector("#carnival-featured-reveal");
+  if (reveal) reveal.hidden = true;
+}
+
+function showCarnivalFeaturedReveal(count) {
+  const unit = carnivalUnit(carnivalState.featuredId);
+  const reveal = document.querySelector("#carnival-featured-reveal");
+  if (!unit || !reveal) return;
+  clearTimeout(carnivalRevealTimer);
+  document.querySelector("#carnival-reveal-image").src = unit.image;
+  document.querySelector("#carnival-reveal-image").alt = unit.name;
+  document.querySelector("#carnival-reveal-name").textContent = unit.name;
+  document.querySelector("#carnival-reveal-title").textContent = `${unit.title || `Unit #${unit.id}`} · ${unit.rarity}`;
+  document.querySelector("#carnival-reveal-count").textContent = count > 1 ? `${count} featured copies in this batch` : "Featured copy obtained";
+  const particles = document.querySelector(".carnival-reveal-particles");
+  particles.innerHTML = Array.from({ length: 20 }, (_, index) => `<i style="--particle:${index};--x:${Math.round(Math.random() * 180 - 90)}px;--y:${Math.round(Math.random() * -150 - 30)}px"></i>`).join("");
+  reveal.hidden = false;
+  reveal.classList.remove("reveal-active");
+  void reveal.offsetWidth;
+  reveal.classList.add("reveal-active");
+  carnivalRevealTimer = setTimeout(hideCarnivalFeaturedReveal, 3200);
+}
+
 function renderCarnival() {
   const setText = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
   setText("#carnival-pulls", formatNumber(carnivalState.pulls));
+  setText("#carnival-tickets", formatNumber(carnivalState.pulls));
   setText("#carnival-diamonds", formatNumber(carnivalState.pulls * 600));
   setText("#carnival-featured-copies", formatNumber(carnivalState.featuredCopies));
+  setText("#carnival-star-crystals", formatNumber(carnivalState.inventory["Panacean Star-Up Crystal"] || 0));
+  setText("#carnival-refine-crystals", formatNumber(carnivalState.inventory["Panacean Refinement Crystal"] || 0));
   setText("#carnival-other-ssr", formatNumber(carnivalState.otherSsr));
   setText("#carnival-progress-text", `${carnivalState.progress} / 100`);
   document.querySelector("#carnival-progress-bar").style.width = `${carnivalState.progress}%`;
@@ -573,8 +769,327 @@ function initializeCarnival() {
 }
 
 function resetCarnival() {
+  hideCarnivalFeaturedReveal();
   Object.assign(carnivalState, { pulls: 0, progress: 0, featuredCopies: 0, otherSsr: 0, inventory: {}, recent: [], bonuses: [] });
   renderCarnival();
+}
+*/
+
+let carnivalData = null;
+let carnivalRevealTimer = null;
+const carnivalState = {
+  bannerKey: "SeasonGachaTest18_1150", featuredId: "1150", pulls: 0, progress: 0, pendingClaim: false,
+  featuredCopies: 0, otherSsr: 0, inventory: {}, selectedRewards: {}, recent: [], bonuses: [], history: [], historyFilter: "all",
+  walletTickets: 100, walletDiamonds: 60000, ticketsSpent: 0, diamondsSpent: 0, payment: "tickets-first",
+  status: "Set your wallet, then recruit."
+};
+
+function carnivalBanner() {
+  return carnivalData?.banners.find(banner => banner.key === carnivalState.bannerKey) || carnivalData?.banners.at(-1);
+}
+
+function carnivalUnit(id) {
+  return state.units.find(unit => String(unit.id) === String(id));
+}
+
+function carnivalWeightedRoll(pool, rng = Math.random) {
+  let roll = rng();
+  for (const item of pool) {
+    roll -= Number(item.probability || 0);
+    if (roll < 0) return item;
+  }
+  return pool[pool.length - 1];
+}
+
+function carnivalPool(kind) {
+  const banner = carnivalBanner();
+  const pool = kind === "bonus" ? banner.cumulativeRewards : [...banner.normalCharacters, ...banner.normalItems];
+  return pool.map(item => item.kind === "featured" ? {
+    ...item, code: carnivalState.featuredId,
+    name: carnivalUnit(carnivalState.featuredId)?.name || `Hero #${carnivalState.featuredId}`,
+    title: carnivalUnit(carnivalState.featuredId)?.title || ""
+  } : { ...item });
+}
+
+function addCarnivalInventory(item) {
+  carnivalState.inventory[item.name] = (carnivalState.inventory[item.name] || 0) + Number(item.amount || 1);
+}
+
+function carnivalCategory(item, source = "pull") {
+  if (source === "cumulative" || source === "chest") return source;
+  if (item.kind === "featured") return "featured";
+  if (item.kind === "hero") return "ssr";
+  if (["20059", "20203"].includes(String(item.code))) return "crystal";
+  return "item";
+}
+
+function addCarnivalHistory(item, source, pull = carnivalState.pulls) {
+  carnivalState.history.unshift({ ...item, source, category: carnivalCategory(item, source), pull, sequence: carnivalState.history.length + 1 });
+}
+
+function carnivalCanPay() {
+  const cost = Number(carnivalBanner()?.diamondCost || 600);
+  const hasTicket = carnivalState.walletTickets >= 1;
+  const hasDiamonds = carnivalState.walletDiamonds >= cost;
+  if (carnivalState.payment === "tickets-only") return hasTicket;
+  if (carnivalState.payment === "diamonds-only") return hasDiamonds;
+  return hasTicket || hasDiamonds;
+}
+
+function carnivalPayOne() {
+  const cost = Number(carnivalBanner().diamondCost);
+  const preferDiamonds = carnivalState.payment === "diamonds-first" || carnivalState.payment === "diamonds-only";
+  const allowTickets = carnivalState.payment !== "diamonds-only";
+  const allowDiamonds = carnivalState.payment !== "tickets-only";
+  if (!preferDiamonds && allowTickets && carnivalState.walletTickets >= 1) {
+    carnivalState.walletTickets--; carnivalState.ticketsSpent++; return true;
+  }
+  if (allowDiamonds && carnivalState.walletDiamonds >= cost) {
+    carnivalState.walletDiamonds -= cost; carnivalState.diamondsSpent += cost; return true;
+  }
+  if (preferDiamonds && allowTickets && carnivalState.walletTickets >= 1) {
+    carnivalState.walletTickets--; carnivalState.ticketsSpent++; return true;
+  }
+  return false;
+}
+
+function carnivalNormalRoll() {
+  const result = carnivalWeightedRoll(carnivalPool("normal"));
+  const item = { ...result, unitId: ["featured", "hero"].includes(result.kind) ? result.code : undefined };
+  if (item.kind === "featured") carnivalState.featuredCopies++;
+  else if (item.kind === "hero") carnivalState.otherSsr++;
+  else addCarnivalInventory(item);
+  return item;
+}
+
+function carnivalPullMany(requestedCount) {
+  if (!carnivalData) return;
+  if (carnivalState.pendingClaim) {
+    carnivalState.status = "Claim the 100-draw cumulative reward before recruiting again.";
+    return renderCarnival();
+  }
+  const featuredBefore = carnivalState.featuredCopies;
+  const allowed = Math.min(Number(requestedCount), 100 - carnivalState.progress);
+  const batch = [];
+  for (let index = 0; index < allowed; index++) {
+    if (!carnivalPayOne()) break;
+    carnivalState.pulls++;
+    carnivalState.progress++;
+    const result = { ...carnivalNormalRoll(), pull: carnivalState.pulls };
+    batch.push(result);
+    addCarnivalHistory(result, "pull", carnivalState.pulls);
+    if (carnivalState.progress === 100) { carnivalState.pendingClaim = true; break; }
+  }
+  carnivalState.recent = batch.slice(-10).reverse();
+  if (!batch.length) carnivalState.status = "Insufficient Carnival Tickets or diamonds for this payment method.";
+  else if (carnivalState.pendingClaim) carnivalState.status = "100 draws reached. Claim the cumulative reward to reset progress.";
+  else if (batch.length < requestedCount) carnivalState.status = `Recruited ${batch.length}; the wallet could not fund the remaining draws.`;
+  else carnivalState.status = `Recruited ${batch.length} using ${carnivalState.payment.replace("-", " ")}.`;
+  renderCarnival();
+  const featuredGained = carnivalState.featuredCopies - featuredBefore;
+  if (featuredGained > 0) showCarnivalFeaturedReveal(featuredGained);
+}
+
+function claimCarnivalBonus() {
+  if (!carnivalState.pendingClaim) return;
+  const result = { ...carnivalWeightedRoll(carnivalPool("bonus")), atPull: carnivalState.pulls };
+  if (result.kind === "featured") { result.unitId = carnivalState.featuredId; carnivalState.featuredCopies++; }
+  else addCarnivalInventory(result);
+  carnivalState.bonuses.unshift(result);
+  addCarnivalHistory(result, "cumulative", carnivalState.pulls);
+  carnivalState.pendingClaim = false;
+  carnivalState.progress = 0;
+  carnivalState.status = `Cumulative reward claimed: ${result.name}${result.amount > 1 ? ` x${result.amount}` : ""}.`;
+  renderCarnival();
+  if (result.kind === "featured") showCarnivalFeaturedReveal(1);
+}
+
+function carnivalResultMarkup(result) {
+  const unit = result.unitId ? carnivalUnit(result.unitId) : null;
+  return `<article class="carnival-result ${result.kind}">${unit ? `<img src="${escapeHtml(unit.image)}" alt="">` : `<span class="carnival-result-icon">ITEM</span>`}<div><strong>${escapeHtml(result.name)}</strong><small>${result.amount > 1 ? `x${formatNumber(result.amount)} · ` : ""}Pull ${formatNumber(result.pull)}</small></div></article>`;
+}
+
+function renderCarnivalFeatured() {
+  const unit = carnivalUnit(carnivalState.featuredId);
+  const banner = carnivalBanner();
+  const card = document.querySelector("#carnival-featured-card");
+  if (!unit || !card || !banner) return;
+  const rate = carnivalPool("normal").find(item => item.kind === "featured")?.probability || 0;
+  card.innerHTML = `<img src="${escapeHtml(unit.image)}" alt=""><div><span>${(rate * 100).toFixed(2)}% featured rate</span><h3>${escapeHtml(unit.name)}</h3><p>${escapeHtml(unit.title || `Unit #${unit.id}`)} · ${escapeHtml(unit.rarity)}</p><small>${escapeHtml(banner.key)} · ${escapeHtml(banner.selectionChestName)}</small></div>`;
+}
+
+function hideCarnivalFeaturedReveal() {
+  clearTimeout(carnivalRevealTimer);
+  const reveal = document.querySelector("#carnival-featured-reveal");
+  if (reveal) reveal.hidden = true;
+}
+
+function showCarnivalFeaturedReveal(count) {
+  const unit = carnivalUnit(carnivalState.featuredId);
+  const reveal = document.querySelector("#carnival-featured-reveal");
+  if (!unit || !reveal) return;
+  clearTimeout(carnivalRevealTimer);
+  document.querySelector("#carnival-reveal-image").src = unit.image;
+  document.querySelector("#carnival-reveal-image").alt = unit.name;
+  document.querySelector("#carnival-reveal-name").textContent = unit.name;
+  document.querySelector("#carnival-reveal-title").textContent = `${unit.title || `Unit #${unit.id}`} · ${unit.rarity}`;
+  document.querySelector("#carnival-reveal-count").textContent = count > 1 ? `${count} featured copies in this batch` : "Featured copy obtained";
+  document.querySelector(".carnival-reveal-particles").innerHTML = Array.from({ length: 20 }, (_, index) => `<i style="--particle:${index};--x:${Math.round(Math.random() * 180 - 90)}px;--y:${Math.round(Math.random() * -150 - 30)}px"></i>`).join("");
+  reveal.hidden = false;
+  reveal.classList.remove("reveal-active");
+  void reveal.offsetWidth;
+  reveal.classList.add("reveal-active");
+  carnivalRevealTimer = setTimeout(hideCarnivalFeaturedReveal, 3200);
+}
+
+function carnivalHistoryMarkup(entry) {
+  const unit = entry.unitId ? carnivalUnit(entry.unitId) : null;
+  const source = ({ pull: "Normal pull", cumulative: "100-draw reward", chest: "Chest selection" })[entry.source] || entry.source;
+  return `<article class="carnival-history-entry ${entry.category}">${unit ? `<img src="${escapeHtml(unit.image)}" alt="">` : `<span>${entry.kind === "item" ? "ITEM" : "SSR"}</span>`}<div><strong>${escapeHtml(entry.name)}${entry.amount > 1 ? ` x${formatNumber(entry.amount)}` : ""}</strong><small>${escapeHtml(source)} · Draw ${formatNumber(entry.pull)}</small></div></article>`;
+}
+
+function renderCarnivalHistory() {
+  const matches = entry => ({
+    all: true,
+    featured: entry.kind === "featured",
+    ssr: entry.kind === "hero" && entry.source === "pull",
+    crystal: ["20059", "20203"].includes(String(entry.code)),
+    item: entry.kind === "item" && entry.source === "pull",
+    cumulative: entry.source === "cumulative",
+    chest: entry.source === "chest"
+  })[carnivalState.historyFilter] ?? true;
+  const filtered = carnivalState.history.filter(matches);
+  document.querySelector("#carnival-history-count").textContent = `${formatNumber(filtered.length)} of ${formatNumber(carnivalState.history.length)} entries`;
+  document.querySelector("#carnival-history").innerHTML = filtered.length ? filtered.map(carnivalHistoryMarkup).join("") : `<p class="carnival-empty">No history entries match this filter.</p>`;
+}
+
+function renderCarnivalRates() {
+  const banner = carnivalBanner();
+  if (!banner) return;
+  const normal = carnivalPool("normal");
+  const bonus = carnivalPool("bonus");
+  const formatRate = value => `${(Number(value) * 100).toFixed(Number(value) < .01 ? 2 : 1)}%`;
+  document.querySelector("#carnival-rule-summary").textContent = `At 100 draws, claim one separately rolled reward: ${bonus.map(item => `${item.name} ${formatRate(item.probability)}`).join(" · ")}.`;
+  document.querySelector("#carnival-rate-grid").innerHTML = `<div><h3>Normal character results</h3>${normal.filter(item => item.kind !== "item").map(item => `<p>${escapeHtml(item.name)}${item.title ? ` · ${escapeHtml(item.title)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}</div><div><h3>Normal item results</h3>${normal.filter(item => item.kind === "item").map(item => `<p>${escapeHtml(item.name)}${item.amount > 1 ? ` x${formatNumber(item.amount)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}</div><div><h3>Cumulative reward · claim at 100</h3>${bonus.map(item => `<p>${escapeHtml(item.name)}${item.amount > 1 ? ` x${formatNumber(item.amount)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}<p><strong>${banner.selectionChestChoices.length}</strong> choose-one chest options · ${escapeHtml(banner.ticketName)} or ${formatNumber(banner.diamondCost)} diamonds per draw.</p></div>`;
+}
+
+function renderCarnival() {
+  if (!carnivalData) return;
+  const banner = carnivalBanner();
+  const setText = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
+  setText("#carnival-pulls", formatNumber(carnivalState.pulls));
+  setText("#carnival-tickets", formatNumber(carnivalState.walletTickets));
+  setText("#carnival-diamonds", formatNumber(carnivalState.walletDiamonds));
+  setText("#carnival-featured-copies", formatNumber(carnivalState.featuredCopies));
+  setText("#carnival-star-crystals", formatNumber(carnivalState.inventory["Panacean Star-Up Crystal"] || 0));
+  setText("#carnival-refine-crystals", formatNumber(carnivalState.inventory["Panacean Refinement Crystal"] || 0));
+  setText("#carnival-other-ssr", formatNumber(carnivalState.otherSsr));
+  setText("#carnival-progress-text", `${carnivalState.progress} / 100${carnivalState.pendingClaim ? " · CLAIM READY" : ""}`);
+  setText("#carnival-spend-summary", `Spent: ${formatNumber(carnivalState.ticketsSpent)} tickets · ${formatNumber(carnivalState.diamondsSpent)} diamonds`);
+  setText("#carnival-status", carnivalState.status);
+  document.querySelector("#carnival-progress-bar").style.width = `${carnivalState.progress}%`;
+  document.querySelector("#carnival-featured").disabled = carnivalState.progress !== 0 || carnivalState.pendingClaim;
+  document.querySelector("#carnival-banner").disabled = carnivalState.progress !== 0 || carnivalState.pendingClaim;
+  document.querySelector("#carnival-claim").hidden = !carnivalState.pendingClaim;
+  document.querySelectorAll("[data-carnival-pulls]").forEach(button => button.disabled = carnivalState.pendingClaim || !carnivalCanPay());
+  document.querySelector("#carnival-wallet-tickets").value = carnivalState.walletTickets;
+  document.querySelector("#carnival-wallet-diamonds").value = carnivalState.walletDiamonds;
+  document.querySelector("#carnival-payment").value = carnivalState.payment;
+  renderCarnivalFeatured();
+  document.querySelector("#carnival-results").innerHTML = carnivalState.recent.length ? carnivalState.recent.map(carnivalResultMarkup).join("") : `<p class="carnival-empty">Recruit to see the latest results.</p>`;
+  const inventory = Object.entries(carnivalState.inventory).sort(([a], [b]) => a.localeCompare(b));
+  const selectedRewards = Object.entries(carnivalState.selectedRewards).sort(([a], [b]) => a.localeCompare(b));
+  document.querySelector("#carnival-inventory").innerHTML = inventory.length || selectedRewards.length ? `${inventory.map(([name, amount]) => `<div><span>${escapeHtml(name)}</span><strong>${formatNumber(amount)}</strong>${name === banner.selectionChestName ? `<button type="button" data-open-carnival-chest>Choose reward</button>` : ""}</div>`).join("")}${selectedRewards.map(([name, amount]) => `<div class="selected-reward"><span>${escapeHtml(name)} <small>Chest selection</small></span><strong>${formatNumber(amount)}</strong></div>`).join("")}` : `<p class="carnival-empty">No resources obtained yet.</p>`;
+  document.querySelector("#carnival-bonus-log").innerHTML = carnivalState.bonuses.length ? carnivalState.bonuses.map(bonus => `<div class="${bonus.kind === "featured" ? "featured" : ""}"><span>Draw ${formatNumber(bonus.atPull)}</span><strong>${escapeHtml(bonus.name)}${bonus.amount > 1 ? ` x${formatNumber(bonus.amount)}` : ""}</strong></div>`).join("") : `<p class="carnival-empty">Reach 100 draws, then manually claim the cumulative reward.</p>`;
+  renderCarnivalHistory();
+  renderCarnivalRates();
+}
+
+function populateCarnivalFeatured() {
+  const banner = carnivalBanner();
+  const select = document.querySelector("#carnival-featured");
+  select.innerHTML = banner.switchableHeroIds.map(id => {
+    const unit = carnivalUnit(id);
+    return unit ? `<option value="${id}">${escapeHtml(unit.name)} · ${escapeHtml(unit.title || id)}</option>` : "";
+  }).join("");
+  if (!banner.switchableHeroIds.includes(carnivalState.featuredId)) carnivalState.featuredId = banner.featuredId;
+  select.value = carnivalState.featuredId;
+}
+
+async function initializeCarnival() {
+  if (!carnivalData) carnivalData = await fetch("./carnival-banner-data.json").then(checkResponse).then(response => response.json());
+  const select = document.querySelector("#carnival-banner");
+  select.innerHTML = [...carnivalData.banners].reverse().map(banner => `<option value="${escapeHtml(banner.key)}">${escapeHtml(banner.featuredName)} · ${escapeHtml(banner.featuredTitle)}</option>`).join("");
+  carnivalState.bannerKey = carnivalData.currentBannerKey;
+  carnivalState.featuredId = carnivalBanner().featuredId;
+  select.value = carnivalState.bannerKey;
+  populateCarnivalFeatured();
+  renderCarnival();
+}
+
+function resetCarnival(keepWallet = false) {
+  hideCarnivalFeaturedReveal();
+  const wallet = keepWallet ? { walletTickets: carnivalState.walletTickets, walletDiamonds: carnivalState.walletDiamonds, payment: carnivalState.payment } : { walletTickets: 100, walletDiamonds: 60000, payment: "tickets-first" };
+  Object.assign(carnivalState, { pulls: 0, progress: 0, pendingClaim: false, featuredCopies: 0, otherSsr: 0, inventory: {}, selectedRewards: {}, recent: [], bonuses: [], history: [], ticketsSpent: 0, diamondsSpent: 0, status: "Simulation reset." }, wallet);
+  renderCarnival();
+}
+
+function openCarnivalChest() {
+  const banner = carnivalBanner();
+  if (!banner || !(carnivalState.inventory[banner.selectionChestName] > 0)) return;
+  document.querySelector("#carnival-chest-title").textContent = banner.selectionChestName;
+  document.querySelector("#carnival-chest-choices").innerHTML = banner.selectionChestChoices.map((choice, index) => {
+    const unit = choice.kind === "hero" ? carnivalUnit(choice.code) : null;
+    return `<button type="button" data-chest-choice="${index}">${unit ? `<img src="${escapeHtml(unit.image)}" alt="">` : `<span>ITEM</span>`}<div><strong>${escapeHtml(choice.name)}</strong><small>${escapeHtml(choice.title || choice.rarity || "Choose this reward")}</small></div></button>`;
+  }).join("");
+  document.querySelector("#carnival-chest-modal").showModal();
+}
+
+function chooseCarnivalChestReward(index) {
+  const banner = carnivalBanner();
+  const choice = banner?.selectionChestChoices[Number(index)];
+  if (!choice || !(carnivalState.inventory[banner.selectionChestName] > 0)) return;
+  carnivalState.inventory[banner.selectionChestName]--;
+  if (!carnivalState.inventory[banner.selectionChestName]) delete carnivalState.inventory[banner.selectionChestName];
+  if (choice.kind === "item") addCarnivalInventory(choice);
+  else carnivalState.selectedRewards[choice.name] = (carnivalState.selectedRewards[choice.name] || 0) + Number(choice.amount || 1);
+  addCarnivalHistory({ ...choice, unitId: choice.kind === "hero" ? choice.code : undefined }, "chest", carnivalState.pulls);
+  carnivalState.status = `Selected ${choice.name} from ${banner.selectionChestName}.`;
+  document.querySelector("#carnival-chest-modal").close();
+  renderCarnival();
+}
+
+function runCarnivalAnalysis() {
+  const sessionsInput = document.querySelector("#carnival-analysis-sessions");
+  const drawsInput = document.querySelector("#carnival-analysis-draws");
+  const sessions = Math.max(100, Math.min(10000, Number(sessionsInput.value) || 1000));
+  const draws = Math.max(10, Math.min(1000, Number(drawsInput.value) || 100));
+  sessionsInput.value = sessions; drawsInput.value = draws;
+  const normalPool = carnivalPool("normal");
+  const bonusPool = carnivalPool("bonus");
+  const totals = { featured: 0, normalFeatured: 0, star: 0, refine: 0, firstDrawSum: 0, firstDrawCount: 0, zero: 0, distribution: [0, 0, 0, 0, 0] };
+  for (let session = 0; session < sessions; session++) {
+    let featured = 0; let firstDraw = 0;
+    for (let draw = 1; draw <= draws; draw++) {
+      const result = carnivalWeightedRoll(normalPool);
+      if (result.kind === "featured") { featured++; totals.normalFeatured++; if (!firstDraw) firstDraw = draw; }
+      if (result.code === "20059") totals.star += Number(result.amount || 1);
+      if (result.code === "20203") totals.refine += Number(result.amount || 1);
+      if (draw % 100 === 0) {
+        const bonus = carnivalWeightedRoll(bonusPool);
+        if (bonus.kind === "featured") { featured++; if (!firstDraw) firstDraw = draw; }
+        if (bonus.code === "20059") totals.star += Number(bonus.amount || 1);
+        if (bonus.code === "20203") totals.refine += Number(bonus.amount || 1);
+      }
+    }
+    totals.featured += featured;
+    if (!featured) totals.zero++;
+    totals.distribution[Math.min(4, featured)]++;
+    if (firstDraw) { totals.firstDrawSum += firstDraw; totals.firstDrawCount++; }
+  }
+  const average = value => value / sessions;
+  const maxBucket = Math.max(...totals.distribution, 1);
+  document.querySelector("#carnival-analysis-results").innerHTML = `<div class="carnival-analysis-metrics"><div><span>Average featured</span><strong>${average(totals.featured).toFixed(2)}</strong></div><div><span>Zero-featured chance</span><strong>${(totals.zero / sessions * 100).toFixed(1)}%</strong></div><div><span>Avg. normal featured</span><strong>${average(totals.normalFeatured).toFixed(2)}</strong></div><div><span>Avg. Star-Up Crystals</span><strong>${average(totals.star).toFixed(2)}</strong></div><div><span>Avg. Refinement Crystals</span><strong>${average(totals.refine).toFixed(2)}</strong></div><div><span>Avg. diamonds to first*</span><strong>${totals.firstDrawCount ? formatNumber(Math.round(totals.firstDrawSum / totals.firstDrawCount * carnivalBanner().diamondCost)) : "N/A"}</strong></div></div><div class="carnival-histogram">${totals.distribution.map((value, index) => `<div><span>${index === 4 ? "4+" : index} featured</span><i><b style="width:${value / maxBucket * 100}%"></b></i><strong>${(value / sessions * 100).toFixed(1)}%</strong></div>`).join("")}</div><p>Based on ${formatNumber(sessions)} sessions x ${formatNumber(draws)} draws using ${escapeHtml(carnivalBanner().featuredName)}'s APK preset. *First-featured cost is averaged only across sessions that obtained at least one featured unit.</p>`;
 }
 
 function statCards(stats = {}) {
@@ -724,6 +1239,7 @@ function openUnit(id) {
         <p class="hero-title">${escapeHtml(unit.title || "Character record")}</p>
         <div class="hero-meta">
           <span class="pill accent">${escapeHtml(unit.rarity)}</span>
+          ${unit.upcoming ? `<span class="pill upcoming-pill">Upcoming Preview</span>` : ""}
           <span class="pill">${escapeHtml(unit.faction)}</span>
           ${model.tactic_type ? `<span class="pill">${escapeHtml(tacticNames[model.tactic_type] || `Tactic ${model.tactic_type}`)}</span>` : ""}
           ${model.rc_type ? `<span class="pill">${escapeHtml(model.rc_type)}</span>` : ""}
@@ -732,6 +1248,7 @@ function openUnit(id) {
       </div>
     </header>
     <div class="details-body">
+      ${unit.upcoming ? `<section class="upcoming-preview-warning"><strong>Upcoming preview · subject to change</strong><p>This record comes from ${escapeHtml(d.preview?.sourceVersion || "preview data")}. The kit, assets, release timing, rarity, and availability may change before release.</p></section>` : ""}
       <section class="ability-card">
         <div class="orb-icon">◉</div>
         <div>
@@ -792,15 +1309,37 @@ document.querySelectorAll(".language-option").forEach(button => {
   });
 });
 document.querySelector("#carnival-featured").addEventListener("change", event => {
-  if (carnivalState.progress !== 0) return;
+  if (carnivalState.progress !== 0 || carnivalState.pendingClaim) return;
   carnivalState.featuredId = event.target.value;
-  renderCarnivalFeatured();
+  carnivalState.status = "Featured character switched at zero cumulative progress.";
+  renderCarnival();
+});
+document.querySelector("#carnival-banner").addEventListener("change", event => {
+  carnivalState.bannerKey = event.target.value;
+  carnivalState.featuredId = carnivalBanner().featuredId;
+  resetCarnival(true);
+  populateCarnivalFeatured();
+  document.querySelector("#carnival-analysis-results").innerHTML = `<p class="carnival-empty">Run an analysis to estimate outcomes for this banner.</p>`;
+  carnivalState.status = `Loaded APK preset ${carnivalBanner().key}.`;
+  renderCarnival();
 });
 document.querySelector("#carnival-view").addEventListener("click", event => {
   const pullButton = event.target.closest("[data-carnival-pulls]");
   if (pullButton) carnivalPullMany(Number(pullButton.dataset.carnivalPulls));
+  if (event.target.closest("[data-open-carnival-chest]")) openCarnivalChest();
 });
-document.querySelector("#carnival-reset").addEventListener("click", resetCarnival);
+document.querySelector("#carnival-reset").addEventListener("click", () => resetCarnival(false));
+document.querySelector("#carnival-claim").addEventListener("click", claimCarnivalBonus);
+document.querySelector("#carnival-featured-reveal").addEventListener("click", hideCarnivalFeaturedReveal);
+document.querySelector("#carnival-wallet-tickets").addEventListener("change", event => { carnivalState.walletTickets = Math.max(0, Math.floor(Number(event.target.value) || 0)); renderCarnival(); });
+document.querySelector("#carnival-wallet-diamonds").addEventListener("change", event => { carnivalState.walletDiamonds = Math.max(0, Math.floor(Number(event.target.value) || 0)); renderCarnival(); });
+document.querySelector("#carnival-payment").addEventListener("change", event => { carnivalState.payment = event.target.value; renderCarnival(); });
+document.querySelector("#carnival-history-filter").addEventListener("change", event => { carnivalState.historyFilter = event.target.value; renderCarnivalHistory(); });
+document.querySelector("#carnival-history-clear").addEventListener("click", () => { carnivalState.history = []; renderCarnivalHistory(); });
+document.querySelector("#carnival-analysis-run").addEventListener("click", runCarnivalAnalysis);
+document.querySelector("#carnival-chest-close").addEventListener("click", () => document.querySelector("#carnival-chest-modal").close());
+document.querySelector("#carnival-chest-choices").addEventListener("click", event => { const choice = event.target.closest("[data-chest-choice]"); if (choice) chooseCarnivalChestReward(choice.dataset.chestChoice); });
+document.querySelector("#carnival-chest-modal").addEventListener("click", event => { if (event.target.id === "carnival-chest-modal") event.target.close(); });
 ["left", "right"].forEach(side => {
   const slots = document.querySelector(`#${side}-slots`);
   slots.addEventListener("click", event => {
@@ -809,13 +1348,20 @@ document.querySelector("#carnival-reset").addEventListener("click", resetCarniva
   });
 });
 document.querySelector("#team-builder-stages").addEventListener("click", event => {
-  if (event.target.closest(".builder-team-name")) return;
+  const shareButton = event.target.closest(".builder-share-button");
+  if (shareButton) {
+    openTeamShare(Number(shareButton.dataset.stage));
+    return;
+  }
+  if (event.target.closest(".builder-team-name, .builder-team-description")) return;
   const slot = event.target.closest(".builder-unit-slot");
   if (slot) openBuilderPicker(Number(slot.dataset.stage), slot.dataset.role, Number(slot.dataset.slot));
 });
 document.querySelector("#team-builder-stages").addEventListener("input", event => {
   const input = event.target.closest(".builder-team-name");
   if (input) state.builder[Number(input.dataset.stage)].name = input.value;
+  const description = event.target.closest(".builder-team-description");
+  if (description) state.builder[Number(description.dataset.stage)].description = description.value;
 });
 document.querySelector("#team-builder-stages").addEventListener("change", event => {
   const input = event.target.closest(".builder-team-name");
@@ -861,6 +1407,9 @@ document.querySelector("#team-builder-stages").addEventListener("dragend", () =>
   builderDrag = null;
   document.querySelectorAll(".builder-unit-slot.dragging, .builder-unit-slot.drag-over").forEach(item => item.classList.remove("dragging", "drag-over"));
 });
+document.querySelector("#team-share-close").addEventListener("click", () => teamShareModal.close());
+document.querySelector("#team-share-copy").addEventListener("click", copyTeamShareImage);
+teamShareModal.addEventListener("click", event => { if (event.target === teamShareModal) teamShareModal.close(); });
 document.querySelector("#battle-picker-search").addEventListener("input", refreshBattlePicker);
 document.querySelector("#battle-picker-faction").addEventListener("change", refreshBattlePicker);
 battlePickerResults.addEventListener("click", event => {

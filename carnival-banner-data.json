@@ -1,0 +1,5989 @@
+{
+  "format": "XIII Files Carnival Recruitment Simulator Data",
+  "source": {
+    "package": "com.tokyoghoulsea1.google",
+    "version": "3.10814",
+    "tables": [
+      "00347_Gacha.bin",
+      "00241_Item.bin",
+      "00384_Reward.bin",
+      "00155_TranslateForMultiEN.bin"
+    ]
+  },
+  "currentBannerKey": "SeasonGachaTest18_1150",
+  "note": "Chest items use choose-one reward lists from Item field 14 and fixed Reward entries; they are not random rolls.",
+  "banners": [
+    {
+      "key": "SeasonGachaTest1",
+      "featuredId": "1050",
+      "featuredName": "Kisho Arima",
+      "featuredTitle": "CCG's Reaper",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21901",
+      "milestoneDisplayItemName": "Setsail - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1050"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1050",
+          "name": "Kisho Arima",
+          "title": "CCG's Reaper",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20210",
+          "name": "PSY Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1050",
+          "name": "Kisho Arima",
+          "title": "CCG's Reaper",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21801",
+          "name": "Carnival Selection Chest · Set Sail",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21801",
+      "selectionChestName": "Carnival Selection Chest · Set Sail",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest2_bz",
+      "featuredId": "1065",
+      "featuredName": "Ken Kaneki",
+      "featuredTitle": "Centipede Rampage",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21902",
+      "milestoneDisplayItemName": "Daybreak - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1065"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1065",
+          "name": "Ken Kaneki",
+          "title": "Centipede Rampage",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20211",
+          "name": "WIT Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1065",
+          "name": "Ken Kaneki",
+          "title": "Centipede Rampage",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21802",
+          "name": "Carnival Selection Chest · Daybreak",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21802",
+      "selectionChestName": "Carnival Selection Chest · Daybreak",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest3_xd",
+      "featuredId": "1058",
+      "featuredName": "Ayato Kirishima",
+      "featuredTitle": "Wings of Power-seeker",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21903",
+      "milestoneDisplayItemName": "Newborn - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1058",
+        "1050"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20210",
+          "name": "PSY Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21803",
+          "name": "Carnival Selection Chest · Newborn",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21803",
+      "selectionChestName": "Carnival Selection Chest · Newborn",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest4_td",
+      "featuredId": "1072",
+      "featuredName": "Kohtaro Amon",
+      "featuredTitle": "Dojima Kai",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21904",
+      "milestoneDisplayItemName": "Vortex - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1072",
+        "1050",
+        "1065"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20210",
+          "name": "PSY Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21804",
+          "name": "Carnival Selection Chest · Vortex",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21804",
+      "selectionChestName": "Carnival Selection Chest · Vortex",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest7_1120",
+      "featuredId": "1120",
+      "featuredName": "Yoshimura",
+      "featuredTitle": "Owl (Anteiku)",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21907",
+      "milestoneDisplayItemName": "Guilt - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1120",
+        "1050",
+        "1065",
+        "1058"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20211",
+          "name": "WIT Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21807",
+          "name": "Carnival Selection Chest · Guilt",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21807",
+      "selectionChestName": "Carnival Selection Chest · Guilt",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest10_1135",
+      "featuredId": "1135",
+      "featuredName": "Noro",
+      "featuredTitle": "Overpower",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21910",
+      "milestoneDisplayItemName": "Encounter - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1135",
+        "1050",
+        "1065",
+        "1058",
+        "1072"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20211",
+          "name": "WIT Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21810",
+          "name": "Carnival Selection Chest - Encounter",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21810",
+      "selectionChestName": "Carnival Selection Chest - Encounter",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest12_1127",
+      "featuredId": "1127",
+      "featuredName": "Hideyoshi Nagachika",
+      "featuredTitle": "Best Friend",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21912",
+      "milestoneDisplayItemName": "Partner - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1127",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20210",
+          "name": "PSY Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21812",
+          "name": "Carnival Random Chest · Past",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21812",
+      "selectionChestName": "Carnival Random Chest · Past",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest13_1146",
+      "featuredId": "1146",
+      "featuredName": "Kisho Arima",
+      "featuredTitle": "Invincible Investigator",
+      "featuredRarity": "SP",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21913",
+      "milestoneDisplayItemName": "Reaper - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1146",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120",
+        "1135"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1146",
+          "name": "Kisho Arima",
+          "title": "Invincible Investigator",
+          "rarity": "SP",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20211",
+          "name": "WIT Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1146",
+          "name": "Kisho Arima",
+          "title": "Invincible Investigator",
+          "rarity": "SP",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21813",
+          "name": "Carnival Random Chest - Reaper",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21813",
+      "selectionChestName": "Carnival Random Chest - Reaper",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest14_1147",
+      "featuredId": "1147",
+      "featuredName": "Ayato Kirishima",
+      "featuredTitle": "Wings of Ardor",
+      "featuredRarity": "SP",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21914",
+      "milestoneDisplayItemName": "Black Wings - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1147",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120",
+        "1135",
+        "1127"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1147",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Ardor",
+          "rarity": "SP",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20211",
+          "name": "WIT Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1147",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Ardor",
+          "rarity": "SP",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21814",
+          "name": "Carnival Selection Chest - Black Wings",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21814",
+      "selectionChestName": "Carnival Selection Chest - Black Wings",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest15_1160",
+      "featuredId": "1160",
+      "featuredName": "Toka Kirishima",
+      "featuredTitle": "Flame Strike",
+      "featuredRarity": "SP",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21915",
+      "milestoneDisplayItemName": "Fire - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1160",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120",
+        "1135",
+        "1127",
+        "1146"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1160",
+          "name": "Toka Kirishima",
+          "title": "Flame Strike",
+          "rarity": "SP",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20210",
+          "name": "PSY Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1160",
+          "name": "Toka Kirishima",
+          "title": "Flame Strike",
+          "rarity": "SP",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21815",
+          "name": "Carnival Selection Chest - Fire",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21815",
+      "selectionChestName": "Carnival Selection Chest - Fire",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1146",
+          "name": "Kisho Arima",
+          "title": "Invincible Investigator",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest16_1168",
+      "featuredId": "1168",
+      "featuredName": "Ken Kaneki",
+      "featuredTitle": "√A",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21916",
+      "milestoneDisplayItemName": "Ashes - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1168",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120",
+        "1135",
+        "1127",
+        "1146",
+        "1147"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1168",
+          "name": "Ken Kaneki",
+          "title": "√A",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20696",
+          "name": "DST Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1168",
+          "name": "Ken Kaneki",
+          "title": "√A",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21816",
+          "name": "Carnival Selection Chest - Ashes",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21816",
+      "selectionChestName": "Carnival Selection Chest - Ashes",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1147",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Ardor",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1146",
+          "name": "Kisho Arima",
+          "title": "Invincible Investigator",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1078",
+          "name": "Toka Kirishima",
+          "title": "Natsu Matsuri",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1079",
+          "name": "Ken Kaneki",
+          "title": "Natsu Matsuri",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest17_1114",
+      "featuredId": "1114",
+      "featuredName": "Nishiki Nishio",
+      "featuredTitle": "Orochi",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21917",
+      "milestoneDisplayItemName": "Reunion - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1114",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120",
+        "1135",
+        "1127",
+        "1146",
+        "1147",
+        "1160"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1114",
+          "name": "Nishiki Nishio",
+          "title": "Orochi",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20210",
+          "name": "PSY Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1114",
+          "name": "Nishiki Nishio",
+          "title": "Orochi",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21817",
+          "name": "Carnival Selection Chest - Reunion",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21817",
+      "selectionChestName": "Carnival Selection Chest - Reunion",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1160",
+          "name": "Toka Kirishima",
+          "title": "Flame Strike",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1147",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Ardor",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1146",
+          "name": "Kisho Arima",
+          "title": "Invincible Investigator",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1078",
+          "name": "Toka Kirishima",
+          "title": "Natsu Matsuri",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1079",
+          "name": "Ken Kaneki",
+          "title": "Natsu Matsuri",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "key": "SeasonGachaTest18_1150",
+      "featuredId": "1150",
+      "featuredName": "Haise Sasaki",
+      "featuredTitle": "Sealed Memory",
+      "featuredRarity": "SSR",
+      "ticketId": "21135",
+      "ticketName": "Carnival Summon Ticket",
+      "diamondCost": 600,
+      "milestoneAt": 100,
+      "milestoneDisplayItemId": "21918",
+      "milestoneDisplayItemName": "Erosion - Carnival Summon Chest",
+      "switchableHeroIds": [
+        "1150",
+        "1050",
+        "1065",
+        "1058",
+        "1072",
+        "1120",
+        "1135",
+        "1127",
+        "1146",
+        "1147",
+        "1160",
+        "1168"
+      ],
+      "normalCharacters": [
+        {
+          "kind": "featured",
+          "code": "1150",
+          "name": "Haise Sasaki",
+          "title": "Sealed Memory",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.01
+        },
+        {
+          "kind": "hero",
+          "code": "1001",
+          "name": "Rize Kamishiro",
+          "title": "Binge Eater",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1010",
+          "name": "Kureo Mado",
+          "title": "Quinque Maniac",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1004",
+          "name": "Shu Tsukiyama",
+          "title": "Gourmet",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1012",
+          "name": "Yakumo Omori",
+          "title": "Jason",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1015",
+          "name": "Yukinori Shinohara",
+          "title": "Arata proto",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1018",
+          "name": "Kurona Yasuhisa",
+          "title": "Inky Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1019",
+          "name": "Nashiro Yasuhisa",
+          "title": "Spotless Shroud",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1023",
+          "name": "Kosuke Hoji",
+          "title": "Red Tongue Hitman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1026",
+          "name": "Enji Koma",
+          "title": "Devil Ape",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1027",
+          "name": "Kaya Irimi",
+          "title": "Black Dog",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1033",
+          "name": "Take Hirako",
+          "title": "Absolute Strength",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1035",
+          "name": "Kori Ui",
+          "title": "Shining New Star",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1036",
+          "name": "Naki",
+          "title": "Crybaby",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1037",
+          "name": "Nico",
+          "title": "Ladyboy in Love",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1038",
+          "name": "Elder Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1039",
+          "name": "Younger Bin",
+          "title": "Tail Brothers",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1041",
+          "name": "Mogan Tanakamaru",
+          "title": "Battleground Gentleman",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1042",
+          "name": "Ayumu Hogi",
+          "title": "Long-haired Ghoul Investigator",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1043",
+          "name": "Chu Hachikawa",
+          "title": "Envoy of Vengeance",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1046",
+          "name": "Kyoji Misaka",
+          "title": "Warden",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1060",
+          "name": "Kohtaro Amon",
+          "title": "Twinblades of Justice",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        },
+        {
+          "kind": "hero",
+          "code": "1076",
+          "name": "Toka Kirishima",
+          "title": "Blazewing",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.0018
+        }
+      ],
+      "normalItems": [
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.007
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 100,
+          "probability": 0.005
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 30,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 10,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "30000",
+          "name": "Limit Crystal",
+          "amount": 5,
+          "probability": 0.15
+        },
+        {
+          "kind": "item",
+          "code": "21130",
+          "name": "Lv.4 Random Potential",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "20211",
+          "name": "WIT Cell Casket",
+          "amount": 1,
+          "probability": 0.05
+        },
+        {
+          "kind": "item",
+          "code": "21129",
+          "name": "Lv.3 Random Potential",
+          "amount": 1,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 500,
+          "probability": 0.1
+        },
+        {
+          "kind": "item",
+          "code": "41001",
+          "name": "Ability Booster",
+          "amount": 300,
+          "probability": 0.1314
+        }
+      ],
+      "cumulativeRewards": [
+        {
+          "kind": "featured",
+          "code": "1150",
+          "name": "Haise Sasaki",
+          "title": "Sealed Memory",
+          "rarity": "SSR",
+          "amount": 1,
+          "probability": 0.3
+        },
+        {
+          "kind": "item",
+          "code": "20059",
+          "name": "Panacean Star-Up Crystal",
+          "amount": 1,
+          "probability": 0.24
+        },
+        {
+          "kind": "item",
+          "code": "20203",
+          "name": "Panacean Refinement Crystal",
+          "amount": 1,
+          "probability": 0.16
+        },
+        {
+          "kind": "item",
+          "code": "21818",
+          "name": "Carnival Selection Chest - Erosion",
+          "amount": 1,
+          "probability": 0.3
+        }
+      ],
+      "selectionChestId": "21818",
+      "selectionChestName": "Carnival Selection Chest - Erosion",
+      "selectionChestChoices": [
+        {
+          "kind": "hero",
+          "code": "1168",
+          "name": "Ken Kaneki",
+          "title": "√A",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1160",
+          "name": "Toka Kirishima",
+          "title": "Flame Strike",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1147",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Ardor",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1146",
+          "name": "Kisho Arima",
+          "title": "Invincible Investigator",
+          "rarity": "SP",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1127",
+          "name": "Hideyoshi Nagachika",
+          "title": "Best Friend",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1124",
+          "name": "Yoshimura",
+          "title": "Cleaner",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1135",
+          "name": "Noro",
+          "title": "Overpower",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1134",
+          "name": "Uta",
+          "title": "The Past",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1125",
+          "name": "Kisho Arima",
+          "title": "Second Owl Raid",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1120",
+          "name": "Yoshimura",
+          "title": "Owl (Anteiku)",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1071",
+          "name": "Yakumo Omori",
+          "title": "Warrior",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1056",
+          "name": "Shu Tsukiyama",
+          "title": "Bloody Feast",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1058",
+          "name": "Ayato Kirishima",
+          "title": "Wings of Power-seeker",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1072",
+          "name": "Kohtaro Amon",
+          "title": "Dojima Kai",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1078",
+          "name": "Toka Kirishima",
+          "title": "Natsu Matsuri",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1079",
+          "name": "Ken Kaneki",
+          "title": "Natsu Matsuri",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1099",
+          "name": "Hinami Fueguchi",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1098",
+          "name": "Ayato Kirishima",
+          "title": "Tanabata",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1104",
+          "name": "Ayato Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1105",
+          "name": "Toka Kirishima",
+          "title": "Easter",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1087",
+          "name": "Ken Kaneki",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1088",
+          "name": "Hinami Fueguchi",
+          "title": "Christmas",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1080",
+          "name": "Ken Kaneki",
+          "title": "Combat Outfit",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "hero",
+          "code": "1007",
+          "name": "Ken Kaneki",
+          "title": "Awaken",
+          "rarity": "SSR",
+          "amount": 1
+        },
+        {
+          "kind": "item",
+          "code": "21170",
+          "name": "Lv.6 Random Potential",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

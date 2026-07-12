@@ -1,0 +1,2118 @@
+{
+  "id": "1171",
+  "name": "Rize Kamishiro",
+  "folder": "1171_Rize_Kamishiro",
+  "source": "https://btc-web-863ee.web.app/upcoming-characters",
+  "version": "9333 (2) JSON dump",
+  "preview": {
+    "upcoming": true,
+    "changeType": "updated",
+    "releaseAt": "2026-07-21 05:00:00",
+    "baselineVersion": "Master Update 28-7-6",
+    "sourceVersion": "9333 (2) JSON dump",
+    "generatedAt": "2026-07-10T20:30:11.011Z",
+    "warning": "Early preview data. Kit, assets, release timing, and availability may change."
+  },
+  "downloadedImages": [
+    {
+      "url": "https://btc-web-863ee.web.app/pic_head/1171_head.png",
+      "file": "images/1171_head.png"
+    }
+  ],
+  "hero": {
+    "__key": "1171",
+    "id": "1171",
+    "model": "r_1171_T1",
+    "hero_coin": "30171",
+    "display_time": "{\"DisplayTime\":\"2026-07-21 05:00:00\"}",
+    "display_chain_level": 17,
+    "rarity": 4,
+    "comm_coin": 30,
+    "max_rank_skill_icon": "ComPSkill_3",
+    "max_rank_skill_tips": "tid#HeroRMaxDescT1_396",
+    "max_rank_skill_tips_translated": "Active Elevation: Wave damage is upgraded to Ultra-Wave damage.",
+    "max_rank_skill_desc": "tid#Skill_SupEntryDesc_396",
+    "max_rank_skill_desc_translated": "*UItra-Wave: This skill's damage dealt increases by 40%. Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 35% of the damage dealt skill for 1 turn",
+    "base_quality": "1171_Q1",
+    "rank": "Rank_40",
+    "skill_up_cost": "SLvCost4",
+    "skill_up_effect": "{\"1\":[\"1171_bre1_p1\",\"1171_bre1_p2\",\"1171_bre1_p3\",\"1171_bre1_p4\",\"1171_bre1_p5\"],\"2\":[\"1171_bre2_p1\",\"1171_bre2_p2\",\"1171_bre2_p3\",\"1171_bre2_p4\",\"1171_bre2_p5\"],\"3\":[\"1171_bre3_p1\",\"1171_bre3_p2\",\"1171_bre3_p3\",\"1171_bre3_p4\",\"1171_bre3_p5\"]}",
+    "star_value": "{\"1\":[\"StarValueTask01_1171_1\"],\"2\":[\"StarValueTask02_1171_1\"],\"3\":[\"StarValueTask03_1171_1\"]}",
+    "hero_limit": "HL_1171_0",
+    "gift_natural": "gift_1171_00",
+    "relation": [
+      "1171_R1_1",
+      "1171_R2_1",
+      "1171_R3_1"
+    ],
+    "relation_max": "1171_Rmax",
+    "base_cell_fusion": "Com_CellF_0",
+    "cell_fusion_name": "tid#HeroCellFusionName",
+    "cell_fusion_name_translated": "Ability Breakthrough",
+    "exp_factor": 1,
+    "atk_factor": 1.265,
+    "def_factor": 1.072,
+    "hp_factor": 1.238,
+    "skill": [
+      "1171_v1s1"
+    ],
+    "passive_skill": [
+      "1171_p1",
+      "1171_p2",
+      "1171_p3",
+      "1171_p4"
+    ],
+    "passive_skill_gift_n": [
+      "1171_rp1",
+      "1171_p2",
+      "1171_p3",
+      "1171_p4"
+    ],
+    "rank_p_skill": "1171_p5",
+    "skill_amount": [
+      8
+    ],
+    "weak_min": 3,
+    "weak_max": 6,
+    "attribution_id": "h171",
+    "player_head": "H_1171",
+    "player_head_combine": "HC_1171",
+    "star_preview": "[\"tid#RoleStarPreview_1171_1\",\"tid#RoleStarPreview_1171_2\",\"tid#RoleStarPreview_1171_3\",\"tid#RoleStarPreview_1171_4\",\"tid#RoleStarPreview_1171_5\",\"tid#RoleStarPreview_1171_6\"]",
+    "senior_arena_equip": [
+      "EquipAtk_UR_atk_T1_1",
+      "EquipDef_UR_def_T1_1",
+      "EquipHp_UR_hp_T1_1"
+    ],
+    "senior_arena_gift": [
+      "Gift_106_04_06",
+      "Gift_106_04_06",
+      "Gift_106_04_06",
+      "Gift_106_04_06",
+      "Gift_106_04_06",
+      "Gift_106_04_06",
+      "Gift_105_04_06",
+      "Gift_105_04_06",
+      "Gift_105_04_06"
+    ],
+    "senior_arena_lineup": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "roleModels": [
+    {
+      "__key": "r_1171_T1",
+      "id": "r_1171_T1",
+      "model": "1171",
+      "pic_spell": "1171",
+      "boss_pic_config": [
+        -17,
+        -112,
+        0.64
+      ],
+      "gacha_pic_config": [
+        -17,
+        -112,
+        0.64
+      ],
+      "title": "tid#RoleTitle_1171",
+      "title_translated": "Seaside Carnival Party",
+      "name": "tid#RoleName_1171",
+      "name_translated": "Rize Kamishiro",
+      "name_pic": "1171_name",
+      "eng_name": "tid#RoleEngName_1171",
+      "cv": "tid#RoleCV_1171",
+      "grow_show_rate": 1,
+      "soul": "1171",
+      "real_soul": "1001",
+      "test_appear": 3,
+      "test_lightness": "{\"start\":[3,60],\"keep\":[4,60],\"end\":[6,0]}",
+      "hpbar_delay_time": 0.3,
+      "radius": 0.5,
+      "sex": 2,
+      "faction": [
+        0
+      ],
+      "race": 2,
+      "tactic_type": 2,
+      "rc_type": "T1",
+      "animator": "1171Anima",
+      "full_star_effect": [
+        "skill_fullstar",
+        "4",
+        "0.8",
+        "0",
+        "0",
+        "0"
+      ],
+      "get_dialogue": "108709",
+      "gacha_pic_pos": [
+        284,
+        -368,
+        0.8
+      ]
+    }
+  ],
+  "ranks": [],
+  "qualities": [
+    {
+      "__key": "1171_Q1",
+      "id": "1171_Q1",
+      "next_quality": "1171_Q2",
+      "level_limit": 30,
+      "gold_cost": 10000,
+      "cost_item": [
+        "20023",
+        "20008",
+        "20007",
+        "20006"
+      ],
+      "cost_item_amount": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q2",
+      "id": "1171_Q2",
+      "next_quality": "1171_Q3",
+      "level_limit": 40,
+      "gold_cost": 20000,
+      "cost_item": [
+        "20023",
+        "20009",
+        "20008",
+        "20007"
+      ],
+      "cost_item_amount": [
+        1,
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q3",
+      "id": "1171_Q3",
+      "next_quality": "1171_Q4",
+      "level_limit": 45,
+      "gold_cost": 30000,
+      "cost_item": [
+        "20023",
+        "20009",
+        "20008",
+        "20007"
+      ],
+      "cost_item_amount": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q4",
+      "id": "1171_Q4",
+      "next_quality": "1171_Q5",
+      "level_limit": 50,
+      "gold_cost": 40000,
+      "cost_item": [
+        "20023",
+        "20010",
+        "20009",
+        "20008"
+      ],
+      "cost_item_amount": [
+        1,
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q5",
+      "id": "1171_Q5",
+      "next_quality": "1171_Q6",
+      "is_quality_up": 1,
+      "level_limit": 55,
+      "gold_cost": 50000,
+      "cost_item": [
+        "20023",
+        "20010",
+        "20009",
+        "20008"
+      ],
+      "cost_item_amount": [
+        1,
+        2,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q6",
+      "id": "1171_Q6",
+      "next_quality": "1171_Q7",
+      "level_limit": 60,
+      "gold_cost": 60000,
+      "cost_item": [
+        "20023",
+        "20010",
+        "20009",
+        "20008"
+      ],
+      "cost_item_amount": [
+        1,
+        2,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q7",
+      "id": "1171_Q7",
+      "next_quality": "1171_Q8",
+      "level_limit": 65,
+      "gold_cost": 80000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        25,
+        2,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q8",
+      "id": "1171_Q8",
+      "next_quality": "1171_Q9",
+      "level_limit": 70,
+      "gold_cost": 100000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        25,
+        2,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q9",
+      "id": "1171_Q9",
+      "next_quality": "1171_Q10",
+      "level_limit": 75,
+      "gold_cost": 120000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        30,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q10",
+      "id": "1171_Q10",
+      "next_quality": "1171_Q11",
+      "is_quality_up": 1,
+      "level_limit": 80,
+      "gold_cost": 160000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        30,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q11",
+      "id": "1171_Q11",
+      "next_quality": "1171_Q12",
+      "level_limit": 85,
+      "gold_cost": 200000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        30,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q12",
+      "id": "1171_Q12",
+      "next_quality": "1171_Q13",
+      "level_limit": 90,
+      "gold_cost": 250000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        30,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q13",
+      "id": "1171_Q13",
+      "next_quality": "1171_Q14",
+      "level_limit": 95,
+      "gold_cost": 300000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        30,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q14",
+      "id": "1171_Q14",
+      "next_quality": "1171_Q15",
+      "level_limit": 100,
+      "gold_cost": 400000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        30,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q15",
+      "id": "1171_Q15",
+      "next_quality": "1171_Q16",
+      "level_limit": 105,
+      "gold_cost": 600000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        40,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q16",
+      "id": "1171_Q16",
+      "next_quality": "1171_Q17",
+      "is_quality_up": 1,
+      "level_limit": 110,
+      "gold_cost": 800000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        40,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q17",
+      "id": "1171_Q17",
+      "next_quality": "1171_Q18",
+      "level_limit": 115,
+      "gold_cost": 1000000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        40,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q18",
+      "id": "1171_Q18",
+      "next_quality": "1171_Q19",
+      "level_limit": 120,
+      "gold_cost": 1200000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        40,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q19",
+      "id": "1171_Q19",
+      "next_quality": "1171_Q20",
+      "level_limit": 125,
+      "gold_cost": 1400000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        40,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q20",
+      "id": "1171_Q20",
+      "next_quality": "1171_Q21",
+      "level_limit": 130,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        40,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q21",
+      "id": "1171_Q21",
+      "next_quality": "1171_Q22",
+      "level_limit": 135,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q22",
+      "id": "1171_Q22",
+      "next_quality": "1171_Q23",
+      "level_limit": 140,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q23",
+      "id": "1171_Q23",
+      "next_quality": "1171_Q24",
+      "is_quality_up": 1,
+      "level_limit": 145,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q24",
+      "id": "1171_Q24",
+      "next_quality": "1171_Q25",
+      "level_limit": 150,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q25",
+      "id": "1171_Q25",
+      "next_quality": "1171_Q26",
+      "level_limit": 155,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q26",
+      "id": "1171_Q26",
+      "next_quality": "1171_Q27",
+      "level_limit": 160,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q27",
+      "id": "1171_Q27",
+      "next_quality": "1171_Q28",
+      "level_limit": 165,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q28",
+      "id": "1171_Q28",
+      "next_quality": "1171_Q29",
+      "level_limit": 170,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q29",
+      "id": "1171_Q29",
+      "next_quality": "1171_Q30",
+      "level_limit": 175,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q30",
+      "id": "1171_Q30",
+      "next_quality": "1171_Q31",
+      "level_limit": 180,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q31",
+      "id": "1171_Q31",
+      "next_quality": "1171_Q32",
+      "level_limit": 185,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q32",
+      "id": "1171_Q32",
+      "next_quality": "1171_Q33",
+      "level_limit": 190,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q33",
+      "id": "1171_Q33",
+      "next_quality": "1171_Q34",
+      "level_limit": 195,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q34",
+      "id": "1171_Q34",
+      "next_quality": "1171_Q35",
+      "level_limit": 200,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q35",
+      "id": "1171_Q35",
+      "next_quality": "1171_Q36",
+      "level_limit": 205,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q36",
+      "id": "1171_Q36",
+      "next_quality": "1171_Q37",
+      "level_limit": 210,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q37",
+      "id": "1171_Q37",
+      "next_quality": "1171_Q38",
+      "level_limit": 215,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q38",
+      "id": "1171_Q38",
+      "next_quality": "1171_Q39",
+      "level_limit": 220,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q39",
+      "id": "1171_Q39",
+      "next_quality": "1171_Q40",
+      "level_limit": 225,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q40",
+      "id": "1171_Q40",
+      "next_quality": "1171_Q41",
+      "level_limit": 230,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q41",
+      "id": "1171_Q41",
+      "next_quality": "1171_Q42",
+      "level_limit": 235,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q42",
+      "id": "1171_Q42",
+      "next_quality": "1171_Q43",
+      "level_limit": 240,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q43",
+      "id": "1171_Q43",
+      "next_quality": "1171_Q44",
+      "level_limit": 245,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q44",
+      "id": "1171_Q44",
+      "next_quality": "1171_Q45",
+      "level_limit": 250,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q45",
+      "id": "1171_Q45",
+      "next_quality": "1171_Q46",
+      "level_limit": 255,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q46",
+      "id": "1171_Q46",
+      "next_quality": "1171_Q47",
+      "level_limit": 260,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q47",
+      "id": "1171_Q47",
+      "next_quality": "1171_Q48",
+      "level_limit": 265,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q48",
+      "id": "1171_Q48",
+      "next_quality": "1171_Q49",
+      "level_limit": 270,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q49",
+      "id": "1171_Q49",
+      "next_quality": "1171_Q50",
+      "level_limit": 275,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q50",
+      "id": "1171_Q50",
+      "next_quality": "1171_Q51",
+      "level_limit": 280,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q51",
+      "id": "1171_Q51",
+      "next_quality": "1171_Q52",
+      "level_limit": 285,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q52",
+      "id": "1171_Q52",
+      "next_quality": "1171_Q53",
+      "level_limit": 290,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q53",
+      "id": "1171_Q53",
+      "next_quality": "1171_Q54",
+      "level_limit": 295,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "20023",
+        "20024",
+        "20010",
+        "20009"
+      ],
+      "cost_item_amount": [
+        1,
+        50,
+        5,
+        5
+      ]
+    },
+    {
+      "__key": "1171_Q54",
+      "id": "1171_Q54",
+      "next_quality": "1171_Q55",
+      "is_quality_up": 1,
+      "level_limit": 300,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "70171",
+        "20023",
+        "20024",
+        "20010"
+      ],
+      "cost_item_amount": [
+        10,
+        10,
+        500,
+        50
+      ]
+    },
+    {
+      "__key": "1171_Q55",
+      "id": "1171_Q55",
+      "level_limit": 350,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "70171",
+        "20023",
+        "20024",
+        "20010"
+      ],
+      "cost_item_amount": [
+        10,
+        10,
+        500,
+        50
+      ]
+    },
+    {
+      "__key": "1171_Q56",
+      "id": "1171_Q56",
+      "next_quality": "1171_Q57",
+      "level_limit": 400,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "70171",
+        "20023",
+        "20024",
+        "20010"
+      ],
+      "cost_item_amount": [
+        10,
+        10,
+        500,
+        50
+      ]
+    },
+    {
+      "__key": "1171_Q57",
+      "id": "1171_Q57",
+      "next_quality": "1171_Q58",
+      "level_limit": 450,
+      "gold_cost": 1500000,
+      "cost_item": [
+        "70171",
+        "20023",
+        "20024",
+        "20010"
+      ],
+      "cost_item_amount": [
+        10,
+        10,
+        500,
+        50
+      ]
+    },
+    {
+      "__key": "1171_Q58",
+      "id": "1171_Q58",
+      "level_limit": 500,
+      "gold_cost": 1500000
+    }
+  ],
+  "stats": [
+    {
+      "__key": "h171",
+      "id": "h171",
+      "energy_be_hurt": 30,
+      "atk": 1265,
+      "def": 857.6,
+      "hp": 12380,
+      "crit": 0.1,
+      "uncrit": 0.07,
+      "crit_deepen": 1.63,
+      "uncrit_deepen": 0.09,
+      "block": 0.07,
+      "unblock": 0.11,
+      "suck": 0.04,
+      "regeneration": 0.04,
+      "get_cured": 1.05
+    }
+  ],
+  "skills": [
+    {
+      "__key": "1171_v1s1",
+      "id": "1171_v1s1",
+      "type": 1,
+      "sub_type": 1,
+      "ai_type": [
+        "free"
+      ],
+      "level": 1,
+      "next": "1171_v1s2",
+      "skill_action": "1171_v1s1",
+      "effects": [
+        "1171_v1s1_1",
+        "1171_v1s1_2",
+        "1171_v1s1_3",
+        "1171_v1s1_4"
+      ],
+      "energy": 5,
+      "card_type": 5,
+      "type_icon": 3,
+      "rc_type": "T0",
+      "name": "tid#SkillName_ActiveSkill_lv1",
+      "name_translated": "Active Skill - Level 1",
+      "desc_short": "tid#SkillDesc_1171_v1s1",
+      "desc_short_translated": "Deals #Entry_1# damage to all enemies equal to #Factor_1# of ATK.",
+      "max_desc_short": "tid#SkillDesc_1171_v1s1",
+      "max_desc_short_translated": "Deals #Entry_1# damage to all enemies equal to #Factor_1# of ATK.",
+      "entry": [
+        "tid#Skill_EntryName_396"
+      ],
+      "entry_desc": [
+        "tid#Skill_EntryDesc_396"
+      ],
+      "entry_desc_translated": "*Wave: Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 20% of the damage dealt for 1 turn",
+      "factor_lv1": [
+        "5%"
+      ],
+      "factor_lv2": [
+        "5.2%",
+        "5.4%",
+        "5.6%",
+        "5.8%",
+        "6%"
+      ],
+      "r_max_entry": [
+        "tid#Skill_SupEntryName_396"
+      ],
+      "r_max_entry_desc": [
+        "tid#Skill_SupEntryDesc_396"
+      ],
+      "r_max_entry_desc_translated": "*UItra-Wave: This skill's damage dealt increases by 40%. Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 35% of the damage dealt skill for 1 turn",
+      "card_bg": "1171_skill_b",
+      "card_use_icon": "1171_skill_s"
+    },
+    {
+      "__key": "1171_v1s2",
+      "id": "1171_v1s2",
+      "type": 1,
+      "sub_type": 1,
+      "ai_type": [
+        "free"
+      ],
+      "level": 2,
+      "next": "1171_v1s3",
+      "skill_action": "1171_v1s2",
+      "effects": [
+        "1171_v1s2_1",
+        "1171_v1s2_2",
+        "1171_v1s2_3",
+        "1171_v1s2_4"
+      ],
+      "energy": 5,
+      "card_type": 5,
+      "type_icon": 3,
+      "rc_type": "T0",
+      "name": "tid#SkillName_ActiveSkill_lv2",
+      "name_translated": "Active Skill - Level 2",
+      "desc_short": "tid#SkillDesc_1171_v1s2",
+      "desc_short_translated": "Deals #Entry_1# damage to all enemies equal to #Factor_1# of ATK.",
+      "max_desc_short": "tid#SkillDesc_1171_v1s2",
+      "max_desc_short_translated": "Deals #Entry_1# damage to all enemies equal to #Factor_1# of ATK.",
+      "entry": [
+        "tid#Skill_EntryName_396"
+      ],
+      "entry_desc": [
+        "tid#Skill_EntryDesc_396"
+      ],
+      "entry_desc_translated": "*Wave: Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 20% of the damage dealt for 1 turn",
+      "factor_lv1": [
+        "5%"
+      ],
+      "factor_lv2": [
+        "5.2%",
+        "5.4%",
+        "5.6%",
+        "5.8%",
+        "6%"
+      ],
+      "r_max_entry": [
+        "tid#Skill_SupEntryName_396"
+      ],
+      "r_max_entry_desc": [
+        "tid#Skill_SupEntryDesc_396"
+      ],
+      "r_max_entry_desc_translated": "*UItra-Wave: This skill's damage dealt increases by 40%. Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 35% of the damage dealt skill for 1 turn",
+      "card_bg": "1171_skill_b",
+      "card_use_icon": "1171_skill_s"
+    },
+    {
+      "__key": "1171_v1s3",
+      "id": "1171_v1s3",
+      "type": 1,
+      "sub_type": 1,
+      "ai_type": [
+        "skill_lv3",
+        "free"
+      ],
+      "level": 3,
+      "skill_action": "1171_v1s3",
+      "effects": [
+        "1171_v1s3_1",
+        "1171_v1s3_2",
+        "1171_v1s3_3",
+        "1171_v1s3_4"
+      ],
+      "energy": 5,
+      "card_type": 5,
+      "type_icon": 3,
+      "rc_type": "T0",
+      "name": "tid#SkillName_ActiveSkill_lv3",
+      "name_translated": "Active Skill - Level 3",
+      "desc_short": "tid#SkillDesc_1171_v1s3",
+      "desc_short_translated": "Deals #Entry_1# damage to all enemies equal to #Factor_1# of ATK.",
+      "max_desc_short": "tid#SkillDesc_1171_v1s3",
+      "max_desc_short_translated": "Deals #Entry_1# damage to all enemies equal to #Factor_1# of ATK.",
+      "entry": [
+        "tid#Skill_EntryName_396"
+      ],
+      "entry_desc": [
+        "tid#Skill_EntryDesc_396"
+      ],
+      "entry_desc_translated": "*Wave: Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 20% of the damage dealt for 1 turn",
+      "factor_lv1": [
+        "8%"
+      ],
+      "factor_lv2": [
+        "8.7%",
+        "8.9%",
+        "9%",
+        "9.4%",
+        "10%"
+      ],
+      "r_max_entry": [
+        "tid#Skill_SupEntryName_396"
+      ],
+      "r_max_entry_desc": [
+        "tid#Skill_SupEntryDesc_396"
+      ],
+      "r_max_entry_desc_translated": "*UItra-Wave: This skill's damage dealt increases by 40%. Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 35% of the damage dealt skill for 1 turn",
+      "card_bg": "1171_skill_b",
+      "card_use_icon": "1171_skill_s"
+    },
+    {
+      "__key": "1171_p1",
+      "id": "1171_p1",
+      "type": 302,
+      "effects": [
+        "1171_p1_1",
+        "1171_p1_2",
+        "1171_p1_3"
+      ],
+      "name": "tid#SkillName_1171_p1",
+      "name_translated": "Counter",
+      "desc_short": "tid#SkillDesc_1171_p1",
+      "desc_short_translated": "When your turn starts, gain a Shield equal to 15% of Max HP for 1 turn. When other allies take single-target damage while you possess a Shield, you absorb 50% of that incoming damage and deal #Entry_1# damage equal to 150% ATK to the attacker. Each Retaliation grants all allies a stack of +15% non-active skill damage for 1 turn, stacking up to 3 times",
+      "max_desc_short": "tid#SkillDesc_1171_p1",
+      "max_desc_short_translated": "When your turn starts, gain a Shield equal to 15% of Max HP for 1 turn. When other allies take single-target damage while you possess a Shield, you absorb 50% of that incoming damage and deal #Entry_1# damage equal to 150% ATK to the attacker. Each Retaliation grants all allies a stack of +15% non-active skill damage for 1 turn, stacking up to 3 times",
+      "entry": [
+        "tid#Skill_EntryName_396"
+      ],
+      "entry_desc": [
+        "tid#Skill_EntryDesc_396"
+      ],
+      "entry_desc_translated": "*Wave: Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 20% of the damage dealt for 1 turn",
+      "r_max_entry": [
+        "tid#Skill_EntryName_396"
+      ],
+      "r_max_entry_desc": [
+        "tid#Skill_EntryDesc_396"
+      ],
+      "r_max_entry_desc_translated": "*Wave: Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 20% of the damage dealt for 1 turn",
+      "icon": "1171_p1"
+    },
+    {
+      "__key": "1171_p2",
+      "id": "1171_p2",
+      "type": 302,
+      "effects": [
+        "1171_p2_1",
+        "1171_p2_2",
+        "1171_p2_3"
+      ],
+      "name": "tid#SkillName_1171_p2",
+      "name_translated": "Unorganized Boost",
+      "desc_short": "tid#SkillDesc_1171_p2",
+      "desc_short_translated": "While you are on the field, all No Organization allies receive the following buffs: Basic stats increased by 24%. When HP exceeds 60%, ATK increases by 10% and extra damage dealt goes up by 18%. When HP drops below 60%, DEF-related stats increase by 15% and extra damage taken is reduced by 12%. Every 2 active skill casts raise your skill level",
+      "max_desc_short": "tid#SkillDesc_1171_p2",
+      "max_desc_short_translated": "While you are on the field, all No Organization allies receive the following buffs: Basic stats increased by 24%. When HP exceeds 60%, ATK increases by 10% and extra damage dealt goes up by 18%. When HP drops below 60%, DEF-related stats increase by 15% and extra damage taken is reduced by 12%. Every 2 active skill casts raise your skill level",
+      "icon": "1171_p2"
+    },
+    {
+      "__key": "1171_p3",
+      "id": "1171_p3",
+      "type": 302,
+      "effects": [
+        "1171_p3_1",
+        "1171_p3_2",
+        "1171_p3_3",
+        "1171_p3_4",
+        "1171_p3_5",
+        "1171_p3_6"
+      ],
+      "name": "tid#SkillName_1171_p3",
+      "name_translated": "Wave Strike",
+      "desc_short": "tid#SkillDesc_1171_p3",
+      "desc_short_translated": "Gain 1 Wave Strike stack each time an ally casts a non-active skill, up to 10 stacks. When your turn starts, if you hold any Wave Strike stacks, remove all stacks and grant corresponding buffs to No Organization allies based on the total cleared stacks: 1 stack: Damage taken from a single skill cannot exceed 40% of the unit's Max HP; 2 stacks: All stats increased by 6%; 3 stacks: The unit's ATK is multiplied by 1.2 for the duration of any damage-dealing skill they cast; 4 stacks: Single-target attacks deal extra damage equal to 80% of ATK, and that skill's total damage is boosted by 25%",
+      "max_desc_short": "tid#SkillDesc_1171_p3",
+      "max_desc_short_translated": "Gain 1 Wave Strike stack each time an ally casts a non-active skill, up to 10 stacks. When your turn starts, if you hold any Wave Strike stacks, remove all stacks and grant corresponding buffs to No Organization allies based on the total cleared stacks: 1 stack: Damage taken from a single skill cannot exceed 40% of the unit's Max HP; 2 stacks: All stats increased by 6%; 3 stacks: The unit's ATK is multiplied by 1.2 for the duration of any damage-dealing skill they cast; 4 stacks: Single-target attacks deal extra damage equal to 80% of ATK, and that skill's total damage is boosted by 25%",
+      "entry": [
+        "tid#Skill_EntryName_397"
+      ],
+      "entry_desc": [
+        "tid#Skill_EntryDesc_397"
+      ],
+      "entry_desc_translated": "*Wave Strike: All allies gain +4% DEF and Max HP, and their non-active skill damage increases by 5%",
+      "r_max_entry": [
+        "tid#Skill_EntryName_397"
+      ],
+      "r_max_entry_desc": [
+        "tid#Skill_EntryDesc_397"
+      ],
+      "r_max_entry_desc_translated": "*Wave Strike: All allies gain +4% DEF and Max HP, and their non-active skill damage increases by 5%",
+      "icon": "1171_p3"
+    },
+    {
+      "__key": "1171_p4",
+      "id": "1171_p4",
+      "type": 301,
+      "effects": [
+        "1171_p4_1"
+      ],
+      "name": "tid#SkillName_burst_1",
+      "name_translated": "Power Burst Boost",
+      "desc_short": "tid#SkillDesc_burst_55",
+      "desc_short_translated": "Gaining Power Burst increases self's basic stats by 10% for 1 turn.",
+      "max_desc_short": "tid#SkillDesc_burst_55",
+      "max_desc_short_translated": "Gaining Power Burst increases self's basic stats by 10% for 1 turn.",
+      "icon": "ComPSkill_1"
+    },
+    {
+      "__key": "1171_rp1",
+      "id": "1171_rp1",
+      "type": 302,
+      "effects": [
+        "1171_rp1_1",
+        "1171_rp1_2",
+        "1171_rp1_3"
+      ],
+      "name": "tid#SkillName_1171_rp1",
+      "name_translated": "Counter",
+      "desc_short": "tid#SkillDesc_1171_rp1",
+      "desc_short_translated": "When your turn starts, gain a Shield equal to 15% of Max HP for 1 turn. When other allies take single-target damage while you possess a Shield, you absorb 50% of that incoming damage and deal #Entry_1# damage equal to 150% ATK to the attacker. Each Retaliation grants all allies a stack of +15% non-active skill damage for 1 turn, stacking up to 3 times",
+      "max_desc_short": "tid#SkillDesc_1171_rp1",
+      "max_desc_short_translated": "When your turn starts, gain a Shield equal to 15% of Max HP for 1 turn. When other allies take single-target damage while you possess a Shield, you absorb 50% of that incoming damage and deal #Entry_1# damage equal to 150% ATK to the attacker. Each Retaliation grants all allies a stack of +15% non-active skill damage for 1 turn, stacking up to 3 times",
+      "entry": [
+        "tid#Skill_SupEntryName_396"
+      ],
+      "entry_desc": [
+        "tid#Skill_SupEntryDesc_396"
+      ],
+      "entry_desc_translated": "*UItra-Wave: This skill's damage dealt increases by 40%. Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 35% of the damage dealt skill for 1 turn",
+      "r_max_entry": [
+        "tid#Skill_SupEntryName_396"
+      ],
+      "r_max_entry_desc": [
+        "tid#Skill_SupEntryDesc_396"
+      ],
+      "r_max_entry_desc_translated": "*UItra-Wave: This skill's damage dealt increases by 40%. Skill multiplier increases by 40% if the target carries a Shield. If the target has no Shield, ignore the target's DEF and Block Chance, and grant all allies a Shield equal to 35% of the damage dealt skill for 1 turn",
+      "icon": "1171_p1"
+    },
+    {
+      "__key": "1171_p5",
+      "id": "1171_p5",
+      "type": 301,
+      "effects": [
+        "1171_p5_1"
+      ],
+      "name": "tid#SkillName_weak_1",
+      "name_translated": "Weak",
+      "desc_short": "tid#SkillDesc_weak_63",
+      "desc_short_translated": "Applying Weak increases your damage dealt by 10% for 1 turn.",
+      "max_desc_short": "tid#SkillDesc_weak_63",
+      "max_desc_short_translated": "Applying Weak increases your damage dealt by 10% for 1 turn.",
+      "icon": "ComPSkill_2"
+    },
+    {
+      "__key": "1171_bre1_p1",
+      "id": "1171_bre1_p1",
+      "type": 301,
+      "effects": [
+        "hero_break_1_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_1",
+      "desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+      "max_desc_short": "tid#SkillDesc_hero_break_1",
+      "max_desc_short_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+      "icon": "1022_p2"
+    },
+    {
+      "__key": "1171_bre1_p2",
+      "id": "1171_bre1_p2",
+      "type": 301,
+      "effects": [
+        "1171_bre1_p2_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre1_p2",
+      "max_desc_short": "tid#SkillDesc_1171_bre1_p2",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre1_p3",
+      "id": "1171_bre1_p3",
+      "type": 301,
+      "effects": [
+        "1171_bre1_p3_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre1_p3",
+      "desc_short_translated": "In battle, Increases your CRIT Resist by 10%.",
+      "max_desc_short": "tid#SkillDesc_1171_bre1_p3",
+      "max_desc_short_translated": "In battle, Increases your CRIT Resist by 10%.",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre1_p4",
+      "id": "1171_bre1_p4",
+      "type": 301,
+      "effects": [
+        "1171_bre1_p4_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre1_p4",
+      "desc_short_translated": "When the battle starts, increase your DEF by 8% for 1 turn",
+      "max_desc_short": "tid#SkillDesc_1171_bre1_p4",
+      "max_desc_short_translated": "When the battle starts, increase your DEF by 8% for 1 turn",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre1_p5",
+      "id": "1171_bre1_p5",
+      "type": 301,
+      "effects": [
+        "hero_break_5_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_5",
+      "desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+      "max_desc_short": "tid#SkillDesc_hero_break_5",
+      "max_desc_short_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+      "icon": "1022_p2"
+    },
+    {
+      "__key": "1171_bre2_p1",
+      "id": "1171_bre2_p1",
+      "type": 301,
+      "effects": [
+        "hero_break_24_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_24",
+      "desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+      "max_desc_short": "tid#SkillDesc_hero_break_24",
+      "max_desc_short_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+      "icon": "1016_p1"
+    },
+    {
+      "__key": "1171_bre2_p2",
+      "id": "1171_bre2_p2",
+      "type": 301,
+      "effects": [
+        "1171_bre2_p2_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre2_p2",
+      "desc_short_translated": "Increase allied characters' CRIT damage by 10%.",
+      "max_desc_short": "tid#SkillDesc_1171_bre2_p2",
+      "max_desc_short_translated": "Increase allied characters' CRIT damage by 10%.",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre2_p3",
+      "id": "1171_bre2_p3",
+      "type": 301,
+      "effects": [
+        "1171_bre2_p3_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre2_p3",
+      "desc_short_translated": "While you bear a Shield, all [No Organization] allies deal 6% more damage",
+      "max_desc_short": "tid#SkillDesc_1171_bre2_p3",
+      "max_desc_short_translated": "While you bear a Shield, all [No Organization] allies deal 6% more damage",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre2_p4",
+      "id": "1171_bre2_p4",
+      "type": 301,
+      "effects": [
+        "1171_bre2_p4_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre2_p4",
+      "desc_short_translated": "Max HP in battle increased by 6%",
+      "max_desc_short": "tid#SkillDesc_1171_bre2_p4",
+      "max_desc_short_translated": "Max HP in battle increased by 6%",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre2_p5",
+      "id": "1171_bre2_p5",
+      "type": 301,
+      "effects": [
+        "hero_break_28_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_28",
+      "desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+      "max_desc_short": "tid#SkillDesc_hero_break_28",
+      "max_desc_short_translated": "When the battle starts, increase your MAX HP by 10%.",
+      "icon": "1016_p1"
+    },
+    {
+      "__key": "1171_bre3_p1",
+      "id": "1171_bre3_p1",
+      "type": 301,
+      "effects": [
+        "hero_break_40_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_40",
+      "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+      "max_desc_short": "tid#SkillDesc_hero_break_40",
+      "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+      "icon": "1045_p3"
+    },
+    {
+      "__key": "1171_bre3_p2",
+      "id": "1171_bre3_p2",
+      "type": 301,
+      "effects": [
+        "1171_bre3_p2_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_12",
+      "desc_short_translated": "When the battle starts, increase your Restoration Rate by 5%.",
+      "max_desc_short": "tid#SkillDesc_hero_break_12",
+      "max_desc_short_translated": "When the battle starts, increase your Restoration Rate by 5%.",
+      "icon": "1037_p3"
+    },
+    {
+      "__key": "1171_bre3_p3",
+      "id": "1171_bre3_p3",
+      "type": 301,
+      "effects": [
+        "1171_bre3_p3_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre3_p3",
+      "desc_short_translated": "When battle starts, become immune to Disruption effects; this immunity is removed once afflicted with Weak",
+      "max_desc_short": "tid#SkillDesc_1171_bre3_p3",
+      "max_desc_short_translated": "When battle starts, become immune to Disruption effects; this immunity is removed once afflicted with Weak",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre3_p4",
+      "id": "1171_bre3_p4",
+      "type": 301,
+      "effects": [
+        "1171_bre3_p4_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_1171_bre3_p4",
+      "max_desc_short": "tid#SkillDesc_1171_bre3_p4",
+      "icon": "1068_p1"
+    },
+    {
+      "__key": "1171_bre3_p5",
+      "id": "1171_bre3_p5",
+      "type": 301,
+      "effects": [
+        "hero_break_44_1"
+      ],
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc_short": "tid#SkillDesc_hero_break_44",
+      "desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+      "max_desc_short": "tid#SkillDesc_hero_break_44",
+      "max_desc_short_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+      "icon": "1045_p3"
+    },
+    {
+      "__key": "1171_ep2",
+      "id": "1171_ep2",
+      "type": 302,
+      "effects": [
+        "1171_ep2_1"
+      ],
+      "name": "tid#UI_Text_Battle_38",
+      "name_translated": "Exclusive Skill",
+      "desc_short": "tid#SkillDesc_1171_ep2",
+      "desc_short_translated": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by #Factor_1#, up to#Factor_2#",
+      "max_desc_short": "tid#SkillDesc_1171_ep2",
+      "max_desc_short_translated": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by #Factor_1#, up to#Factor_2#",
+      "factor_lv1": [
+        "2%",
+        "8%"
+      ],
+      "icon": "1042_p3"
+    },
+    {
+      "__key": "1171_ep3",
+      "id": "1171_ep3",
+      "type": 302,
+      "effects": [
+        "1171_ep3_1"
+      ],
+      "name": "tid#UI_Text_Battle_38",
+      "name_translated": "Exclusive Skill",
+      "desc_short": "tid#SkillDesc_1171_ep3",
+      "desc_short_translated": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by #Factor_1#, up to #Factor_2#",
+      "max_desc_short": "tid#SkillDesc_1171_ep3",
+      "max_desc_short_translated": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by #Factor_1#, up to #Factor_2#",
+      "factor_lv1": [
+        "4%",
+        "16%"
+      ],
+      "icon": "1042_p3"
+    },
+    {
+      "__key": "1171_ep4",
+      "id": "1171_ep4",
+      "type": 302,
+      "effects": [
+        "1171_ep4_1",
+        "1171_ep4_2"
+      ],
+      "name": "tid#UI_Text_Battle_38",
+      "name_translated": "Exclusive Skill",
+      "desc_short": "tid#SkillDesc_1171_ep4",
+      "desc_short_translated": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by #Factor_1#, up to #Factor_2#. When your HP first falls below #Factor_3#, all your stats are boosted by #Factor_5# for #Factor_4# turns, and your skill level is raised to Lv.#Factor_6#.",
+      "max_desc_short": "tid#SkillDesc_1171_ep4",
+      "max_desc_short_translated": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by #Factor_1#, up to #Factor_2#. When your HP first falls below #Factor_3#, all your stats are boosted by #Factor_5# for #Factor_4# turns, and your skill level is raised to Lv.#Factor_6#.",
+      "factor_lv1": [
+        "4%",
+        "16%",
+        "30%",
+        "1",
+        "4%",
+        "3"
+      ],
+      "icon": "1042_p3"
+    }
+  ],
+  "effects": [
+    {
+      "__key": "1171_bre1_p1",
+      "id": "1171_bre1_p1",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_1",
+      "desc_translated": "When the battle starts, gain a shield equal to 5% of your MAX HP for 1 turn.",
+      "icon": "1022_p2",
+      "fighting_skill": "1171_bre1_p1"
+    },
+    {
+      "__key": "1171_bre1_p2",
+      "id": "1171_bre1_p2",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre1_p2",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre1_p2"
+    },
+    {
+      "__key": "1171_bre1_p3",
+      "id": "1171_bre1_p3",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre1_p3",
+      "desc_translated": "In battle, Increases your CRIT Resist by 10%.",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre1_p3"
+    },
+    {
+      "__key": "1171_bre1_p4",
+      "id": "1171_bre1_p4",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre1_p4",
+      "desc_translated": "When the battle starts, increase your DEF by 8% for 1 turn",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre1_p4"
+    },
+    {
+      "__key": "1171_bre1_p5",
+      "id": "1171_bre1_p5",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_5",
+      "desc_translated": "When your turn starts, gain a shield equal to 5% of your Max HP for 1 turn.",
+      "icon": "1022_p2",
+      "fighting_skill": "1171_bre1_p5"
+    },
+    {
+      "__key": "1171_bre2_p1",
+      "id": "1171_bre2_p1",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_24",
+      "desc_translated": "When the battle starts, increase your Max HP by 10% for 1 turn.",
+      "icon": "1016_p1",
+      "fighting_skill": "1171_bre2_p1"
+    },
+    {
+      "__key": "1171_bre2_p2",
+      "id": "1171_bre2_p2",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre2_p2",
+      "desc_translated": "Increase allied characters' CRIT damage by 10%.",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre2_p2"
+    },
+    {
+      "__key": "1171_bre2_p3",
+      "id": "1171_bre2_p3",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre2_p3",
+      "desc_translated": "While you bear a Shield, all [No Organization] allies deal 6% more damage",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre2_p3"
+    },
+    {
+      "__key": "1171_bre2_p4",
+      "id": "1171_bre2_p4",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre2_p4",
+      "desc_translated": "Max HP in battle increased by 6%",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre2_p4"
+    },
+    {
+      "__key": "1171_bre2_p5",
+      "id": "1171_bre2_p5",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_28",
+      "desc_translated": "When the battle starts, increase your MAX HP by 10%.",
+      "icon": "1016_p1",
+      "fighting_skill": "1171_bre2_p5"
+    },
+    {
+      "__key": "1171_bre3_p1",
+      "id": "1171_bre3_p1",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_40",
+      "desc_translated": "When the battle starts, reduce damage taken from active skills by 5% for 1 turn.",
+      "icon": "1045_p3",
+      "fighting_skill": "1171_bre3_p1"
+    },
+    {
+      "__key": "1171_bre3_p2",
+      "id": "1171_bre3_p2",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_12",
+      "desc_translated": "When the battle starts, increase your Restoration Rate by 5%.",
+      "icon": "1037_p3",
+      "fighting_skill": "1171_bre3_p2"
+    },
+    {
+      "__key": "1171_bre3_p3",
+      "id": "1171_bre3_p3",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre3_p3",
+      "desc_translated": "When battle starts, become immune to Disruption effects; this immunity is removed once afflicted with Weak",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre3_p3"
+    },
+    {
+      "__key": "1171_bre3_p4",
+      "id": "1171_bre3_p4",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_1171_bre3_p4",
+      "icon": "1068_p1",
+      "fighting_skill": "1171_bre3_p4"
+    },
+    {
+      "__key": "1171_bre3_p5",
+      "id": "1171_bre3_p5",
+      "name": "tid#SkillName_Talent_Common",
+      "name_translated": "Talent Effect",
+      "desc": "tid#SkillDesc_hero_break_44",
+      "desc_translated": "When the battle starts, reduce damage taken from active skills by 5%.",
+      "icon": "1045_p3",
+      "fighting_skill": "1171_bre3_p5"
+    }
+  ],
+  "attrEffects": [],
+  "relations": [
+    {
+      "__key": "1171_R1_1",
+      "id": "1171_R1_1",
+      "next": "1171_R1_2",
+      "hero_soul_id": [
+        "1171",
+        "1019"
+      ],
+      "hero_head_icon": "1019_head",
+      "item": [
+        "20097"
+      ],
+      "item_amount": [
+        10
+      ],
+      "gold": 30000,
+      "effect": "1001_R1_1"
+    },
+    {
+      "__key": "1171_R2_1",
+      "id": "1171_R2_1",
+      "next": "1171_R2_2",
+      "hero_soul_id": [
+        "1171",
+        "1018"
+      ],
+      "hero_head_icon": "1018_head",
+      "item": [
+        "20095"
+      ],
+      "item_amount": [
+        10
+      ],
+      "gold": 30000,
+      "effect": "1001_R2_1"
+    },
+    {
+      "__key": "1171_R3_1",
+      "id": "1171_R3_1",
+      "next": "1171_R3_2",
+      "hero_soul_id": [
+        "1171",
+        "1004"
+      ],
+      "hero_head_icon": "1004_head",
+      "item": [
+        "20096"
+      ],
+      "item_amount": [
+        10
+      ],
+      "gold": 30000,
+      "effect": "1001_R3_1"
+    }
+  ],
+  "properEquip": [
+    {
+      "__key": "Equip_1171_3",
+      "id": "Equip_1171_3",
+      "display_time": "{\"DisplayTime\":\"2026-07-21 05:00:00\"}",
+      "hero_belong": "1171",
+      "name": "tid#Equip_1171",
+      "name_translated": "Seaside Carnival Party Ability Sphere",
+      "icon": "Equip_HE_SR_1171",
+      "rarity": 3,
+      "re_item": "41713",
+      "re_item_amount": 10,
+      "lv_up": "1171_3_1",
+      "base_advance": "1171_pe_300"
+    },
+    {
+      "__key": "Equip_1171_4",
+      "id": "Equip_1171_4",
+      "display_time": "{\"DisplayTime\":\"2026-07-21 05:00:00\"}",
+      "hero_belong": "1171",
+      "name": "tid#Equip_1171",
+      "name_translated": "Seaside Carnival Party Ability Sphere",
+      "icon": "Equip_HE_SSR_1171",
+      "rarity": 4,
+      "re_item": "41714",
+      "re_item_amount": 10,
+      "lv_up": "1171_4_1",
+      "base_advance": "1171_pe_400"
+    },
+    {
+      "__key": "Equip_1171_5",
+      "id": "Equip_1171_5",
+      "display_time": "{\"DisplayTime\":\"2026-07-21 05:00:00\"}",
+      "hero_belong": "1171",
+      "name": "tid#Equip_1171",
+      "name_translated": "Seaside Carnival Party Ability Sphere",
+      "icon": "Equip_HE_UR_1171",
+      "rarity": 5,
+      "re_item": "41715",
+      "re_item_amount": 10,
+      "lv_up": "1171_5_1",
+      "base_advance": "1171_pe_500",
+      "single_warning_amount": 10,
+      "daily_warning_amount": 50
+    }
+  ],
+  "properEquipAdvance": []
+}

@@ -30,7 +30,13 @@ Every 100 draws unlocks one separate cumulative reward. The counter resets after
 - Selected featured character: 30%
 - Panacean Star-Up Crystal: 24%
 - Panacean Refinement Crystal: 16%
-- Carnival Random Chest - Erosion: 30%
+- Carnival Selection Chest - Erosion: 30%
+
+Although some English item-name rows say "Random Chest," `00241_Item.bin` defines these as choose-one items with a reward list and the instruction token translated as "Choose to get a reward upon use." Each selectable result points to a fixed entry in `00384_Reward.bin`. The current Erosion chest has 25 choices.
+
+## Banner presets
+
+The local simulator now contains 13 canonical Carnival records, from `SeasonGachaTest1` through `SeasonGachaTest18_1150` where the APK exposes an eligible selectable banner. Each preset retains its own normal item pool, Cell Casket type, chest identity, and chest choices. These canonical records use the 30% / 24% / 16% / 30% cumulative table. The APK also contains superseded legacy/test variants with different reward tables; those are intentionally excluded from the preset selector.
 
 ## Corrections to the supplied HTML simulator
 
@@ -39,6 +45,9 @@ Every 100 draws unlocks one separate cumulative reward. The counter resets after
 3. Preserved the separate 100-draw cumulative reward instead of combining it with an extra pity copy.
 4. Replaced informal item names with translated in-game names.
 5. Removed the unverified star/refinement upgrade calculator. Those progression rules are separate from the Carnival gacha table and should not be presented as part of the verified pull model.
+6. Added a manual reward-claim gate at 100 draws, matching the rule that progress resets after the cumulative reward is received.
+7. Separated Carnival Ticket and diamond spending, including configurable payment priority and insufficient-funds behavior.
+8. Replaced the generic chest roll with banner-specific choose-one chest contents.
 
 ## Source rule text
 
