@@ -1,6 +1,8 @@
 # XIII Files
 
-A community unit archive, CP comparison tool, and team builder for Tokyo Ghoul Awakening.
+A community unit archive, CP comparison tool, team builder, and APK-verified Carnival Banner Simulator for Tokyo Ghoul Awakening.
+
+The simulator audit and exact rates are documented in `CARNIVAL-SIMULATOR-AUDIT.md`.
 
 Presented by ICX (5081).
 

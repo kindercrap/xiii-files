@@ -31,6 +31,7 @@
       <button class="app-tab active" type="button" role="tab" aria-selected="true" aria-controls="archive-view" data-view="archive">Unit Archive</button>
       <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="cp-battle-view" data-view="battle">CP Battle</button>
       <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="team-builder-view" data-view="builder">Team Building</button>
+      <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="carnival-view" data-view="carnival">Carnival Banner Simulator</button>
     </nav>
 
     <section id="archive-view" class="app-view" role="tabpanel">
@@ -117,6 +118,58 @@
       </header>
       <div class="builder-column-headings" aria-hidden="true"><span>Main Line-up</span><span>Back-up</span><span>Team CP</span></div>
       <div id="team-builder-stages" class="builder-stages"></div>
+    </section>
+
+    <section id="carnival-view" class="app-view carnival-view" role="tabpanel" hidden>
+      <header class="carnival-header">
+        <div>
+          <p class="eyebrow">APK-verified recruitment model</p>
+          <h2>Carnival Banner Simulator</h2>
+          <p>Simulates the latest Carnival Recruitment table extracted from the installed game. Results are random and use the exact configured rates.</p>
+        </div>
+        <span class="verified-badge">APK VERIFIED</span>
+      </header>
+
+      <div class="carnival-layout">
+        <section class="carnival-panel carnival-controls-panel">
+          <div id="carnival-featured-card" class="carnival-featured"></div>
+          <label class="carnival-featured-select"><span>Featured character</span><select id="carnival-featured"></select></label>
+          <p class="carnival-switch-note">The game allows switching only while cumulative draw progress is 0.</p>
+          <div class="carnival-actions">
+            <button type="button" data-carnival-pulls="1">Recruit x1</button>
+            <button type="button" data-carnival-pulls="10" class="primary">Recruit x10</button>
+            <button type="button" data-carnival-pulls="100">Simulate x100</button>
+            <button type="button" id="carnival-reset" class="danger">Reset</button>
+          </div>
+          <div class="carnival-rule-note"><strong>No 100-pull featured guarantee</strong><p>Every 100 draws awards one separate cumulative reward: featured character 30%, Star-Up Crystal 24%, Refinement Crystal 16%, or Carnival Random Chest 30%.</p></div>
+        </section>
+
+        <section class="carnival-panel carnival-dashboard">
+          <div class="carnival-stats">
+            <div><span>Total draws</span><strong id="carnival-pulls">0</strong></div>
+            <div><span>Diamond equivalent</span><strong id="carnival-diamonds">0</strong></div>
+            <div><span>Featured copies</span><strong id="carnival-featured-copies">0</strong></div>
+            <div><span>Other SSR</span><strong id="carnival-other-ssr">0</strong></div>
+          </div>
+          <div class="carnival-progress-heading"><span>Next cumulative reward</span><strong id="carnival-progress-text">0 / 100</strong></div>
+          <div class="carnival-progress"><span id="carnival-progress-bar"></span></div>
+          <div id="carnival-results" class="carnival-results" aria-live="polite"></div>
+        </section>
+      </div>
+
+      <div class="carnival-lower-grid">
+        <section class="carnival-panel"><div class="carnival-section-heading"><h3>Obtained resources</h3><span>Current simulation</span></div><div id="carnival-inventory" class="carnival-inventory"></div></section>
+        <section class="carnival-panel"><div class="carnival-section-heading"><h3>Cumulative rewards</h3><span>One per 100 draws</span></div><div id="carnival-bonus-log" class="carnival-log"></div></section>
+      </div>
+
+      <details class="carnival-rates carnival-panel">
+        <summary>View APK rate table and verification notes</summary>
+        <div class="carnival-rate-grid">
+          <div><h3>Character results · 4.96%</h3><p>Featured character 1.00%</p><p>22 standard SSR characters at 0.18% each (3.96% total)</p></div>
+          <div><h3>Item results · 95.04%</h3><p>Star-Up Crystal 0.70% · Refinement Crystal 0.70%</p><p>Rainbow Tokens: x100 0.50%, x30 5%, x10 30%, x5 15%</p><p>Lv.4 Potential 5% · WIT Cell Casket 5% · Lv.3 Potential 10%</p><p>Ability Booster x500 10% · x300 13.14%</p></div>
+          <div><h3>Source behavior</h3><p>1 Carnival Summon Ticket or 600 diamonds per draw. Each roll remains independent; drawing the featured character does not remove it from later rolls.</p></div>
+        </div>
+      </details>
     </section>
   </main>
 

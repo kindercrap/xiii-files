@@ -16,7 +16,7 @@ const state = {
 
 const translations = {
   en: {
-    subtitle: "Tokyo Ghoul Awakening", archive: "Unit Archive", battle: "CP Battle", builder: "Team Building",
+    subtitle: "Tokyo Ghoul Awakening", archive: "Unit Archive", battle: "CP Battle", builder: "Team Building", carnival: "Carnival Banner Simulator",
     localDatabase: "Local character database", rarity: "Rarity", faction: "Faction", sort: "Sort by", searchName: "Search by name",
     all: "All", ccg: "CCG (High & Low Rank)", anteiku: "Anteiku", noOrg: "No Org", defaultSort: "Default",
     cpHigh: "CP: highest to lowest", cpLow: "CP: lowest to highest", newest: "Release: newest first", oldest: "Release: oldest first",
@@ -114,6 +114,7 @@ async function loadCatalog() {
     render();
     renderBattle();
     renderTeamBuilder();
+    initializeCarnival();
     applyLanguage();
   } catch (error) {
     loading.innerHTML = `<span class="error">Could not open the local character data.</span><br>${escapeHtml(error.message)}<br><small>Start the page with <code>node server.mjs</code>.</small>`;
@@ -133,6 +134,7 @@ function applyLanguage() {
   document.querySelector('[data-view="archive"]').textContent = t("archive");
   document.querySelector('[data-view="battle"]').textContent = t("battle");
   document.querySelector('[data-view="builder"]').textContent = t("builder");
+  document.querySelector('[data-view="carnival"]').textContent = t("carnival");
   document.querySelector("#rarity-filter").closest("label").querySelector("span").textContent = t("rarity");
   document.querySelector("#faction-filter").closest("label").querySelector("span").textContent = t("faction");
   document.querySelector("#sort-filter").closest("label").querySelector("span").textContent = t("sort");
@@ -429,11 +431,150 @@ function switchView(view) {
   document.querySelector("#archive-view").hidden = view !== "archive";
   document.querySelector("#cp-battle-view").hidden = view !== "battle";
   document.querySelector("#team-builder-view").hidden = view !== "builder";
+  document.querySelector("#carnival-view").hidden = view !== "carnival";
   document.querySelectorAll(".app-tab").forEach(tab => {
     const active = tab.dataset.view === view;
     tab.classList.toggle("active", active);
     tab.setAttribute("aria-selected", String(active));
   });
+}
+
+const CARNIVAL_FEATURED_IDS = ["1150", "1114", "1168", "1160", "1147", "1146", "1127", "1135", "1120", "1072", "1058", "1065", "1050"];
+const CARNIVAL_STANDARD_SSR_IDS = ["1001", "1010", "1004", "1012", "1015", "1018", "1019", "1023", "1026", "1027", "1033", "1035", "1036", "1037", "1038", "1039", "1041", "1042", "1043", "1046", "1060", "1076"];
+const CARNIVAL_ITEM_POOL = [
+  { key: "star", name: "Panacean Star-Up Crystal", amount: 1, probability: 0.007 },
+  { key: "refine", name: "Panacean Refinement Crystal", amount: 1, probability: 0.007 },
+  { key: "token100", name: "Rainbow Token", amount: 100, probability: 0.005 },
+  { key: "token30", name: "Rainbow Token", amount: 30, probability: 0.05 },
+  { key: "token10", name: "Rainbow Token", amount: 10, probability: 0.30 },
+  { key: "token5", name: "Rainbow Token", amount: 5, probability: 0.15 },
+  { key: "potential4", name: "Lv.4 Random Potential", amount: 1, probability: 0.05 },
+  { key: "witCell", name: "WIT Cell Casket", amount: 1, probability: 0.05 },
+  { key: "potential3", name: "Lv.3 Random Potential", amount: 1, probability: 0.10 },
+  { key: "booster500", name: "Ability Booster", amount: 500, probability: 0.10 },
+  { key: "booster300", name: "Ability Booster", amount: 300, probability: 0.1314 }
+];
+const CARNIVAL_BONUS_POOL = [
+  { key: "featured", name: "Featured character", amount: 1, probability: 0.30 },
+  { key: "star", name: "Panacean Star-Up Crystal", amount: 1, probability: 0.24 },
+  { key: "refine", name: "Panacean Refinement Crystal", amount: 1, probability: 0.16 },
+  { key: "randomChest", name: "Carnival Random Chest · Erosion", amount: 1, probability: 0.30 }
+];
+const carnivalState = {
+  featuredId: "1150", pulls: 0, progress: 0, featuredCopies: 0, otherSsr: 0,
+  inventory: {}, recent: [], bonuses: []
+};
+
+function carnivalWeightedRoll(pool) {
+  let roll = Math.random();
+  for (const item of pool) {
+    roll -= item.probability;
+    if (roll < 0) return item;
+  }
+  return pool[pool.length - 1];
+}
+
+function carnivalUnit(id) {
+  return state.units.find(unit => String(unit.id) === String(id));
+}
+
+function addCarnivalInventory(item) {
+  carnivalState.inventory[item.name] = (carnivalState.inventory[item.name] || 0) + Number(item.amount || 1);
+}
+
+function carnivalNormalRoll() {
+  const roll = Math.random();
+  if (roll < 0.01) {
+    carnivalState.featuredCopies++;
+    return { kind: "featured", name: carnivalUnit(carnivalState.featuredId)?.name || `Unit #${carnivalState.featuredId}`, amount: 1, probability: 0.01, unitId: carnivalState.featuredId };
+  }
+  if (roll < 0.0496) {
+    const index = Math.min(CARNIVAL_STANDARD_SSR_IDS.length - 1, Math.floor((roll - 0.01) / 0.0018));
+    const unitId = CARNIVAL_STANDARD_SSR_IDS[index];
+    carnivalState.otherSsr++;
+    return { kind: "ssr", name: carnivalUnit(unitId)?.name || `SSR Unit #${unitId}`, amount: 1, probability: 0.0018, unitId };
+  }
+  const item = carnivalWeightedRoll(CARNIVAL_ITEM_POOL.map(entry => ({ ...entry, probability: entry.probability / 0.9504 })));
+  addCarnivalInventory(item);
+  return { ...item, kind: "item" };
+}
+
+function claimCarnivalBonus() {
+  const bonus = carnivalWeightedRoll(CARNIVAL_BONUS_POOL);
+  const featured = carnivalUnit(carnivalState.featuredId);
+  const result = { ...bonus, atPull: carnivalState.pulls };
+  if (bonus.key === "featured") {
+    carnivalState.featuredCopies++;
+    result.name = featured ? `${featured.name} · ${featured.title}` : `Featured Unit #${carnivalState.featuredId}`;
+    result.unitId = carnivalState.featuredId;
+  } else addCarnivalInventory(bonus);
+  carnivalState.bonuses.unshift(result);
+  carnivalState.progress = 0;
+}
+
+function carnivalPullMany(count) {
+  const batch = [];
+  for (let index = 0; index < count; index++) {
+    carnivalState.pulls++;
+    carnivalState.progress++;
+    batch.push({ ...carnivalNormalRoll(), pull: carnivalState.pulls });
+    if (carnivalState.progress === 100) claimCarnivalBonus();
+  }
+  carnivalState.recent = batch.slice(-10).reverse();
+  renderCarnival();
+}
+
+function carnivalResultMarkup(result) {
+  const unit = result.unitId ? carnivalUnit(result.unitId) : null;
+  return `<article class="carnival-result ${result.kind}">
+    ${unit ? `<img src="${escapeHtml(unit.image)}" alt="">` : `<span class="carnival-result-icon">ITEM</span>`}
+    <div><strong>${escapeHtml(result.name)}</strong><small>${result.amount > 1 ? `x${formatNumber(result.amount)} · ` : ""}Pull ${formatNumber(result.pull)}</small></div>
+  </article>`;
+}
+
+function renderCarnivalFeatured() {
+  const unit = carnivalUnit(carnivalState.featuredId);
+  const card = document.querySelector("#carnival-featured-card");
+  if (!unit || !card) return;
+  card.innerHTML = `<img src="${escapeHtml(unit.image)}" alt=""><div><span>1.00% featured rate</span><h3>${escapeHtml(unit.name)}</h3><p>${escapeHtml(unit.title || `Unit #${unit.id}`)} · ${escapeHtml(unit.rarity)}</p></div>`;
+}
+
+function renderCarnival() {
+  const setText = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
+  setText("#carnival-pulls", formatNumber(carnivalState.pulls));
+  setText("#carnival-diamonds", formatNumber(carnivalState.pulls * 600));
+  setText("#carnival-featured-copies", formatNumber(carnivalState.featuredCopies));
+  setText("#carnival-other-ssr", formatNumber(carnivalState.otherSsr));
+  setText("#carnival-progress-text", `${carnivalState.progress} / 100`);
+  document.querySelector("#carnival-progress-bar").style.width = `${carnivalState.progress}%`;
+  document.querySelector("#carnival-featured").disabled = carnivalState.progress !== 0;
+  renderCarnivalFeatured();
+  document.querySelector("#carnival-results").innerHTML = carnivalState.recent.length
+    ? carnivalState.recent.map(carnivalResultMarkup).join("")
+    : `<p class="carnival-empty">Recruit to see the latest results.</p>`;
+  const inventory = Object.entries(carnivalState.inventory).sort(([a], [b]) => a.localeCompare(b));
+  document.querySelector("#carnival-inventory").innerHTML = inventory.length
+    ? inventory.map(([name, amount]) => `<div><span>${escapeHtml(name)}</span><strong>${formatNumber(amount)}</strong></div>`).join("")
+    : `<p class="carnival-empty">No resources obtained yet.</p>`;
+  document.querySelector("#carnival-bonus-log").innerHTML = carnivalState.bonuses.length
+    ? carnivalState.bonuses.map(bonus => `<div class="${bonus.key === "featured" ? "featured" : ""}"><span>Draw ${formatNumber(bonus.atPull)}</span><strong>${escapeHtml(bonus.name)}${bonus.amount > 1 ? ` ×${formatNumber(bonus.amount)}` : ""}</strong></div>`).join("")
+    : `<p class="carnival-empty">Reach 100 draws to claim the first cumulative reward.</p>`;
+}
+
+function initializeCarnival() {
+  const select = document.querySelector("#carnival-featured");
+  if (!select || select.options.length) return renderCarnival();
+  select.innerHTML = CARNIVAL_FEATURED_IDS.map(id => {
+    const unit = carnivalUnit(id);
+    return unit ? `<option value="${id}">${escapeHtml(unit.name)} · ${escapeHtml(unit.title || id)}</option>` : "";
+  }).join("");
+  select.value = carnivalState.featuredId;
+  renderCarnival();
+}
+
+function resetCarnival() {
+  Object.assign(carnivalState, { pulls: 0, progress: 0, featuredCopies: 0, otherSsr: 0, inventory: {}, recent: [], bonuses: [] });
+  renderCarnival();
 }
 
 function statCards(stats = {}) {
@@ -650,6 +791,16 @@ document.querySelectorAll(".language-option").forEach(button => {
     applyLanguage();
   });
 });
+document.querySelector("#carnival-featured").addEventListener("change", event => {
+  if (carnivalState.progress !== 0) return;
+  carnivalState.featuredId = event.target.value;
+  renderCarnivalFeatured();
+});
+document.querySelector("#carnival-view").addEventListener("click", event => {
+  const pullButton = event.target.closest("[data-carnival-pulls]");
+  if (pullButton) carnivalPullMany(Number(pullButton.dataset.carnivalPulls));
+});
+document.querySelector("#carnival-reset").addEventListener("click", resetCarnival);
 ["left", "right"].forEach(side => {
   const slots = document.querySelector(`#${side}-slots`);
   slots.addEventListener("click", event => {
