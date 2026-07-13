@@ -11,6 +11,14 @@
     ]
   },
   "currentBannerKey": "SeasonGachaTest18_1150",
+  "randomPotentialFamilies": [
+    "Artifice",
+    "Eliminate",
+    "Initiate",
+    "Potent",
+    "Smash",
+    "Undermine"
+  ],
   "note": "Chest items use choose-one reward lists from Item field 14 and fixed Reward entries; they are not random rolls.",
   "banners": [
     {

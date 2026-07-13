@@ -797,6 +797,7 @@ function resetCarnival() {
 */
 
 let carnivalData = null;
+let carnivalPlayerSample = null;
 let carnivalRevealTimer = null;
 const carnivalState = {
   bannerKey: "SeasonGachaTest18_1150", featuredId: "1150", pulls: 0, progress: 0, pendingClaim: false,
@@ -820,6 +821,21 @@ function carnivalWeightedRoll(pool, rng = Math.random) {
     if (roll < 0) return item;
   }
   return pool[pool.length - 1];
+}
+
+function resolveCarnivalPotential(item, rng = Math.random) {
+  const levelByCode = { "21129": 3, "21130": 4 };
+  const level = levelByCode[String(item.code)];
+  const families = carnivalData?.randomPotentialFamilies || [];
+  if (!level || !families.length) return { ...item };
+  const family = families[Math.min(families.length - 1, Math.floor(rng() * families.length))];
+  return {
+    ...item,
+    parentName: item.name,
+    potentialFamily: family,
+    potentialLevel: level,
+    name: `${family}Lv.${level}`
+  };
 }
 
 function carnivalPool(kind) {
@@ -876,7 +892,8 @@ function carnivalPayOne() {
 
 function carnivalNormalRoll() {
   const result = carnivalWeightedRoll(carnivalPool("normal"));
-  const item = { ...result, unitId: ["featured", "hero"].includes(result.kind) ? result.code : undefined };
+  const resolved = result.kind === "item" ? resolveCarnivalPotential(result) : { ...result };
+  const item = { ...resolved, unitId: ["featured", "hero"].includes(resolved.kind) ? resolved.code : undefined };
   if (item.kind === "featured") carnivalState.featuredCopies++;
   else if (item.kind === "hero") carnivalState.otherSsr++;
   else addCarnivalInventory(item);
@@ -991,7 +1008,29 @@ function renderCarnivalRates() {
   const bonus = carnivalPool("bonus");
   const formatRate = value => `${(Number(value) * 100).toFixed(Number(value) < .01 ? 2 : 1)}%`;
   document.querySelector("#carnival-rule-summary").textContent = `At 100 draws, claim one separately rolled reward: ${bonus.map(item => `${item.name} ${formatRate(item.probability)}`).join(" · ")}.`;
-  document.querySelector("#carnival-rate-grid").innerHTML = `<div><h3>Normal character results</h3>${normal.filter(item => item.kind !== "item").map(item => `<p>${escapeHtml(item.name)}${item.title ? ` · ${escapeHtml(item.title)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}</div><div><h3>Normal item results</h3>${normal.filter(item => item.kind === "item").map(item => `<p>${escapeHtml(item.name)}${item.amount > 1 ? ` x${formatNumber(item.amount)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}</div><div><h3>Cumulative reward · claim at 100</h3>${bonus.map(item => `<p>${escapeHtml(item.name)}${item.amount > 1 ? ` x${formatNumber(item.amount)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}<p><strong>${banner.selectionChestChoices.length}</strong> choose-one chest options · ${escapeHtml(banner.ticketName)} or ${formatNumber(banner.diamondCost)} diamonds per draw.</p></div>`;
+  const potentialNote = carnivalData.randomPotentialFamilies?.length
+    ? `<p class="potential-note">Random Potential results resolve to ${carnivalData.randomPotentialFamilies.map(escapeHtml).join(", ")}. The simulator uses an equal sub-roll, supported by the supplied 300-pull sample.</p>`
+    : "";
+  document.querySelector("#carnival-rate-grid").innerHTML = `<div><h3>Normal character results</h3>${normal.filter(item => item.kind !== "item").map(item => `<p>${escapeHtml(item.name)}${item.title ? ` · ${escapeHtml(item.title)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}</div><div><h3>Normal item results</h3>${normal.filter(item => item.kind === "item").map(item => `<p>${escapeHtml(item.name)}${item.amount > 1 ? ` x${formatNumber(item.amount)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}${potentialNote}</div><div><h3>Cumulative reward · claim at 100</h3>${bonus.map(item => `<p>${escapeHtml(item.name)}${item.amount > 1 ? ` x${formatNumber(item.amount)}` : ""}: ${formatRate(item.probability)}</p>`).join("")}<p><strong>${banner.selectionChestChoices.length}</strong> choose-one chest options · ${escapeHtml(banner.ticketName)} or ${formatNumber(banner.diamondCost)} diamonds per draw.</p></div>`;
+  renderCarnivalPlayerSample();
+}
+
+function renderCarnivalPlayerSample() {
+  const container = document.querySelector("#carnival-player-sample");
+  if (!container) return;
+  const sample = carnivalPlayerSample;
+  if (!sample || sample.bannerKey !== carnivalState.bannerKey) {
+    container.hidden = true;
+    return;
+  }
+  container.hidden = false;
+  const rate = value => `${(Number(value) * 100).toFixed(2)}%`;
+  const metric = (label, observed, observedRate, configuredRate) => `<div><span>${escapeHtml(label)}</span><strong>${formatNumber(observed)} <small>${rate(observedRate)}</small></strong><em>APK ${rate(configuredRate)}</em></div>`;
+  const featured = sample.comparison.featured;
+  const star = sample.comparison["Panacean Star-Up Crystal x1"];
+  const refine = sample.comparison["Panacean Refinement Crystal x1"];
+  const families = Object.entries(sample.potentials.byFamily).map(([name, count]) => `${escapeHtml(name)} ${formatNumber(count)}`).join(" · ");
+  container.innerHTML = `<header><div><p class="eyebrow">Real player validation</p><h3>${formatNumber(sample.sampleSize)} recorded pulls</h3></div><span>${escapeHtml(sample.obtainedAt)}</span></header><div class="carnival-sample-metrics">${metric("All SSR", sample.summary.totalSsr, sample.summary.observedSsrRate, sample.summary.configuredSsrRate)}${metric("Featured Haise", featured.observed, featured.observedRate, featured.configuredRate)}${metric("Star-Up Crystal", star.observed, star.observedRate, star.configuredRate)}${metric("Refinement Crystal", refine.observed, refine.observedRate, refine.configuredRate)}</div><p><strong>${formatNumber(sample.potentials.total)} named Potential results:</strong> ${families}.</p><small>The observed sample closely matches the configured table. It validates the model but does not redefine the APK rates; normal random variation is expected.</small>`;
 }
 
 function renderCarnival() {
@@ -1038,7 +1077,12 @@ function populateCarnivalFeatured() {
 }
 
 async function initializeCarnival() {
-  if (!carnivalData) carnivalData = await fetch("./carnival-banner-data.json").then(checkResponse).then(response => response.json());
+  if (!carnivalData || !carnivalPlayerSample) {
+    [carnivalData, carnivalPlayerSample] = await Promise.all([
+      carnivalData || fetch("./carnival-banner-data.json").then(checkResponse).then(response => response.json()),
+      carnivalPlayerSample || fetch("./carnival-player-sample.json").then(checkResponse).then(response => response.json())
+    ]);
+  }
   const select = document.querySelector("#carnival-banner");
   select.innerHTML = [...carnivalData.banners].reverse().map(banner => `<option value="${escapeHtml(banner.key)}">${escapeHtml(banner.featuredName)} · ${escapeHtml(banner.featuredTitle)}</option>`).join("");
   carnivalState.bannerKey = carnivalData.currentBannerKey;

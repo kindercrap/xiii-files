@@ -1,0 +1,1934 @@
+{
+  "format": "XIII Files Carnival Real Player Sample",
+  "bannerKey": "SeasonGachaTest18_1150",
+  "banner": "Haise Sasaki [Sealed Memory] Carnival Recruitment",
+  "obtainedAt": "2026-07-13",
+  "sampleSize": 300,
+  "source": "30 user-supplied in-game recruit-history screenshots, 10 results per page",
+  "evidenceScope": "Observed frequencies validate the APK table but do not replace configured probabilities.",
+  "summary": {
+    "totalSsr": 15,
+    "featuredSsr": 3,
+    "offBannerSsr": 12,
+    "observedSsrRate": 0.05,
+    "configuredSsrRate": 0.049600000000000005
+  },
+  "comparison": {
+    "featured": {
+      "observed": 3,
+      "observedRate": 0.01,
+      "configuredRate": 0.01
+    },
+    "offBannerSsr": {
+      "observed": 12,
+      "observedRate": 0.04,
+      "configuredRate": 0.0396
+    },
+    "Panacean Star-Up Crystal x1": {
+      "observed": 2,
+      "observedRate": 0.006666666666666667,
+      "configuredRate": 0.007
+    },
+    "Panacean Refinement Crystal x1": {
+      "observed": 2,
+      "observedRate": 0.006666666666666667,
+      "configuredRate": 0.007
+    },
+    "Limit Crystal x100": {
+      "observed": 1,
+      "observedRate": 0.0033333333333333335,
+      "configuredRate": 0.005
+    },
+    "Limit Crystal x30": {
+      "observed": 11,
+      "observedRate": 0.03666666666666667,
+      "configuredRate": 0.05
+    },
+    "Limit Crystal x10": {
+      "observed": 93,
+      "observedRate": 0.31,
+      "configuredRate": 0.3
+    },
+    "Limit Crystal x5": {
+      "observed": 45,
+      "observedRate": 0.15,
+      "configuredRate": 0.15
+    },
+    "Lv.4 Random Potential": {
+      "observed": 17,
+      "observedRate": 0.056666666666666664,
+      "configuredRate": 0.05
+    },
+    "WIT Cell Casket x1": {
+      "observed": 17,
+      "observedRate": 0.056666666666666664,
+      "configuredRate": 0.05
+    },
+    "Lv.3 Random Potential": {
+      "observed": 29,
+      "observedRate": 0.09666666666666666,
+      "configuredRate": 0.1
+    },
+    "Ability Booster x500": {
+      "observed": 31,
+      "observedRate": 0.10333333333333333,
+      "configuredRate": 0.1
+    },
+    "Ability Booster x300": {
+      "observed": 37,
+      "observedRate": 0.12333333333333334,
+      "configuredRate": 0.1314
+    }
+  },
+  "characters": {
+    "Ayumu Hogi [Long-haired Ghoul Investigator]": 1,
+    "Haise Sasaki [Sealed Memory]": 3,
+    "Kaya Irimi [Black Dog]": 1,
+    "Kohtaro Amon [Twinblades of Justice]": 3,
+    "Kyoji Misaka [Warden]": 1,
+    "Mogan Tanakamaru [Battleground Gentleman]": 2,
+    "Naki [Crybaby]": 1,
+    "Rize Kamishiro [Binge Eater]": 1,
+    "Younger Bin [Tail Brothers]": 1,
+    "Yukinori Shinohara [Arata proto]": 1
+  },
+  "potentials": {
+    "total": 46,
+    "byLevel": {
+      "Lv.3": 29,
+      "Lv.4": 17
+    },
+    "byFamily": {
+      "Artifice": 5,
+      "Eliminate": 10,
+      "Initiate": 8,
+      "Potent": 6,
+      "Smash": 9,
+      "Undermine": 8
+    },
+    "byLevelAndFamily": {
+      "Artifice Lv.3": 2,
+      "Artifice Lv.4": 3,
+      "Eliminate Lv.3": 7,
+      "Eliminate Lv.4": 3,
+      "Initiate Lv.3": 4,
+      "Initiate Lv.4": 4,
+      "Potent Lv.3": 3,
+      "Potent Lv.4": 3,
+      "Smash Lv.3": 6,
+      "Smash Lv.4": 3,
+      "Undermine Lv.3": 7,
+      "Undermine Lv.4": 1
+    },
+    "supportedFamilies": [
+      "Artifice",
+      "Eliminate",
+      "Initiate",
+      "Potent",
+      "Smash",
+      "Undermine"
+    ]
+  },
+  "transcription": [
+    {
+      "page": 1,
+      "row": 1,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 1,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 1,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 1,
+      "row": 4,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 1,
+      "row": 5,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 1,
+      "row": 6,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 1,
+      "row": 7,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 1,
+      "row": 8,
+      "raw": "C:Haise Sasaki [Sealed Memory]",
+      "label": "C:Haise Sasaki [Sealed Memory]"
+    },
+    {
+      "page": 1,
+      "row": 9,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 1,
+      "row": 10,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 2,
+      "row": 1,
+      "raw": "REFINE",
+      "label": "Panacean Refinement Crystal x1"
+    },
+    {
+      "page": 2,
+      "row": 2,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 2,
+      "row": 3,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 2,
+      "row": 4,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 2,
+      "row": 5,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 2,
+      "row": 6,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 2,
+      "row": 7,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 2,
+      "row": 8,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 2,
+      "row": 9,
+      "raw": "P4:Smash",
+      "label": "P4:Smash"
+    },
+    {
+      "page": 2,
+      "row": 10,
+      "raw": "P4:Potent",
+      "label": "P4:Potent"
+    },
+    {
+      "page": 3,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 3,
+      "row": 2,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 3,
+      "row": 3,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 3,
+      "row": 4,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 3,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 3,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 3,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 3,
+      "row": 8,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 3,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 3,
+      "row": 10,
+      "raw": "C:Younger Bin [Tail Brothers]",
+      "label": "C:Younger Bin [Tail Brothers]"
+    },
+    {
+      "page": 4,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 4,
+      "row": 2,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 4,
+      "row": 3,
+      "raw": "C:Kaya Irimi [Black Dog]",
+      "label": "C:Kaya Irimi [Black Dog]"
+    },
+    {
+      "page": 4,
+      "row": 4,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 4,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 4,
+      "row": 6,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 4,
+      "row": 7,
+      "raw": "P4:Smash",
+      "label": "P4:Smash"
+    },
+    {
+      "page": 4,
+      "row": 8,
+      "raw": "P4:Eliminate",
+      "label": "P4:Eliminate"
+    },
+    {
+      "page": 4,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 4,
+      "row": 10,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 5,
+      "row": 1,
+      "raw": "P4:Undermine",
+      "label": "P4:Undermine"
+    },
+    {
+      "page": 5,
+      "row": 2,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 5,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 5,
+      "row": 4,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 5,
+      "row": 5,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 5,
+      "row": 6,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 5,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 5,
+      "row": 8,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 5,
+      "row": 9,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 5,
+      "row": 10,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 6,
+      "row": 1,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 6,
+      "row": 2,
+      "raw": "C:Mogan Tanakamaru [Battleground Gentleman]",
+      "label": "C:Mogan Tanakamaru [Battleground Gentleman]"
+    },
+    {
+      "page": 6,
+      "row": 3,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 6,
+      "row": 4,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 6,
+      "row": 5,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 6,
+      "row": 6,
+      "raw": "C:Ayumu Hogi [Long-haired Ghoul Investigator]",
+      "label": "C:Ayumu Hogi [Long-haired Ghoul Investigator]"
+    },
+    {
+      "page": 6,
+      "row": 7,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 6,
+      "row": 8,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 6,
+      "row": 9,
+      "raw": "P3:Potent",
+      "label": "P3:Potent"
+    },
+    {
+      "page": 6,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 1,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 7,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 4,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 7,
+      "row": 7,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 7,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 7,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 8,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 8,
+      "row": 2,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 8,
+      "row": 3,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 8,
+      "row": 4,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 8,
+      "row": 5,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 8,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 8,
+      "row": 7,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 8,
+      "row": 8,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 8,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 8,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 9,
+      "row": 1,
+      "raw": "STAR",
+      "label": "Panacean Star-Up Crystal x1"
+    },
+    {
+      "page": 9,
+      "row": 2,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 9,
+      "row": 3,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 9,
+      "row": 4,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 9,
+      "row": 5,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 9,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 9,
+      "row": 7,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 9,
+      "row": 8,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 9,
+      "row": 9,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 9,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 10,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 10,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 10,
+      "row": 3,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 10,
+      "row": 4,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 10,
+      "row": 5,
+      "raw": "P3:Smash",
+      "label": "P3:Smash"
+    },
+    {
+      "page": 10,
+      "row": 6,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 10,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 10,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 10,
+      "row": 9,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 10,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 11,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 11,
+      "row": 2,
+      "raw": "P4:Initiate",
+      "label": "P4:Initiate"
+    },
+    {
+      "page": 11,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 11,
+      "row": 4,
+      "raw": "P3:Smash",
+      "label": "P3:Smash"
+    },
+    {
+      "page": 11,
+      "row": 5,
+      "raw": "C:Rize Kamishiro [Binge Eater]",
+      "label": "C:Rize Kamishiro [Binge Eater]"
+    },
+    {
+      "page": 11,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 11,
+      "row": 7,
+      "raw": "P3:Initiate",
+      "label": "P3:Initiate"
+    },
+    {
+      "page": 11,
+      "row": 8,
+      "raw": "P4:Artifice",
+      "label": "P4:Artifice"
+    },
+    {
+      "page": 11,
+      "row": 9,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 11,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 4,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 12,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 12,
+      "row": 8,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 12,
+      "row": 9,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 12,
+      "row": 10,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 13,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 13,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 13,
+      "row": 3,
+      "raw": "C:Mogan Tanakamaru [Battleground Gentleman]",
+      "label": "C:Mogan Tanakamaru [Battleground Gentleman]"
+    },
+    {
+      "page": 13,
+      "row": 4,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 13,
+      "row": 5,
+      "raw": "P3:Artifice",
+      "label": "P3:Artifice"
+    },
+    {
+      "page": 13,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 13,
+      "row": 7,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 13,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 13,
+      "row": 9,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 13,
+      "row": 10,
+      "raw": "P4:Initiate",
+      "label": "P4:Initiate"
+    },
+    {
+      "page": 14,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 14,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 14,
+      "row": 3,
+      "raw": "P3:Artifice",
+      "label": "P3:Artifice"
+    },
+    {
+      "page": 14,
+      "row": 4,
+      "raw": "P4:Initiate",
+      "label": "P4:Initiate"
+    },
+    {
+      "page": 14,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 14,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 14,
+      "row": 7,
+      "raw": "P3:Potent",
+      "label": "P3:Potent"
+    },
+    {
+      "page": 14,
+      "row": 8,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 14,
+      "row": 9,
+      "raw": "P4:Smash",
+      "label": "P4:Smash"
+    },
+    {
+      "page": 14,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 15,
+      "row": 1,
+      "raw": "P3:Smash",
+      "label": "P3:Smash"
+    },
+    {
+      "page": 15,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 15,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 15,
+      "row": 4,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 15,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 15,
+      "row": 6,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 15,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 15,
+      "row": 8,
+      "raw": "REFINE",
+      "label": "Panacean Refinement Crystal x1"
+    },
+    {
+      "page": 15,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 15,
+      "row": 10,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 16,
+      "row": 1,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 16,
+      "row": 2,
+      "raw": "P4:Potent",
+      "label": "P4:Potent"
+    },
+    {
+      "page": 16,
+      "row": 3,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 16,
+      "row": 4,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 16,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 16,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 16,
+      "row": 7,
+      "raw": "P3:Initiate",
+      "label": "P3:Initiate"
+    },
+    {
+      "page": 16,
+      "row": 8,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 16,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 16,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 17,
+      "row": 1,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 17,
+      "row": 2,
+      "raw": "P4:Eliminate",
+      "label": "P4:Eliminate"
+    },
+    {
+      "page": 17,
+      "row": 3,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 17,
+      "row": 4,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 17,
+      "row": 5,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 17,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 17,
+      "row": 7,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 17,
+      "row": 8,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 17,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 17,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 18,
+      "row": 1,
+      "raw": "P4:Eliminate",
+      "label": "P4:Eliminate"
+    },
+    {
+      "page": 18,
+      "row": 2,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 18,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 18,
+      "row": 4,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 18,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 18,
+      "row": 6,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 18,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 18,
+      "row": 8,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 18,
+      "row": 9,
+      "raw": "C:Haise Sasaki [Sealed Memory]",
+      "label": "C:Haise Sasaki [Sealed Memory]"
+    },
+    {
+      "page": 18,
+      "row": 10,
+      "raw": "P4:Artifice",
+      "label": "P4:Artifice"
+    },
+    {
+      "page": 19,
+      "row": 1,
+      "raw": "P3:Undermine",
+      "label": "P3:Undermine"
+    },
+    {
+      "page": 19,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 19,
+      "row": 3,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 19,
+      "row": 4,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 19,
+      "row": 5,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 19,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 19,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 19,
+      "row": 8,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 19,
+      "row": 9,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 19,
+      "row": 10,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 20,
+      "row": 1,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 20,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 20,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 20,
+      "row": 4,
+      "raw": "P4:Initiate",
+      "label": "P4:Initiate"
+    },
+    {
+      "page": 20,
+      "row": 5,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 20,
+      "row": 6,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 20,
+      "row": 7,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 20,
+      "row": 8,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 20,
+      "row": 9,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 20,
+      "row": 10,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 21,
+      "row": 1,
+      "raw": "C:Haise Sasaki [Sealed Memory]",
+      "label": "C:Haise Sasaki [Sealed Memory]"
+    },
+    {
+      "page": 21,
+      "row": 2,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 21,
+      "row": 3,
+      "raw": "P3:Initiate",
+      "label": "P3:Initiate"
+    },
+    {
+      "page": 21,
+      "row": 4,
+      "raw": "P3:Smash",
+      "label": "P3:Smash"
+    },
+    {
+      "page": 21,
+      "row": 5,
+      "raw": "P3:Smash",
+      "label": "P3:Smash"
+    },
+    {
+      "page": 21,
+      "row": 6,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 21,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 21,
+      "row": 8,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 21,
+      "row": 9,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 21,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 22,
+      "row": 1,
+      "raw": "P3:Potent",
+      "label": "P3:Potent"
+    },
+    {
+      "page": 22,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 22,
+      "row": 3,
+      "raw": "P3:Smash",
+      "label": "P3:Smash"
+    },
+    {
+      "page": 22,
+      "row": 4,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 22,
+      "row": 5,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 22,
+      "row": 6,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 22,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 22,
+      "row": 8,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 22,
+      "row": 9,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 22,
+      "row": 10,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 23,
+      "row": 1,
+      "raw": "LC100",
+      "label": "Limit Crystal x100"
+    },
+    {
+      "page": 23,
+      "row": 2,
+      "raw": "P4:Potent",
+      "label": "P4:Potent"
+    },
+    {
+      "page": 23,
+      "row": 3,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 23,
+      "row": 4,
+      "raw": "STAR",
+      "label": "Panacean Star-Up Crystal x1"
+    },
+    {
+      "page": 23,
+      "row": 5,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 23,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 23,
+      "row": 7,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 23,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 23,
+      "row": 9,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 23,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 24,
+      "row": 1,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 24,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 24,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 24,
+      "row": 4,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 24,
+      "row": 5,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 24,
+      "row": 6,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 24,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 24,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 24,
+      "row": 9,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 24,
+      "row": 10,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 25,
+      "row": 1,
+      "raw": "P3:Eliminate",
+      "label": "P3:Eliminate"
+    },
+    {
+      "page": 25,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 25,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 25,
+      "row": 4,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 25,
+      "row": 5,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 25,
+      "row": 6,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 25,
+      "row": 7,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 25,
+      "row": 8,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 25,
+      "row": 9,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 25,
+      "row": 10,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 26,
+      "row": 1,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 26,
+      "row": 2,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 26,
+      "row": 3,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 26,
+      "row": 4,
+      "raw": "P3:Initiate",
+      "label": "P3:Initiate"
+    },
+    {
+      "page": 26,
+      "row": 5,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 26,
+      "row": 6,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 26,
+      "row": 7,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 26,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 26,
+      "row": 9,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 26,
+      "row": 10,
+      "raw": "LC30",
+      "label": "Limit Crystal x30"
+    },
+    {
+      "page": 27,
+      "row": 1,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 27,
+      "row": 2,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 27,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 27,
+      "row": 4,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 27,
+      "row": 5,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 27,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 27,
+      "row": 7,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 27,
+      "row": 8,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 27,
+      "row": 9,
+      "raw": "C:Kohtaro Amon [Twinblades of Justice]",
+      "label": "C:Kohtaro Amon [Twinblades of Justice]"
+    },
+    {
+      "page": 27,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 28,
+      "row": 1,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 28,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 28,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 28,
+      "row": 4,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 28,
+      "row": 5,
+      "raw": "C:Kyoji Misaka [Warden]",
+      "label": "C:Kyoji Misaka [Warden]"
+    },
+    {
+      "page": 28,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 28,
+      "row": 7,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 28,
+      "row": 8,
+      "raw": "C:Kohtaro Amon [Twinblades of Justice]",
+      "label": "C:Kohtaro Amon [Twinblades of Justice]"
+    },
+    {
+      "page": 28,
+      "row": 9,
+      "raw": "P4:Artifice",
+      "label": "P4:Artifice"
+    },
+    {
+      "page": 28,
+      "row": 10,
+      "raw": "C:Yukinori Shinohara [Arata proto]",
+      "label": "C:Yukinori Shinohara [Arata proto]"
+    },
+    {
+      "page": 29,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 29,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 29,
+      "row": 3,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 29,
+      "row": 4,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 29,
+      "row": 5,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 29,
+      "row": 6,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 29,
+      "row": 7,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 29,
+      "row": 8,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 29,
+      "row": 9,
+      "raw": "AB500",
+      "label": "Ability Booster x500"
+    },
+    {
+      "page": 29,
+      "row": 10,
+      "raw": "C:Kohtaro Amon [Twinblades of Justice]",
+      "label": "C:Kohtaro Amon [Twinblades of Justice]"
+    },
+    {
+      "page": 30,
+      "row": 1,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 30,
+      "row": 2,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 30,
+      "row": 3,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 30,
+      "row": 4,
+      "raw": "LC5",
+      "label": "Limit Crystal x5"
+    },
+    {
+      "page": 30,
+      "row": 5,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 30,
+      "row": 6,
+      "raw": "AB300",
+      "label": "Ability Booster x300"
+    },
+    {
+      "page": 30,
+      "row": 7,
+      "raw": "CELL",
+      "label": "WIT Cell Casket x1"
+    },
+    {
+      "page": 30,
+      "row": 8,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    },
+    {
+      "page": 30,
+      "row": 9,
+      "raw": "C:Naki [Crybaby]",
+      "label": "C:Naki [Crybaby]"
+    },
+    {
+      "page": 30,
+      "row": 10,
+      "raw": "LC10",
+      "label": "Limit Crystal x10"
+    }
+  ]
+}
