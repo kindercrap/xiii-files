@@ -2292,23 +2292,29 @@ function simulatorBattle(leftSource, rightSource, seed, maxRounds, includeKits, 
   const left = simulatorBuildTeam(leftSource, "A", includeKits);
   const right = simulatorBuildTeam(rightSource, "B", includeKits);
   const log = captureLog ? [] : null;
-  if (includeKits) {
-    simulatorOpeningPassiveLog(left, log);
-    simulatorOpeningPassiveLog(right, log);
-    simulatorFirePassives("battle-start", left, right, { sourceIsCard: false, triggerDepth: 0 }, random, log, 0);
-    simulatorFirePassives("battle-start", right, left, { sourceIsCard: false, triggerDepth: 0 }, random, log, 0);
-  }
+  // Resolve every global phase in actual first-action order. Previously these
+  // phases always ran left-to-right, which gave My Team a hidden advantage when
+  // passives on both teams competed at battle/turn boundaries.
   const first = left.cp === right.cp ? (random() < 0.5 ? left : right) : (left.cp > right.cp ? left : right);
   const second = first === left ? right : left;
+  const priorityOrder = [[first, second], [second, first]];
+  if (includeKits) {
+    simulatorOpeningPassiveLog(first, log);
+    simulatorOpeningPassiveLog(second, log);
+    priorityOrder.forEach(([team, enemyTeam]) => {
+      simulatorFirePassives("battle-start", team, enemyTeam, { sourceIsCard: false, triggerDepth: 0 }, random, log, 0);
+    });
+  }
   let turn = 0;
   for (turn = 1; turn <= maxRounds; turn++) {
     simulatorBringBackup(left, log, turn, true);
     simulatorBringBackup(right, log, turn, true);
     if (includeKits) {
-      simulatorFirePassives("turn-start", left, right, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
-      simulatorFirePassives("turn-start", right, left, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
+      priorityOrder.forEach(([team, enemyTeam]) => {
+        simulatorFirePassives("turn-start", team, enemyTeam, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
+      });
     }
-    for (const [acting, defending] of [[first, second], [second, first]]) {
+    for (const [acting, defending] of priorityOrder) {
       const actors = [...simulatorLiving(acting)].sort((a, b) => simulatorEffectiveAtk(b) - simulatorEffectiveAtk(a) || random() - 0.5);
       for (const actor of actors) {
         if (!simulatorLiving(defending).length) break;
@@ -2317,8 +2323,9 @@ function simulatorBattle(leftSource, rightSource, seed, maxRounds, includeKits, 
       if (!simulatorLiving(defending).length && !defending.bench.length) break;
     }
     if (includeKits) {
-      simulatorFirePassives("turn-end", left, right, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
-      simulatorFirePassives("turn-end", right, left, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
+      priorityOrder.forEach(([team, enemyTeam]) => {
+        simulatorFirePassives("turn-end", team, enemyTeam, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
+      });
       simulatorTickStatuses(left);
       simulatorTickStatuses(right);
     }
@@ -2344,6 +2351,26 @@ function simulatorBattle(leftSource, rightSource, seed, maxRounds, includeKits, 
     leftMaxHp: left.all.reduce((sum, member) => sum + member.maxHp, 0),
     rightMaxHp: right.all.reduce((sum, member) => sum + member.maxHp, 0),
     leftUnits: unitStats(left), rightUnits: unitStats(right), log: log || []
+  };
+}
+
+function simulatorNormalizeMirroredBattle(battle) {
+  const swapSide = side => side === "A" ? "B" : side === "B" ? "A" : side;
+  return {
+    ...battle,
+    winner: swapSide(battle.winner),
+    first: swapSide(battle.first),
+    leftHp: battle.rightHp,
+    rightHp: battle.leftHp,
+    leftSurvivors: battle.rightSurvivors,
+    rightSurvivors: battle.leftSurvivors,
+    leftDamage: battle.rightDamage,
+    rightDamage: battle.leftDamage,
+    leftMaxHp: battle.rightMaxHp,
+    rightMaxHp: battle.leftMaxHp,
+    leftUnits: battle.rightUnits,
+    rightUnits: battle.leftUnits,
+    log: (battle.log || []).map(entry => ({ ...entry, side: swapSide(entry.side) }))
   };
 }
 
@@ -2468,7 +2495,16 @@ function executeBattleSimulator(leftSource, rightSource) {
   };
   let sample = null;
   for (let index = 0; index < battleSimulatorState.runs; index++) {
-    const battle = simulatorBattle(leftSource, rightSource, battleSimulatorState.seed + index * 7919, battleSimulatorState.maxRounds, battleSimulatorState.includeKits, index === 0);
+    // Use the same seed for each normal/mirrored pair. Mapping the mirrored
+    // result back to the user's original teams makes the Monte Carlo estimate
+    // invariant to which team is displayed on the left side.
+    const pairIndex = Math.floor(index / 2);
+    const mirrored = index % 2 === 1;
+    const pairSeed = battleSimulatorState.seed + pairIndex * 7919;
+    const rawBattle = mirrored
+      ? simulatorBattle(rightSource, leftSource, pairSeed, battleSimulatorState.maxRounds, battleSimulatorState.includeKits, false)
+      : simulatorBattle(leftSource, rightSource, pairSeed, battleSimulatorState.maxRounds, battleSimulatorState.includeKits, index === 0);
+    const battle = mirrored ? simulatorNormalizeMirroredBattle(rawBattle) : rawBattle;
     totals[battle.winner]++;
     totals.rounds += battle.rounds;
     totals.leftHp += battle.leftHp / Math.max(1, battle.leftMaxHp);
@@ -2581,7 +2617,7 @@ function renderBattleSimulatorResults() {
   document.querySelector("#simulator-results").innerHTML = `
     <section class="quick-result-board ${winnerClass}">
       <div class="simulator-victory-stamp">${winnerTitle}</div>
-      <header><span>QUICK BATTLE RESULT</span><h3>${winnerTitle}</h3><p>${battleSimulatorState.runs.toLocaleString()} simulations · 4 On Field + 1 Backup · seed ${battleSimulatorState.seed}${battleSimulatorState.maxInvestment ? " · MAX INVESTMENT PROXY" : ""}</p></header>
+      <header><span>QUICK BATTLE RESULT</span><h3>${winnerTitle}</h3><p>${battleSimulatorState.runs.toLocaleString()} side-balanced simulations · 4 On Field + 1 Backup · seed ${battleSimulatorState.seed}${battleSimulatorState.maxInvestment ? " · MAX INVESTMENT PROXY" : ""}</p></header>
       <div class="quick-result-lineups">
         <section class="ally ${allyOutcomeClass}"><em class="quick-side-outcome">${allyResult === "VICTORY" ? "WINNER" : allyResult === "DEFEAT" ? "DEFEATED" : "DRAW"}</em><strong>MY TEAM · ${formatNumber(leftCp)} CP</strong>${simulatorBattleLineup(leftSource, "ally")}</section>
         <div><b>${winnerTitle}</b><span>1</span><small>ROUND</small></div>
@@ -2600,6 +2636,7 @@ function renderBattleSimulatorResults() {
     </div>
     <details class="simulator-sample-log" open><summary>Battle action log, passive triggers, and Auto AI decisions</summary><div>${sample.log.slice(0, 220).map(simulatorLogEntryMarkup).join("")}</div></details>
     <details class="simulator-kit-coverage"><summary>Skill/passive coverage: ${coverage.modeled} modeled · ${coverage.partial} partial · ${coverage.unmodeled} not yet reproducible</summary>
+      <p class="simulator-coverage-note">Fairness control: each random seed is evaluated as a normal/mirrored pair and mapped back to the original teams, removing any left/right screen-position or random-consumption advantage.</p>
       <p class="simulator-coverage-note">Every equipped natural-gift/rank passive is audited against its APK event chain. “Partial” means the trigger is reproduced but one or more exact runtime details (for example a named status, card-hand operation, or encrypted target condition) remain approximated.</p>
       <div class="simulator-coverage-grid">${simulatorCoverageMarkup([...leftSource.ids, ...rightSource.ids])}</div>
     </details>`;
