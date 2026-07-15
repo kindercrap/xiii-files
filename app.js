@@ -38,6 +38,11 @@ const BATTLE_SIMULATOR_PLAYBACK_TIMING = Object.freeze({
   resultDelay: 600
 });
 
+// Formation slots define a deterministic initial ATK hierarchy. These are
+// minimum targets based on the strongest pre-battle ATK on the team, so no
+// unit is weakened and every On Field slot has a strict priority.
+const SIMULATOR_SLOT_ATTACK_PREMIUMS = Object.freeze([0.06, 0.04, 0.02, 0]);
+
 /* The APK splits account progression across many tables and does not provide one
    authoritative "everything maxed" snapshot. This equalized proxy is calibrated
    to the roughly 3x S00-to-built-team gap visible in supplied Quick Battle captures.
@@ -848,15 +853,17 @@ function simulatorOpeningPrediction(unit) {
 }
 
 function simulatorAiPredictionRows(side) {
-  const ids = battleSimulatorState.teams[side].slots.filter(Boolean);
-  if (!ids.length) return `<p class="simulator-ai-empty">Select units to reveal their opening Auto priorities.</p>`;
-  return ids.map(id => {
+  const entries = battleSimulatorState.teams[side].slots
+    .map((id, index) => ({ id, index }))
+    .filter(entry => entry.id);
+  if (!entries.length) return `<p class="simulator-ai-empty">Select units to reveal their opening Auto priorities.</p>`;
+  return entries.map(({ id, index }) => {
     const unit = simulatorUnit(id);
     const prediction = simulatorOpeningPrediction(unit);
     if (!unit || !prediction) return "";
     return `<article class="simulator-ai-row">
       <img src="${escapeHtml(unit.image)}" alt="">
-      <div class="simulator-ai-unit"><strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong><span>${escapeHtml(prediction.levelLabel)} predicted</span></div>
+      <div class="simulator-ai-unit"><strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong><span>${index === 4 ? "Backup · inherits open ATK priority" : `ATK Priority #${index + 1} · ${escapeHtml(prediction.levelLabel)} predicted`}</span></div>
       <div class="simulator-ai-rule"><b>${escapeHtml(prediction.rule.label)}</b><span>${escapeHtml(prediction.rule.key)} · ${escapeHtml(prediction.rule.order)}</span></div>
       <em class="${prediction.confidence === "HIGH" ? "high" : "tie"}">${prediction.confidence}</em>
     </article>`;
@@ -2129,7 +2136,8 @@ function simulatorRosterMarkup(side) {
       <i class="simulator-drag-grip" aria-hidden="true">⠿</i>
       <img src="${escapeHtml(unit.image)}" alt="">
       <strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong>
-      <small>${index === 4 ? "Enters next turn after an ally is defeated" : escapeHtml(unit.rarity)}</small>
+      <small>${index === 4 ? "Enters next turn and inherits the open slot priority" : escapeHtml(unit.rarity)}</small>
+      <i class="simulator-atk-priority">${index === 4 ? "ATK PRIORITY · INHERITED" : `ATK PRIORITY #${index + 1} · ${SIMULATOR_SLOT_ATTACK_PREMIUMS[index] ? `TEAM MAX +${SIMULATOR_SLOT_ATTACK_PREMIUMS[index] * 100}%` : "TEAM MAX"}`}</i>
       <em>${formatNumber(simulatorCombatPower(unit.id))}</em>
     </button>`;
   }).join("");
@@ -2242,7 +2250,24 @@ function simulatorBuildTeam(source, side, includeKits) {
       member.hp = member.maxHp;
     });
   }
+  simulatorApplySlotAttackPriority(team);
   return team;
+}
+
+function simulatorApplySlotAttackPriority(team) {
+  const onField = team.active.filter(member => member?.alive);
+  if (!onField.length) return;
+  const teamMaximum = Math.max(...team.all.map(member => Number(member.atk) || 0), 1);
+  team.slotAttackTargets = {};
+  onField.forEach(member => {
+    const slot = Math.max(0, Math.min(3, Number(member.slot) || 0));
+    const targetAtk = teamMaximum * (1 + SIMULATOR_SLOT_ATTACK_PREMIUMS[slot]);
+    member.naturalInitialAtk = member.atk;
+    member.atk = Math.max(member.atk, targetAtk);
+    member.baseAtk = member.atk;
+    member.slotAttackPriority = slot + 1;
+    team.slotAttackTargets[slot] = member.atk;
+  });
 }
 
 function simulatorBringBackup(team, log, round, deploy = false) {
@@ -2261,6 +2286,10 @@ function simulatorBringBackup(team, log, round, deploy = false) {
   }
   if (!team.backupPending || round < team.backupReadyRound) return false;
   const backup = team.bench.shift();
+  const inheritedAtk = Number(team.slotAttackTargets?.[team.backupSlot]) || 0;
+  backup.atk = Math.max(backup.atk, inheritedAtk);
+  backup.baseAtk = backup.atk;
+  backup.slotAttackPriority = team.backupSlot + 1;
   team.active[team.backupSlot] = backup;
   team.backupPending = false;
   team.backupReadyRound = 0;
@@ -2378,7 +2407,7 @@ function simulatorBattleLineup(source, side) {
   const battleSide = side === "enemy" ? "B" : "A";
   return `<div class="quick-lineup ${side}" data-battle-side="${battleSide}">${source.ids.map((id, index) => {
     const unit = simulatorUnit(id);
-    return unit ? `<div class="quick-combatant${index === 4 ? " is-backup is-waiting" : ""}" data-battle-side="${battleSide}" data-battle-unit="${escapeHtml(String(id))}"><div class="quick-unit-fx"></div>${index === 4 ? `<small class="quick-position-label">BACKUP</small>` : ""}<img src="${escapeHtml(unit.image)}" alt=""><span>${escapeHtml(simulatorUnitDisplayName(unit))}</span><i class="quick-unit-health"><b></b></i><em class="quick-unit-dead-label">DEAD</em></div>` : "";
+    return unit ? `<div class="quick-combatant${index === 4 ? " is-backup is-waiting" : ""}" data-battle-side="${battleSide}" data-battle-unit="${escapeHtml(String(id))}"><div class="quick-unit-fx"></div>${index === 4 ? `<small class="quick-position-label">BACKUP</small>` : ""}<small class="quick-atk-priority">${index === 4 ? "INHERITS ATK ORDER" : `ATK #${index + 1}`}</small><img src="${escapeHtml(unit.image)}" alt=""><span>${escapeHtml(simulatorUnitDisplayName(unit))}</span><i class="quick-unit-health"><b></b></i><em class="quick-unit-dead-label">DEAD</em></div>` : "";
   }).join("")}</div>`;
 }
 

@@ -1012,6 +1012,8 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 .simulator-empty.updated { border-left: 2px solid #31d3a7; animation: selectionFlash .45s ease; }
 .simulator-unit > em { position: static; display: block; width: auto; height: auto; margin-top: 3px; overflow: visible; color: #31d3a7; border: 0; border-radius: 0; background: transparent; box-shadow: none; font-size: 8px; font-style: normal; }
 .team-b .simulator-unit > em { color: #b58aff; }
+.simulator-unit > .simulator-atk-priority { display: block; margin-top: 4px; padding: 3px 4px; color: #f0c66c; border-left: 2px solid #e0ad4e; background: #221b0f; font-size: 7px; font-style: normal; font-weight: 900; line-height: 1.25; letter-spacing: .04em; }
+.team-b .simulator-unit > .simulator-atk-priority { color: #c8a8ff; border-left-color: #b58aff; background: #201a29; }
 .simulator-unit.empty b { display: block; color: #5e5e66; font-size: 21px; font-weight: 400; line-height: 1; }
 .simulator-roster .simulator-unit:nth-child(5) { border-left: 3px solid #e0ad4e; background: #1b1710; }
 .simulator-roster .simulator-unit:nth-child(5) > span { color: #f2c66d; }
@@ -1042,6 +1044,9 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 .quick-combatant.is-backup { border-style: dashed; border-color: #d5a64e; background: #1e180d; }
 .quick-combatant.is-backup.is-waiting { opacity: .48; filter: grayscale(.55); }
 .quick-position-label { position: absolute; top: 4px; left: 4px; z-index: 4; margin: 0; padding: 2px 3px; color: #171005; background: #e0ad4e; font-size: 6px; font-weight: 1000; letter-spacing: .07em; }
+.quick-atk-priority { position: absolute; top: 4px; right: 4px; z-index: 4; margin: 0; padding: 2px 3px; color: #061510; background: #31d3a7; font-size: 6px; font-weight: 1000; line-height: 1; letter-spacing: .05em; }
+.quick-lineup.enemy .quick-atk-priority { color: #fff; background: #b22b55; }
+.quick-combatant.is-backup .quick-atk-priority { top: auto; right: 4px; bottom: 20px; color: #171005; background: #e0ad4e; }
 .quick-combatant.is-entering { opacity: 1; filter: none; border-style: solid; animation: backupEntry .58s cubic-bezier(.17,.85,.25,1.18) both; }
 .quick-combatant.is-entering .quick-position-label { color: #061510; background: #31d3a7; }
 .quick-lineup img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
