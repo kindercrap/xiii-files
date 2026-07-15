@@ -14,8 +14,8 @@ const state = {
 
 const battleSimulatorState = {
   teams: {
-    left: { slots: ["", "", "", "", ""] },
-    right: { slots: ["", "", "", "", ""] }
+    left: { slots: ["", "", "", "", ""], maxTalents: [false, false, false, false, false] },
+    right: { slots: ["", "", "", "", ""], maxTalents: [false, false, false, false, false] }
   },
   runs: 500,
   maxRounds: 12,
@@ -906,7 +906,7 @@ function simulatorAiTarget(team, decision, random) {
   return simulatorTarget(team, random);
 }
 
-function simulatorSkillProfile(unit) {
+function simulatorSkillProfile(unit, includeTalents = false) {
   const details = unit.details || {};
   const skills = uniqueSkills(details.skills || []);
   const active = skills.filter(skill => Number(skill.type) === 1);
@@ -961,7 +961,7 @@ function simulatorSkillProfile(unit) {
     levels,
     aoe: /all enemies|all enemy/.test(activeText),
     cards: [1, 2, 3].map(level => simulatorActiveSkillSpec(unit, level)),
-    passiveRules: simulatorCompilePassiveRules(unit),
+    passiveRules: simulatorCompilePassiveRules(unit, includeTalents),
     ignoreDef: /ignores? def/.test(activeText),
     doubleCrit: /doubles crit rate/.test(activeText),
     pursuit: pursuitMatch ? Number(pursuitMatch[1]) / 100 : 0,
@@ -1059,6 +1059,20 @@ function simulatorSelectedOrbSkills(unit) {
   }));
 }
 
+function simulatorSelectedTalentSkills(unit) {
+  const details = unit?.details || {};
+  let tiers = {};
+  try { tiers = JSON.parse(details.hero?.skill_up_effect || "{}"); } catch { tiers = {}; }
+  const ids = [...new Set(Object.values(tiers).flat().filter(Boolean).map(String))];
+  const byId = new Map(uniqueSkills(details.skills || []).map(skill => [String(skill.id), skill]));
+  const auditById = new Map((state.battleEffectAudit.get(String(unit?.id))?.talents || []).map(rule => [String(rule.id), rule]));
+  return ids.map(id => byId.get(id)).filter(Boolean).map(skill => ({
+    ...skill,
+    __sourceType: "talent",
+    __audit: auditById.get(String(skill.id)) || {}
+  }));
+}
+
 function simulatorRuleTriggers(events, text) {
   const values = new Set();
   const exact = new Set(events || []);
@@ -1080,7 +1094,10 @@ function simulatorRuleTriggers(events, text) {
   if (exact.has("burst_after") || /gaining power burst|after power burst/.test(text)) values.add("power-burst");
   if (["label_get_after", "label_apply_after"].some(value => exact.has(value))) values.add("status-gained");
   if (exact.has("label_lose_after")) values.add("status-lost");
-  if (/when (?:the )?battle (?:begins|starts)|at the (?:start|beginning) of (?:the )?battle|upon entering battle/.test(text)) values.add("battle-start");
+  if (/when (?:the )?battle (?:begins|starts)|at the (?:start|beginning) of (?:the )?battle|upon entering battle|in the first turn|during the first turn/.test(text)) {
+    values.add("battle-start");
+    values.delete("turn-start");
+  }
   if (/gaining power burst|after power burst/.test(text) && !/active skill/.test(text)) {
     values.delete("before-active");
     values.delete("after-active");
@@ -1090,6 +1107,7 @@ function simulatorRuleTriggers(events, text) {
     values.delete("after-active");
   }
   if (/when using active skills?/.test(text) && !/release active skills? of the same level/.test(text)) values.delete("after-active");
+  if (/after (?:you|self) (?:use|uses|cast|casts|release|releases) an? active skill/.test(text)) values.delete("before-active");
   return [...values];
 }
 
@@ -1101,10 +1119,14 @@ function simulatorFactionRequirement(text) {
   return "";
 }
 
-function simulatorCompilePassiveRules(unit) {
+function simulatorCompilePassiveRules(unit, includeTalents = false) {
   const audited = state.battleEffectAudit.get(String(unit?.id));
   const auditById = new Map((audited?.passives || []).map(rule => [String(rule.id), rule]));
-  const ruleSkills = [...simulatorSelectedPassiveSkills(unit), ...simulatorSelectedOrbSkills(unit)];
+  const ruleSkills = [
+    ...simulatorSelectedPassiveSkills(unit),
+    ...simulatorSelectedOrbSkills(unit),
+    ...(includeTalents ? simulatorSelectedTalentSkills(unit) : [])
+  ];
   return ruleSkills.map(skill => {
     const passiveId = String(skill.id);
     const sourceType = skill.__sourceType || "passive";
@@ -1127,19 +1149,28 @@ function simulatorCompilePassiveRules(unit) {
       const match = text.match(/if you have flash[^.]*?(?:becomes|is) ([0-9.]+) times stronger/);
       return match ? Number(match[1]) : 1;
     })();
+    const ignoreRestorationRate = /not affected by (?:the )?(?:regeneration|restoration) rate/.test(text);
     const shield = simulatorPercentMatch(text, [/(?:shield|shields)[^.]*?(?:equal to |for )?([0-9.]+)% (?:of )?(?:the |their |your |self(?:'s)? )?max hp/]);
     const damageUp = simulatorPercentMatch(text, [
       /(?:damage dealt|dmg dealt|damage caused by this active skill) (?:is |are )?(?:increase|increases|increased) by ([0-9.]+)%/,
       /(?:deal|deals|dealing) ([0-9.]+)% (?:more|increased) damage/,
       /(?:damage|dmg) by ([0-9.]+)%/
     ]);
-    const reduction = simulatorPercentMatch(text, [
+    const parsedReduction = simulatorPercentMatch(text, [
       /(?:damage taken|damage received|skill damage received)[^.]*?(?:is |are )?(?:reduce|reduces|reduced) by ([0-9.]+)%/,
-      /(?:take|takes) ([0-9.]+)% (?:less|reduced) damage/
+      /(?:take|takes) ([0-9.]+)% (?:less|reduced) damage/,
+      /reduces? damage taken by ([0-9.]+)%/
     ]);
-    const atkUp = simulatorPercentMatch(text, [/(?:atk-related stats|atk) (?:are |is )?(?:increase|increases|increased) by ([0-9.]+)%/]);
-    const defUp = simulatorPercentMatch(text, [/(?:def-related stats|def) (?:are |is )?(?:increase|increases|increased) by ([0-9.]+)%/]);
-    const hpUp = simulatorPercentMatch(text, [/(?:max hp|hp-related stats) (?:are |is )?(?:increase|increases|increased) by ([0-9.]+)%/]);
+    const atkUp = simulatorPercentMatch(text, [/(?:atk-related stats|atk) (?:are |is )?(?:increase|increases|increased) by ([0-9.]+)%/, /(?:increase|increases) atk by ([0-9.]+)%/, /\+([0-9.]+)% atk(?:-related stats)?/]);
+    const defUp = simulatorPercentMatch(text, [/(?:def-related stats|def) (?:are |is )?(?:increase|increases|increased) by ([0-9.]+)%/, /\+([0-9.]+)% def(?:-related stats)?/]);
+    const hpUp = simulatorPercentMatch(text, [/(?:max hp|hp-related stats) (?:are |is )?(?:increase|increases|increased) by ([0-9.]+)%/, /increase(?:s)? (?:your )?max hp by ([0-9.]+)%/]);
+    const critRate = simulatorPercentMatch(text, [/\+([0-9.]+)% crit rate/, /crit rate (?:is |are )?(?:increase|increases|increased) by ([0-9.]+)%/]);
+    const critDamage = simulatorPercentMatch(text, [/\+([0-9.]+)% crit (?:damage|dmg)/, /crit (?:damage|dmg) (?:is |are )?(?:increase|increases|increased) by ([0-9.]+)%/, /increase(?:s)? (?:your )?crit (?:damage|dmg) by ([0-9.]+)%/]);
+    const critDef = simulatorPercentMatch(text, [/crit def (?:of [^.]* )?(?:is |are )?(?:increase|increases|increased) by ([0-9.]+)%/]);
+    const regeneration = simulatorPercentMatch(text, [/(?:regeneration|restoration) rate (?:is |are )?(?:increase|increases|increased) by ([0-9.]+)%/, /increase(?:s)? (?:your )?(?:regeneration|restoration) rate by ([0-9.]+)%/]);
+    const activeReduction = /damage taken from active skills|active skill damage (?:taken|received)/.test(text) ? parsedReduction : 0;
+    const reduction = activeReduction ? 0 : parsedReduction;
+    const nextActiveDamage = /damage of your next active skill/.test(text) ? damageUp : 0;
     const atkDown = simulatorPercentMatch(text, [/(?:target(?:'s)?|enemies(?:'|â€™)?|enemy(?:'s)?) (?:atk-related stats|atk)[^.]*?(?:decrease|decreases|decreased|reduced) by ([0-9.]+)%/]);
     const defDown = simulatorPercentMatch(text, [/(?:target(?:'s)?|enemies(?:'|â€™)?|enemy(?:'s)?) (?:def-related stats|def)[^.]*?(?:decrease|decreases|decreased|reduced) by ([0-9.]+)%/]);
     const chanceMatch = text.match(/([0-9.]+)% chance/);
@@ -1184,9 +1215,11 @@ function simulatorCompilePassiveRules(unit) {
     const immunityMatch = /immune to all basic stat reduction effects|basic stats cannot be reduced|none of your stats can be reduced below base values/.test(text);
     const immunityConditional = immunityMatch && /(?:when|while|if)[^.]{0,180}(?:immune to all basic stat reduction|stats can(?:not|'t) be reduced)/.test(text);
     const basicStatReductionImmune = immunityMatch && !immunityConditional;
-    const staticAura = /while (?:you|self|this character) (?:are|is) on the field|for each allied|all allied characters? (?:gain|gains)|increases? (?:the )?basic stats of all allied/.test(text)
-      && Boolean(basicStats || perAllyMatch || atkUp || defUp || hpUp || damageUp || reduction);
-    const supported = [basicStats, perAllyMatch, directMatch, heal, healLost, healAtk, shield, damageUp, reduction, atkUp, defUp, hpUp, atkDown, defDown, forcedActive, cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock, singleHitCap, basicStatReductionImmune, specialKind].filter(Boolean).length;
+    const persistentTalent = sourceType === "talent" && (!triggers.length || triggers.every(trigger => trigger === "persistent" || trigger === "always"));
+    const explicitAura = /while (?:you|self|this character) (?:are|is) on the field|for each allied|all allied characters? (?:gain|gains)|increases? (?:the )?basic stats of all allied/.test(text);
+    const staticAura = (explicitAura || persistentTalent)
+      && Boolean(basicStats || perAllyMatch || atkUp || defUp || hpUp || damageUp || reduction || critRate || critDamage || critDef || regeneration || activeReduction);
+    const supported = [basicStats, perAllyMatch, directMatch, heal, healLost, healAtk, shield, damageUp, reduction, atkUp, defUp, hpUp, critRate, critDamage, critDef, regeneration, activeReduction, nextActiveDamage, atkDown, defDown, forcedActive, cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock, singleHitCap, basicStatReductionImmune, specialKind].filter(Boolean).length;
     const eventSupported = triggers.some(trigger => ["battle-start", "turn-start", "turn-end", "before-active", "after-active", "before-damage", "after-damage", "before-hit", "after-hit", "after-death", "hp-changed", "after-crit", "after-heal", "after-weak", "receive-weak", "power-burst", "status-gained", "status-lost"].includes(trigger));
     const complexOperators = new Set(["LocalVar", "GlobalVar", "RandamVar", "CountFlag", "EnergyCardDel", "ChangeCardUseMin", "FilterSkillCardHigh", "SkillLvSpecify", "Pose", "EndPose", "Copy", "SkillSub"]);
     const complexRuntime = (audit.operators || []).some(operator => complexOperators.has(operator))
@@ -1199,7 +1232,7 @@ function simulatorCompilePassiveRules(unit) {
       perAlly: perAllyMatch ? Number(perAllyMatch[2]) / 100 : 0,
       perAllyCap: perAllyMatch ? Number(perAllyMatch[3]) / 100 : 0,
       directDamage: directMatch ? Number(directMatch[1]) / 100 : 0,
-      directAoe: /all enemies|all enemy characters/.test(text), heal, healLost, healAtk, healAtkFlashMultiplier, shield, damageUp, reduction, atkUp, defUp, hpUp, atkDown, defDown,
+      directAoe: /all enemies|all enemy characters/.test(text), heal, healLost, healAtk, healAtkFlashMultiplier, ignoreRestorationRate, shield, damageUp, reduction, atkUp, defUp, hpUp, critRate, critDamage, critDef, regeneration, activeReduction, nextActiveDamage, atkDown, defDown,
       forcedActive, forcedActiveMode, forcedEvents,
       forcedActiveLevel: Number(forcedLevelMatch?.[1] || forcedLevelMatch?.[2] || 0),
       forcedTargetLowestHp: /enemy with the lowest hp percentage/.test(text),
@@ -1213,11 +1246,13 @@ function simulatorCompilePassiveRules(unit) {
       cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock, singleHitCap, basicStatReductionImmune,
       chance: chanceMatch ? Number(chanceMatch[1]) / 100 : 1,
       duration: durationMatch ? Number(durationMatch[1]) : 1,
+      permanent: sourceType === "talent" && !durationMatch && triggers.includes("battle-start"),
       maxStacks: stackMatch ? Number(stackMatch[1] || stackMatch[2]) : 1,
       requiredStacks: forcedStackActive && requiredStackMatch ? Number(requiredStackMatch[1] || requiredStackMatch[2]) : forcedActive ? 0 : requiredStackMatch ? Number(requiredStackMatch[1] || requiredStackMatch[2]) : 0,
       oncePerTurn: /once per turn|trigger(?:s|ed)? once (?:per|each) turn/.test(text),
       minLevel: /lv\.?2 or above|level 2 or above/.test(text) ? 2 : /lv\.?3|level 3/.test(text) ? 3 : 1,
       hpBelow: (() => { const match = text.match(/(?:hp|health)[^.]{0,35}(?:below|lower than) ([0-9.]+)%/); return match ? Number(match[1]) / 100 : 0; })(),
+      hpAbove: (() => { const match = text.match(/(?:hp|health)[^.]{0,35}(?:above|higher than) ([0-9.]+)%/); return match ? Number(match[1]) / 100 : 0; })(),
       coverage: supported && (eventSupported || staticAura || triggers.includes("battle-start") || singleHitCap || basicStatReductionImmune) && (!complexRuntime || forcedActive || singleHitCap || basicStatReductionImmune) ? "modeled" : supported ? "partial" : "unmodeled",
       supportedFamilies: supported
     };
@@ -1239,7 +1274,12 @@ function simulatorStatusValue(member, key) {
 }
 
 function simulatorEffectiveAtk(member) {
-  return Math.max(1, member.atk * (1 + simulatorStatusValue(member, "atk")));
+  const hpRatio = member.hp / Math.max(1, simulatorEffectiveMaxHp(member));
+  const conditionalTalentAtk = (member.profile?.passiveRules || []).reduce((sum, rule) => {
+    if (rule.sourceType !== "talent" || !rule.atkUp || !rule.hpAbove || hpRatio <= rule.hpAbove) return sum;
+    return sum + rule.atkUp;
+  }, 0);
+  return Math.max(1, member.atk * (1 + simulatorStatusValue(member, "atk") + conditionalTalentAtk));
 }
 
 function simulatorEffectiveDef(member) {
@@ -1332,6 +1372,10 @@ function simulatorRuleActorMatches(rule, eventName, provider, team, context) {
     if (rule.faction && !simulatorRequirementMatches(target.unit, rule.faction)) return false;
   }
   if (eventName === "power-burst" && context.actor !== provider) return false;
+  if (eventName === "status-gained") {
+    if (context.target !== provider) return false;
+    if (/when flash is activated/.test(text) && !/flash/.test(String(context.statusName || "").toLowerCase())) return false;
+  }
   if (eventName === "after-weak" && /applying weak|inflicting weak|when causing weak/.test(text) && context.actor !== provider) return false;
   if (eventName === "receive-weak" && context.target !== provider && !/allied|your team|our character/.test(text)) return false;
   if (eventName === "after-death" && /successfully (?:killing|defeating)|when (?:you|self) (?:kill|kills|defeat|defeats)/.test(text) && context.killer !== provider) return false;
@@ -1346,7 +1390,7 @@ function simulatorRuleRecipients(rule, provider, team, enemyTeam, context) {
     return [context.target || context.actor].filter(member => member?.side !== provider.side);
   }
   if (/all enemies|each enemy/.test(text)) return simulatorLiving(enemyTeam);
-  if (/all allied|all allies|your whole team|your team|all of our|our characters|each allied|characters gain the following effects/.test(text)) {
+  if (/all allied|all allies|your whole team|your team|all of our|our characters|each allied|characters gain the following effects|your [^.]*characters? gain/.test(text)) {
     return simulatorLiving(team).filter(member => !rule.faction || simulatorRequirementMatches(member.unit, rule.faction));
   }
   if (/character with the highest initial attack|highest initial atk/.test(text)) {
@@ -1407,9 +1451,11 @@ function simulatorHealMember(source, target, rule) {
   const attackHealing = rule.healAtk
     ? simulatorEffectiveAtk(source) * rule.healAtk * (hasFlash ? Math.max(1, Number(rule.healAtkFlashMultiplier) || 1) : 1)
     : 0;
-  const amount = attackHealing || (rule.healLost
+  const baseAmount = attackHealing || (rule.healLost
     ? (maxHp - Math.max(0, target.hp)) * rule.healLost
     : maxHp * rule.heal);
+  const restoration = rule.ignoreRestorationRate ? 0 : (Number(target.profile?.regeneration) || 0) + simulatorStatusValue(target, "regeneration");
+  const amount = baseAmount * (1 + Math.max(-0.8, restoration));
   const healed = Math.max(0, Math.min(maxHp - target.hp, amount));
   target.hp += healed;
   source.healing += healed;
@@ -1476,14 +1522,21 @@ function simulatorApplyRuleStatus(rule, recipient, eventName) {
   const debuff = Boolean(atkDown || defDown || rule.healBlock || (rule.skillLevel < 0));
   return simulatorAddStatus(recipient, {
     key: `${rule.id}:${eventName}:${debuff ? "debuff" : "buff"}`,
-    sourceId: rule.id, name: rule.name, turns: rule.duration, maxStacks: rule.maxStacks,
+    sourceId: rule.id, name: rule.name, turns: rule.nextActiveDamage ? 99 : rule.duration, maxStacks: rule.maxStacks,
     isDebuff: debuff, isBuff: !debuff,
     atk: atkDown ? -atkDown : rule.atkUp + dynamicBasic,
     def: defDown ? -defDown : rule.defUp + dynamicBasic,
     hp: rule.hpUp + dynamicBasic,
     damage: rule.damageUp,
     reduction: rule.reduction,
-    skillLevel: rule.skillLevel
+    critRate: rule.critRate,
+    critDamage: rule.critDamage,
+    critDef: rule.critDef,
+    regeneration: rule.regeneration,
+    activeReduction: rule.activeReduction,
+    nextActiveDamage: rule.nextActiveDamage,
+    skillLevel: rule.skillLevel,
+    permanent: rule.permanent
   });
 }
 
@@ -1671,8 +1724,16 @@ function simulatorApplyPassiveRule(eventName, provider, rule, team, enemyTeam, c
     recipients.forEach(target => { target.shield += simulatorEffectiveMaxHp(target) * effectRule.shield; });
     applied ||= recipients.length > 0;
   }
-  if (effectRule.basicStats || effectRule.atkUp || effectRule.defUp || effectRule.hpUp || effectRule.damageUp || effectRule.reduction || effectRule.atkDown || effectRule.defDown || effectRule.skillLevel) {
-    if (!["before-damage", "before-hit"].includes(eventName)) recipients.forEach(target => simulatorApplyRuleStatus(effectRule, target, eventName));
+  if (effectRule.basicStats || effectRule.atkUp || effectRule.defUp || effectRule.hpUp || effectRule.damageUp || effectRule.reduction || effectRule.critRate || effectRule.critDamage || effectRule.critDef || effectRule.regeneration || effectRule.activeReduction || effectRule.nextActiveDamage || effectRule.atkDown || effectRule.defDown || effectRule.skillLevel) {
+    if (!["before-damage", "before-hit"].includes(eventName)) recipients.forEach(target => {
+      const previousMaxHp = simulatorEffectiveMaxHp(target);
+      const gainedStatus = simulatorApplyRuleStatus(effectRule, target, eventName);
+      const nextMaxHp = simulatorEffectiveMaxHp(target);
+      if (nextMaxHp > previousMaxHp) target.hp += nextMaxHp - previousMaxHp;
+      if (eventName !== "status-gained" && gainedStatus && /flash/.test(`${effectRule.name} ${effectRule.normalizedText}`.toLowerCase())) {
+        simulatorFirePassives("status-gained", team, enemyTeam, { actor: provider, target, statusName: "Flash", status: gainedStatus, sourceIsCard: false, triggerDepth: (context.triggerDepth || 0) + 1 }, random, log, round);
+      }
+    });
     applied ||= recipients.length > 0;
   }
   if (rule.control) {
@@ -1689,8 +1750,8 @@ function simulatorApplyPassiveRule(eventName, provider, rule, team, enemyTeam, c
   }
   if (applied && !rule.forcedActive && !(rule.directDamage > 0 && directAllowed && !["before-damage", "before-hit"].includes(eventName))) {
     const isHealing = Boolean(effectRule.heal || effectRule.healLost || effectRule.healAtk);
-    const actionType = rule.cleanseDebuffs ? "Cleanse" : isHealing ? (rule.sourceType === "orb" ? "Orb Heal" : "Passive Heal") : effectRule.shield ? "Passive Shield" : rule.control ? "Control" : rule.sourceType === "orb" ? "Orb Effect" : "Passive Trigger";
-    const kind = rule.cleanseDebuffs ? "cleanse" : isHealing ? "heal" : effectRule.shield ? "buff" : rule.control ? "control" : rule.sourceType === "orb" ? "orb" : "passive";
+    const actionType = rule.cleanseDebuffs ? "Cleanse" : isHealing ? (rule.sourceType === "orb" ? "Orb Heal" : "Passive Heal") : effectRule.shield ? (rule.sourceType === "talent" ? "Talent Shield" : "Passive Shield") : rule.control ? "Control" : rule.sourceType === "orb" ? "Orb Effect" : rule.sourceType === "talent" ? "Talent Effect" : "Passive Trigger";
+    const kind = rule.cleanseDebuffs ? "cleanse" : isHealing ? "heal" : effectRule.shield ? (rule.sourceType === "talent" ? "talent" : "buff") : rule.control ? "control" : rule.sourceType === "orb" ? "orb" : rule.sourceType === "talent" ? "talent" : "passive";
     const text = isHealing && healedTotal > 0
       ? `${provider.name}'s ${rule.name} restores ${formatNumber(Math.round(healedTotal))} HP across ${healedIds.length} ${healedIds.length === 1 ? "ally" : "allies"}.`
       : `${provider.name} activates ${rule.name}.`;
@@ -1711,7 +1772,7 @@ function simulatorFirePassives(eventName, team, enemyTeam, context, random, log,
 }
 
 function simulatorApplyStaticPassives(team) {
-  const multipliers = new Map(team.all.map(member => [member, { atk: 0, def: 0, hp: 0, damage: 0, reduction: 0 }]));
+  const multipliers = new Map(team.all.map(member => [member, { atk: 0, def: 0, hp: 0, damage: 0, reduction: 0, critRate: 0, critDamage: 0, critDef: 0, regeneration: 0, activeReduction: 0 }]));
   team.all.forEach(provider => {
     (provider.profile.passiveRules || []).forEach(rule => {
       if (!rule.staticAura || !simulatorRuleProviderAvailable(provider, team, rule)) return;
@@ -1723,11 +1784,16 @@ function simulatorApplyStaticPassives(team) {
         if (!values) return;
         const basic = rule.basicStats + perAlly;
         const hasDynamicTrigger = rule.triggers.some(trigger => trigger !== "battle-start");
-        values.atk += basic + (hasDynamicTrigger ? 0 : rule.atkUp);
+        values.atk += basic + (hasDynamicTrigger || rule.hpAbove ? 0 : rule.atkUp);
         values.def += basic + (hasDynamicTrigger ? 0 : rule.defUp);
         values.hp += basic + (hasDynamicTrigger ? 0 : rule.hpUp);
         values.damage += hasDynamicTrigger ? 0 : rule.damageUp;
         values.reduction += hasDynamicTrigger ? 0 : rule.reduction;
+        values.critRate += hasDynamicTrigger ? 0 : rule.critRate;
+        values.critDamage += hasDynamicTrigger ? 0 : rule.critDamage;
+        values.critDef += hasDynamicTrigger ? 0 : rule.critDef;
+        values.regeneration += hasDynamicTrigger ? 0 : rule.regeneration;
+        values.activeReduction += hasDynamicTrigger ? 0 : rule.activeReduction;
       });
     });
   });
@@ -1738,15 +1804,20 @@ function simulatorApplyStaticPassives(team) {
     member.hp = member.maxHp;
     member.profile.outgoingAmp = Math.min(0.7, member.profile.outgoingAmp + values.damage);
     member.profile.reduction = Math.min(0.7, member.profile.reduction + values.reduction);
+    member.profile.critRate = Math.min(0.8, (member.profile.critRate || 0) + values.critRate);
+    member.profile.critDamage = Math.min(1.5, (member.profile.critDamage || 0) + values.critDamage);
+    member.profile.critDef = Math.min(1.0, (member.profile.critDef || 0) + values.critDef);
+    member.profile.regeneration = Math.min(1.0, (member.profile.regeneration || 0) + values.regeneration);
+    member.profile.activeReduction = Math.min(0.7, (member.profile.activeReduction || 0) + values.activeReduction);
   });
 }
 
-function makeSimulatorCombatant(id, assistantId, slot, includeKits) {
+function makeSimulatorCombatant(id, assistantId, slot, includeKits, maxTalents = false) {
   const unit = simulatorUnit(id);
   const snapshot = state.combatPower[String(id)]?.upgraded;
   if (!unit || !snapshot) return null;
   const assist = battleSimulatorState.includeAssistants ? simulatorAssistantStats(assistantId) : { atk: 0, def: 0, hp: 0 };
-  const profile = includeKits ? simulatorSkillProfile(unit) : {
+  const profile = includeKits ? simulatorSkillProfile(unit, maxTalents) : {
     levels: [1.2, 1.7, 2.5], cards: [], passiveRules: [], aoe: false, ignoreDef: false, doubleCrit: false, pursuit: 0, heal: 0, shield: 0,
     reduction: 0, damageAmp: 0, control: 0, healBlock: false, teamStat: 0, teamRequirement: "", selfPerAlly: 0, selfRequirement: "", recognized: 0, passiveCount: 0
   };
@@ -1825,17 +1896,23 @@ function simulatorDealDamage(attacker, defender, multiplier, random, options = {
   const attack = simulatorEffectiveAtk(attacker);
   const defense = simulatorEffectiveDef(defender);
   const mitigation = options.ignoreDef ? 0 : defense / (defense + 125000);
-  const critChance = Math.min(0.5, (attacker.unit.rarity === "SP" ? 0.19 : 0.15) * (options.doubleCrit ? 2 : 1));
+  const critBonus = (Number(attacker.profile?.critRate) || 0) + simulatorStatusValue(attacker, "critRate");
+  const critChance = Math.min(0.95, ((attacker.unit.rarity === "SP" ? 0.19 : 0.15) + critBonus) * (options.doubleCrit ? 2 : 1));
   const critical = random() < critChance;
   const blocked = random() < 0.11;
   const variance = 0.9 + random() * 0.2;
-  const reduction = options.ignoreReduction ? 0 : (defender.profile.reduction || 0) + simulatorStatusValue(defender, "reduction");
+  const activeReduction = options.activeSkill ? (Number(defender.profile?.activeReduction) || 0) + simulatorStatusValue(defender, "activeReduction") : 0;
+  const reduction = options.ignoreReduction ? 0 : (defender.profile.reduction || 0) + simulatorStatusValue(defender, "reduction") + activeReduction;
   const incoming = (1 - Math.min(0.75, reduction)) * (1 + Math.min(0.6, (defender.profile.damageAmp || 0) + simulatorStatusValue(defender, "vulnerability")));
   const outgoing = (attacker.profile.outgoingAmp || 0) + simulatorStatusValue(attacker, "damage") + (Number(options.bonusDamage) || 0);
   const attribute = simulatorAttributeRelation(attacker, defender);
   const attributeMultiplier = attribute > 0 ? 1.2 : attribute < 0 ? 0.8 : 1;
   let damage = attack * multiplier * attributeMultiplier * (1 - mitigation) * variance * incoming * (1 + Math.min(0.9, outgoing));
-  if (critical) damage *= 1.5;
+  if (critical) {
+    const critDamage = (Number(attacker.profile?.critDamage) || 0) + simulatorStatusValue(attacker, "critDamage");
+    const critDef = (Number(defender.profile?.critDef) || 0) + simulatorStatusValue(defender, "critDef");
+    damage *= 1 + Math.max(0.1, 0.5 + critDamage - critDef);
+  }
   if (blocked) damage *= 0.65;
   damage = Math.max(1, Math.round(damage));
   const hitCaps = (defender.profile?.passiveRules || []).map(rule => Number(rule.singleHitCap) || 0).filter(Boolean);
@@ -1871,6 +1948,7 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
   };
   let primaryTarget = options.target?.alive ? options.target : simulatorAiTarget(enemies, decision, random);
   if (!primaryTarget) return null;
+  const consumedNextActiveStatuses = (attacker.statuses || []).filter(status => status.nextActiveDamage > 0);
   const context = {
     actor: attacker, target: primaryTarget, level, spec, sourceIsCard: options.sourceIsCard !== false,
     triggerDepth: Number(options.triggerDepth || 0), damageMultiplier: 1, triggeredBy: options.triggeredBy || null,
@@ -1901,7 +1979,7 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
     simulatorFirePassives("before-hit", enemies, allies, damageContext, random, log, round);
     const multiplier = (spec.factor + spec.extraAtk) * (spec.aoe ? 0.78 : 1) * Math.max(0.05, damageContext.damageMultiplier);
     const result = simulatorDealDamage(attacker, target, multiplier, random, {
-      ignoreDef: spec.ignoreDef, ignoreReduction: spec.ignoreReduction, doubleCrit: spec.doubleCrit, bonusDamage: options.bonusDamage
+      ignoreDef: spec.ignoreDef, ignoreReduction: spec.ignoreReduction, doubleCrit: spec.doubleCrit, bonusDamage: options.bonusDamage, activeSkill: true
     });
     total += result.damage;
     damageContext.damage = result.damage;
@@ -1962,6 +2040,7 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
   }
   context.offensive = total > 0 && targets.length > 0;
   simulatorRecordActiveSkill(allies, round, attacker, level, context.offensive, options.triggeredBy?.id);
+  if (consumedNextActiveStatuses.length) attacker.statuses = (attacker.statuses || []).filter(status => !consumedNextActiveStatuses.includes(status));
   simulatorFirePassives("after-active", allies, enemies, context, random, log, round);
   attacker.energy = Math.min(100, Number(attacker.energy || 0) + Number(spec.energy || 5));
   if (attacker.energy >= 100) {
@@ -2024,10 +2103,11 @@ function simulatorBattle(leftSource, rightSource, seed, maxRounds, includeKits, 
 }
 
 function simulatorKitCoverage(source) {
-  return source.ids.filter(Boolean).reduce((totals, id) => {
+  return source.ids.reduce((totals, id, index) => {
+    if (!id) return totals;
     const unit = simulatorUnit(id);
     if (!unit) return totals;
-    const profile = simulatorSkillProfile(unit);
+    const profile = simulatorSkillProfile(unit, Boolean(source.maxTalents?.[index]));
     const rules = profile.passiveRules || [];
     totals.modeled += rules.filter(rule => rule.coverage === "modeled").length;
     totals.partial += rules.filter(rule => rule.coverage === "partial").length;
@@ -2039,17 +2119,19 @@ function simulatorKitCoverage(source) {
   }, { recognized: 0, modeled: 0, partial: 0, unmodeled: 0, passives: 0, skills: 0 });
 }
 
-function simulatorCoverageMarkup(ids) {
-  return ids.filter(Boolean).map(id => {
+function simulatorCoverageMarkup(ids, maxTalents = []) {
+  return ids.map((id, index) => {
+    if (!id) return "";
     const unit = simulatorUnit(id);
     if (!unit) return "";
-    const profile = simulatorSkillProfile(unit);
+    const profile = simulatorSkillProfile(unit, Boolean(maxTalents[index]));
     const rules = profile.passiveRules || [];
     const orbCount = rules.filter(rule => rule.sourceType === "orb").length;
-    const passiveCount = rules.length - orbCount;
+    const talentCount = rules.filter(rule => rule.sourceType === "talent").length;
+    const passiveCount = rules.length - orbCount - talentCount;
     return `<article class="simulator-coverage-unit">
-      <header><img src="${escapeHtml(unit.image)}" alt=""><div><strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong><span>${(profile.cards || []).filter(card => card.text).length} Active Skill levels · ${passiveCount} passives · ${orbCount} Ability Sphere</span></div></header>
-      <div>${rules.map(rule => `<p><em class="coverage-${rule.coverage}">${rule.coverage}</em><b>${rule.sourceType === "orb" ? "ORB · " : ""}${escapeHtml(rule.name)}</b><span>${escapeHtml(rule.id)} · ${escapeHtml(rule.triggers.join(", ") || "persistent/config-only")}</span></p>`).join("")}</div>
+      <header><img src="${escapeHtml(unit.image)}" alt=""><div><strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong><span>${(profile.cards || []).filter(card => card.text).length} Active Skill levels · ${passiveCount} passives · ${orbCount} Ability Sphere · ${talentCount} Talents</span></div></header>
+      <div>${rules.map(rule => `<p><em class="coverage-${rule.coverage}">${rule.coverage}</em><b>${rule.sourceType === "orb" ? "ORB · " : rule.sourceType === "talent" ? "TALENT · " : ""}${escapeHtml(rule.name)}</b><span>${escapeHtml(rule.id)} · ${escapeHtml(rule.triggers.join(", ") || "persistent/config-only")}</span></p>`).join("")}</div>
     </article>`;
   }).join("");
 }
@@ -2100,7 +2182,8 @@ function renderBattleSimulatorResults() {
   const favored = leftRate === rightRate ? "No clear favorite" : leftRate > rightRate ? "Team A is favored" : "Team B is favored";
   const leftCp = simulatorTeamCp(leftSource).total;
   const rightCp = simulatorTeamCp(rightSource).total;
-  const coverage = simulatorKitCoverage({ ids: [...leftSource.ids, ...rightSource.ids] });
+  const coverageSource = { ids: [...leftSource.ids, ...rightSource.ids], maxTalents: [...leftSource.maxTalents, ...rightSource.maxTalents] };
+  const coverage = simulatorKitCoverage(coverageSource);
   const completeTeams = leftSource.ids.filter(Boolean).length >= 4 && rightSource.ids.filter(Boolean).length >= 4;
   const confidence = completeTeams && coverage.recognized >= 4 ? "MEDIUM" : "LOW";
   const firstTeam = leftCp === rightCp ? "Tie - seeded coin flip" : leftCp > rightCp ? "Team A" : "Team B";
@@ -2151,6 +2234,7 @@ function simulatorSourceTeam(side) {
   return {
     name: side === "left" ? "My Team" : "Enemy Team",
     ids: [...battleSimulatorState.teams[side].slots],
+    maxTalents: [...battleSimulatorState.teams[side].maxTalents],
     assistants: ["", "", "", "", ""]
   };
 }
@@ -2185,8 +2269,9 @@ function simulatorRosterMarkup(side) {
   const teamName = side === "left" ? "My Team" : "Enemy Team";
   return team.slots.map((id, index) => {
     const unit = simulatorUnit(id);
-    if (!unit) return `<button class="simulator-unit empty${index === 4 ? " backup-slot" : ""}" type="button" data-simulator-side="${side}" data-simulator-slot="${index}" aria-label="Choose ${teamName} ${index === 4 ? "Backup Slot" : `On Field slot ${index + 1}`}"><span>${index === 4 ? "BACKUP SLOT" : `ON FIELD ${index + 1}`}</span><b>+</b><strong>${index === 4 ? "Select Backup" : "Select unit"}</strong></button>`;
-    return `<button class="simulator-unit filled" type="button" draggable="true" data-simulator-side="${side}" data-simulator-slot="${index}" aria-label="Change ${teamName} slot ${index + 1}, ${escapeHtml(unit.name)}">
+    if (!unit) return `<div class="simulator-slot"><button class="simulator-unit empty${index === 4 ? " backup-slot" : ""}" type="button" data-simulator-side="${side}" data-simulator-slot="${index}" aria-label="Choose ${teamName} ${index === 4 ? "Backup Slot" : `On Field slot ${index + 1}`}"><span>${index === 4 ? "BACKUP SLOT" : `ON FIELD ${index + 1}`}</span><b>+</b><strong>${index === 4 ? "Select Backup" : "Select unit"}</strong></button></div>`;
+    const maxTalents = Boolean(team.maxTalents[index]);
+    return `<div class="simulator-slot${maxTalents ? " talents-active" : ""}"><button class="simulator-unit filled" type="button" draggable="true" data-simulator-side="${side}" data-simulator-slot="${index}" aria-label="Change ${teamName} slot ${index + 1}, ${escapeHtml(unit.name)}">
       <span>${index === 4 ? "BACKUP SLOT" : `ON FIELD ${index + 1}`}</span>
       <i class="simulator-drag-grip" aria-hidden="true">⠿</i>
       <img src="${escapeHtml(unit.image)}" alt="">
@@ -2194,7 +2279,7 @@ function simulatorRosterMarkup(side) {
       <small>${index === 4 ? "Enters next turn and inherits the open slot priority" : escapeHtml(unit.rarity)}</small>
       <i class="simulator-atk-priority">${index === 4 ? "ATK PRIORITY · INHERITED" : `ATK PRIORITY #${index + 1} · ${SIMULATOR_SLOT_ATTACK_PREMIUMS[index] ? `TEAM MAX +${SIMULATOR_SLOT_ATTACK_PREMIUMS[index] * 100}%` : "TEAM MAX"}`}</i>
       <em>${formatNumber(simulatorCombatPower(unit.id))}</em>
-    </button>`;
+    </button><label class="simulator-max-talents"><input type="checkbox" data-simulator-talents-side="${side}" data-simulator-talents-slot="${index}"${maxTalents ? " checked" : ""}><span>Max Talents</span></label></div>`;
   }).join("");
 }
 
@@ -2225,6 +2310,8 @@ function populateBattleSimulatorTeams() {
   battleSimulatorState.playbackToken++;
   battleSimulatorState.teams.left.slots.splice(0, 5, ...BATTLE_SIMULATOR_TEST_PRESET.left);
   battleSimulatorState.teams.right.slots.splice(0, 5, ...BATTLE_SIMULATOR_TEST_PRESET.right);
+  battleSimulatorState.teams.left.maxTalents.fill(false);
+  battleSimulatorState.teams.right.maxTalents.fill(false);
   battleSimulatorState.result = null;
   const runButton = document.querySelector("#simulator-run");
   runButton.disabled = false;
@@ -2263,18 +2350,18 @@ function openSimulatorPicker(side, slot) {
   document.querySelector("#battle-picker-search").focus();
 }
 
-function makeSimulatorCombatant(id, assistantId, slot, includeKits) {
+function makeSimulatorCombatant(id, assistantId, slot, includeKits, maxTalents = false) {
   const unit = simulatorUnit(id);
   const snapshot = simulatorStatSnapshot(id);
   if (!unit || !snapshot) return null;
-  const profile = includeKits ? simulatorSkillProfile(unit) : {
+  const profile = includeKits ? simulatorSkillProfile(unit, maxTalents) : {
     levels: [1.2, 1.7, 2.5], cards: [], passiveRules: [], aoe: false, ignoreDef: false, doubleCrit: false, pursuit: 0, heal: 0, shield: 0,
     reduction: 0, damageAmp: 0, outgoingAmp: 0, control: 0, healBlock: false, teamStat: 0, teamRequirement: "", selfPerAlly: 0, selfRequirement: "", recognized: 0, passiveCount: 0,
     effectiveInBackup: false, backupBoosts: { atk: 0, def: 0, hp: 0, damage: 0, reduction: 0 }, backupRequirement: "", backupPassiveLabel: "", passiveLabel: ""
   };
   const hp = Number(snapshot.hp);
   return {
-    id: String(id), name: simulatorUnitDisplayName(unit), title: unit.title, unit, slot, profile,
+    id: String(id), name: simulatorUnitDisplayName(unit), title: unit.title, unit, slot, profile, maxTalents,
     atk: Number(snapshot.atk), baseAtk: Number(snapshot.atk), def: Number(snapshot.def), maxHp: hp, hp,
     shield: 0, stunned: 0, healBlocked: 0, weak: 0, weakGauge: 0, weakCap: Number(unit.details?.hero?.weak_max) || 6,
     energy: 0, statuses: [], ruleState: {}, alive: true,
@@ -2283,7 +2370,7 @@ function makeSimulatorCombatant(id, assistantId, slot, includeKits) {
 }
 
 function simulatorBuildTeam(source, side, includeKits) {
-  const members = source.ids.map((id, index) => makeSimulatorCombatant(id, "", index, includeKits)).filter(Boolean);
+  const members = source.ids.map((id, index) => makeSimulatorCombatant(id, "", index, includeKits, Boolean(source.maxTalents?.[index]))).filter(Boolean);
   members.forEach(member => { member.side = side; });
   const active = members.filter(member => member.slot < 4);
   const bench = members.filter(member => member.slot === 4);
@@ -2541,6 +2628,7 @@ function finishBattleSimulatorPlayback(result, token) {
     runButton.textContent = "Battle";
     document.querySelector("#simulator-populate").disabled = false;
     document.querySelector("#simulator-max-investment").disabled = false;
+    document.querySelectorAll("[data-simulator-talents-side]").forEach(input => { input.disabled = false; });
     battleSimulatorState.runTimer = null;
   }, BATTLE_SIMULATOR_PLAYBACK_TIMING.resultDelay);
 }
@@ -2623,6 +2711,7 @@ function runBattleSimulator() {
   runButton.textContent = "Quick Simulating...";
   document.querySelector("#simulator-populate").disabled = true;
   document.querySelector("#simulator-max-investment").disabled = true;
+  document.querySelectorAll("[data-simulator-talents-side]").forEach(input => { input.disabled = true; });
   showSimulatorBattleStart(leftSource, rightSource);
   requestAnimationFrame(() => document.querySelector("#simulator-results")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   battleSimulatorState.runTimer = setTimeout(() => executeBattleSimulator(leftSource, rightSource), BATTLE_SIMULATOR_PLAYBACK_TIMING.startDelay);
@@ -2683,7 +2772,8 @@ function renderBattleSimulatorResults() {
   const enemyResult = allyResult === "VICTORY" ? "DEFEAT" : allyResult === "DEFEAT" ? "VICTORY" : "DRAW";
   const leftCp = simulatorTeamCp(leftSource).total;
   const rightCp = simulatorTeamCp(rightSource).total;
-  const coverage = simulatorKitCoverage({ ids: [...leftSource.ids, ...rightSource.ids] });
+  const coverageSource = { ids: [...leftSource.ids, ...rightSource.ids], maxTalents: [...leftSource.maxTalents, ...rightSource.maxTalents] };
+  const coverage = simulatorKitCoverage(coverageSource);
   const coverageRate = coverage.passives ? (coverage.modeled + coverage.partial * 0.5) / coverage.passives : 0;
   const confidence = coverageRate >= 0.75 ? "MEDIUM-HIGH" : coverageRate >= 0.45 ? "MEDIUM" : "LOW";
   const firstTeam = leftCp === rightCp ? "Seeded tie-break" : leftCp > rightCp ? "My Team" : "Enemy Team";
@@ -2712,10 +2802,10 @@ function renderBattleSimulatorResults() {
       <div><span>My Team survivors</span><strong>${simulatorAverage(totals.leftSurvivors).toFixed(1)}</strong></div><div><span>Enemy survivors</span><strong>${simulatorAverage(totals.rightSurvivors).toFixed(1)}</strong></div>
     </div>
     <details class="simulator-sample-log" open><summary>Battle action log, passive triggers, and Auto AI decisions</summary><div>${sample.log.slice(0, 220).map(simulatorLogEntryMarkup).join("")}</div></details>
-    <details class="simulator-kit-coverage"><summary>Skill/passive/Orb coverage: ${coverage.modeled} modeled · ${coverage.partial} partial · ${coverage.unmodeled} not yet reproducible</summary>
+    <details class="simulator-kit-coverage"><summary>Skill/passive/Orb/Talent coverage: ${coverage.modeled} modeled · ${coverage.partial} partial · ${coverage.unmodeled} not yet reproducible</summary>
       <p class="simulator-coverage-note">Fairness control: each random seed is evaluated as a normal/mirrored pair and mapped back to the original teams, removing any left/right screen-position or random-consumption advantage.</p>
-      <p class="simulator-coverage-note">Every equipped natural-gift/rank passive and UR Ability Sphere is audited against its APK event chain. “Partial” means the trigger is reproduced but one or more exact runtime details (for example a named status, card-hand operation, or encrypted target condition) remain approximated.</p>
-      <div class="simulator-coverage-grid">${simulatorCoverageMarkup([...leftSource.ids, ...rightSource.ids])}</div>
+      <p class="simulator-coverage-note">Every equipped natural-gift/rank passive, UR Ability Sphere, and enabled Max Talent is audited against its APK event chain. “Partial” means the trigger is reproduced but one or more exact runtime details (for example a named status, card-hand operation, or encrypted target condition) remain approximated.</p>
+      <div class="simulator-coverage-grid">${simulatorCoverageMarkup(coverageSource.ids, coverageSource.maxTalents)}</div>
     </details>`;
 }
 
@@ -3707,6 +3797,16 @@ document.querySelector("#simulator-max-investment").addEventListener("change", e
 });
 document.querySelector("#simulator-run").addEventListener("click", runBattleSimulator);
 document.querySelector("#simulator-populate").addEventListener("click", populateBattleSimulatorTeams);
+document.querySelector("#battle-simulator-view").addEventListener("change", event => {
+  const input = event.target.closest("[data-simulator-talents-side][data-simulator-talents-slot]");
+  if (!input) return;
+  const side = input.dataset.simulatorTalentsSide;
+  const slot = Number(input.dataset.simulatorTalentsSlot);
+  battleSimulatorState.teams[side].maxTalents[slot] = input.checked;
+  battleSimulatorState.result = null;
+  document.querySelector("#simulator-results").innerHTML = `<div class="simulator-empty updated"><strong>Max Talents ${input.checked ? "enabled" : "disabled"}</strong><p>${input.checked ? "All three Skill Up tiers will be applied to this unit." : "This unit will battle without its Skill Up tier effects."}</p></div>`;
+  renderBattleSimulatorSetup();
+});
 document.querySelector("#battle-simulator-view").addEventListener("click", event => {
   if (Date.now() < simulatorIgnoreClickUntil) return;
   const slot = event.target.closest("[data-simulator-side][data-simulator-slot]");
@@ -3717,6 +3817,7 @@ document.querySelector("#battle-simulator-view").addEventListener("click", event
   const clear = event.target.closest("[data-simulator-clear]");
   if (clear) {
     battleSimulatorState.teams[clear.dataset.simulatorClear].slots.fill("");
+    battleSimulatorState.teams[clear.dataset.simulatorClear].maxTalents.fill(false);
     battleSimulatorState.result = null;
     document.querySelector("#simulator-results").innerHTML = `<div class="simulator-empty"><strong>Team cleared</strong><p>Select five units for each side, then press Battle.</p></div>`;
     renderBattleSimulatorSetup();
@@ -3734,6 +3835,8 @@ function completeSimulatorReorder(side, sourceSlot, destinationSlot) {
   if (sourceSlot === destinationSlot) return false;
   const slots = battleSimulatorState.teams[side].slots;
   [slots[sourceSlot], slots[destinationSlot]] = [slots[destinationSlot], slots[sourceSlot]];
+  const maxTalents = battleSimulatorState.teams[side].maxTalents;
+  [maxTalents[sourceSlot], maxTalents[destinationSlot]] = [maxTalents[destinationSlot], maxTalents[sourceSlot]];
   // Suppress only the synthetic click emitted by the completed drag. A timestamp
   // cannot remain stuck and block later slot or Clear clicks after the rerender.
   simulatorIgnoreClickUntil = Date.now() + 250;
@@ -3929,6 +4032,7 @@ battlePickerResults.addEventListener("click", event => {
     renderTeamBuilder();
   } else if (activeBattlePicker.context === "simulator") {
     battleSimulatorState.teams[activeBattlePicker.side].slots[activeBattlePicker.slot] = button.dataset.unitId;
+    battleSimulatorState.teams[activeBattlePicker.side].maxTalents[activeBattlePicker.slot] = false;
     battleSimulatorState.result = null;
     renderBattleSimulatorSetup();
   } else {
@@ -3948,6 +4052,7 @@ document.querySelector("#battle-picker-clear").addEventListener("click", () => {
     renderTeamBuilder();
   } else if (activeBattlePicker.context === "simulator") {
     battleSimulatorState.teams[activeBattlePicker.side].slots[activeBattlePicker.slot] = "";
+    battleSimulatorState.teams[activeBattlePicker.side].maxTalents[activeBattlePicker.slot] = false;
     battleSimulatorState.result = null;
     renderBattleSimulatorSetup();
   } else {
