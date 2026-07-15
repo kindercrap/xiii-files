@@ -99,7 +99,7 @@
       </section>
 
       <div class="simulator-options">
-        <label><input id="simulator-kits" type="checkbox" checked><span>Apply APK-audited active skills and passive triggers</span></label>
+        <label><input id="simulator-kits" type="checkbox" checked><span>Apply APK-audited active skills, passive triggers, and Ability Spheres</span></label>
         <label class="simulator-max-investment"><input id="simulator-max-investment" type="checkbox"><span>Max RC Cells, Force Talents, Scenes, Potentials, Tactics &amp; equipment</span></label>
         <span><strong>SLOT ATK ORDER:</strong> Slot 1 = Team Max +6%, Slot 2 = +4%, Slot 3 = +2%, Slot 4 = Team Max. This guarantees the initial highest-to-lowest ATK order. Backup inherits the defeated slot's priority.</span>
         <span id="simulator-investment-detail" class="simulator-investment-detail" hidden><strong>MAX INVESTMENT PROXY</strong> 3.00x CP, ATK, DEF and HP for every unit. Calibrated to supplied game screenshots; exact loadout-specific effects are not claimed.</span>
@@ -137,7 +137,7 @@
         <summary>How this estimate works and what is not exact</summary>
         <div class="simulator-method-grid">
           <div><strong>Measured inputs</strong><p>Maximum S00 HP, ATK, DEF, Combat Power, active-skill multipliers, faction data, and configured passive text from the extracted game data.</p></div>
-          <div><strong>APK-informed rules</strong><p>Higher total CP acts first. Four units begin On Field; Slot 5 enters from Backup on the next turn after a defeat. The model audits all equipped natural-gift/rank passives and maps their APK events, including turn, card release, damage, hit, death, Weak, Power Burst, and Backup triggers.</p></div>
+          <div><strong>APK-informed rules</strong><p>Higher total CP acts first. Four units begin On Field; Slot 5 enters from Backup on the next turn after a defeat. The model audits active skills, equipped natural-gift/rank passives, and each unit's UR Ability Sphere, mapping APK events including side-turn, card release, damage, hit, healing, death, Weak, Power Burst, and Backup triggers.</p></div>
           <div><strong>Modeled behavior</strong><p>Formation slots set initial ATK priority: Slot 1 uses Team Max +6%, Slot 2 +4%, Slot 3 +2%, and Slot 4 Team Max. This controls opening action order and highest-initial-ATK passive targeting; later battle buffs or debuffs can change effective ATK order. Active-skill levels use their configured multipliers and entries. Unit attributes follow the APK rule: STR &gt; SKL &gt; SPD &gt; STR, PSY/WIT counter each other, and DST counters all; advantage/disadvantage changes damage by ±20%.</p></div>
           <div><strong>Not yet exact</strong><p>The result now identifies partial and unreproducible passives instead of silently ignoring them. Named-status state machines, exact card-hand operations, encrypted runtime tie-breaking, account bonuses, and server-only timing remain approximations.</p></div>
         </div>

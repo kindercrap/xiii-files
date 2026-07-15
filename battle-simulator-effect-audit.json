@@ -1,44 +1,46 @@
 {
-  "generatedAt": "2026-07-14T11:14:16.026Z",
+  "generatedAt": "2026-07-15T12:23:37.685Z",
   "sourceUnits": 113,
   "passiveCount": 565,
+  "orbCount": 113,
   "triggerCounts": {
     "unclassified": 231,
-    "always": 160,
-    "turn-start": 66,
-    "battle-start": 60,
-    "backup": 58,
-    "ally-defeated": 38,
-    "hp-threshold": 31,
-    "turn-end": 24,
-    "defeat": 15,
-    "take-damage": 14,
-    "after-active": 12,
-    "deal-damage": 9,
-    "control": 8,
-    "active-level": 2,
-    "field-aura": 2,
-    "buff-received": 1
+    "always": 187,
+    "turn-start": 84,
+    "backup": 74,
+    "battle-start": 67,
+    "ally-defeated": 55,
+    "hp-threshold": 45,
+    "persistent": 36,
+    "turn-end": 30,
+    "defeat": 19,
+    "take-damage": 17,
+    "deal-damage": 15,
+    "after-active": 14,
+    "control": 10,
+    "active-level": 3,
+    "buff-received": 2,
+    "field-aura": 2
   },
   "operatorCounts": {
-    "Buff": 1126,
-    "PerformOnEvent": 1080,
-    "PBuff": 483,
-    "LocalVar": 191,
-    "Dispel": 190,
-    "SkillReleace": 81,
-    "SkillLv": 59,
-    "ExtraDamage": 57,
-    "Recover": 47,
-    "FilterByFlag": 34,
-    "CountFlag": 30,
-    "FilterTarget": 21,
-    "GlobalVar": 17,
+    "Buff": 1420,
+    "PerformOnEvent": 1304,
+    "PBuff": 642,
+    "LocalVar": 223,
+    "Dispel": 222,
+    "SkillReleace": 82,
+    "SkillLv": 67,
+    "ExtraDamage": 58,
+    "Recover": 58,
+    "FilterByFlag": 47,
+    "CountFlag": 36,
+    "GlobalVar": 26,
+    "FilterTarget": 22,
+    "Weak": 10,
     "RandamVar": 9,
-    "Weak": 9,
     "EnergyCardDel": 6,
+    "ChangeCardUseMin": 5,
     "BuffDot": 3,
-    "ChangeCardUseMin": 2,
     "EndPose": 2,
     "KillTarget": 2,
     "Copy": 1,
@@ -48,37 +50,40 @@
     "SkillSub": 1
   },
   "eventCounts": {
-    "round_start": 125,
-    "release_after": 120,
+    "round_start": 155,
+    "release_after": 149,
+    "release_before": 128,
+    "label_get_after": 112,
     "burst_after": 111,
-    "release_before": 104,
-    "make_weak_after": 96,
-    "label_get_after": 78,
-    "be_hurt_after": 50,
-    "label_lose_after": 47,
-    "hurt_after": 46,
-    "round_end": 37,
-    "death_after": 35,
-    "atk_after": 31,
+    "make_weak_after": 99,
+    "be_hurt_after": 64,
+    "hurt_after": 59,
+    "label_lose_after": 59,
+    "round_end": 47,
+    "death_after": 46,
+    "hurt_before": 38,
+    "atk_after": 32,
     "card_release_after": 27,
-    "hurt_before": 27,
-    "beweak_after": 19,
-    "atk_before": 18,
-    "lose_hp_after": 18,
-    "be_hurt_before": 15,
-    "be_hit_before": 14,
-    "be_hit_after": 13,
+    "atk_before": 23,
+    "lose_hp_after": 23,
+    "beweak_after": 21,
+    "be_hurt_before": 19,
+    "be_hit_before": 16,
+    "be_hit_after": 15,
     "card_release_before": 13,
-    "death_before": 12,
+    "death_before": 13,
+    "crit_after": 9,
     "be_extra_damage_after": 5,
-    "crit_after": 4,
-    "recover_hp_after": 4,
-    "subdebut_after": 3,
+    "recover_hp_after": 5,
+    "subdebut_after": 4,
+    "skill_up_after": 3,
     "card_skill_before": 2,
     "invalidate_work": 2,
-    "skill_up_after": 2,
     "label_apply_after": 1,
-    "make_recover_after": 1
+    "make_recover_after": 1,
+    "teamskill_after": 1,
+    "teamskill_before": 1,
+    "weakup": 1
   },
   "units": [
     {
@@ -172,6 +177,41 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1001_ep4",
+          "name": "Binge Eater Ability Sphere",
+          "text": "Increases damage dealt by 3% for each 1 buff on self, stacking up to 12%. When your turn starts, your next 1 active skill will deal 5% more damage for 1 turn.",
+          "factors": [
+            "1",
+            "3%",
+            "12%",
+            "1",
+            "1",
+            "5%"
+          ],
+          "roots": [
+            "1001_ep4_1",
+            "1001_ep4_2",
+            "1001_ep4_3",
+            "1001_ep4_4",
+            "1001_ep4_5"
+          ],
+          "triggers": [
+            "turn-start",
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "release_before"
           ]
         }
       ]
@@ -280,6 +320,35 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1002_ep4",
+          "name": "Lightning God Ability Sphere",
+          "text": "When you gain #Entry_1# effect, your ATK increase by 0.5%, up to 4%. When your turn starts, you gain 1 stack of #Entry_1# effect.",
+          "factors": [
+            "1",
+            "0.5%",
+            "4%"
+          ],
+          "roots": [
+            "1002_ep4_1",
+            "1002_ep4_2"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "PBuff"
+          ],
+          "events": [
+            "label_get_after",
+            "round_start",
+            "release_before"
           ]
         }
       ]
@@ -395,6 +464,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1003_ep4",
+          "name": "CCG Maverick Ability Sphere",
+          "text": "After casting an active skill, the damage you cause increases by 2.5%, stacking up to 10%. When your turn starts, if there is an enemy Character with HP below 30%, grant #Entry_1# to all enemies for 1 turn, and grant the effect of increasing ATK of self by 3% for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "2.5%",
+            "10%",
+            "30%",
+            "3%"
+          ],
+          "roots": [
+            "1003_ep4_1",
+            "1003_ep4_2"
+          ],
+          "triggers": [
+            "turn-start",
+            "hp-threshold"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "PBuff"
+          ],
+          "events": [
+            "release_after",
+            "round_start",
+            "be_hit_before"
+          ]
+        }
       ]
     },
     {
@@ -494,6 +596,42 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1004_ep4",
+          "name": "Gourmet Ability Sphere",
+          "text": "When you enter or exit a Stance, all damage taken by all your allies is reduced by 1.5%, stacking up to 6%. If you take damage while in Stance, increase your ATK-related stats by 1.5% for 1 turn, stacking up to 3 times.",
+          "factors": [
+            "1",
+            "3",
+            "1.5%",
+            "6%",
+            "1.5%"
+          ],
+          "roots": [
+            "1004_ep4_1",
+            "1004_ep4_2",
+            "1004_ep4_3",
+            "1004_ep4_4",
+            "1004_ep4_5"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "release_before",
+            "label_lose_after",
+            "release_after",
+            "be_hurt_after",
+            "label_get_after"
           ]
         }
       ]
@@ -622,6 +760,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1005_ep4",
+          "name": "Flamewing Ability Sphere",
+          "text": "When you or allies with Charm take damage, increase all allies' damage by 0.8%, up to 8%. When an ally with Charm dies, grant yourself 6% all stat increase for 1 turn.",
+          "factors": [
+            "1",
+            "0.8%",
+            "8%",
+            "6%"
+          ],
+          "roots": [
+            "1005_ep4_1",
+            "1005_ep4_2",
+            "1005_ep4_3"
+          ],
+          "triggers": [
+            "ally-defeated"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after",
+            "death_after"
+          ]
+        }
       ]
     },
     {
@@ -718,6 +885,36 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1006_ep4",
+          "name": "Rebelwing Ability Sphere",
+          "text": "Your Landing CRIT increases ATK by 8% for 1 turn. When your turn starts, if you are not immobilized, grants 4% more PEN rate for all your allies for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "8%",
+            "4%"
+          ],
+          "roots": [
+            "1006_ep4_1",
+            "1006_ep4_2"
+          ],
+          "triggers": [
+            "turn-start",
+            "control",
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "crit_after",
+            "round_start"
           ]
         }
       ]
@@ -824,6 +1021,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1007_ep4",
+          "name": "Awaken Ability Sphere",
+          "text": "When using Skills of level 2 and above, the damage caused increases by 10%. When there are restricted enemies on the field, you will be in #Entry_1#, and the damage received from a single Skill does not exceed 65% of your max HP.",
+          "factors": [
+            "2",
+            "10%",
+            "65%"
+          ],
+          "roots": [
+            "1007_ep4_1",
+            "1007_ep4_2",
+            "1007_ep4_3",
+            "1007_ep4_4",
+            "1007_ep4_5"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "hurt_before",
+            "round_start",
+            "release_before"
+          ]
+        }
       ]
     },
     {
@@ -922,6 +1152,39 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1010_ep4",
+          "name": "Quinque Maniac Ability Sphere",
+          "text": "[Effective also in back-up state] When the Ultimate Skill causes damage, for every 30% reduction in the target's HP, this damage increases by 1.5%. After using an Ultimate Skill, the damage caused by all our allies increases by 2%, stacking up to 6%.",
+          "factors": [
+            "30%",
+            "1.5%",
+            "2%",
+            "6%"
+          ],
+          "roots": [
+            "1010_ep4_1",
+            "1010_ep4_2",
+            "1010_ep4_3",
+            "1010_ep4_4"
+          ],
+          "triggers": [
+            "backup"
+          ],
+          "operators": [
+            "Buff",
+            "PerformOnEvent",
+            "LocalVar",
+            "Dispel"
+          ],
+          "events": [
+            "teamskill_before",
+            "death_after",
+            "teamskill_after"
           ]
         }
       ]
@@ -1023,6 +1286,42 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1011_ep4",
+          "name": "Fledgling Butterfly Ability Sphere",
+          "text": "If you restore your Character's HP from below 100% to 100% after using an active skill, you will gain a 3% increase in your basic stats. Limited to 4 times. When you are on the field, all your allies gain the following effect: When the current HP is 100%, the damage caused increases by 5%.",
+          "factors": [
+            "4",
+            "100%",
+            "100%",
+            "3%",
+            "100%",
+            "5%"
+          ],
+          "roots": [
+            "1011_ep4_1",
+            "1011_ep4_2",
+            "1011_ep4_3",
+            "1011_ep4_4"
+          ],
+          "triggers": [
+            "hp-threshold"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "LocalVar",
+            "PBuff",
+            "Dispel",
+            "Buff"
+          ],
+          "events": [
+            "release_before",
+            "release_after",
+            "recover_hp_after"
           ]
         }
       ]
@@ -1127,6 +1426,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1012_ep4",
+          "name": "Jason Ability Sphere",
+          "text": "Being attacked by a debuffed enemy grants you a 3% increase in basic stats for 2 turns, stacking up to 3 time. After causing damage to an enemy affected by [Lethal], the target's Active Skill effects will be invalidated for 1 turn.",
+          "factors": [
+            "2",
+            "3",
+            "1",
+            "3%"
+          ],
+          "roots": [
+            "1012_ep4_1",
+            "1012_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hit_after",
+            "hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -1229,6 +1556,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1013_ep4",
+          "name": "Father's Will Ability Sphere",
+          "text": "For every 1 debuff on all enemies, increase the basic stats of your Character by 1%, up to 5%. Releasing Active Skill reduces damage taken for all your allies by 5% for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "1%",
+            "5%",
+            "5%"
+          ],
+          "roots": [
+            "1013_ep4_1",
+            "1013_ep4_2",
+            "1013_ep4_3",
+            "1013_ep4_4",
+            "1013_ep4_5",
+            "1013_ep4_6"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
+          ]
+        }
       ]
     },
     {
@@ -1324,6 +1684,36 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1014_ep4",
+          "name": "Taciturn Warrior Ability Sphere",
+          "text": "[Effective also in back-up state] Our SPD Characters deal 5% more damage and receive 5% less damage. Our Characters causing Weak increases All Stats by 2% for all our allies for 2 turns, stacking up to 2 times.",
+          "factors": [
+            "2",
+            "2",
+            "5%",
+            "5%",
+            "2%"
+          ],
+          "roots": [
+            "1014_ep4_1",
+            "1014_ep4_2"
+          ],
+          "triggers": [
+            "backup"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_before",
+            "make_weak_after"
+          ]
+        }
       ]
     },
     {
@@ -1416,6 +1806,41 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1015_ep4",
+          "name": "Arata proto Ability Sphere",
+          "text": "When your turn starts, the next 1 times damage your SKL Characters take will be reduced by 6% for 1 turn. When an allied buffed Character causes damage, it will cause an additional damage for 2% of its max HP as damage.",
+          "factors": [
+            "1",
+            "1",
+            "6%",
+            "2%"
+          ],
+          "roots": [
+            "1015_ep4_1",
+            "1015_ep4_2",
+            "1015_ep4_3"
+          ],
+          "triggers": [
+            "turn-start",
+            "deal-damage",
+            "ally-defeated"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Dispel",
+            "ExtraDamage"
+          ],
+          "events": [
+            "round_start",
+            "release_before",
+            "release_after",
+            "hurt_after"
           ]
         }
       ]
@@ -1531,6 +1956,35 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1016_ep4",
+          "name": "Non-Killing Owl Ability Sphere",
+          "text": "When your Character is in [Flaming Blood], the damage caused increases by 4%, and PEN rate increases by 4%. And when you use level 2 and above skills to cause damage, the target's DEF-related stats are reduced by 3% for 1 turn.",
+          "factors": [
+            "2",
+            "1",
+            "4%",
+            "4%",
+            "3%"
+          ],
+          "roots": [
+            "1016_ep4_1",
+            "1016_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "hurt_after"
           ]
         }
       ]
@@ -1650,6 +2104,35 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1017_ep4",
+          "name": "Bandaged Mysteries Ability Sphere",
+          "text": "After other allied Characters use Active Skills 9 times, grant all allies #Entry_1# effect. After using your Active Skill, grant all your allies the effect of increasing CRIT Rate of the next Skill by 5% and CRIT DMG by 5% for 1 turn.",
+          "factors": [
+            "9",
+            "1",
+            "5%",
+            "5%"
+          ],
+          "roots": [
+            "1017_ep4_1",
+            "1017_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "LocalVar",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
+          ]
+        }
       ]
     },
     {
@@ -1750,6 +2233,45 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1018_ep4",
+          "name": "Inky Shroud Ability Sphere",
+          "text": "For every 1 buff on all allies, the damage taken by all allies is reduced by 1%, up to 8%. When your Character is damaged, if you have 3 or more buff effects, cause the target's ATK to reduce by 5% for 2 turns.",
+          "factors": [
+            "1",
+            "3",
+            "2",
+            "1%",
+            "8%",
+            "5%"
+          ],
+          "roots": [
+            "1018_ep4_1",
+            "1018_ep4_2",
+            "1018_ep4_3",
+            "1018_ep4_4",
+            "1018_ep4_5",
+            "1018_ep4_6",
+            "1018_ep4_7"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "GlobalVar",
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "round_end",
+            "release_before",
+            "be_hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -1847,6 +2369,45 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1019_ep4",
+          "name": "Spotless Shroud Ability Sphere",
+          "text": "For every 1 debuff on all enemies, the damage taken by all enemies increases by 1%, up to 8%. When allied character deals damage, if the target has 3 or more debuffs, reduce the target's DEF by 5% for 2 turns.",
+          "factors": [
+            "1",
+            "3",
+            "2",
+            "1%",
+            "8%",
+            "5%"
+          ],
+          "roots": [
+            "1019_ep4_1",
+            "1019_ep4_2",
+            "1019_ep4_3",
+            "1019_ep4_4",
+            "1019_ep4_5",
+            "1019_ep4_6",
+            "1019_ep4_7"
+          ],
+          "triggers": [
+            "deal-damage"
+          ],
+          "operators": [
+            "GlobalVar",
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "round_end",
+            "release_before",
+            "hurt_after"
           ]
         }
       ]
@@ -1967,6 +2528,33 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1020_ep4",
+          "name": "Wordless Avenger Ability Sphere",
+          "text": "Each Burst gained increases all allies' MAX HP by 2%, up to 12%. Each Revenge gained grants all allies a 1 damage increase for their next ATK for 5% turn.",
+          "factors": [
+            "1",
+            "2%",
+            "12%",
+            "5%"
+          ],
+          "roots": [
+            "1020_ep4_1",
+            "1020_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after"
+          ]
+        }
       ]
     },
     {
@@ -2075,6 +2663,38 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1021_ep4",
+          "name": "Shachi Ability Sphere",
+          "text": "When your turn starts, within 2 turns, grant a Rage Mark to 1 random enemy without the Rage Mark. For each 1 enemy with the Rage Mark on the enemy's field, your damage will increase by 3%. When all enemies have the Rage Mark, my skill level will increase.",
+          "factors": [
+            "2",
+            "1",
+            "1",
+            "3%"
+          ],
+          "roots": [
+            "1021_ep4_1",
+            "1021_ep4_2",
+            "1021_ep4_3"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "FilterByFlag",
+            "Buff",
+            "SkillLv"
+          ],
+          "events": [
+            "round_start",
+            "hurt_before",
+            "label_get_after"
           ]
         }
       ]
@@ -2188,6 +2808,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1023_ep4",
+          "name": "Red Tongue Hitman Ability Sphere",
+          "text": "When attack debuffed enemies, increase your damage dealt by 8% and CRIT Rate by 5%. For every 1 [Scorched] effect on all enemies, increase your ATK by 1%, up to 5%.",
+          "factors": [
+            "1",
+            "8%",
+            "5%",
+            "1%",
+            "5%"
+          ],
+          "roots": [
+            "1023_ep4_1",
+            "1023_ep4_2",
+            "1023_ep4_3",
+            "1023_ep4_4",
+            "1023_ep4_5",
+            "1023_ep4_6"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "atk_before"
+          ]
+        }
       ]
     },
     {
@@ -2295,6 +2948,33 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1025_ep4",
+          "name": "Mask-Maker Ability Sphere",
+          "text": "Every 10 times your other Characters use Active Skills, increases the Skill level for all your allies, and grants a Shield equal to 8% of their Max HP.",
+          "factors": [
+            "10",
+            "8%"
+          ],
+          "roots": [
+            "1025_ep4_1",
+            "1025_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "LocalVar",
+            "PerformOnEvent",
+            "Buff",
+            "SkillLv"
+          ],
+          "events": [
+            "release_after"
           ]
         }
       ]
@@ -2408,6 +3088,37 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1026_ep4",
+          "name": "Devil Ape Ability Sphere",
+          "text": "For every 2 debuffs on all enemies, increase ATK of all your allies by 1%, up to 4%. When your characters cause damage to restraining attribute, PEN rate increases by 5%.",
+          "factors": [
+            "2",
+            "1%",
+            "4%",
+            "5%"
+          ],
+          "roots": [
+            "1026_ep4_1",
+            "1026_ep4_2",
+            "1026_ep4_3",
+            "1026_ep4_4",
+            "1026_ep4_5"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -2501,6 +3212,37 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1027_ep4",
+          "name": "Black Dog Ability Sphere",
+          "text": "When your Anteiku character uses a Skill, the damage caused by all allies will be increased by 1.5%, limited to 6 times. When it reaches the max value, recovers 5% of their max HP, and increase their basic stats by 3% for 1 turn.",
+          "factors": [
+            "6",
+            "1",
+            "1.5%",
+            "5%",
+            "3%"
+          ],
+          "roots": [
+            "1027_ep4_1",
+            "1027_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "LocalVar",
+            "PerformOnEvent",
+            "Buff",
+            "Recover",
+            "Dispel"
+          ],
+          "events": [
+            "release_after"
           ]
         }
       ]
@@ -2617,6 +3359,37 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1030_ep4",
+          "name": "Quick Revival Ability Sphere",
+          "text": "After taking damage, grant the attacker 5% reduced damage dealt for 1 turn. When your HP first drops below 50%, your Aogiri Tree characters remove all debuffs, and grant yourself 3% increased basic stats and debuff immunity for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "5%",
+            "50%",
+            "3%"
+          ],
+          "roots": [
+            "1030_ep4_1",
+            "1030_ep4_2"
+          ],
+          "triggers": [
+            "take-damage",
+            "hp-threshold"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "be_hurt_after",
+            "lose_hp_after"
+          ]
+        }
       ]
     },
     {
@@ -2716,6 +3489,39 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1031_ep4",
+          "name": "Helter Skelter Ability Sphere",
+          "text": "For every 1 STR character on your side of field, all damage taken by your side is reduced by 1.5% and damage dealt is increased by 1.5%. After using the Active Skill, the character with the highest ATK on our side will have the effect of increasing the CRIT rate by 5% and the CRIT damage by 8% for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "1.5%",
+            "1.5%",
+            "5%",
+            "8%"
+          ],
+          "roots": [
+            "1031_ep4_1",
+            "1031_ep4_2",
+            "1031_ep4_3",
+            "1031_ep4_4",
+            "1031_ep4_5"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
           ]
         }
       ]
@@ -2820,6 +3626,35 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1032_ep4",
+          "name": "Arata proto Ability Sphere",
+          "text": "When the enemy uses an Active Skill, the target's ATK is reduced by 4% for 1 turn, stacking up to 1 stack. When your turn ends, if you are in a Stance, your DEF stats will be increased by 1%, up to 4%.",
+          "factors": [
+            "1",
+            "1",
+            "4%",
+            "1%",
+            "4%"
+          ],
+          "roots": [
+            "1032_ep4_1",
+            "1032_ep4_2"
+          ],
+          "triggers": [
+            "turn-end"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_after",
+            "round_end"
           ]
         }
       ]
@@ -2928,6 +3763,38 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1033_ep4",
+          "name": "Absolute Strength Ability Sphere",
+          "text": "For every 30% of your current HP, your CRIT rate increases by 2% and your CRIT damage increases by 4%. When you have Blood Rage, you gain the following effects: your ATK increases by 5%, and the single damage you receive does not exceed 70% of your max HP.",
+          "factors": [
+            "30%",
+            "2%",
+            "4%",
+            "5%",
+            "70%"
+          ],
+          "roots": [
+            "1033_ep4_1",
+            "1033_ep4_2",
+            "1033_ep4_3",
+            "1033_ep4_4"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff",
+            "PerformOnEvent"
+          ],
+          "events": [
+            "round_start",
+            "release_before"
+          ]
+        }
       ]
     },
     {
@@ -3023,6 +3890,35 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1035_ep4",
+          "name": "Shining New Star Ability Sphere",
+          "text": "When your HP is below 50%, you will get the following effects: basic stats increases by 5%, and damage received decreases by 8%. When you gain a shield, increase the level of 1 of your skills randomly.",
+          "factors": [
+            "1",
+            "50%",
+            "5%",
+            "8%"
+          ],
+          "roots": [
+            "1035_ep4_1"
+          ],
+          "triggers": [
+            "hp-threshold",
+            "buff-received"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff",
+            "PerformOnEvent",
+            "SkillLv"
+          ],
+          "events": [
+            "label_get_after"
           ]
         }
       ]
@@ -3125,6 +4021,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1036_ep4",
+          "name": "Crybaby Ability Sphere",
+          "text": "[Effective also in back-up state] For every 6% of your PEN Rate, the BLK Chance of all enemies is reduced by 1%. When your Character causes damage, the target will receive 1% more damage for 2 turns, stacking up to 3 times.",
+          "factors": [
+            "2",
+            "3",
+            "6%",
+            "1%",
+            "1%"
+          ],
+          "roots": [
+            "1036_ep4_1",
+            "1036_ep4_2",
+            "1036_ep4_3",
+            "1036_ep4_4"
+          ],
+          "triggers": [
+            "backup"
+          ],
+          "operators": [
+            "GlobalVar",
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_before",
+            "hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -3221,6 +4150,40 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1037_ep4",
+          "name": "Ladyboy in Love Ability Sphere",
+          "text": "When battle starts, all allied characters' ATK-related stats are increased by 4% for 1 turn. This effect triggers every 3 turns. When an allied Aogiri Tree Character gains a buff, increase its basic stats by 1%, up to 4%.",
+          "factors": [
+            "1",
+            "3",
+            "4%",
+            "1%",
+            "4%"
+          ],
+          "roots": [
+            "1037_ep4_1",
+            "1037_ep4_2",
+            "1037_ep4_3",
+            "1037_ep4_4",
+            "1037_ep4_5"
+          ],
+          "triggers": [
+            "battle-start",
+            "ally-defeated"
+          ],
+          "operators": [
+            "LocalVar",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "label_get_after"
           ]
         }
       ]
@@ -3322,6 +4285,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1038_ep4",
+          "name": "Tail Brothers Ability Sphere",
+          "text": "For every 2 buffs on all allies, increase the DEF of all your allies by 1% and ATK by 1%, up to 4%. When our allied Aogiri Tree Character causes damage, grant it an effect that increases damage by 3% for 2 turns.",
+          "factors": [
+            "2",
+            "2",
+            "1%",
+            "1%",
+            "4%",
+            "3%"
+          ],
+          "roots": [
+            "1038_ep4_1",
+            "1038_ep4_2",
+            "1038_ep4_3",
+            "1038_ep4_4",
+            "1038_ep4_5"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -3418,6 +4414,40 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1039_ep4",
+          "name": "Tail Brothers Ability Sphere",
+          "text": "For every 2 debuffs on all enemies, reduce the ATK of all enemies by 1% and DEF by 1%, up to 4%. When an allied Aogiri Tree Character is damaged, reduce the damage caused by the attacker by 3% for 2 turns.",
+          "factors": [
+            "2",
+            "2",
+            "1%",
+            "1%",
+            "4%",
+            "3%"
+          ],
+          "roots": [
+            "1039_ep4_1",
+            "1039_ep4_2",
+            "1039_ep4_3",
+            "1039_ep4_4",
+            "1039_ep4_5"
+          ],
+          "triggers": [
+            "ally-defeated",
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after"
           ]
         }
       ]
@@ -3526,6 +4556,40 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1040_ep4",
+          "name": "Daughter Protector Ability Sphere",
+          "text": "[Effective also in back-up state] When all allied Characters are SKL Characters, reduce the damage taken by all allies by 6%. When your turn ends, grant the SKL Characters an effect that the next 1 damage they take is fixed to 1, and restore 4% of the lost HP for all allies. Triggers 1 times every 5 turns.",
+          "factors": [
+            "1",
+            "5",
+            "1",
+            "6%",
+            "4%"
+          ],
+          "roots": [
+            "1040_ep4_1",
+            "1040_ep4_2",
+            "1040_ep4_3"
+          ],
+          "triggers": [
+            "turn-end",
+            "backup",
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "LocalVar",
+            "PerformOnEvent",
+            "Buff",
+            "Recover"
+          ],
+          "events": [
+            "round_end"
+          ]
+        }
       ]
     },
     {
@@ -3628,6 +4692,38 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1041_ep4",
+          "name": "Battleground Gentleman Ability Sphere",
+          "text": "For each 1 buff you have, your ATK increases by 1.5%, up to 6%. When battle starts, gain 1 #Entry_1# effect. When you have 3 or more [Charged-Up] effects, your CRIT rate increases by 4% and CRIT damage increases by 8%.",
+          "factors": [
+            "1",
+            "1",
+            "3",
+            "1.5%",
+            "6%",
+            "4%",
+            "8%"
+          ],
+          "roots": [
+            "1041_ep4_1",
+            "1041_ep4_2",
+            "1041_ep4_3",
+            "1041_ep4_4",
+            "1041_ep4_5",
+            "1041_ep4_6"
+          ],
+          "triggers": [
+            "battle-start"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff"
+          ],
+          "events": []
+        }
       ]
     },
     {
@@ -3722,6 +4818,46 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1042_ep4",
+          "name": "Long-haired Ghoul Investigator Ability Sphere",
+          "text": "For every 1 Shielded allied Character, the CRIT rate of all allies increases by 2% and the CRIT damage increases by 3%. When your Character gains a shield, it grants an effect that increases its ATK by 1% for 1 turns, stacking up to 2 times.",
+          "factors": [
+            "1",
+            "1",
+            "2",
+            "2%",
+            "3%",
+            "1%"
+          ],
+          "roots": [
+            "1042_ep4_1",
+            "1042_ep4_2",
+            "1042_ep4_3",
+            "1042_ep4_4",
+            "1042_ep4_5",
+            "1042_ep4_6",
+            "1042_ep4_7"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "FilterByFlag",
+            "CountFlag",
+            "GlobalVar",
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "release_before",
+            "label_get_after"
           ]
         }
       ]
@@ -3829,6 +4965,41 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1043_ep4",
+          "name": "Envoy of Vengeance Ability Sphere",
+          "text": "Each Charged-Up increases the damage caused by 2% and the PEN rate by 2%. When the Charged-Up reaches 3 times, the PEN rate increases by an additional 3% and the CRIT rate increases by an additional 8%. After a CRIT is caused at this time, the ATK of yourself is increased by 2 for 2% turns. Stacking up to 3 times.",
+          "factors": [
+            "3",
+            "2",
+            "3",
+            "2%",
+            "2%",
+            "3%",
+            "8%",
+            "2%"
+          ],
+          "roots": [
+            "1043_ep4_1",
+            "1043_ep4_2",
+            "1043_ep4_3",
+            "1043_ep4_4"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff",
+            "PerformOnEvent"
+          ],
+          "events": [
+            "release_before",
+            "crit_after"
           ]
         }
       ]
@@ -3942,6 +5113,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1046_ep4",
+          "name": "Warden Ability Sphere",
+          "text": "When a Character on the field is immobilized, increase your basic stats by 3%, up to 9%. When you cause damage, if the target is immobilized, increase your skill levels.",
+          "factors": [
+            "3%",
+            "9%"
+          ],
+          "roots": [
+            "1046_ep4_1",
+            "1046_ep4_2"
+          ],
+          "triggers": [
+            "deal-damage",
+            "control"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "SkillLv"
+          ],
+          "events": [
+            "label_get_after",
+            "hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -4046,6 +5245,38 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1050_ep4",
+          "name": "CCG's Reaper Ability Sphere",
+          "text": "When you are on the field, all your allies gain the following effect: When gaining a Shield, randomly remove 1 debuff. When affected by Shield, the damage caused increases by 10%. At the start of the turn, you will gain a 2% increase in your PEN rate stacking up to 3 times and disappears when the Shield is removed.",
+          "factors": [
+            "1",
+            "3",
+            "10%",
+            "2%"
+          ],
+          "roots": [
+            "1050_ep4_1",
+            "1050_ep4_2",
+            "1050_ep4_3"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "label_get_after",
+            "label_lose_after",
+            "round_start"
           ]
         }
       ]
@@ -4163,6 +5394,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1052_ep4",
+          "name": "Rabbit Ability Sphere",
+          "text": "When your turn ends, for each 1 debuffed enemy Character, your PEN Rate increases by 1.25%, up to 15%, and your damage dealt to debuffed targets increases by 5%.",
+          "factors": [
+            "1",
+            "1.25%",
+            "15%",
+            "5%"
+          ],
+          "roots": [
+            "1052_ep4_1",
+            "1052_ep4_2"
+          ],
+          "triggers": [
+            "turn-end"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "CountFlag",
+            "Buff"
+          ],
+          "events": [
+            "round_end",
+            "hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -4270,6 +5530,40 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1055_ep4",
+          "name": "Growing Teenage Girl Ability Sphere",
+          "text": "When allied Anteiku characters uses an active skill, increase all allies' damage by 1%, up to 8% At the end of our turn, if all characters who used active skills are Anteiku characters, heal all allies for 8% of their lost HP.",
+          "factors": [
+            "1%",
+            "8%",
+            "8%"
+          ],
+          "roots": [
+            "1055_ep4_1",
+            "1055_ep4_2",
+            "1055_ep4_3",
+            "1055_ep4_4"
+          ],
+          "triggers": [
+            "turn-end",
+            "after-active",
+            "defeat"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "LocalVar",
+            "Recover"
+          ],
+          "events": [
+            "release_after",
+            "round_start",
+            "round_end"
           ]
         }
       ]
@@ -4399,6 +5693,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1056_ep4",
+          "name": "Bloody Feast Ability Sphere",
+          "text": "For each 1 buff gained, increase your damage dealt by 1.25%, up to 7.5%. Upon first reaching the maximum stack of Blood, increase your all stats by 4% for 2 turns.",
+          "factors": [
+            "1",
+            "2",
+            "1.25%",
+            "7.5%",
+            "4%"
+          ],
+          "roots": [
+            "1056_ep4_1",
+            "1056_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "label_get_after"
+          ]
+        }
       ]
     },
     {
@@ -4510,6 +5833,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1058_ep4",
+          "name": "Wings of Power-seeker Ability Sphere",
+          "text": "For every 1 stack of Momentum Gathering you have gained, your basic stats increase by 0.75%, up to 6%. When you cause damage to a target with Despair, the damage dealt increases by 10%.",
+          "factors": [
+            "1",
+            "0.75%",
+            "6%",
+            "10%"
+          ],
+          "roots": [
+            "1058_ep4_1",
+            "1058_ep4_2"
+          ],
+          "triggers": [
+            "deal-damage"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -4606,6 +5957,40 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1060_ep4",
+          "name": "Twinblades of Justice Ability Sphere",
+          "text": "When you land a CRIT, this damage will increase by 20% for every 3% decrease in the target's HP. When your Character uses an Active Skill to cause damage, if it does not Critically hit, the CRIT rate will be increased by 10% when releasing the Active Skill. The effect is removed until a CRIT is landed.",
+          "factors": [
+            "20%",
+            "3%",
+            "10%"
+          ],
+          "roots": [
+            "1060_ep4_1",
+            "1060_ep4_2",
+            "1060_ep4_3",
+            "1060_ep4_4"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "GlobalVar",
+            "Buff",
+            "CountFlag",
+            "Dispel"
+          ],
+          "events": [
+            "atk_before",
+            "release_before",
+            "crit_after",
+            "release_after"
           ]
         }
       ]
@@ -4722,6 +6107,38 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1065_ep4",
+          "name": "Centipede Rampage Ability Sphere",
+          "text": "For every 1 stack of Collapse on all enemies, damage dealt by yourself increases by 1.5%, up to 12%. When your HP is above 80%, you will definitely cause CRITs when dealing damage.",
+          "factors": [
+            "1",
+            "1.5%",
+            "12%",
+            "80%"
+          ],
+          "roots": [
+            "1065_ep4_1",
+            "1065_ep4_2",
+            "1065_ep4_3",
+            "1065_ep4_4",
+            "1065_ep4_5"
+          ],
+          "triggers": [
+            "hp-threshold"
+          ],
+          "operators": [
+            "GlobalVar",
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_before"
+          ]
+        }
       ]
     },
     {
@@ -4836,6 +6253,41 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1071_ep4",
+          "name": "Warrior Ability Sphere",
+          "text": "Each 1 #Entry_1# increases your basic stats by 2.5%, up to 10%. Active skills ignore Provoke. When dealing damage, this skill's damage increases by 2% for every 10% reduction in the target's HP, up to 8%.",
+          "factors": [
+            "1",
+            "2.5%",
+            "10%",
+            "10%",
+            "2%",
+            "8%"
+          ],
+          "roots": [
+            "1071_ep4_1",
+            "1071_ep4_2",
+            "1071_ep4_3",
+            "1071_ep4_4"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "label_get_after",
+            "hurt_before",
+            "release_after"
+          ]
+        }
       ]
     },
     {
@@ -4947,6 +6399,42 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1072_ep4",
+          "name": "Dojima Kai Ability Sphere",
+          "text": "When dealing damage to an enemy with more than 60% remaining HP, the damage dealt increases by 1.5% for every 10% remaining HP of the target. For every 1 stack of Vigorous you have, your CRIT Rate increases by 2% and your CRIT DMG increases by 3%.",
+          "factors": [
+            "1",
+            "60%",
+            "10%",
+            "1.5%",
+            "2%",
+            "3%"
+          ],
+          "roots": [
+            "1072_ep4_1",
+            "1072_ep4_2",
+            "1072_ep4_3",
+            "1072_ep4_4",
+            "1072_ep4_5",
+            "1072_ep4_6",
+            "1072_ep4_7"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "GlobalVar",
+            "Buff"
+          ],
+          "events": [
+            "hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -5055,6 +6543,38 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1073_ep4",
+          "name": "Fueguchi Ni Ability Sphere",
+          "text": "[Effective also in back-up state] For each allied CCG character on the field, increase all allied CCG characters' basic stats by 1.75%. When an enemy's HP drops below 50% for the first time, inflict Lethal on the target for 1 turn.",
+          "factors": [
+            "1",
+            "1.75%",
+            "50%"
+          ],
+          "roots": [
+            "1073_ep4_1",
+            "1073_ep4_2",
+            "1073_ep4_3",
+            "1073_ep4_4",
+            "1073_ep4_5"
+          ],
+          "triggers": [
+            "hp-threshold",
+            "backup"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff",
+            "LocalVar"
+          ],
+          "events": [
+            "lose_hp_after"
           ]
         }
       ]
@@ -5170,6 +6690,35 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1074_ep4",
+          "name": "Arata proto (Rampage) Ability Sphere",
+          "text": "Each time an enemy is affected by Disarm 1 times, increase all allied CCG characters' basic stats by 2%, up to 8%. When the enemy's turn starts, reduce the skill level of enemies affected by Disarm.",
+          "factors": [
+            "1",
+            "2%",
+            "8%"
+          ],
+          "roots": [
+            "1074_ep4_1",
+            "1074_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "FilterByFlag",
+            "SkillLv",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "label_get_after"
           ]
         }
       ]
@@ -5300,6 +6849,35 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1075_ep4",
+          "name": "Arata proto (Rampage) Ability Sphere",
+          "text": "Every time our character receives Offense, they make themselves Basic stats Increase1.5%, increase up to6%, increase all of our DEF and CRIT Resist when using Active Skills yourself2.5%, increase up to10%",
+          "factors": [
+            "1.5%",
+            "6%",
+            "2.5%",
+            "10%"
+          ],
+          "roots": [
+            "1075_ep4_1",
+            "1075_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_before",
+            "release_after",
+            "be_hit_after"
+          ]
+        }
       ]
     },
     {
@@ -5398,6 +6976,46 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1076_ep4",
+          "name": "Blazewing Ability Sphere",
+          "text": "Each time you trigger #Entry_1# Effect 1 times, the damage caused by your next 1 active skill will increase by 10%. When your turn starts, if there is an enemy character with HP below 20%, you will be granted the #Entry_1# effect for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "1",
+            "10%",
+            "20%"
+          ],
+          "roots": [
+            "1076_ep4_1",
+            "1076_ep4_2",
+            "1076_ep4_3",
+            "1076_ep4_4",
+            "1076_ep4_5"
+          ],
+          "triggers": [
+            "turn-start",
+            "hp-threshold"
+          ],
+          "operators": [
+            "LocalVar",
+            "PerformOnEvent",
+            "Buff",
+            "FilterByFlag",
+            "CountFlag",
+            "PBuff",
+            "SkillReleace"
+          ],
+          "events": [
+            "release_after",
+            "release_before",
+            "round_start",
+            "death_after"
           ]
         }
       ]
@@ -5515,6 +7133,35 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1077_ep4",
+          "name": "Mr.MM Ability Sphere Fragment",
+          "text": "After using an active skill, increase your basic stats by 2.5%, up to 10%. While holding #Entry_1#, increase damage dealt by 5%. If not holding #Entry_1#, reduce damage taken by 5%.",
+          "factors": [
+            "2.5%",
+            "10%",
+            "5%",
+            "5%"
+          ],
+          "roots": [
+            "1077_ep4_1",
+            "1077_ep4_2",
+            "1077_ep4_3"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
           ]
         }
       ]
@@ -5639,6 +7286,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1078_ep4",
+          "name": "Natsu Ability Sphere",
+          "text": "At the start of your turn, increase all allies' damage dealt by 2%, capped at 6%. Each time an ally deals damage, increase that ally's ATK and PEN rate by 0.75%, capped at 3%.",
+          "factors": [
+            "2%",
+            "6%",
+            "0.75%",
+            "3%"
+          ],
+          "roots": [
+            "1078_ep4_1",
+            "1078_ep4_2"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -5758,6 +7433,35 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1079_ep4",
+          "name": "Natsu Matsuri Ability Sphere",
+          "text": "Each time self takes damage, increase own attack and defense by 1%, up to a maximum of 6%. For each 1 Decline effect on all enemies, reduce all enemies' crit resistance and crit defense by 1%, up to a maximum of 4%.",
+          "factors": [
+            "1",
+            "1%",
+            "6%",
+            "1%",
+            "4%"
+          ],
+          "roots": [
+            "1079_ep4_1",
+            "1079_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after",
+            "label_get_after"
+          ]
+        }
       ]
     },
     {
@@ -5872,6 +7576,41 @@
           "events": [
             "release_before",
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1080_ep4",
+          "name": "Combat Outfit Ability Sphere",
+          "text": "[Effective also in back-up state] Increases allied Aogiri Tree characters' basic stats by 2% for each allied Aogiri Tree character present. When your turn starts, randomly remove a weak effect from 1 allied Aogiri Tree character and restore 6% of their lost HP.",
+          "factors": [
+            "1",
+            "2%",
+            "6%"
+          ],
+          "roots": [
+            "1080_ep4_1",
+            "1080_ep4_2",
+            "1080_ep4_3",
+            "1080_ep4_4",
+            "1080_ep4_5"
+          ],
+          "triggers": [
+            "turn-start",
+            "backup"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff",
+            "FilterByFlag",
+            "CountFlag",
+            "Dispel",
+            "Recover"
+          ],
+          "events": [
+            "round_start"
           ]
         }
       ]
@@ -6005,6 +7744,42 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1081_ep4",
+          "name": "Reliable Partner Ability Sphere",
+          "text": "For every 1 Anteiku Character on your side, your basic stats increase by 1.5%, up to 6%. When your turn starts, if an allied Anteiku Character has received damage in the previous turn, all allies' damage dealt will increase by 1%, up to 5 times.",
+          "factors": [
+            "1",
+            "5",
+            "1.5%",
+            "6%",
+            "1%"
+          ],
+          "roots": [
+            "1081_ep4_1",
+            "1081_ep4_2",
+            "1081_ep4_3",
+            "1081_ep4_4",
+            "1081_ep4_5",
+            "1081_ep4_6"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff",
+            "LocalVar",
+            "Dispel"
+          ],
+          "events": [
+            "round_start",
+            "be_hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -6114,6 +7889,34 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1083_ep4",
+          "name": "Pet Boy Ability Sphere",
+          "text": "Each time an enemy gains 1 stack of #Entry_1#, increases all allies' basic stats by 1%, up to 6%, and reduces damage dealt by enemies with #Entry_2# by 5%.",
+          "factors": [
+            "1",
+            "1%",
+            "6%",
+            "5%"
+          ],
+          "roots": [
+            "1083_ep4_1",
+            "1083_ep4_2"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after"
           ]
         }
       ]
@@ -6236,6 +8039,31 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1084_ep4",
+          "name": "Novelist Ability Sphere",
+          "text": "Grant Disruption Immunity to yourself. When a character with #Entry_1# deals damage, increase their and characters with #Entry_1# basic stats by 1.5%, up to 6%.",
+          "factors": [
+            "1.5%",
+            "6%"
+          ],
+          "roots": [
+            "1084_ep4_1",
+            "1084_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "Buff",
+            "PerformOnEvent"
+          ],
+          "events": [
+            "hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -6338,6 +8166,35 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1087_ep4",
+          "name": "Christmas Ability Sphere",
+          "text": "Each time an enemy is Incapacitated, increase your basic stats by 2%, up to 8%. When the enemy is removed from Incapacitation, the target's DEF-related stats are reduced by 5% for 1 turn.",
+          "factors": [
+            "1",
+            "2%",
+            "8%",
+            "5%"
+          ],
+          "roots": [
+            "1087_ep4_1",
+            "1087_ep4_2",
+            "1087_ep4_3"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "label_lose_after"
           ]
         }
       ]
@@ -6448,6 +8305,33 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1088_ep4",
+          "name": "Christmas Ability Sphere",
+          "text": "Each 1 time your Character consumes Encourage, the basic stats increases by 1%, up to 4% per Character. When battle starts, grant 1 stack of Encourage to your Character with the highest ATK.",
+          "factors": [
+            "1",
+            "1",
+            "1%",
+            "4%"
+          ],
+          "roots": [
+            "1088_ep4_1",
+            "1088_ep4_2"
+          ],
+          "triggers": [
+            "battle-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after"
           ]
         }
       ]
@@ -6563,6 +8447,33 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1089_ep4",
+          "name": "Anteiku Ability Sphere",
+          "text": "Each damage taken increases allied Anteiku characters' damage dealt by 1.5%, up to 9%. When dealing damage to targets with higher current HP percentage than yourself, increase the damage dealt by 6%.",
+          "factors": [
+            "1.5%",
+            "9%",
+            "6%"
+          ],
+          "roots": [
+            "1089_ep4_1",
+            "1089_ep4_2"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after",
+            "hurt_before"
           ]
         }
       ]
@@ -6685,6 +8596,36 @@
           "events": [
             "make_weak_after"
           ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1090_ep4",
+          "name": "Rescue Ability Sphere",
+          "text": "For each 1 buff on an allied Anteiku or No Organization character, increase their DEF by 1.6%, up to 8%. When they have 4 or more buffs, increase their Block Chance by 4%.",
+          "factors": [
+            "1",
+            "4",
+            "1.6%",
+            "8%",
+            "4%"
+          ],
+          "roots": [
+            "1090_ep4_1",
+            "1090_ep4_2",
+            "1090_ep4_3",
+            "1090_ep4_4",
+            "1090_ep4_5",
+            "1090_ep4_6"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff"
+          ],
+          "events": []
         }
       ]
     },
@@ -6809,6 +8750,37 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1091_ep4",
+          "name": "Chief Ability Sphere",
+          "text": "Each time an allied CCG character gains a shield, their basic stats increase by 0.75%, up to 6%. When your turn starts, allied CCG characters with shields reduce their Weak by 1 point and gain a 4% ATK increase for 1 turn.",
+          "factors": [
+            "1",
+            "1",
+            "0.75%",
+            "6%",
+            "4%"
+          ],
+          "roots": [
+            "1091_ep4_1",
+            "1091_ep4_2"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "FilterByFlag",
+            "Weak"
+          ],
+          "events": [
+            "label_get_after",
+            "round_start"
+          ]
+        }
       ]
     },
     {
@@ -6929,6 +8901,33 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1092_ep4",
+          "name": "Revenge Ability Sphere",
+          "text": "For each 1 allied Aogiri Tree character on the field, increase all allied characters' damage dealt by 1.5%, up to 6%. All allied characters with Blood Feud are immune to disabling and Weak.",
+          "factors": [
+            "1",
+            "1.5%",
+            "6%"
+          ],
+          "roots": [
+            "1092_ep4_1",
+            "1092_ep4_2",
+            "1092_ep4_3",
+            "1092_ep4_4",
+            "1092_ep4_5"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff"
+          ],
+          "events": []
+        }
       ]
     },
     {
@@ -7036,6 +9035,33 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1098_ep4",
+          "name": "Tanabata Ability Sphere",
+          "text": "When an allied character gains a buff, increase their basic stats by 1%, up to 6%. If you under Fulfillment, increase your active skill damage by 8%.",
+          "factors": [
+            "1%",
+            "6%",
+            "8%"
+          ],
+          "roots": [
+            "1098_ep4_1",
+            "1098_ep4_2"
+          ],
+          "triggers": [
+            "ally-defeated"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "release_before"
           ]
         }
       ]
@@ -7151,6 +9177,34 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1099_ep4",
+          "name": "Tanabata Ability Sphere",
+          "text": "When an allied character gains a buff, increase their basic stats by 1%, up to 6%. Allied characters with Blessing gain 6% CRIT Resist and 6% CRIT DEF.",
+          "factors": [
+            "1%",
+            "6%",
+            "6%",
+            "6%"
+          ],
+          "roots": [
+            "1099_ep4_1",
+            "1099_ep4_2"
+          ],
+          "triggers": [
+            "ally-defeated"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after"
           ]
         }
       ]
@@ -7285,6 +9339,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1100_ep4",
+          "name": "Half Year Anniversary Ability Sphere",
+          "text": "For each 1 #Entry_1# you gain, increase your basic stats by 0.875%, up to 10.5%. Reduce damage taken by 6% if target's HP is higher.",
+          "factors": [
+            "1",
+            "0.875%",
+            "10.5%",
+            "6%"
+          ],
+          "roots": [
+            "1100_ep4_1",
+            "1100_ep4_2"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "be_hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -7405,6 +9487,39 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1101_ep4",
+          "name": "Half Year Anniversary Ability Sphere",
+          "text": "Each time you remove 1 Discharge, increase your damage by 3%, up to 9%. While having Energy Storage, increase your DEF by 5%, and while having Discharge, increase your ATK by 5%.",
+          "factors": [
+            "1",
+            "3%",
+            "9%",
+            "5%",
+            "5%"
+          ],
+          "roots": [
+            "1101_ep4_1",
+            "1101_ep4_2",
+            "1101_ep4_3",
+            "1101_ep4_4",
+            "1101_ep4_5"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "label_lose_after",
+            "label_get_after"
           ]
         }
       ]
@@ -7532,6 +9647,33 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1102_ep4",
+          "name": "Mentor Ability Sphere",
+          "text": "The damage you take from a single skill hit cannot exceed 35% of your Max HP, and you are immune to all Basic Stat reduction effects. At the start of your side's turn, all allies recover HP equal to 200% of your ATK. If you have Flash, this recovery becomes 2 times stronger and is not affected by Restoration Rate",
+          "factors": [
+            "35%",
+            "200%",
+            "2"
+          ],
+          "roots": [
+            "1102_ep4_1"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff",
+            "PerformOnEvent",
+            "Recover"
+          ],
+          "events": [
+            "round_start"
+          ]
+        }
       ]
     },
     {
@@ -7633,6 +9775,33 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1104_ep4",
+          "name": "Easter Ability Sphere",
+          "text": "After using an active skill, increase all allied Aogiri Tree characters' basic stats by 2%, up to 8%. Reduce the DEF-related stats of enemies with Detonate by 5%.",
+          "factors": [
+            "2%",
+            "8%",
+            "5%"
+          ],
+          "roots": [
+            "1104_ep4_1",
+            "1104_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
           ]
         }
       ]
@@ -7746,6 +9915,37 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1105_ep4",
+          "name": "Easter Ability Sphere",
+          "text": "For every 5 buffs on all allied characters, reduce all allied characters' damage taken by 2.5%, up to 10%. When an allied character gains Capability Burst, remove all debuffs on that character.",
+          "factors": [
+            "5",
+            "2.5%",
+            "10%"
+          ],
+          "roots": [
+            "1105_ep4_1",
+            "1105_ep4_2",
+            "1105_ep4_3",
+            "1105_ep4_4",
+            "1105_ep4_5"
+          ],
+          "triggers": [
+            "ally-defeated"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "label_get_after"
           ]
         }
       ]
@@ -7870,6 +10070,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1114_ep4",
+          "name": "Orochi Ability Sphere",
+          "text": "When your turn starts, for every ally on the field below 50% HP, gain basic stats +4% and CRIT DEF +6% for 1 turn. When the enemy turn starts, gain a shield equal to 5% of Max HP for 1 turn for every low-HP ally on the field",
+          "factors": [
+            "50%",
+            "4%",
+            "6%",
+            "50%",
+            "5%"
+          ],
+          "roots": [
+            "1114_ep4_1",
+            "1114_ep4_2"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "FilterByFlag",
+            "Buff"
+          ],
+          "events": [
+            "round_start"
+          ]
+        }
       ]
     },
     {
@@ -7982,6 +10211,41 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1116_ep4",
+          "name": "Class Monitor Ability Sphere",
+          "text": "The critical hit damage of all our team members is increased by 5%. When our CCG character releases an active skill attack, the active skill damage received by the target 2 will be increased by 3% within the round, and can only be superimposed 4 times. If this skill does not cause a critical hit, the target 2's critical hit resistance and critical defense will be reduced by 6% during the round, and can be superimposed 4 times.",
+          "factors": [
+            "5%",
+            "2",
+            "3%",
+            "4",
+            "2",
+            "6%",
+            "4"
+          ],
+          "roots": [
+            "1116_ep4_1",
+            "1116_ep4_2",
+            "1116_ep4_3"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "crit_after",
+            "atk_after",
+            "be_hit_before"
           ]
         }
       ]
@@ -8107,6 +10371,36 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1120_ep4",
+          "name": "Yoshimura [Owl (Anteiku)] Ability Sphere",
+          "text": "When gaining each 1 buff, increase your basic stats by 1.25%, up to 7.5%. When attacking, increase your ATK by 1% for each 1 buff you have, up to 5%.",
+          "factors": [
+            "1",
+            "1",
+            "1.25%",
+            "7.5%",
+            "1%",
+            "5%"
+          ],
+          "roots": [
+            "1120_ep4_1",
+            "1120_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "atk_before"
+          ]
+        }
       ]
     },
     {
@@ -8228,6 +10522,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1121_ep4",
+          "name": "Chi She Ability Sphere",
+          "text": "[Effective also in back-up state] When your turn ends, reduces damage taken by 3% and increases Crit DEF by 8% for all allies, up to 3 stacks. After an allied character takes damage, their max HP increases by 2%, up to 10%.",
+          "factors": [
+            "3",
+            "3%",
+            "8%",
+            "2%",
+            "10%"
+          ],
+          "roots": [
+            "1121_ep4_1",
+            "1121_ep4_2"
+          ],
+          "triggers": [
+            "turn-end",
+            "ally-defeated",
+            "backup",
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "round_end",
+            "be_hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -8346,6 +10673,33 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1122_ep4",
+          "name": "Torture Ability Sphere",
+          "text": "When allied characters deal damage to enemies with #Entry_1#, increase all allied characters' basic stats by 1.5%, up to 6%. Additionally, increase your damage dealt to targets with #Entry_1# by 5%.",
+          "factors": [
+            "1.5%",
+            "6%",
+            "5%"
+          ],
+          "roots": [
+            "1122_ep4_1",
+            "1122_ep4_2"
+          ],
+          "triggers": [
+            "deal-damage"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "hurt_after",
+            "atk_before"
           ]
         }
       ]
@@ -8472,6 +10826,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1123_ep4",
+          "name": "Scorpion1/56 Ability Sphere",
+          "text": "For every 1 Weak applied by allied characters, increase all allied characters' basic stats by 1%, up to 6%. When allied characters apply Weak to enemies, they randomly remove 1 buff from the target.",
+          "factors": [
+            "1",
+            "1",
+            "1%",
+            "6%"
+          ],
+          "roots": [
+            "1123_ep4_1",
+            "1123_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "weakup",
+            "make_weak_after"
+          ]
+        }
       ]
     },
     {
@@ -8594,6 +10977,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1124_ep4",
+          "name": "Cleaner Ability Sphere",
+          "text": "When an allied character's skill level increases, that character's ATK increases by 1.5%, up to 9%. After the caster uses an active skill, max HP of all allied characters increases by 1.5%, up to 6%.",
+          "factors": [
+            "1.5%",
+            "9%",
+            "1.5%",
+            "6%"
+          ],
+          "roots": [
+            "1124_ep4_1",
+            "1124_ep4_2"
+          ],
+          "triggers": [
+            "defeat",
+            "ally-defeated"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "skill_up_after",
+            "release_after"
+          ]
+        }
       ]
     },
     {
@@ -8713,6 +11125,36 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1125_ep4",
+          "name": "Second Owl Raid Ability Sphere",
+          "text": "Each time an enemy gains #Entry_1#, increase your Crit Rate and damage dealt by 0.75%, up to 6%. When dealing Crit DMG, increase your ATK-related stats by 3% for 1 turn, up to 1 stack.",
+          "factors": [
+            "1",
+            "1",
+            "0.75%",
+            "6%",
+            "3%"
+          ],
+          "roots": [
+            "1125_ep4_1",
+            "1125_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "release_before",
+            "crit_after"
           ]
         }
       ]
@@ -8860,6 +11302,42 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1127_ep4",
+          "name": "Best Friend Ability Sphere",
+          "text": "When the battle starts, your team's action slots will not drop below 3. For every 2 active skills your team uses, increase all allies' ATK by 2%, up to 16%. After an allied character uses an active skill, they gain 8% CRIT DEF for 1 turn, up to 4 stack.",
+          "factors": [
+            "3",
+            "2",
+            "1",
+            "4",
+            "2%",
+            "16%",
+            "8%"
+          ],
+          "roots": [
+            "1127_ep4_1",
+            "1127_ep4_2",
+            "1127_ep4_3"
+          ],
+          "triggers": [
+            "battle-start",
+            "after-active",
+            "ally-defeated"
+          ],
+          "operators": [
+            "ChangeCardUseMin",
+            "LocalVar",
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
+          ]
+        }
       ]
     },
     {
@@ -8982,6 +11460,32 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1128_ep4",
+          "name": "1st Anniversary Ability Sphere",
+          "text": "[Effective also in back-up state] When allied Anteiku characters take AoE skill damage, their CRIT DEF increases by 10%; when they take single-target skill damage, their Block Rate increases by 6%.",
+          "factors": [
+            "10%",
+            "6%"
+          ],
+          "roots": [
+            "1128_ep4_1",
+            "1128_ep4_2"
+          ],
+          "triggers": [
+            "defeat",
+            "backup"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_before"
+          ]
+        }
       ]
     },
     {
@@ -9091,6 +11595,41 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1129_ep4",
+          "name": "1st Anniversary Ability Sphere",
+          "text": "When self takes damage or deals damage, the damage dealt is increased by 1.4%, up to 7%. When an enemy's HP is lower than 50% for the first time, reduces the target's stats by 3% and lowers the skill level for 1 turn.",
+          "factors": [
+            "1",
+            "1.4%",
+            "7%",
+            "50%",
+            "3%"
+          ],
+          "roots": [
+            "1129_ep4_1",
+            "1129_ep4_2",
+            "1129_ep4_3"
+          ],
+          "triggers": [
+            "take-damage",
+            "hp-threshold"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "SkillLv",
+            "LocalVar"
+          ],
+          "events": [
+            "be_hurt_after",
+            "release_before",
+            "lose_hp_after",
+            "hurt_after"
           ]
         }
       ]
@@ -9211,6 +11750,36 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1132_ep4",
+          "name": "Taiikusai Ability Sphere",
+          "text": "When an enemy character is affected by Control or Weak, increases all allies' basic stats by 1.5%, up to 6%. For each 1 debuff on all enemies, increases all allies' CRIT DEF by 1%, up to 8%.",
+          "factors": [
+            "1",
+            "1.5%",
+            "6%",
+            "1%",
+            "8%"
+          ],
+          "roots": [
+            "1132_ep4_1",
+            "1132_ep4_2",
+            "1132_ep4_3"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "label_get_after",
+            "beweak_after"
           ]
         }
       ]
@@ -9334,6 +11903,40 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1133_ep4",
+          "name": "Taiikusai Ability Sphere",
+          "text": "After using an active skill, increases CRIT Rate of all allied Anteiku characters' skill damage by 1.2%, up to 6%. When self removes Passion, increases damage dealt by self's next 1 active skill by 8%.",
+          "factors": [
+            "1",
+            "1.2%",
+            "6%",
+            "8%"
+          ],
+          "roots": [
+            "1133_ep4_1",
+            "1133_ep4_2",
+            "1133_ep4_3",
+            "1133_ep4_4",
+            "1133_ep4_5"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "LocalVar",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "release_after",
+            "release_before",
+            "label_lose_after"
+          ]
+        }
       ]
     },
     {
@@ -9454,6 +12057,34 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1134_ep4",
+          "name": "The Past Ability Sphere",
+          "text": "Each time self deals damage, increase own attack power and damage dealt by 1%, up to a maximum of 8%. When self uses active skills of level 2 or higher, grant the entire ally team the effect of 4% increased max HP for 1 turn.",
+          "factors": [
+            "1",
+            "1%",
+            "8%",
+            "4%"
+          ],
+          "roots": [
+            "1134_ep4_1",
+            "1134_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "hurt_after",
+            "release_after"
           ]
         }
       ]
@@ -9590,6 +12221,41 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1135_ep4",
+          "name": "Overpower Ability Sphere",
+          "text": "For each 1 surviving character on your field, increases DEF by 1%, capped at 4%. For each 1 character that dies on your field, increases ATK by 1%, capped at 4%. When the caster is the only ally left on your field, increases damage dealt by 5%.",
+          "factors": [
+            "1",
+            "1",
+            "1%",
+            "4%",
+            "1%",
+            "4%",
+            "5%"
+          ],
+          "roots": [
+            "1135_ep4_1",
+            "1135_ep4_2",
+            "1135_ep4_3",
+            "1135_ep4_4",
+            "1135_ep4_5",
+            "1135_ep4_6"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "death_after"
+          ]
+        }
       ]
     },
     {
@@ -9698,6 +12364,39 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1136_ep4",
+          "name": "Special Class Ghoul Investigator Ability Orb",
+          "text": "[Effective also in back-up state] For each surviving ally on the field, increases damage dealt by all allies by 1.5%, up to 6%. When an ally dies, increases DEF of all allies by 2.5%, up to 4 stacks.",
+          "factors": [
+            "4",
+            "1.5%",
+            "6%",
+            "2.5%"
+          ],
+          "roots": [
+            "1136_ep4_1",
+            "1136_ep4_2",
+            "1136_ep4_3",
+            "1136_ep4_4",
+            "1136_ep4_5"
+          ],
+          "triggers": [
+            "ally-defeated",
+            "backup",
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "death_after"
           ]
         }
       ]
@@ -9815,6 +12514,33 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1137_ep4",
+          "name": "Prisoner Ability Orb",
+          "text": "[Effective also in back-up state] When an Aogiri Tree ally takes damage from an active skill, increases that ally's max HP by 1.5% up to 6%. When the caster takes damage, increases damage dealt by all allies by 1%, up to 4%.",
+          "factors": [
+            "1.5%",
+            "6%",
+            "1%",
+            "4%"
+          ],
+          "roots": [
+            "1137_ep4_1"
+          ],
+          "triggers": [
+            "backup",
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after"
           ]
         }
       ]
@@ -9937,6 +12663,36 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1138_ep4",
+          "name": "Halloween Ability Sphere",
+          "text": "Increases damage dealt by allies to enemies with Misfortune by 8%. For each 1 Misfortune or Death Curse on all enemies, increases all allies' ATK by 0.6%, up to 10 stacks.",
+          "factors": [
+            "1",
+            "10",
+            "8%",
+            "0.6%"
+          ],
+          "roots": [
+            "1138_ep4_1",
+            "1138_ep4_2",
+            "1138_ep4_3"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "release_before",
+            "label_get_after",
+            "atk_before"
           ]
         }
       ]
@@ -10066,6 +12822,32 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1139_ep4",
+          "name": "Halloween Ability Sphere",
+          "text": "[Effective also in back-up state] When an ally has no shield, increases DEF by 8%. When an ally has a shield, increases damage dealt by 5% and CRIT DMG by 5%.",
+          "factors": [
+            "8%",
+            "5%",
+            "5%"
+          ],
+          "roots": [
+            "1139_ep4_1",
+            "1139_ep4_2"
+          ],
+          "triggers": [
+            "ally-defeated",
+            "backup",
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff"
+          ],
+          "events": []
+        }
       ]
     },
     {
@@ -10189,6 +12971,49 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1140_ep4",
+          "name": "Christmas Ability Sphere",
+          "text": "For every 10% of current HP a No Organization ally has, increases damage dealt and CRIT Rate by 1.8%. For every 10% HP lost, they gain -2% damage taken and +2% CRIT RES.",
+          "factors": [
+            "10%",
+            "1.8%",
+            "10%",
+            "2%",
+            "2%"
+          ],
+          "roots": [
+            "1140_ep4_1",
+            "1140_ep4_2",
+            "1140_ep4_3",
+            "1140_ep4_4",
+            "1140_ep4_5",
+            "1140_ep4_6",
+            "1140_ep4_7",
+            "1140_ep4_8",
+            "1140_ep4_9",
+            "1140_ep4_10",
+            "1140_ep4_11",
+            "1140_ep4_12",
+            "1140_ep4_13",
+            "1140_ep4_14",
+            "1140_ep4_15",
+            "1140_ep4_16",
+            "1140_ep4_17",
+            "1140_ep4_18",
+            "1140_ep4_19"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff"
+          ],
+          "events": []
+        }
       ]
     },
     {
@@ -10308,6 +13133,38 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1141_ep4",
+          "name": "New Year Ability Sphere",
+          "text": "When your turn starts, increases self's basic stats by 3%, up to 9%. For every 4 stacks of #Entry_1# on allies, reduces damage taken by 2.5%.",
+          "factors": [
+            "4",
+            "3%",
+            "9%",
+            "2.5%"
+          ],
+          "roots": [
+            "1141_ep4_1",
+            "1141_ep4_2",
+            "1141_ep4_3",
+            "1141_ep4_4",
+            "1141_ep4_5"
+          ],
+          "triggers": [
+            "turn-start",
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "round_start"
           ]
         }
       ]
@@ -10434,6 +13291,35 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1142_ep4",
+          "name": "Elegant Deception Ability Sphere",
+          "text": "When your turn ends, if an ally's current HP is above 50%, increases that ally's ATK by 2.5%, up to 7.5%. If the ally's current HP is 50% or below, increases that ally's CRIT RES by 8%, up to 16%.",
+          "factors": [
+            "50%",
+            "2.5%",
+            "7.5%",
+            "50%",
+            "8%",
+            "16%"
+          ],
+          "roots": [
+            "1142_ep4_1"
+          ],
+          "triggers": [
+            "turn-end",
+            "hp-threshold"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "round_end"
+          ]
+        }
       ]
     },
     {
@@ -10546,6 +13432,38 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1143_ep4",
+          "name": "Anteiku Ability Sphere",
+          "text": "When taking damage, for each 1 buff the enemy has, reduces damage taken this time by 6%, up to 30%. For every 3 buffs dispelled via active skills, increases all allies' basic stats by 2.5%, up to 7.5%.",
+          "factors": [
+            "1",
+            "3",
+            "6%",
+            "30%",
+            "2.5%",
+            "7.5%"
+          ],
+          "roots": [
+            "1143_ep4_1",
+            "1143_ep4_2",
+            "1143_ep4_3",
+            "1143_ep4_4"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_before"
           ]
         }
       ]
@@ -10667,6 +13585,39 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1144_ep4",
+          "name": "Hina Matsuri Ability Sphere",
+          "text": "When your turn starts, for each 1 ally below 50% HP, grants all allies 2% increased DEF, up to 8%. When your turn starts, for each 1 ally below 50% HP, grants all allies 2% increased ATK, up to 8%.",
+          "factors": [
+            "1",
+            "1",
+            "50%",
+            "2%",
+            "8%",
+            "50%",
+            "2%",
+            "8%"
+          ],
+          "roots": [
+            "1144_ep4_1"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "FilterByFlag",
+            "CountFlag",
+            "LocalVar",
+            "Buff"
+          ],
+          "events": [
+            "round_start"
+          ]
+        }
       ]
     },
     {
@@ -10782,6 +13733,39 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1145_ep4",
+          "name": "New Year Ability Sphere",
+          "text": "[Effective also in back-up state] When your turn starts, increases basic stats of allied No Organization characters by 2.5%, up to 7.5%. When the user enters the field as a back-up, restores 10% of lost HP to all allies and sets damage taken from the next 1 attacks to 1 for the ally with the highest ATK.",
+          "factors": [
+            "1",
+            "2.5%",
+            "7.5%",
+            "10%"
+          ],
+          "roots": [
+            "1145_ep4_1",
+            "1145_ep4_2"
+          ],
+          "triggers": [
+            "turn-start",
+            "backup",
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Recover",
+            "FilterTarget",
+            "Buff"
+          ],
+          "events": [
+            "round_start",
+            "subdebut_after"
           ]
         }
       ]
@@ -10909,6 +13893,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1146_ep4",
+          "name": "Invincible Investigator Ability Sphere",
+          "text": "When an allied CCG character deals damage to an enemy with HP below 50%, increases Crit Rate and Crit Damage of all allies by 2%, up to 8%. When an enemy dies, raises the user's skill level to 3.",
+          "factors": [
+            "3",
+            "50%",
+            "2%",
+            "8%"
+          ],
+          "roots": [
+            "1146_ep4_1",
+            "1146_ep4_2"
+          ],
+          "triggers": [
+            "deal-damage",
+            "hp-threshold",
+            "ally-defeated",
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "SkillLv",
+            "Buff"
+          ],
+          "events": [
+            "hurt_after",
+            "death_after"
+          ]
+        }
       ]
     },
     {
@@ -11028,6 +14045,38 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1147_ep4",
+          "name": "Wings of Ardor Ability Sphere",
+          "text": "For each 1 Aogiri Tree ally on the field, increases DEF by 3% and CRIT DEF by 3%. For each fallen Aogiri Tree ally, increases ATK by 3% and Crit DMG by 3%.",
+          "factors": [
+            "1",
+            "3%",
+            "3%",
+            "3%",
+            "3%"
+          ],
+          "roots": [
+            "1147_ep4_1",
+            "1147_ep4_2",
+            "1147_ep4_3",
+            "1147_ep4_4",
+            "1147_ep4_5"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "death_after"
           ]
         }
       ]
@@ -11152,6 +14201,36 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1148_ep4",
+          "name": "Valentine's Day Ability Sphere",
+          "text": "When HP is above 50%, increases ATK by 8%. When HP is below 50%, restores HP equal to 8% of damage dealt.",
+          "factors": [
+            "50%",
+            "8%",
+            "50%",
+            "8%"
+          ],
+          "roots": [
+            "1148_ep4_1",
+            "1148_ep4_2"
+          ],
+          "triggers": [
+            "hp-threshold",
+            "always"
+          ],
+          "operators": [
+            "PBuff",
+            "Buff",
+            "PerformOnEvent",
+            "Recover"
+          ],
+          "events": [
+            "hurt_after"
+          ]
+        }
       ]
     },
     {
@@ -11257,6 +14336,42 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1149_ep4",
+          "name": "Anteiku Ability Sphere",
+          "text": "[Effective also in back-up state] [Effective also in Assistance] When an allied character is defeated, the next 1 active skill hits of all allies deal 2% increased damage and gain 2% increased Lifesteal Rate, up to 3 stacks. At the start of the ally's 3th turn, all allies take 4% reduced damage.",
+          "factors": [
+            "1",
+            "2%",
+            "2%",
+            "3",
+            "3",
+            "4%"
+          ],
+          "roots": [
+            "1149_ep4_1",
+            "1149_ep4_2"
+          ],
+          "triggers": [
+            "defeat",
+            "ally-defeated",
+            "backup"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "round_start",
+            "death_before",
+            "release_before",
+            "release_after"
           ]
         }
       ]
@@ -11381,6 +14496,39 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1150_ep4",
+          "name": "Sealed Memory Ability Sphere",
+          "text": "Each time a CCG ally casts an active skill, your Critical Damage increases by 6% for 1 turns, capped at 18%. When your HP drops below 30%, gain 3% ATK and Pierce Rate for the turn.5%",
+          "factors": [
+            "1",
+            "6%",
+            "18%",
+            "30%",
+            "3%",
+            "5%"
+          ],
+          "roots": [
+            "1150_ep4_1",
+            "1150_ep4_2",
+            "1150_ep4_3"
+          ],
+          "triggers": [
+            "hp-threshold"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "PBuff"
+          ],
+          "events": [
+            "release_after",
+            "lose_hp_after",
+            "label_lose_after"
+          ]
+        }
       ]
     },
     {
@@ -11497,6 +14645,37 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1158_ep4",
+          "name": "Easter Ability Sphere",
+          "text": "[Effective also in back-up state] When battle starts, the number of active slots for allies cannot drop below 3. When an Aogiri Tree ally deals non?active skill damage, Crit Rate +10% and CRIT DMG +5%",
+          "factors": [
+            "3",
+            "10%",
+            "5%"
+          ],
+          "roots": [
+            "1158_ep4_1",
+            "1158_ep4_2",
+            "1158_ep4_3"
+          ],
+          "triggers": [
+            "battle-start",
+            "backup"
+          ],
+          "operators": [
+            "ChangeCardUseMin",
+            "PerformOnEvent",
+            "Buff",
+            "Dispel"
+          ],
+          "events": [
+            "hurt_before",
+            "hurt_after"
           ]
         }
       ]
@@ -11624,6 +14803,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1160_ep4",
+          "name": "Flame Strike Ability Sphere",
+          "text": "For each character that dies, boosts damage dealt by 3% and reduces damage taken by 3% for 1 turn. While you have Vigor, increases additional DMG by 5%, and none of your stats can be reduced below base values",
+          "factors": [
+            "3%",
+            "3%",
+            "5%"
+          ],
+          "roots": [
+            "1160_ep4_1",
+            "1160_ep4_2",
+            "1160_ep4_3"
+          ],
+          "triggers": [
+            "always"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "death_after"
+          ]
+        }
       ]
     },
     {
@@ -11738,6 +14945,32 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1161_ep4",
+          "name": "1.5th Anniversary Ability Sphere",
+          "text": "When an enemy with Weakness Erosion acts, reduce their Max HP by 0.75% (up to 3%). While any enemy has Weakness Erosion, become immune to Weak and skill level reduction",
+          "factors": [
+            "0.75%",
+            "3%"
+          ],
+          "roots": [
+            "1161_ep4_1",
+            "1161_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "Buff"
+          ],
+          "events": [
+            "release_after"
           ]
         }
       ]
@@ -11872,6 +15105,35 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1162_ep4",
+          "name": "June Bride Ability Sphere",
+          "text": "After an ally uses a non-active skill, increase their Max HP and Pierce Rate by 4% for 1 turns, capped at 12%. When #Entry_1# is removed, heal all allies for 25% of initial max HP",
+          "factors": [
+            "1",
+            "4%",
+            "12%",
+            "25%"
+          ],
+          "roots": [
+            "1162_ep4_1",
+            "1162_ep4_2"
+          ],
+          "triggers": [
+            "ally-defeated"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Recover"
+          ],
+          "events": [
+            "release_after",
+            "label_lose_after"
+          ]
+        }
       ]
     },
     {
@@ -11991,6 +15253,32 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1164_ep4",
+          "name": "3M Downloads Ability Sphere",
+          "text": "When your turn starts, if you used an active skill this turn, increases all allies' basic stats by 2.5%, up to 3 stacks and restores 6% of max HP.",
+          "factors": [
+            "3",
+            "2.5%",
+            "6%"
+          ],
+          "roots": [
+            "1164_ep4_1"
+          ],
+          "triggers": [
+            "turn-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Recover"
+          ],
+          "events": [
+            "round_end"
           ]
         }
       ]
@@ -12113,6 +15401,34 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1165_ep4",
+          "name": "1.5th Anniversary Ability Sphere",
+          "text": "Upon death, increase all stats of the ally with the highest ATK by 8% and raise the skill level. Grant a shield equal to 10% of initial Max HP to the target for 1 turns",
+          "factors": [
+            "8%",
+            "1",
+            "10%"
+          ],
+          "roots": [
+            "1165_ep4_1",
+            "1165_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "PBuff",
+            "SkillLv",
+            "Buff"
+          ],
+          "events": [
+            "death_after"
           ]
         }
       ]
@@ -12240,6 +15556,44 @@
             "beweak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1166_ep4",
+          "name": "June Bride Ability Sphere",
+          "text": "[Effective also in back-up state] Gain 2 stacks of #Entry_1# when an ally's HP first drops below 40%. When an ally applies Weak to an enemy, all allies gain 1% increased ATK, capped at 5%. When an ally is afflicted with Weak, all allies gain 1% increased DEF, capped at5%",
+          "factors": [
+            "40%",
+            "2",
+            "1%",
+            "5%",
+            "1%",
+            "5%"
+          ],
+          "roots": [
+            "1166_ep4_1",
+            "1166_ep4_2",
+            "1166_ep4_3",
+            "1166_ep4_4",
+            "1166_ep4_5"
+          ],
+          "triggers": [
+            "hp-threshold",
+            "ally-defeated",
+            "backup"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "LocalVar",
+            "Buff"
+          ],
+          "events": [
+            "lose_hp_after",
+            "label_lose_after",
+            "make_weak_after",
+            "beweak_after"
+          ]
+        }
       ]
     },
     {
@@ -12363,6 +15717,33 @@
           ],
           "events": [
             "beweak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1167_ep4",
+          "name": "Relax Time Ability Sphere",
+          "text": "[Effective also in Assistance] When a character is defeated, gains a shield equal to 3% Max HP for 1 turns. All allies gain +1% basic stats for 1 turns (up to +2%)",
+          "factors": [
+            "1",
+            "3%",
+            "1",
+            "1%",
+            "2%"
+          ],
+          "roots": [
+            "1167_ep4_1"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "death_after"
           ]
         }
       ]
@@ -12499,6 +15880,34 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1168_ep4",
+          "name": "√A Ability Sphere",
+          "text": "When any character is inflicted with Control or Weak, increase your Max HP by 3% (up to 12%) and heal self for 2% of your Max HP. If the target is an enemy, remove all shields and buffs from them",
+          "factors": [
+            "3%",
+            "12%",
+            "2%"
+          ],
+          "roots": [
+            "1168_ep4_1",
+            "1168_ep4_2"
+          ],
+          "triggers": [
+            "persistent"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff",
+            "Recover",
+            "Dispel"
+          ],
+          "events": [
+            "label_get_after"
+          ]
+        }
       ]
     },
     {
@@ -12629,6 +16038,37 @@
           ],
           "events": [
             "make_weak_after"
+          ]
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1169_ep4",
+          "name": "Delinquent Youth Ability Sphere",
+          "text": "When battle starts, all allies gain the following effect for 1 turns: Block Rate increases by 6% after taking active skill damage, up to 6 stacks, lasting 1 turns. After casting an active skill attack, PEN Rate increases by 1% for 1 turns, up to 6 stacks",
+          "factors": [
+            "1",
+            "1",
+            "6%",
+            "6",
+            "1",
+            "1%",
+            "6"
+          ],
+          "roots": [
+            "1169_ep4_1",
+            "1169_ep4_2"
+          ],
+          "triggers": [
+            "battle-start"
+          ],
+          "operators": [
+            "PerformOnEvent",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after",
+            "release_after"
           ]
         }
       ]
@@ -12763,6 +16203,41 @@
             "make_weak_after"
           ]
         }
+      ],
+      "orbs": [
+        {
+          "id": "1170_ep4",
+          "name": "Cowardly Investigator Ability Sphere",
+          "text": "[Effective also in back-up state] When the battle starts, the minimum number of ally action slots is fixed at 3. When an allied CCG character takes damage exceeding 35% of its Max HP, clear all control and Weak effects on that unit and grant it a shield equal to 5% of their Max HP for 1 turns. Triggers up to 1 times per round",
+          "factors": [
+            "3",
+            "35%",
+            "1",
+            "5%",
+            "1"
+          ],
+          "roots": [
+            "1170_ep4_1",
+            "1170_ep4_2",
+            "1170_ep4_3"
+          ],
+          "triggers": [
+            "battle-start",
+            "take-damage",
+            "ally-defeated",
+            "backup"
+          ],
+          "operators": [
+            "ChangeCardUseMin",
+            "PerformOnEvent",
+            "Dispel",
+            "Buff"
+          ],
+          "events": [
+            "be_hurt_after",
+            "round_end"
+          ]
+        }
       ]
     },
     {
@@ -12846,6 +16321,30 @@
           "operators": [],
           "events": []
         }
+      ],
+      "orbs": [
+        {
+          "id": "1171_ep4",
+          "name": "Seaside Carnival Party Ability Sphere",
+          "text": "After you take your action or an No Organization ally takes single-target damage, your ATK and Max HP increase by 4%, up to 16%. When your HP first falls below 30%, all your stats are boosted by 4% for 1 turns, and your skill level is raised to Lv.3.",
+          "factors": [
+            "4%",
+            "16%",
+            "30%",
+            "1",
+            "4%",
+            "3"
+          ],
+          "roots": [
+            "1171_ep4_1",
+            "1171_ep4_2"
+          ],
+          "triggers": [
+            "hp-threshold"
+          ],
+          "operators": [],
+          "events": []
+        }
       ]
     },
     {
@@ -12925,6 +16424,29 @@
           "text": "Applying Weak increases your damage dealt by 10% for 1 turn. Applying Weak increases your damage dealt by 10% for 1 turn.",
           "roots": [
             "1173_p5_1"
+          ],
+          "operators": [],
+          "events": []
+        }
+      ],
+      "orbs": [
+        {
+          "id": "1173_ep4",
+          "name": "Owl of Realization Ability Sphere",
+          "text": "When our character has the effect of #Entry_1#, the damage received and extra damage will be reduced by 10%. After releasing the active skill, according to the level of the active skill, the attack power of the own 1 will increase 1%, 3%, 7% within the round.",
+          "factors": [
+            "10%",
+            "1",
+            "1%",
+            "3%",
+            "7%"
+          ],
+          "roots": [
+            "1173_ep4_1",
+            "1173_ep4_2"
+          ],
+          "triggers": [
+            "active-level"
           ],
           "operators": [],
           "events": []

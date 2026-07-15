@@ -1067,6 +1067,7 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 .quick-action-callout .action-cleanse, .simulator-action-tag.action-cleanse { color: #061711; border-color: #a5ffe3; background: #65ddb7; }
 .quick-action-callout .action-heal, .simulator-action-tag.action-heal { color: #081609; border-color: #bcffad; background: #72d866; }
 .quick-action-callout .action-buff, .simulator-action-tag.action-buff { color: #160d02; border-color: #ffe1a0; background: #e4b558; }
+.quick-action-callout .action-orb, .simulator-action-tag.action-orb { color: #16081e; border-color: #e0b7ff; background: #bd78e8; }
 .quick-action-callout .action-result { color: #1b1003; border-color: #ffe29a; background: #f0bd54; }
 .quick-action-callout strong { color: #f3f3f5; font-size: 11px; }
 .quick-action-callout span { margin: 0; color: #b0b0b8; font-size: 9px; line-height: 1.45; }

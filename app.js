@@ -1045,10 +1045,24 @@ function simulatorSelectedPassiveSkills(unit) {
   return ids.map(id => byId.get(id)).filter(Boolean);
 }
 
+function simulatorSelectedOrbSkills(unit) {
+  const audited = state.battleEffectAudit.get(String(unit?.id));
+  return (audited?.orbs || []).map(orb => ({
+    id: String(orb.id),
+    name_translated: orb.name,
+    desc_short_translated: orb.text,
+    max_desc_short_translated: orb.text,
+    effects: orb.roots || [],
+    factor_lv1: orb.factors || [],
+    __sourceType: "orb",
+    __audit: orb
+  }));
+}
+
 function simulatorRuleTriggers(events, text) {
   const values = new Set();
   const exact = new Set(events || []);
-  if (exact.has("round_start") || /turn starts|start of (?:our|your|the|each) turn/.test(text)) values.add("turn-start");
+  if (exact.has("round_start") || /turn starts|start of (?:our|your|the|each)(?: side's)? turn/.test(text)) values.add("turn-start");
   if (exact.has("round_end") || /turn ends|end of (?:our|your|the|each) turn/.test(text)) values.add("turn-end");
   if (["card_release_before", "release_before"].some(value => exact.has(value))) values.add("before-active");
   if (["card_release_after", "release_after"].some(value => exact.has(value)) || /when (?:you|self) use an active skill|after .*active skill/.test(text)) values.add("after-active");
@@ -1090,9 +1104,11 @@ function simulatorFactionRequirement(text) {
 function simulatorCompilePassiveRules(unit) {
   const audited = state.battleEffectAudit.get(String(unit?.id));
   const auditById = new Map((audited?.passives || []).map(rule => [String(rule.id), rule]));
-  return simulatorSelectedPassiveSkills(unit).map(skill => {
+  const ruleSkills = [...simulatorSelectedPassiveSkills(unit), ...simulatorSelectedOrbSkills(unit)];
+  return ruleSkills.map(skill => {
     const passiveId = String(skill.id);
-    const audit = auditById.get(String(skill.id)) || {};
+    const sourceType = skill.__sourceType || "passive";
+    const audit = skill.__audit || auditById.get(String(skill.id)) || {};
     const originalText = simulatorSkillFullText(skill);
     const text = originalText.toLowerCase();
     const events = audit.events || [];
@@ -1106,6 +1122,11 @@ function simulatorCompilePassiveRules(unit) {
     const directMatch = text.match(/(?:pursuit|retaliat|immediately (?:deal|deals|cause|causes)|launches?)[^.]*?(?:damage )?(?:equal to |dealing )?([0-9.]+)% (?:of )?atk/);
     const heal = simulatorPercentMatch(text, [/(?:heal|heals|restore|restores|restored)[^.]*?([0-9.]+)% (?:of )?(?:the |their |each allied (?:member(?:'s)? )?)?max hp/]);
     const healLost = simulatorPercentMatch(text, [/(?:heal|heals|restore|restores|restored)[^.]*?([0-9.]+)% (?:of )?(?:the |their |each allied (?:member(?:'s)? )?)?lost hp/]);
+    const healAtk = simulatorPercentMatch(text, [/(?:heal|heals|recover|recovers|restore|restores)[^.]*?hp equal to ([0-9.]+)% of (?:your|self(?:'s)?|the caster(?:'s)?) atk/]);
+    const healAtkFlashMultiplier = (() => {
+      const match = text.match(/if you have flash[^.]*?(?:becomes|is) ([0-9.]+) times stronger/);
+      return match ? Number(match[1]) : 1;
+    })();
     const shield = simulatorPercentMatch(text, [/(?:shield|shields)[^.]*?(?:equal to |for )?([0-9.]+)% (?:of )?(?:the |their |your |self(?:'s)? )?max hp/]);
     const damageUp = simulatorPercentMatch(text, [
       /(?:damage dealt|dmg dealt|damage caused by this active skill) (?:is |are )?(?:increase|increases|increased) by ([0-9.]+)%/,
@@ -1157,22 +1178,28 @@ function simulatorCompilePassiveRules(unit) {
     const weak = /(?:apply|applies|inflict|inflicts|cause|causes) weak/.test(text);
     const control = /stun|dizzy|immobil|silence|unable to act|fear/.test(text);
     const healBlock = /unable to trigger (?:all )?healing|cannot be healed|restoration-hindering/.test(text);
+    const capMatch = text.match(/(?:damage (?:you )?take|damage (?:you )?receive|damage received|damage you take from a single skill hit|single damage you receive)[^.]*?(?:cannot|does not|doesn't) exceed ([0-9.]+)% of (?:your|the|self(?:'s)?)? ?max hp/);
+    const capConditional = capMatch ? /(?:when|while|if)[^.]{0,180}(?:single skill hit|single skill|single damage|damage (?:you )?(?:take|receive))/.test(text.slice(Math.max(0, capMatch.index - 190), capMatch.index + capMatch[0].length)) : false;
+    const singleHitCap = capMatch && !capConditional ? Number(capMatch[1]) / 100 : 0;
+    const immunityMatch = /immune to all basic stat reduction effects|basic stats cannot be reduced|none of your stats can be reduced below base values/.test(text);
+    const immunityConditional = immunityMatch && /(?:when|while|if)[^.]{0,180}(?:immune to all basic stat reduction|stats can(?:not|'t) be reduced)/.test(text);
+    const basicStatReductionImmune = immunityMatch && !immunityConditional;
     const staticAura = /while (?:you|self|this character) (?:are|is) on the field|for each allied|all allied characters? (?:gain|gains)|increases? (?:the )?basic stats of all allied/.test(text)
       && Boolean(basicStats || perAllyMatch || atkUp || defUp || hpUp || damageUp || reduction);
-    const supported = [basicStats, perAllyMatch, directMatch, heal, healLost, shield, damageUp, reduction, atkUp, defUp, hpUp, atkDown, defDown, forcedActive, cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock, specialKind].filter(Boolean).length;
+    const supported = [basicStats, perAllyMatch, directMatch, heal, healLost, healAtk, shield, damageUp, reduction, atkUp, defUp, hpUp, atkDown, defDown, forcedActive, cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock, singleHitCap, basicStatReductionImmune, specialKind].filter(Boolean).length;
     const eventSupported = triggers.some(trigger => ["battle-start", "turn-start", "turn-end", "before-active", "after-active", "before-damage", "after-damage", "before-hit", "after-hit", "after-death", "hp-changed", "after-crit", "after-heal", "after-weak", "receive-weak", "power-burst", "status-gained", "status-lost"].includes(trigger));
     const complexOperators = new Set(["LocalVar", "GlobalVar", "RandamVar", "CountFlag", "EnergyCardDel", "ChangeCardUseMin", "FilterSkillCardHigh", "SkillLvSpecify", "Pose", "EndPose", "Copy", "SkillSub"]);
     const complexRuntime = (audit.operators || []).some(operator => complexOperators.has(operator))
       || /when (?:this|the) effect (?:ends|expires)|consume all .*cards?|special skill|sure-kill|named status/.test(text);
     return {
-      id: passiveId, name: cleanText(skill.name_translated || skill.id), text: originalText, normalizedText: text, specialKind,
+      id: passiveId, name: cleanText(skill.name_translated || skill.id), text: originalText, normalizedText: text, specialKind, sourceType,
       triggers, apkEvents: events, operators: audit.operators || [], cardOnly: events.includes("card_release_after") || events.includes("card_release_before"),
       backupEffective: /effective also in back-?up state|also effective (?:while )?in back-?up/.test(text),
       staticAura, faction: simulatorFactionRequirement(text), basicStats,
       perAlly: perAllyMatch ? Number(perAllyMatch[2]) / 100 : 0,
       perAllyCap: perAllyMatch ? Number(perAllyMatch[3]) / 100 : 0,
       directDamage: directMatch ? Number(directMatch[1]) / 100 : 0,
-      directAoe: /all enemies|all enemy characters/.test(text), heal, healLost, shield, damageUp, reduction, atkUp, defUp, hpUp, atkDown, defDown,
+      directAoe: /all enemies|all enemy characters/.test(text), heal, healLost, healAtk, healAtkFlashMultiplier, shield, damageUp, reduction, atkUp, defUp, hpUp, atkDown, defDown,
       forcedActive, forcedActiveMode, forcedEvents,
       forcedActiveLevel: Number(forcedLevelMatch?.[1] || forcedLevelMatch?.[2] || 0),
       forcedTargetLowestHp: /enemy with the lowest hp percentage/.test(text),
@@ -1183,7 +1210,7 @@ function simulatorCompilePassiveRules(unit) {
         /damage caused by this active skill (?:is )?increased by ([0-9.]+)%/
       ]) : 0,
       modeRestricted: /\bin (?:stronghold clash|stronghold takeover|blockade breakthrough|conquest battle|force challenge|region breakthrough)\b/.test(text),
-      cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock,
+      cleanseDebuffs, cleanseBuffs, skillLevel, weak, control, healBlock, singleHitCap, basicStatReductionImmune,
       chance: chanceMatch ? Number(chanceMatch[1]) / 100 : 1,
       duration: durationMatch ? Number(durationMatch[1]) : 1,
       maxStacks: stackMatch ? Number(stackMatch[1] || stackMatch[2]) : 1,
@@ -1191,7 +1218,7 @@ function simulatorCompilePassiveRules(unit) {
       oncePerTurn: /once per turn|trigger(?:s|ed)? once (?:per|each) turn/.test(text),
       minLevel: /lv\.?2 or above|level 2 or above/.test(text) ? 2 : /lv\.?3|level 3/.test(text) ? 3 : 1,
       hpBelow: (() => { const match = text.match(/(?:hp|health)[^.]{0,35}(?:below|lower than) ([0-9.]+)%/); return match ? Number(match[1]) / 100 : 0; })(),
-      coverage: supported && (eventSupported || staticAura || triggers.includes("battle-start")) && (!complexRuntime || forcedActive) ? "modeled" : supported ? "partial" : "unmodeled",
+      coverage: supported && (eventSupported || staticAura || triggers.includes("battle-start") || singleHitCap || basicStatReductionImmune) && (!complexRuntime || forcedActive || singleHitCap || basicStatReductionImmune) ? "modeled" : supported ? "partial" : "unmodeled",
       supportedFamilies: supported
     };
   });
@@ -1376,9 +1403,13 @@ function simulatorCleanseMember(member, count = 1, random = Math.random) {
 function simulatorHealMember(source, target, rule) {
   if (!target?.alive || target.healBlocked > 0) return 0;
   const maxHp = simulatorEffectiveMaxHp(target);
-  const amount = rule.healLost
+  const hasFlash = (source.statuses || []).some(status => String(status.name || "").toLowerCase().includes("flash"));
+  const attackHealing = rule.healAtk
+    ? simulatorEffectiveAtk(source) * rule.healAtk * (hasFlash ? Math.max(1, Number(rule.healAtkFlashMultiplier) || 1) : 1)
+    : 0;
+  const amount = attackHealing || (rule.healLost
     ? (maxHp - Math.max(0, target.hp)) * rule.healLost
-    : maxHp * rule.heal;
+    : maxHp * rule.heal);
   const healed = Math.max(0, Math.min(maxHp - target.hp, amount));
   target.hp += healed;
   source.healing += healed;
@@ -1439,13 +1470,16 @@ function simulatorRuleStateAllows(provider, rule, eventName, round, log, team, c
 
 function simulatorApplyRuleStatus(rule, recipient, eventName) {
   const dynamicBasic = rule.basicStats || 0;
-  const debuff = Boolean(rule.atkDown || rule.defDown || rule.healBlock || (rule.skillLevel < 0));
+  const immuneToBasicReduction = (recipient.profile?.passiveRules || []).some(item => item.basicStatReductionImmune);
+  const atkDown = immuneToBasicReduction ? 0 : rule.atkDown;
+  const defDown = immuneToBasicReduction ? 0 : rule.defDown;
+  const debuff = Boolean(atkDown || defDown || rule.healBlock || (rule.skillLevel < 0));
   return simulatorAddStatus(recipient, {
     key: `${rule.id}:${eventName}:${debuff ? "debuff" : "buff"}`,
     sourceId: rule.id, name: rule.name, turns: rule.duration, maxStacks: rule.maxStacks,
     isDebuff: debuff, isBuff: !debuff,
-    atk: rule.atkDown ? -rule.atkDown : rule.atkUp + dynamicBasic,
-    def: rule.defDown ? -rule.defDown : rule.defUp + dynamicBasic,
+    atk: atkDown ? -atkDown : rule.atkUp + dynamicBasic,
+    def: defDown ? -defDown : rule.defUp + dynamicBasic,
     hp: rule.hpUp + dynamicBasic,
     damage: rule.damageUp,
     reduction: rule.reduction,
@@ -1583,11 +1617,14 @@ function simulatorApplyPassiveRule(eventName, provider, rule, team, enemyTeam, c
   }
   const effectRule = simulatorRuleForEvent(rule, eventName);
   let applied = false;
+  let healedTotal = 0;
+  let healedIds = [];
   const recipients = simulatorRuleRecipients(effectRule, provider, team, enemyTeam, context);
+  const targetImmuneToBasicReduction = (context.target?.profile?.passiveRules || []).some(item => item.basicStatReductionImmune);
   if (["before-damage", "before-hit"].includes(eventName)) {
     if (effectRule.damageUp && eventName === "before-damage") { context.damageMultiplier *= 1 + effectRule.damageUp; applied = true; }
     if (effectRule.reduction && eventName === "before-hit") { context.damageMultiplier *= 1 - Math.min(0.8, effectRule.reduction); applied = true; }
-    if (effectRule.atkDown && eventName === "before-hit") { context.damageMultiplier *= 1 - Math.min(0.6, effectRule.atkDown); applied = true; }
+    if (effectRule.atkDown && eventName === "before-hit" && !targetImmuneToBasicReduction) { context.damageMultiplier *= 1 - Math.min(0.6, effectRule.atkDown); applied = true; }
   }
   if (rule.cleanseDebuffs) {
     const countMatch = rule.normalizedText.match(/remove ([0-9]+) debuffs?/);
@@ -1622,9 +1659,13 @@ function simulatorApplyPassiveRule(eventName, provider, rule, team, enemyTeam, c
       simulatorBringBackup(enemyTeam, log, round);
     }
   }
-  if (effectRule.heal || effectRule.healLost) {
-    const healed = recipients.reduce((sum, target) => sum + simulatorHealMember(provider, target, effectRule), 0);
-    applied ||= healed > 0;
+  if (effectRule.heal || effectRule.healLost || effectRule.healAtk) {
+    healedIds = recipients.filter(target => {
+      const healed = simulatorHealMember(provider, target, effectRule);
+      healedTotal += healed;
+      return healed > 0;
+    }).map(target => target.id);
+    applied ||= healedTotal > 0;
   }
   if (effectRule.shield) {
     recipients.forEach(target => { target.shield += simulatorEffectiveMaxHp(target) * effectRule.shield; });
@@ -1647,9 +1688,13 @@ function simulatorApplyPassiveRule(eventName, provider, rule, team, enemyTeam, c
     applied ||= recipients.some(target => target.side !== provider.side);
   }
   if (applied && !rule.forcedActive && !(rule.directDamage > 0 && directAllowed && !["before-damage", "before-hit"].includes(eventName))) {
-    simulatorPassiveLog(log, round, team, provider, rule, `${provider.name} activates ${rule.name}.`,
-      rule.cleanseDebuffs ? "Cleanse" : effectRule.heal || effectRule.healLost ? "Passive Heal" : effectRule.shield ? "Passive Shield" : rule.control ? "Control" : "Passive Trigger",
-      rule.cleanseDebuffs ? "cleanse" : effectRule.heal || effectRule.healLost ? "heal" : effectRule.shield ? "buff" : rule.control ? "control" : "passive");
+    const isHealing = Boolean(effectRule.heal || effectRule.healLost || effectRule.healAtk);
+    const actionType = rule.cleanseDebuffs ? "Cleanse" : isHealing ? (rule.sourceType === "orb" ? "Orb Heal" : "Passive Heal") : effectRule.shield ? "Passive Shield" : rule.control ? "Control" : rule.sourceType === "orb" ? "Orb Effect" : "Passive Trigger";
+    const kind = rule.cleanseDebuffs ? "cleanse" : isHealing ? "heal" : effectRule.shield ? "buff" : rule.control ? "control" : rule.sourceType === "orb" ? "orb" : "passive";
+    const text = isHealing && healedTotal > 0
+      ? `${provider.name}'s ${rule.name} restores ${formatNumber(Math.round(healedTotal))} HP across ${healedIds.length} ${healedIds.length === 1 ? "ally" : "allies"}.`
+      : `${provider.name} activates ${rule.name}.`;
+    simulatorPassiveLog(log, round, team, provider, rule, text, actionType, kind, { targetIds: healedIds });
   }
   return applied;
 }
@@ -1793,6 +1838,11 @@ function simulatorDealDamage(attacker, defender, multiplier, random, options = {
   if (critical) damage *= 1.5;
   if (blocked) damage *= 0.65;
   damage = Math.max(1, Math.round(damage));
+  const hitCaps = (defender.profile?.passiveRules || []).map(rule => Number(rule.singleHitCap) || 0).filter(Boolean);
+  const hitCap = hitCaps.length ? Math.min(...hitCaps) : 0;
+  const uncappedDamage = damage;
+  if (hitCap > 0) damage = Math.min(damage, Math.max(1, Math.round(simulatorEffectiveMaxHp(defender) * hitCap)));
+  const capped = damage < uncappedDamage;
   const absorbed = Math.min(defender.shield, damage);
   defender.shield -= absorbed;
   const healthDamage = damage - absorbed;
@@ -1804,7 +1854,7 @@ function simulatorDealDamage(attacker, defender, multiplier, random, options = {
     defender.alive = false;
     attacker.kills++;
   }
-  return { damage, critical, blocked, attribute, defeated: !defender.alive };
+  return { damage, critical, blocked, attribute, defeated: !defender.alive, capped, uncappedDamage };
 }
 
 function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, options = {}) {
@@ -1843,6 +1893,7 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
   let total = 0;
   const defeated = [];
   const controlled = [];
+  const cappedTargets = [];
   const attributeResults = [];
   targets.forEach(target => {
     const damageContext = { ...context, target, damageMultiplier: 1 };
@@ -1857,6 +1908,7 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
     damageContext.critical = result.critical;
     damageContext.attribute = result.attribute;
     attributeResults.push(result.attribute);
+    if (result.capped) cappedTargets.push(target);
     damageContext.defeated = result.defeated;
     simulatorFirePassives("after-damage", allies, enemies, damageContext, random, log, round);
     simulatorFirePassives("after-hit", enemies, allies, damageContext, random, log, round);
@@ -1897,10 +1949,11 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
   if (skillLogEntry) Object.assign(skillLogEntry, {
     targetIds: targets.map(target => target.id), defeatedIds: defeated.map(target => target.id),
     healedId: healedAmount > 0 ? healedTarget?.id : "", shieldedId: shieldedTarget?.id || "", controlledIds: controlled.map(target => target.id),
-    reason: triggered
+    reason: (triggered
       ? options.triggerReason || `${options.triggeredBy?.name || "A passive"} forces an additional Active Skill.`
-      : `${decision.rule.reason}${decision.tied ? " Matching candidates tied, so hand order resolved the choice." : ""}${attributeResults.some(value => value > 0) ? " Attribute restriction grants +20% damage." : attributeResults.some(value => value < 0) ? " Restricted attribute applies -20% damage." : ""}`,
-    text: `${attacker.name} ${triggered ? "releases a triggered" : "uses a"} Lv.${level}${spec.aoe ? " area" : ""} Active Skill for ${formatNumber(total)} damage${defeated.length ? ` and defeats ${defeated.map(target => target.name).join(", ")}` : ""}.`
+      : `${decision.rule.reason}${decision.tied ? " Matching candidates tied, so hand order resolved the choice." : ""}${attributeResults.some(value => value > 0) ? " Attribute restriction grants +20% damage." : attributeResults.some(value => value < 0) ? " Restricted attribute applies -20% damage." : ""}`)
+      + (cappedTargets.length ? ` Ability Sphere damage cap protected ${cappedTargets.map(target => target.name).join(", ")}.` : ""),
+    text: `${attacker.name} ${triggered ? "releases a triggered" : "uses a"} Lv.${level}${spec.aoe ? " area" : ""} Active Skill for ${formatNumber(total)} damage${defeated.length ? ` and defeats ${defeated.map(target => target.name).join(", ")}` : ""}${cappedTargets.length ? `; Ability Sphere damage cap triggered on ${cappedTargets.map(target => target.name).join(", ")}` : ""}.`
   });
   if (profile.pursuit > 0 && simulatorLiving(enemies).length) {
     const target = simulatorTarget(enemies, random);
@@ -1992,9 +2045,11 @@ function simulatorCoverageMarkup(ids) {
     if (!unit) return "";
     const profile = simulatorSkillProfile(unit);
     const rules = profile.passiveRules || [];
+    const orbCount = rules.filter(rule => rule.sourceType === "orb").length;
+    const passiveCount = rules.length - orbCount;
     return `<article class="simulator-coverage-unit">
-      <header><img src="${escapeHtml(unit.image)}" alt=""><div><strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong><span>${(profile.cards || []).filter(card => card.text).length} Active Skill levels · ${rules.length} equipped/rank passives</span></div></header>
-      <div>${rules.map(rule => `<p><em class="coverage-${rule.coverage}">${rule.coverage}</em><b>${escapeHtml(rule.name)}</b><span>${escapeHtml(rule.id)} · ${escapeHtml(rule.triggers.join(", ") || "persistent/config-only")}</span></p>`).join("")}</div>
+      <header><img src="${escapeHtml(unit.image)}" alt=""><div><strong>${escapeHtml(simulatorUnitDisplayName(unit))}</strong><span>${(profile.cards || []).filter(card => card.text).length} Active Skill levels · ${passiveCount} passives · ${orbCount} Ability Sphere</span></div></header>
+      <div>${rules.map(rule => `<p><em class="coverage-${rule.coverage}">${rule.coverage}</em><b>${rule.sourceType === "orb" ? "ORB · " : ""}${escapeHtml(rule.name)}</b><span>${escapeHtml(rule.id)} · ${escapeHtml(rule.triggers.join(", ") || "persistent/config-only")}</span></p>`).join("")}</div>
     </article>`;
   }).join("");
 }
@@ -2336,25 +2391,18 @@ function simulatorBattle(leftSource, rightSource, seed, maxRounds, includeKits, 
   }
   let turn = 0;
   for (turn = 1; turn <= maxRounds; turn++) {
-    simulatorBringBackup(left, log, turn, true);
-    simulatorBringBackup(right, log, turn, true);
-    if (includeKits) {
-      priorityOrder.forEach(([team, enemyTeam]) => {
-        simulatorFirePassives("turn-start", team, enemyTeam, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
-      });
-    }
     for (const [acting, defending] of priorityOrder) {
+      simulatorBringBackup(acting, log, turn, true);
+      if (includeKits) simulatorFirePassives("turn-start", acting, defending, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
       const actors = [...simulatorLiving(acting)].sort((a, b) => simulatorEffectiveAtk(b) - simulatorEffectiveAtk(a) || random() - 0.5);
       for (const actor of actors) {
         if (!simulatorLiving(defending).length) break;
         simulatorAct(actor, acting, defending, random, log, turn);
       }
+      if (includeKits) simulatorFirePassives("turn-end", acting, defending, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
       if (!simulatorLiving(defending).length && !defending.bench.length) break;
     }
     if (includeKits) {
-      priorityOrder.forEach(([team, enemyTeam]) => {
-        simulatorFirePassives("turn-end", team, enemyTeam, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
-      });
       simulatorTickStatuses(left);
       simulatorTickStatuses(right);
     }
@@ -2664,9 +2712,9 @@ function renderBattleSimulatorResults() {
       <div><span>My Team survivors</span><strong>${simulatorAverage(totals.leftSurvivors).toFixed(1)}</strong></div><div><span>Enemy survivors</span><strong>${simulatorAverage(totals.rightSurvivors).toFixed(1)}</strong></div>
     </div>
     <details class="simulator-sample-log" open><summary>Battle action log, passive triggers, and Auto AI decisions</summary><div>${sample.log.slice(0, 220).map(simulatorLogEntryMarkup).join("")}</div></details>
-    <details class="simulator-kit-coverage"><summary>Skill/passive coverage: ${coverage.modeled} modeled · ${coverage.partial} partial · ${coverage.unmodeled} not yet reproducible</summary>
+    <details class="simulator-kit-coverage"><summary>Skill/passive/Orb coverage: ${coverage.modeled} modeled · ${coverage.partial} partial · ${coverage.unmodeled} not yet reproducible</summary>
       <p class="simulator-coverage-note">Fairness control: each random seed is evaluated as a normal/mirrored pair and mapped back to the original teams, removing any left/right screen-position or random-consumption advantage.</p>
-      <p class="simulator-coverage-note">Every equipped natural-gift/rank passive is audited against its APK event chain. “Partial” means the trigger is reproduced but one or more exact runtime details (for example a named status, card-hand operation, or encrypted target condition) remain approximated.</p>
+      <p class="simulator-coverage-note">Every equipped natural-gift/rank passive and UR Ability Sphere is audited against its APK event chain. “Partial” means the trigger is reproduced but one or more exact runtime details (for example a named status, card-hand operation, or encrypted target condition) remain approximated.</p>
       <div class="simulator-coverage-grid">${simulatorCoverageMarkup([...leftSource.ids, ...rightSource.ids])}</div>
     </details>`;
 }
@@ -3559,7 +3607,9 @@ function openUnit(id) {
     if (rawDate) releaseDate = new Date(rawDate.replace(" ", "T")).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
   } catch { /* No release date. */ }
   const tacticNames = { 1: "Power", 2: "Wit", 3: "Speed" };
-  const orbDescription = d.hero.max_rank_skill_tips_translated || d.hero.max_rank_skill_desc_translated || "Character ability information.";
+  const orb = state.battleEffectAudit.get(String(unit.id))?.orbs?.[0];
+  const orbName = orb?.name || `${unit.title || unit.name} Ability Sphere`;
+  const orbDescription = orb?.text || "Ability Sphere information is not available in the extracted data.";
   modalContent.innerHTML = `
     <header class="hero-banner">
       <img class="hero-portrait" src="${escapeHtml(unit.image)}" alt="${escapeHtml(unit.name)}">
@@ -3583,7 +3633,7 @@ function openUnit(id) {
         <div class="orb-icon">◉</div>
         <div>
           <span class="skill-kind">Orb Details · Exclusive Skill</span>
-          <h3>${escapeHtml(unit.title)} Ability Sphere</h3>
+          <h3>${escapeHtml(orbName)}</h3>
           <p>${escapeHtml(orbDescription)}</p>
         </div>
       </section>
