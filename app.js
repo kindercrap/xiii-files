@@ -1959,6 +1959,7 @@ function simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, 
   const triggered = options.sourceIsCard === false;
   const skillLogEntry = log ? {
     round, side: allies.side, actorId: attacker.id, kind: triggered ? "triggered" : "attack", actionType: triggered ? "Triggered Skill" : "Active Skill", level,
+    cardAction: !triggered,
     targetIds: targets.map(target => target.id), defeatedIds: [], healedId: "", shieldedId: "", controlledIds: [],
     passiveId: options.triggeredBy?.id || "", passiveName: options.triggeredBy?.name || "", passiveText: options.triggeredBy?.text || "",
     rule: triggered ? options.triggeredBy?.id || "passive-release" : decision.rule.key,
@@ -2055,7 +2056,7 @@ function simulatorAct(attacker, allies, enemies, random, log, round) {
   if (!attacker.alive) return;
   if (attacker.stunned > 0) {
     attacker.stunned--;
-    if (log) log.push({ round, side: allies.side, actorId: attacker.id, kind: "control", actionType: "Status", targetIds: [], text: `${attacker.name} cannot act because of a control effect.` });
+    if (log) log.push({ round, side: allies.side, actorId: attacker.id, kind: "control", actionType: "Status", cardAction: true, level: 0, targetIds: [], text: `${attacker.name} cannot act because of a control effect.` });
     return;
   }
   simulatorUseActiveSkill(attacker, allies, enemies, random, log, round, { sourceIsCard: true });
@@ -2481,7 +2482,11 @@ function simulatorBattle(leftSource, rightSource, seed, maxRounds, includeKits, 
     for (const [acting, defending] of priorityOrder) {
       simulatorBringBackup(acting, log, turn, true);
       if (includeKits) simulatorFirePassives("turn-start", acting, defending, { sourceIsCard: false, triggerDepth: 0 }, random, log, turn);
-      const actors = [...simulatorLiving(acting)].sort((a, b) => simulatorEffectiveAtk(b) - simulatorEffectiveAtk(a) || random() - 0.5);
+      // Each side turn selects at most three primary command cards. Passive-
+      // forced skills and pursuits remain extra actions and consume no card.
+      const actors = [...simulatorLiving(acting)]
+        .sort((a, b) => simulatorEffectiveAtk(b) - simulatorEffectiveAtk(a) || random() - 0.5)
+        .slice(0, 3);
       for (const actor of actors) {
         if (!simulatorLiving(defending).length) break;
         simulatorAct(actor, acting, defending, random, log, turn);
@@ -2555,6 +2560,10 @@ function showSimulatorBattleStart(leftSource, rightSource) {
         <div><b id="quick-battle-round">1</b><small>TURN</small></div>
         <section><strong>ENEMY TEAM</strong>${simulatorBattleLineup(rightSource, "enemy")}</section>
       </div>
+      <section id="quick-turn-cards" class="quick-turn-cards is-waiting">
+        <header><span>COMMAND HAND</span><strong>3 UNIT CARDS PER TURN</strong></header>
+        <div class="quick-turn-card-row"><i></i><i></i><i></i></div>
+      </section>
       <div class="quick-action-callout"><div><em id="quick-action-tag" class="action-ready">READY</em><strong id="quick-action-title">Reading Auto priorities...</strong></div><span id="quick-action-rule">Building the opening hand and checking valid targets.</span></div>
       <div class="quick-loading"><i></i></div>
     </div>`;
@@ -2572,7 +2581,55 @@ function simulatorBattleNode(side, id) {
   return document.querySelector(`.quick-battle-start .quick-combatant[data-battle-side="${side}"][data-battle-unit="${unitId}"]`);
 }
 
-function simulatorAnimateAction(entry) {
+function simulatorTurnCardKey(entry) {
+  return `${entry.round}:${entry.side}`;
+}
+
+function simulatorTurnCardGroups(log) {
+  const groups = new Map();
+  log.filter(entry => entry.cardAction && entry.actorId && entry.round > 0).forEach(entry => {
+    const key = simulatorTurnCardKey(entry);
+    if (!groups.has(key)) groups.set(key, []);
+    const cards = groups.get(key);
+    if (cards.length < 3) cards.push(entry);
+  });
+  return groups;
+}
+
+function simulatorRenderTurnCards(entry, groups, playbackState) {
+  const host = document.querySelector("#quick-turn-cards");
+  if (!host) return;
+  const key = simulatorTurnCardKey(entry);
+  const cards = groups.get(key) || [];
+  if (playbackState.key !== key) {
+    playbackState.key = key;
+    playbackState.index = 0;
+  }
+  if (entry.cardAction) {
+    const cardIndex = cards.indexOf(entry);
+    if (cardIndex >= 0) playbackState.index = cardIndex;
+  }
+  const activeIndex = Math.max(0, Math.min(playbackState.index, Math.max(0, cards.length - 1)));
+  const sideLabel = entry.side === "A" ? "MY TEAM" : "ENEMY TEAM";
+  const extra = !entry.cardAction;
+  const cardMarkup = Array.from({ length: 3 }, (_, index) => {
+    const card = cards[index];
+    if (!card) return `<article class="quick-turn-card is-empty"><span>EMPTY</span></article>`;
+    const unit = simulatorUnit(card.actorId);
+    const name = simulatorUnitDisplayName(unit);
+    const level = Math.max(0, Math.min(3, Number(card.level) || 0));
+    const state = index < activeIndex ? "is-done" : index === activeIndex ? "is-now" : index === activeIndex + 1 ? "is-next" : "";
+    const label = index === activeIndex ? "NOW" : index === activeIndex + 1 ? "NEXT" : index < activeIndex ? "DONE" : `CARD ${index + 1}`;
+    return `<article class="quick-turn-card ${state}" title="${escapeHtml(name)}">
+      <small>${label}</small><img src="${escapeHtml(unit?.image || "")}" alt=""><span>${escapeHtml(name)}</span>
+      <b>${level ? `Lv.${level} <em>${"★".repeat(level)}</em>` : "BLOCKED"}</b>
+    </article>`;
+  }).join("");
+  host.className = `quick-turn-cards side-${entry.side.toLowerCase()}${extra ? " has-extra-action" : ""}`;
+  host.innerHTML = `<header><span>${sideLabel} · TURN ${entry.round}</span><strong>${extra ? "EXTRA ACTION · COMMAND CARDS DO NOT ADVANCE" : "3-CARD COMMAND HAND"}</strong></header><div class="quick-turn-card-row">${cardMarkup}</div>`;
+}
+
+function simulatorAnimateAction(entry, cardGroups, cardState) {
   document.querySelectorAll(".quick-combatant.is-attacking, .quick-combatant.is-hit, .quick-combatant.is-healed, .quick-combatant.is-buffed, .quick-combatant.is-controlled, .quick-combatant.is-entering")
     .forEach(node => node.classList.remove("is-attacking", "is-hit", "is-healed", "is-buffed", "is-controlled", "is-entering"));
   const attacker = simulatorBattleNode(entry.side, entry.actorId);
@@ -2583,6 +2640,7 @@ function simulatorAnimateAction(entry) {
     (entry.targetIds || []).forEach(id => simulatorBattleNode(defendingSide, id)?.classList.add("is-hit"));
   }
   (entry.defeatedIds || []).forEach(id => simulatorBattleNode(defendingSide, id)?.classList.add("is-defeated"));
+  simulatorRenderTurnCards(entry, cardGroups, cardState);
   const round = document.querySelector("#quick-battle-round");
   const title = document.querySelector("#quick-action-title");
   const rule = document.querySelector("#quick-action-rule");
@@ -2602,7 +2660,7 @@ function simulatorAnimateAction(entry) {
 }
 
 function simulatorPlaybackActions(log, limit = 36) {
-  const entries = log.filter(entry => entry.actorId);
+  const entries = log.filter(entry => entry.actorId && entry.round > 0);
   const combatKinds = new Set(["attack", "triggered", "follow-up"]);
   return entries.filter(entry => combatKinds.has(entry.kind)).slice(0, limit);
 }
@@ -2636,6 +2694,8 @@ function finishBattleSimulatorPlayback(result, token) {
 function playBattleSimulatorSample(result) {
   const token = ++battleSimulatorState.playbackToken;
   const actions = simulatorPlaybackActions(result.sample.log);
+  const cardGroups = simulatorTurnCardGroups(result.sample.log);
+  const cardState = { key: "", index: 0 };
   if (!actions.length) {
     finishBattleSimulatorPlayback(result, token);
     return;
@@ -2647,7 +2707,7 @@ function playBattleSimulatorSample(result) {
       finishBattleSimulatorPlayback(result, token);
       return;
     }
-    simulatorAnimateAction(actions[index++]);
+    simulatorAnimateAction(actions[index++], cardGroups, cardState);
     battleSimulatorState.runTimer = setTimeout(playNext, BATTLE_SIMULATOR_PLAYBACK_TIMING.actionDelay);
   };
   playNext();

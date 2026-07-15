@@ -1061,6 +1061,26 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 .quick-lineup.enemy .quick-unit-health b { background: #ff4b72; }
 .quick-unit-dead-label { display: none; }
 .quick-unit-fx { position: absolute; inset: 1px; z-index: 2; pointer-events: none; }
+.quick-turn-cards { --turn-card-accent: #51c7ff; width: min(430px, calc(100% - 24px)); margin: 10px auto 0; padding: 7px 9px 9px; border: 1px solid color-mix(in srgb, var(--turn-card-accent) 70%, #202127); background: #090a0ee8; box-shadow: 0 0 20px color-mix(in srgb, var(--turn-card-accent) 16%, transparent); text-align: left; animation: turnCardsIn .22s ease both; }
+.quick-turn-cards.side-b { --turn-card-accent: #ff4b72; }
+.quick-turn-cards.has-extra-action { --turn-card-accent: #e0ad4e; }
+.quick-turn-cards > header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; color: var(--turn-card-accent); font-size: 7px; font-weight: 900; letter-spacing: .1em; }
+.quick-turn-cards > header strong { color: #d9d9df; font-size: 7px; }
+.quick-turn-card-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 7px; min-height: 88px; }
+.quick-turn-card-row > i { min-height: 74px; border: 1px dashed #35363e; background: #111218; }
+.quick-turn-card { position: relative; display: grid; grid-template-columns: 58px minmax(0, 1fr); grid-template-rows: auto 1fr auto; min-width: 0; min-height: 80px; overflow: hidden; border: 1px solid #3d3e46; background: #14151a; transition: transform .2s ease, opacity .2s ease, filter .2s ease, border-color .2s ease; }
+.quick-turn-card > small { position: absolute; top: 3px; left: 3px; z-index: 2; padding: 2px 4px; color: #0a1014; background: #b9bbc3; font-size: 6px; font-weight: 1000; letter-spacing: .08em; }
+.quick-turn-card > img { grid-row: 1 / 4; width: 58px; height: 100%; min-height: 80px; object-fit: cover; border-right: 2px solid var(--turn-card-accent); }
+.quick-turn-card > span { align-self: end; min-width: 0; padding: 7px 6px 2px; overflow: hidden; color: #f1f1f3; font-size: 8px; font-weight: 800; line-height: 1.15; text-overflow: ellipsis; white-space: nowrap; }
+.quick-turn-card > b { padding: 2px 6px 6px; color: #b8b8c0; font-size: 7px; }
+.quick-turn-card > b em { color: #ffd35a; font-size: 8px; font-style: normal; letter-spacing: -1px; }
+.quick-turn-card.is-now { z-index: 2; border-color: var(--turn-card-accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--turn-card-accent) 52%, transparent), 0 0 14px color-mix(in srgb, var(--turn-card-accent) 30%, transparent); transform: translateY(-5px) scale(1.035); animation: turnCardNow .7s ease-in-out infinite alternate; }
+.quick-turn-card.is-now > small { color: #071410; background: var(--turn-card-accent); }
+.quick-turn-card.is-next { border-color: color-mix(in srgb, var(--turn-card-accent) 68%, #3d3e46); }
+.quick-turn-card.is-next > small { color: #171006; background: #e0ad4e; }
+.quick-turn-card.is-done { opacity: .38; filter: grayscale(.75); transform: scale(.96); }
+.quick-turn-card.is-empty { display: grid; place-items: center; min-height: 80px; border-style: dashed; color: #5d5e66; background: #101116; font-size: 7px; letter-spacing: .1em; }
+.quick-turn-cards.is-waiting .quick-turn-card-row { min-height: 74px; }
 .quick-action-callout { display: grid; gap: 5px; min-height: 58px; margin: 10px auto 0; padding: 8px 10px; border-left: 3px solid #e0ad4e; background: #090a0dcc; text-align: left; }
 .quick-action-callout > div { display: flex; align-items: center; gap: 8px; }
 .quick-action-callout em, .simulator-action-tag { flex: 0 0 auto; padding: 3px 6px; color: #071512; border: 1px solid #7effdc; background: #31d3a7; font-size: 7px; font-style: normal; font-weight: 1000; letter-spacing: .07em; text-transform: uppercase; }
@@ -1184,6 +1204,8 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
 .quick-battle-start.winner-a .quick-stage-lineups > section:last-child, .quick-battle-start.winner-b .quick-stage-lineups > section:first-child { filter: grayscale(.8) brightness(.55); transition: filter .5s ease; }
 
 @keyframes quickLoad { from { transform: translateX(-110%); } to { transform: translateX(250%); } }
+@keyframes turnCardsIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes turnCardNow { from { filter: brightness(1); } to { filter: brightness(1.18); } }
 @keyframes unitAttack { 0% { transform: translateX(0) scale(1); } 48% { transform: translateX(18%) scale(1.08); filter: brightness(1.35); } 100% { transform: translateX(0) scale(1); } }
 @keyframes unitAttackEnemy { 0% { transform: translateX(0) scale(1); } 48% { transform: translateX(-18%) scale(1.08); filter: brightness(1.35); } 100% { transform: translateX(0) scale(1); } }
 @keyframes attackFlash { 0% { opacity: 0; transform: scale(.5); } 50% { opacity: 1; transform: scale(1.15); } 100% { opacity: 0; transform: scale(1.4); } }
@@ -1279,4 +1301,10 @@ select:focus, input:focus { border-color: var(--accent); background: #161619; bo
   .simulator-ai-row img { width: 34px; height: 34px; }
   .simulator-ai-rule { grid-column: 2 / -1; }
   .quick-action-callout { min-height: 54px; }
+  .quick-turn-cards { width: calc(100% - 8px); padding: 6px; }
+  .quick-turn-card-row { gap: 4px; min-height: 74px; }
+  .quick-turn-card { grid-template-columns: 1fr; grid-template-rows: 62px auto; min-height: 82px; }
+  .quick-turn-card > img { grid-row: 1; width: 100%; height: 62px; min-height: 0; border-right: 0; border-bottom: 2px solid var(--turn-card-accent); }
+  .quick-turn-card > span { padding: 3px 4px 4px; font-size: 7px; }
+  .quick-turn-card > b { position: absolute; right: 2px; bottom: 19px; padding: 2px 3px; color: #fff; background: #08090bcc; }
 }
