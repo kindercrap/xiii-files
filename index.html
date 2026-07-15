@@ -29,9 +29,10 @@
   <main>
     <nav class="app-tabs" role="tablist" aria-label="BTC tools">
       <button class="app-tab active" type="button" role="tab" aria-selected="true" aria-controls="archive-view" data-view="archive">Unit Archive</button>
-      <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="cp-battle-view" data-view="battle">CP Battle</button>
+      <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="battle-simulator-view" data-view="simulator">Battle Simulator</button>
       <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="team-builder-view" data-view="builder">Team Building</button>
       <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="carnival-view" data-view="carnival">Carnival Banner Simulator</button>
+      <button class="app-tab" type="button" role="tab" aria-selected="false" aria-controls="potential-wheel-view" data-view="potential-wheel">Potential Wheel Simulator</button>
     </nav>
 
     <section id="archive-view" class="app-view" role="tabpanel">
@@ -79,36 +80,68 @@
     <div id="empty-state" class="state-message" hidden>No units match those filters.</div>
     </section>
 
-    <section id="cp-battle-view" class="app-view cp-battle-view" role="tabpanel" hidden>
-      <header class="battle-header">
+    <section id="battle-simulator-view" class="app-view battle-simulator-view" role="tabpanel" hidden>
+      <header class="simulator-header">
         <div>
-          <p class="eyebrow">Team comparison</p>
-          <h2>CP Battle</h2>
-          <p>Build two teams of five with one Assistant per unit. Assistants use the confirmed max 6★ transfer ratio and an estimated CP contribution.</p>
+          <p class="eyebrow">APK-informed quick battle model</p>
+          <h2>Battle Simulator</h2>
+          <p>Build two independent five-unit teams, then run a one-team-versus-one-team Quick Battle. The same unit may be used once on each opposing side.</p>
         </div>
-        <div class="battle-rule"><strong>5</strong><span>units per side</span></div>
+        <span class="simulator-badge">APK-AUDITED V2</span>
       </header>
 
-      <div class="battle-arena">
-        <article class="battle-team team-left" data-team="left">
-          <header class="team-heading">
-            <div><span>Team A</span><strong id="left-total-cp">0</strong><small>Total max CP · estimated with Assistants</small><em id="left-assist-cp" class="assist-breakdown">Main 0 + Assist ~0</em></div>
-            <div id="left-first-turn" class="first-turn" hidden>FIRST TURN!</div>
-          </header>
-          <div id="left-slots" class="team-slots"></div>
+      <section class="simulator-controls" aria-label="Battle simulation controls">
+        <label><span>Simulations</span><select id="simulator-runs"><option value="100">100 - quick</option><option value="500" selected>500 - balanced</option><option value="1000">1,000 - precise</option></select></label>
+        <label><span>Battle turn limit</span><input id="simulator-rounds" type="number" min="3" max="30" step="1" value="12"></label>
+        <label><span>Random seed</span><input id="simulator-seed" type="number" step="1" value="5081"></label>
+        <button id="simulator-populate" class="simulator-populate" type="button">Populate Teams</button>
+        <button id="simulator-run" class="simulator-run" type="button">Battle</button>
+      </section>
+
+      <div class="simulator-options">
+        <label><input id="simulator-kits" type="checkbox" checked><span>Apply APK-audited active skills and passive triggers</span></label>
+        <label class="simulator-max-investment"><input id="simulator-max-investment" type="checkbox"><span>Max RC Cells, Force Talents, Scenes, Potentials, Tactics &amp; equipment</span></label>
+        <span>Slots 1-4 begin On Field. Slot 5 is the Backup and enters at the start of the next turn after an On Field ally is defeated.</span>
+        <span id="simulator-investment-detail" class="simulator-investment-detail" hidden><strong>MAX INVESTMENT PROXY</strong> 3.00x CP, ATK, DEF and HP for every unit. Calibrated to supplied game screenshots; exact loadout-specific effects are not claimed.</span>
+      </div>
+
+      <div class="simulator-matchup">
+        <article class="simulator-team-panel team-a">
+          <header><div><span>MY TEAM</span><strong id="simulator-left-cp">0 CP</strong></div><button type="button" data-simulator-clear="left">Clear</button></header>
+          <div id="simulator-left-preview" class="simulator-roster"></div>
         </article>
-
-        <div class="battle-versus" aria-hidden="true"><span>VS</span></div>
-
-        <article class="battle-team team-right" data-team="right">
-          <header class="team-heading">
-            <div><span>Team B</span><strong id="right-total-cp">0</strong><small>Total max CP · estimated with Assistants</small><em id="right-assist-cp" class="assist-breakdown">Main 0 + Assist ~0</em></div>
-            <div id="right-first-turn" class="first-turn" hidden>FIRST TURN!</div>
-          </header>
-          <div id="right-slots" class="team-slots"></div>
+        <div class="simulator-vs"><strong>VS</strong><span>1<br><small>ROUND</small></span></div>
+        <article class="simulator-team-panel team-b">
+          <header><div><span>ENEMY TEAM</span><strong id="simulator-right-cp">0 CP</strong></div><button type="button" data-simulator-clear="right">Clear</button></header>
+          <div id="simulator-right-preview" class="simulator-roster"></div>
         </article>
       </div>
-      <p id="battle-status" class="battle-status" aria-live="polite">Select units to compare both teams.</p>
+
+      <section class="simulator-ai-predictor" aria-labelledby="simulator-ai-title">
+        <header>
+          <div>
+            <p class="eyebrow">Extracted player Auto/PVP priority rules</p>
+            <h3 id="simulator-ai-title">Auto Battle AI Predictor</h3>
+            <p>Opening-state prediction for each selected unit. During Battle, the sample action log shows the chosen card, target logic, command position, and the rule that won.</p>
+          </div>
+          <span class="simulator-ai-badge">APK RULES</span>
+        </header>
+        <div id="simulator-ai-prediction" class="simulator-ai-grid"></div>
+      </section>
+
+      <section id="simulator-results" class="simulator-results" aria-live="polite">
+        <div class="simulator-empty"><strong>Build both line-ups</strong><p>Select five units for My Team and five units for Enemy Team, then press Battle.</p></div>
+      </section>
+
+      <details class="simulator-method">
+        <summary>How this estimate works and what is not exact</summary>
+        <div class="simulator-method-grid">
+          <div><strong>Measured inputs</strong><p>Maximum S00 HP, ATK, DEF, Combat Power, active-skill multipliers, faction data, and configured passive text from the extracted game data.</p></div>
+          <div><strong>APK-informed rules</strong><p>Higher total CP acts first. Four units begin On Field; Slot 5 enters from Backup on the next turn after a defeat. The model audits all equipped natural-gift/rank passives and maps their APK events, including turn, card release, damage, hit, death, Weak, Power Burst, and Backup triggers.</p></div>
+          <div><strong>Modeled behavior</strong><p>Active-skill levels use their configured multipliers and entries. Unit attributes follow the APK rule: STR &gt; SKL &gt; SPD &gt; STR, PSY/WIT counter each other, and DST counters all; advantage/disadvantage changes damage by ±20%. The event engine also applies supported auras, timed stacks, recovery, shields, cleanses, control, Weak, pursuit/retaliation, skill-level changes, and forced skill releases.</p></div>
+          <div><strong>Not yet exact</strong><p>The result now identifies partial and unreproducible passives instead of silently ignoring them. Named-status state machines, exact card-hand operations, encrypted runtime tie-breaking, account bonuses, and server-only timing remain approximations.</p></div>
+        </div>
+      </details>
     </section>
 
     <section id="team-builder-view" class="app-view team-builder-view" role="tabpanel" hidden>
@@ -205,6 +238,75 @@
           <strong id="carnival-reveal-count"></strong>
           <span class="carnival-reveal-dismiss">Click anywhere to dismiss</span>
         </div>
+      </div>
+    </section>
+
+    <section id="potential-wheel-view" class="app-view potential-wheel-view" role="tabpanel" hidden>
+      <header class="wheel-header">
+        <div>
+          <p class="eyebrow">APK-verified Potential rates</p>
+          <h2>Potential Wheel Event Simulator</h2>
+          <p>Spin with Potential Lucky Coins, track the escalating Rainbow counter, and compare your simulated results with the installed game's configured rates.</p>
+        </div>
+        <span class="wheel-verified">APK RATES</span>
+      </header>
+
+      <div class="wheel-layout">
+        <section class="wheel-panel wheel-controls">
+          <div class="wheel-cost-banner"><span>Potential Lucky Coin</span><strong>100 <small>diamonds each</small></strong></div>
+          <div class="wheel-wallet">
+            <label><span>Diamonds</span><input id="wheel-diamonds-input" type="number" min="0" step="100" value="100000"></label>
+            <label><span>Lucky Coins</span><input id="wheel-coins-input" type="number" min="0" step="1" value="0"></label>
+          </div>
+          <div class="wheel-buy-actions">
+            <button type="button" data-wheel-buy="1">Buy 1 Coin <small>100 ◇</small></button>
+            <button type="button" data-wheel-buy="10">Buy 10 Coins <small>1,000 ◇</small></button>
+            <button type="button" data-wheel-buy="100">Buy 100 Coins <small>10,000 ◇</small></button>
+          </div>
+          <div class="wheel-spin-actions">
+            <button type="button" data-wheel-spin="1">Spin ×1</button>
+            <button type="button" data-wheel-spin="10" class="primary">Spin ×10</button>
+            <button type="button" id="wheel-reset" class="danger">Reset</button>
+          </div>
+          <p id="wheel-status" class="wheel-status" aria-live="polite">One daily free spin is ready.</p>
+          <div class="wheel-rule-note"><strong>Payment order</strong><p>The daily free spin is used first, followed by Lucky Coins. Purchase coins above before spinning when your balance is empty.</p></div>
+        </section>
+
+        <section class="wheel-panel wheel-dashboard">
+          <div class="wheel-stats">
+            <div><span>Total spins</span><strong id="wheel-total-spins">0</strong></div>
+            <div><span>Diamonds left</span><strong id="wheel-diamonds">100,000</strong></div>
+            <div><span>Lucky Coins</span><strong id="wheel-coins">0</strong></div>
+            <div><span>Free spins</span><strong id="wheel-free-spins">1</strong></div>
+            <div class="fortune"><span>Fortune Points</span><strong id="wheel-fortune">0</strong></div>
+            <div class="rainbow"><span>Rainbow obtained</span><strong id="wheel-rainbows">0</strong></div>
+          </div>
+          <div class="wheel-pity-heading"><div><span>Rainbow counter</span><strong id="wheel-pity-counter">0 failed spins</strong></div><div><span>Next-spin Rainbow rate</span><strong id="wheel-rainbow-rate">0.10%</strong></div></div>
+          <div class="wheel-pity-track"><span id="wheel-pity-bar"></span><i data-threshold="1000"></i><i data-threshold="1100"></i><i data-threshold="1200"></i><i data-threshold="1300"></i><i data-threshold="1400"></i></div>
+          <div id="wheel-results" class="wheel-results" aria-live="polite"><p class="wheel-empty">Spin the wheel to see results.</p></div>
+        </section>
+      </div>
+
+      <section class="wheel-panel wheel-level-summary">
+        <div class="wheel-section-heading"><h3>Simulation results</h3><span>Current session by Potential level</span></div>
+        <div id="wheel-level-counts" class="wheel-level-counts"></div>
+      </section>
+
+      <section class="wheel-panel wheel-history-panel">
+        <div class="wheel-section-heading"><h3>Complete spin history</h3><span id="wheel-history-count">0 entries</span></div>
+        <div class="wheel-history-tools"><select id="wheel-history-filter"><option value="all">All results</option><option value="rainbow">Rainbow</option><option value="level6">Lv.6</option><option value="level5">Lv.5</option><option value="level4">Lv.4</option><option value="level3">Lv.3</option><option value="level2">Lv.2</option></select><button id="wheel-history-clear" type="button">Clear history</button></div>
+        <div id="wheel-history" class="wheel-history"></div>
+      </section>
+
+      <details class="wheel-panel wheel-rates">
+        <summary>View APK rate and Rainbow pity tables</summary>
+        <div class="wheel-rate-layout"><div><h3>Published base rates</h3><div id="wheel-rate-table"></div></div><div><h3>Rainbow escalation</h3><div id="wheel-pity-table"></div></div></div>
+        <p class="wheel-assumption"><strong>Simulation method:</strong> the dynamic Rainbow check is applied first. When Rainbow does not trigger, the published Lv.2–Lv.6 probabilities are proportionally preserved. The 1,499 counter uses the APK's forced-result weight.</p>
+      </details>
+
+      <div id="wheel-rainbow-reveal" class="wheel-rainbow-reveal" hidden role="status" aria-live="assertive">
+        <div class="wheel-rainbow-rays" aria-hidden="true"></div>
+        <div class="wheel-rainbow-card"><span>JACKPOT</span><strong>RAINBOW POTENTIAL</strong><p>The Rainbow counter has reset.</p><small>Click anywhere to dismiss</small></div>
       </div>
     </section>
   </main>

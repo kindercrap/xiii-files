@@ -1,0 +1,41 @@
+{
+  "format": "XIII Files Potential Wheel Simulator Data",
+  "source": {
+    "package": "com.tokyoghoulsea1.google",
+    "version": "3.10814",
+    "tables": [
+      "00054_GiftCommonGacha.bin",
+      "00155_TranslateForMultiEN.bin",
+      "00241_Item.bin"
+    ]
+  },
+  "coinName": "Potential Lucky Coin",
+  "coinCostDiamonds": 100,
+  "dailyFreeSpins": 1,
+  "baseRates": [
+    { "key": "rainbow", "name": "Random Rainbow Potential", "level": "Rainbow", "probability": 0.001, "fortunePoints": 5 },
+    { "key": "level6", "name": "Lv.6 Random Potential", "level": 6, "probability": 0.005, "fortunePoints": 4 },
+    { "key": "level5", "name": "Lv.5 Random Potential", "level": 5, "probability": 0.02, "fortunePoints": 4 },
+    { "key": "level4", "name": "Lv.4 Random Potential", "level": 4, "probability": 0.224, "fortunePoints": 3 },
+    { "key": "level3", "name": "Lv.3 Random Potential", "level": 3, "probability": 0.5, "fortunePoints": 2 },
+    { "key": "level2", "name": "Lv.2 Random Potential", "level": 2, "probability": 0.25, "fortunePoints": 1 }
+  ],
+  "rainbowPity": {
+    "baseWeightPerThousand": 1,
+    "resetsOnRainbow": true,
+    "thresholds": [
+      { "failedSpins": 1000, "weightPerThousand": 4 },
+      { "failedSpins": 1100, "weightPerThousand": 8 },
+      { "failedSpins": 1200, "weightPerThousand": 24 },
+      { "failedSpins": 1300, "weightPerThousand": 41 },
+      { "failedSpins": 1400, "weightPerThousand": 86 },
+      { "failedSpins": 1499, "weightPerThousand": 10000 }
+    ]
+  },
+  "notes": [
+    "The published base rates total 100%.",
+    "The Rainbow rate increases with failed spins and resets when Rainbow is obtained.",
+    "The simulator performs the dynamic Rainbow check first, then proportionally preserves the published non-Rainbow level mix.",
+    "Potential Lucky Coin cost of 100 diamonds was supplied by the user."
+  ]
+}
