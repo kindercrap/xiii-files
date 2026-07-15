@@ -34,8 +34,8 @@ const BATTLE_SIMULATOR_TEST_PRESET = {
 
 const BATTLE_SIMULATOR_PLAYBACK_TIMING = Object.freeze({
   startDelay: 450,
-  actionDelay: 350,
-  resultDelay: 600
+  actionDelay: 700,
+  resultDelay: 800
 });
 
 // Formation slots define a deterministic initial ATK hierarchy. These are
@@ -2561,8 +2561,9 @@ function showSimulatorBattleStart(leftSource, rightSource) {
         <section><strong>ENEMY TEAM</strong>${simulatorBattleLineup(rightSource, "enemy")}</section>
       </div>
       <section id="quick-turn-cards" class="quick-turn-cards is-waiting">
-        <header><span>COMMAND HAND</span><strong>3 UNIT CARDS PER TURN</strong></header>
-        <div class="quick-turn-card-row"><i></i><i></i><i></i></div>
+        <div class="quick-turn-card-team side-a"><header><span>MY TEAM</span><strong>3 CARDS</strong></header><div class="quick-turn-card-row"><i></i><i></i><i></i></div></div>
+        <div class="quick-turn-card-vs"><b>VS</b><small>TURN 1</small></div>
+        <div class="quick-turn-card-team side-b"><header><span>ENEMY TEAM</span><strong>3 CARDS</strong></header><div class="quick-turn-card-row"><i></i><i></i><i></i></div></div>
       </section>
       <div class="quick-action-callout"><div><em id="quick-action-tag" class="action-ready">READY</em><strong id="quick-action-title">Reading Auto priorities...</strong></div><span id="quick-action-rule">Building the opening hand and checking valid targets.</span></div>
       <div class="quick-loading"><i></i></div>
@@ -2599,34 +2600,39 @@ function simulatorTurnCardGroups(log) {
 function simulatorRenderTurnCards(entry, groups, playbackState) {
   const host = document.querySelector("#quick-turn-cards");
   if (!host) return;
-  const key = simulatorTurnCardKey(entry);
-  const cards = groups.get(key) || [];
-  if (playbackState.key !== key) {
-    playbackState.key = key;
-    playbackState.index = 0;
+  if (playbackState.round !== entry.round) {
+    playbackState.round = entry.round;
+    playbackState.indices = { A: 0, B: 0 };
   }
   if (entry.cardAction) {
+    const cards = groups.get(simulatorTurnCardKey(entry)) || [];
     const cardIndex = cards.indexOf(entry);
-    if (cardIndex >= 0) playbackState.index = cardIndex;
+    if (cardIndex >= 0) playbackState.indices[entry.side] = cardIndex;
   }
-  const activeIndex = Math.max(0, Math.min(playbackState.index, Math.max(0, cards.length - 1)));
-  const sideLabel = entry.side === "A" ? "MY TEAM" : "ENEMY TEAM";
   const extra = !entry.cardAction;
-  const cardMarkup = Array.from({ length: 3 }, (_, index) => {
-    const card = cards[index];
-    if (!card) return `<article class="quick-turn-card is-empty"><span>EMPTY</span></article>`;
-    const unit = simulatorUnit(card.actorId);
-    const name = simulatorUnitDisplayName(unit);
-    const level = Math.max(0, Math.min(3, Number(card.level) || 0));
-    const state = index < activeIndex ? "is-done" : index === activeIndex ? "is-now" : index === activeIndex + 1 ? "is-next" : "";
-    const label = index === activeIndex ? "NOW" : index === activeIndex + 1 ? "NEXT" : index < activeIndex ? "DONE" : `CARD ${index + 1}`;
-    return `<article class="quick-turn-card ${state}" title="${escapeHtml(name)}">
-      <small>${label}</small><img src="${escapeHtml(unit?.image || "")}" alt=""><span>${escapeHtml(name)}</span>
-      <b>${level ? `Lv.${level} <em>${"★".repeat(level)}</em>` : "BLOCKED"}</b>
-    </article>`;
-  }).join("");
-  host.className = `quick-turn-cards side-${entry.side.toLowerCase()}${extra ? " has-extra-action" : ""}`;
-  host.innerHTML = `<header><span>${sideLabel} · TURN ${entry.round}</span><strong>${extra ? "EXTRA ACTION · COMMAND CARDS DO NOT ADVANCE" : "3-CARD COMMAND HAND"}</strong></header><div class="quick-turn-card-row">${cardMarkup}</div>`;
+  const teamMarkup = side => {
+    const cards = groups.get(`${entry.round}:${side}`) || [];
+    const activeIndex = Math.max(0, Math.min(playbackState.indices[side] || 0, Math.max(0, cards.length - 1)));
+    const isActing = entry.side === side;
+    const cardMarkup = Array.from({ length: 3 }, (_, index) => {
+      const card = cards[index];
+      if (!card) return `<article class="quick-turn-card is-empty"><span>EMPTY</span></article>`;
+      const unit = simulatorUnit(card.actorId);
+      const name = simulatorUnitDisplayName(unit);
+      const level = Math.max(0, Math.min(3, Number(card.level) || 0));
+      const state = index < activeIndex ? "is-done" : isActing && index === activeIndex ? "is-now" : isActing && index === activeIndex + 1 ? "is-next" : "is-queued";
+      const label = index < activeIndex ? "DONE" : isActing && index === activeIndex ? "NOW" : isActing && index === activeIndex + 1 ? "NEXT" : `CARD ${index + 1}`;
+      return `<article class="quick-turn-card ${state}" title="${escapeHtml(name)}">
+        <small>${label}</small><img src="${escapeHtml(unit?.image || "")}" alt=""><span>${escapeHtml(name)}</span>
+        <b>${level ? `Lv.${level} <em>${"★".repeat(level)}</em>` : "BLOCKED"}</b>
+      </article>`;
+    }).join("");
+    const label = side === "A" ? "MY TEAM" : "ENEMY TEAM";
+    const actionLabel = isActing ? (extra ? "EXTRA ACTION" : "ACTING") : "WAITING";
+    return `<div class="quick-turn-card-team side-${side.toLowerCase()}${isActing ? " is-acting" : ""}"><header><span>${label}</span><strong>${actionLabel}</strong></header><div class="quick-turn-card-row">${cardMarkup}</div></div>`;
+  };
+  host.className = `quick-turn-cards active-${entry.side.toLowerCase()}${extra ? " has-extra-action" : ""}`;
+  host.innerHTML = `${teamMarkup("A")}<div class="quick-turn-card-vs"><b>VS</b><small>TURN ${entry.round}</small></div>${teamMarkup("B")}`;
 }
 
 function simulatorAnimateAction(entry, cardGroups, cardState) {
@@ -2695,7 +2701,7 @@ function playBattleSimulatorSample(result) {
   const token = ++battleSimulatorState.playbackToken;
   const actions = simulatorPlaybackActions(result.sample.log);
   const cardGroups = simulatorTurnCardGroups(result.sample.log);
-  const cardState = { key: "", index: 0 };
+  const cardState = { round: 0, indices: { A: 0, B: 0 } };
   if (!actions.length) {
     finishBattleSimulatorPlayback(result, token);
     return;
